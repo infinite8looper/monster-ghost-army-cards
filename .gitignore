@@ -7,3 +7,6 @@ node_modules/
 .env
 *.log
 /tmp/
+
+# Original images with EXIF/geotagging data (security risk)
+images/orig/
