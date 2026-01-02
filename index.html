@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
 
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
     <!-- Game Container -->
@@ -25,32 +25,18 @@
             <div id="game-info">
                 <span id="round-counter">Round: 1</span>
                 <span id="turn-indicator">Current Turn: Player 1</span>
+                <span id="player-count-display">Players: 2</span>
             </div>
         </header>
 
         <!-- Main Game Area -->
         <main id="game-main">
 
-            <!-- Opponent Area (Top) - Shows opponent cards face-down or minimized -->
+            <!-- All Opponents Area (Top) - Shows all other players' cards organized by player -->
             <section id="opponent-area">
-                <h2 class="area-title">Opponents</h2>
-                <div id="opponent-cards" class="card-row">
-                    <!-- Opponent cards will be rendered here -->
-                    <div class="card-placeholder opponent-card">
-                        <div class="card-back">
-                            <span class="card-back-text">?</span>
-                        </div>
-                    </div>
-                    <div class="card-placeholder opponent-card">
-                        <div class="card-back">
-                            <span class="card-back-text">?</span>
-                        </div>
-                    </div>
-                    <div class="card-placeholder opponent-card">
-                        <div class="card-back">
-                            <span class="card-back-text">?</span>
-                        </div>
-                    </div>
+                <h2 class="area-title">Other Players</h2>
+                <div id="all-opponents-container">
+                    <!-- Each opponent's cards will be in their own player-panel -->
                 </div>
             </section>
 
@@ -88,29 +74,25 @@
                             <!-- Attack buttons will be dynamically generated -->
                         </div>
                     </div>
-                    <div id="defense-options">
+                    <div id="defense-options" class="hidden">
                         <h3>Choose Defense</h3>
                         <div id="defense-buttons" class="action-buttons">
                             <!-- Defense buttons will be dynamically generated -->
                         </div>
                     </div>
                 </div>
+
+                <!-- Battle Status Message -->
+                <div id="battle-status" class="hidden">
+                    <p id="battle-status-text"></p>
+                </div>
             </section>
 
             <!-- Player Area (Bottom) - Shows current player's hand -->
             <section id="player-area">
-                <h2 class="area-title">Your Army</h2>
+                <h2 class="area-title" id="player-area-title">Your Army</h2>
                 <div id="player-cards" class="card-row">
                     <!-- Player cards will be rendered here -->
-                    <div class="card-placeholder player-card" data-card-id="placeholder-1">
-                        <span class="placeholder-text">Card 1</span>
-                    </div>
-                    <div class="card-placeholder player-card" data-card-id="placeholder-2">
-                        <span class="placeholder-text">Card 2</span>
-                    </div>
-                    <div class="card-placeholder player-card" data-card-id="placeholder-3">
-                        <span class="placeholder-text">Card 3</span>
-                    </div>
                 </div>
             </section>
 
@@ -120,17 +102,17 @@
         <aside id="game-controls">
             <h2 class="area-title">Controls</h2>
             <div id="control-buttons">
-                <button id="btn-draw" class="control-btn" title="Draw a card from the deck">
-                    Draw Card
-                </button>
-                <button id="btn-attack" class="control-btn btn-attack" title="Execute the selected attack">
+                <button id="btn-attack" class="control-btn btn-attack" disabled title="Execute the selected attack">
                     Attack!
                 </button>
-                <button id="btn-defend" class="control-btn btn-defend" title="Use a defense move">
-                    Defend
+                <button id="btn-skip-defense" class="control-btn btn-defend" disabled title="Skip defense selection">
+                    Skip Defense
                 </button>
                 <button id="btn-end-turn" class="control-btn btn-end-turn" title="End your turn">
                     End Turn
+                </button>
+                <button id="btn-new-game" class="control-btn" title="Start a new game">
+                    New Game
                 </button>
             </div>
             <div id="special-actions">
@@ -164,6 +146,84 @@
             </div>
         </div>
 
+        <!-- Defense Selection Modal -->
+        <div id="defense-modal" class="modal hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content defense-modal-content">
+                <h2 class="modal-title">Incoming Attack!</h2>
+                <div id="defense-modal-info">
+                    <p id="defense-attack-info"></p>
+                    <p id="defense-damage-preview"></p>
+                </div>
+                <div id="defense-card-display"></div>
+                <h3>Choose Your Defense</h3>
+                <div id="defense-modal-buttons" class="action-buttons">
+                    <!-- Defense buttons will be dynamically generated -->
+                </div>
+                <button id="btn-skip-defense-modal" class="control-btn btn-end-turn">Take the Hit (No Defense)</button>
+            </div>
+        </div>
+
+        <!-- Victory Screen Modal -->
+        <div id="victory-modal" class="modal hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content victory-modal-content">
+                <div class="victory-celebration">
+                    <h1 class="victory-title">VICTORY!</h1>
+                    <div id="victory-player-name" class="victory-winner"></div>
+                    <p class="victory-subtitle">has conquered all foes!</p>
+                </div>
+                <div class="victory-stats" id="victory-stats">
+                    <!-- Stats will be populated dynamically -->
+                </div>
+                <div class="victory-buttons">
+                    <button id="btn-play-again" class="control-btn btn-attack">Play Again</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Setup Screen -->
+        <div id="setup-screen" class="modal hidden">
+            <div class="modal-overlay"></div>
+            <div class="setup-content">
+                <div class="setup-header">
+                    <h2 class="setup-title">Prepare for Battle</h2>
+                    <p class="setup-subtitle">Assemble your warriors and ready your ghost army</p>
+                </div>
+
+                <div class="setup-body">
+                    <!-- Player Count Selection -->
+                    <div class="setup-section">
+                        <label class="setup-label" for="player-count">Number of Warriors</label>
+                        <div class="player-count-selector">
+                            <button type="button" class="count-btn" data-count="2">2</button>
+                            <button type="button" class="count-btn" data-count="3">3</button>
+                            <button type="button" class="count-btn" data-count="4">4</button>
+                            <button type="button" class="count-btn" data-count="5">5</button>
+                            <button type="button" class="count-btn" data-count="6">6</button>
+                            <button type="button" class="count-btn" data-count="7">7</button>
+                            <button type="button" class="count-btn" data-count="8">8</button>
+                        </div>
+                    </div>
+
+                    <!-- Player Configuration -->
+                    <div class="setup-section">
+                        <label class="setup-label">Warriors Configuration</label>
+                        <div id="player-inputs" class="player-inputs">
+                            <!-- Player inputs will be dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setup-footer">
+                    <button id="btn-start-game" class="start-game-btn" type="button">
+                        <span class="btn-text">Begin the Battle</span>
+                        <span class="btn-icon">&#9876;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Loading Screen -->
         <div id="loading-screen">
             <div class="loading-content">
@@ -173,9 +233,98 @@
             </div>
         </div>
 
+        <!-- Drafting Screen -->
+        <div id="drafting-screen" class="hidden">
+            <div class="drafting-container">
+                <!-- Drafting Header -->
+                <header class="drafting-header">
+                    <h1 class="game-title">Monster Ghost Army Cards</h1>
+                    <div class="drafting-info">
+                        <span id="drafting-round" class="drafting-stat">Round: 1 / 10</span>
+                        <span id="drafting-player" class="drafting-stat current-player">Current Player: Player 1</span>
+                    </div>
+                </header>
+
+                <!-- Main Drafting Area -->
+                <div class="drafting-main">
+                    <!-- Controls Bar -->
+                    <div class="drafting-controls">
+                        <!-- Sorting Controls -->
+                        <div class="sort-controls">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by" class="sort-dropdown">
+                                <option value="name">Name</option>
+                                <option value="hp">Health (HP)</option>
+                                <option value="attack">Attack Power</option>
+                                <option value="defense">Defense</option>
+                                <option value="element">Element</option>
+                                <option value="tier">Tier/Rarity</option>
+                            </select>
+                            <button id="sort-order-btn" class="sort-order-btn" title="Toggle sort order">
+                                <span class="sort-arrow">&#9650;</span>
+                            </button>
+                        </div>
+
+                        <!-- Element Filters -->
+                        <div class="element-filters">
+                            <span class="filter-label">Filter:</span>
+                            <button class="element-filter-btn active" data-element="all" title="Show All">All</button>
+                            <button class="element-filter-btn" data-element="air" title="Air">
+                                <span class="filter-icon air">A</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="water" title="Water">
+                                <span class="filter-icon water">W</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="fire" title="Fire">
+                                <span class="filter-icon fire">F</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="earth" title="Earth">
+                                <span class="filter-icon earth">E</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="plant" title="Plant">
+                                <span class="filter-icon plant">P</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="mecha" title="Mecha">
+                                <span class="filter-icon mecha">M</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="magic" title="Magic">
+                                <span class="filter-icon magic">*</span>
+                            </button>
+                            <button class="element-filter-btn" data-element="universe" title="Universe">
+                                <span class="filter-icon universe">U</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card Gallery -->
+                    <div class="drafting-gallery-container">
+                        <div id="drafting-gallery" class="drafting-gallery">
+                            <!-- Cards will be rendered here dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selected Cards Panel (Right Side) -->
+                <aside class="drafting-sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="area-title">Your Drafted Cards</h2>
+                        <span id="drafted-count" class="drafted-count">0 / 10</span>
+                    </div>
+                    <div id="drafted-cards" class="drafted-cards">
+                        <!-- Drafted cards will appear here -->
+                    </div>
+                    <div class="drafting-actions">
+                        <button id="confirm-selection-btn" class="control-btn btn-confirm" disabled>
+                            Confirm Selection
+                        </button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
     </div>
 
     <!-- JavaScript Modules -->
-    <script type="module" src="js/game.js?v=3"></script>
+    <script type="module" src="js/game.js?v=4"></script>
 </body>
 </html>
