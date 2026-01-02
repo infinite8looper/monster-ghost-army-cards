@@ -35,8 +35,9 @@ const BOUNCE_BACK_MULTIPLIER = 0.75;
 const SLIME_SPIKE_REDUCTION = 0.75;
 
 // Default attack/defense values (for cards without explicit values)
-const DEFAULT_ATTACK_DAMAGE = 200000;
-const DEFAULT_DEFENSE_PROTECTION = 100000;
+// Balanced for ~1M HP cards, ~35 turn games
+const DEFAULT_ATTACK_DAMAGE = 650000;
+const DEFAULT_DEFENSE_PROTECTION = 60000;
 
 /**
  * Get the relationship between two elements
@@ -177,15 +178,10 @@ export function normalizeAttack(attack, card) {
     // Determine element: use attack's element or first card element
     const element = attack.element || (card.elements && card.elements[0]) || 'magic';
 
-    // Determine base damage
+    // Determine base damage - use attack's base_damage or default
     let baseDamage = attack.base_damage;
     if (baseDamage === undefined || baseDamage === null) {
-        // Calculate based on card's attack_power if available
-        if (card.attack_power) {
-            baseDamage = card.attack_power * 10000; // Scale up
-        } else {
-            baseDamage = DEFAULT_ATTACK_DAMAGE;
-        }
+        baseDamage = DEFAULT_ATTACK_DAMAGE;
     }
 
     // Determine limited uses for special attacks
@@ -224,15 +220,10 @@ export function normalizeDefense(defense, card) {
     // Determine element: use defense's element or first card element
     const element = defense.element || (card.elements && card.elements[0]) || 'magic';
 
-    // Determine base protection
+    // Determine base protection - use defense's base_protection or default
     let baseProtection = defense.base_protection;
     if (baseProtection === undefined || baseProtection === null) {
-        // Calculate based on card's defense_power if available
-        if (card.defense_power) {
-            baseProtection = card.defense_power * 7500; // Scale up
-        } else {
-            baseProtection = DEFAULT_DEFENSE_PROTECTION;
-        }
+        baseProtection = DEFAULT_DEFENSE_PROTECTION;
     }
 
     // Determine special type
@@ -565,7 +556,7 @@ export function getValidAttacks(card, gameState = {}, playerCount = 2) {
         const defaultAttack = {
             name: `${card.name} Strike`,
             element: card.elements[0] || 'magic',
-            base_damage: (card.attack_power || 20) * 10000,
+            base_damage: DEFAULT_ATTACK_DAMAGE,
             limited_uses: null
         };
         return [{

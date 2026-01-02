@@ -11,28 +11,34 @@
     "attacks": [
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1688042,
+        "element": "plant"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1942766,
+        "element": "plant"
       },
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 981358,
+        "element": "plant"
       },
       {
         "name": "Thunder Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 955664,
+        "element": "plant"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A strong creature. Three creatures in a horizontal frame: a blue geometric tree-like figure on the left, a red brick-textured square creature with stick legs in the center, and a fiery sun-like creature with sharp teeth on the right",
     "original_image": "PXL_20260101_190708125.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1289759
   },
   {
     "id": "box",
@@ -45,16 +51,16 @@
     "attacks": [
       {
         "name": "Roll",
-        "description": ""
+        "description": "",
+        "base_damage": 540213,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A weak creature. A small spiky orange creature with a face inside a teal/blue rectangular frame",
     "original_image": "PXL_20260101_190715764.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 765170
   },
   {
     "id": "light_combined_demons",
@@ -68,32 +74,40 @@
     "attacks": [
       {
         "name": "Dark Wall Forces",
-        "description": "Makes every wall turn against you"
+        "description": "Makes every wall turn against you",
+        "base_damage": 953853,
+        "element": "fire"
       },
       {
         "name": "Fire Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 830309,
+        "element": "fire"
       },
       {
         "name": "Lava Breath",
-        "description": ""
+        "description": "",
+        "base_damage": 992790,
+        "element": "fire"
       },
       {
         "name": "Sun Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 814623,
+        "element": "fire"
       },
       {
         "name": "Do Two Moves At Once",
-        "description": ""
+        "description": "",
+        "base_damage": 907224,
+        "element": "fire"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A strong creature. Three yellow ghost-like demons with red horns and orange eyes, connected by a red horizontal bar, all inside a dark-bordered frame",
     "original_image": "PXL_20260101_190723114.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1132523
   },
   {
     "id": "fog_trio",
@@ -107,28 +121,34 @@
     "attacks": [
       {
         "name": "Fog Sandwich",
-        "description": ""
+        "description": "",
+        "base_damage": 745142,
+        "element": "air"
       },
       {
         "name": "Wind Tunnel",
-        "description": ""
+        "description": "",
+        "base_damage": 728304,
+        "element": "air"
       },
       {
         "name": "Hurricane",
-        "description": ""
+        "description": "",
+        "base_damage": 656624,
+        "element": "air"
       },
       {
         "name": "Do Two Moves At Once",
-        "description": ""
+        "description": "",
+        "base_damage": 783323,
+        "element": "air"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. Three fog/cloud-themed creatures in a purple frame: a dark gray ghost with a yellow eye, a spotted/dotted cloud-like shape, and a blue funnel/tornado shape",
     "original_image": "PXL_20260101_190728932.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 997110
   },
   {
     "id": "uber_candle",
@@ -141,25 +161,29 @@
     "attacks": [
       {
         "name": "Shoots Extremely Hot Wax",
-        "description": "That hardens into an imprisoning shell to prevent next attack"
+        "description": "That hardens into an imprisoning shell to prevent next attack",
+        "base_damage": 742104,
+        "element": "fire"
       },
       {
         "name": "Lights Anything On Fire",
-        "description": ""
+        "description": "",
+        "base_damage": 798991,
+        "element": "fire"
       }
     ],
     "defenses": [
       {
         "name": "Distract And Deflect",
-        "description": "By looking interesting"
+        "description": "By looking interesting",
+        "base_protection": 70260,
+        "element": "fire"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. Seven colorful candles of varying heights arranged in a row inside a brown frame - colors include blue, orange, pink, teal, purple, and red",
     "original_image": "PXL_20260101_190737413.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 876013
   },
   {
     "id": "spike_wall",
@@ -173,44 +197,58 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1359285,
+        "element": "mecha"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1230398,
+        "element": "mecha"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1135113,
+        "element": "mecha"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1163139,
+        "element": "mecha"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2294436,
+        "element": "mecha"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1069587,
+        "element": "mecha"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2642117,
+        "element": "mecha"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2366386,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. An orange spike wall creature with zigzag spikes around the border, two eyes on stalks, and a stand/pole underneath",
     "original_image": "PXL_20260101_190744411.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1698820
   },
   {
     "id": "dreidel_of_doom",
@@ -223,24 +261,28 @@
     "attacks": [
       {
         "name": "Ultra Spin Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 738284,
+        "element": "magic"
       },
       {
         "name": "Enrage Enemies",
-        "description": "To distract them by landing on W (nun) every time"
+        "description": "To distract them by landing on W (nun) every time",
+        "base_damage": 612995,
+        "element": "magic"
       },
       {
         "name": "Summon Daemon",
-        "description": "To help cook latkes (splatters of oil are very painful)"
+        "description": "To help cook latkes (splatters of oil are very painful)",
+        "base_damage": 616497,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A purple dreidel with Hebrew letters shown next to it (nun, gimel, hey, shin) inside a brown frame",
     "original_image": "PXL_20260101_190751214.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 850192
   },
   {
     "id": "sparkler_foe",
@@ -254,11 +296,15 @@
     "attacks": [
       {
         "name": "Super Bright",
-        "description": "Hurts any eye"
+        "description": "Hurts any eye",
+        "base_damage": 553366,
+        "element": "fire"
       },
       {
         "name": "Spawn Firewalker Army",
-        "description": ""
+        "description": "",
+        "base_damage": 606140,
+        "element": "fire"
       }
     ],
     "defenses": [],
@@ -270,9 +316,7 @@
     ],
     "biography": "A common creature. Colorful sparkles and stars in blue, teal, yellow and gold scattered across the frame",
     "original_image": "PXL_20260101_190758053.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 867568
   },
   {
     "id": "music_dude",
@@ -285,25 +329,29 @@
     "attacks": [
       {
         "name": "Very Loud",
-        "description": "Hurts ears"
+        "description": "Hurts ears",
+        "base_damage": 780187,
+        "element": "magic"
       },
       {
         "name": "Puts All Babies That Are Nearby To Sleep",
-        "description": "Next attack is 100x stronger"
+        "description": "Next attack is 100x stronger",
+        "base_damage": 660340,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Cannot Be Damaged While In \"Singing\" Form",
-        "description": ""
+        "description": "",
+        "base_protection": 71802,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. Musical notes (eighth notes, quarter note, and other music symbols) in purple/blue inside a brown frame",
     "original_image": "PXL_20260101_190806305.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1060817
   },
   {
     "id": "electric_spike_wall",
@@ -317,48 +365,64 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1177978,
+        "element": "mecha"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1290296,
+        "element": "mecha"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1130456,
+        "element": "mecha"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1149016,
+        "element": "mecha"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2602894,
+        "element": "mecha"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1065432,
+        "element": "mecha"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2682844,
+        "element": "mecha"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2160993,
+        "element": "mecha"
       },
       {
         "name": "Lightning",
-        "description": ""
+        "description": "",
+        "base_damage": 1360389,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A yellow electric spike wall with zigzag lightning patterns around the border, three eyes, and electricity effects inside a brown and yellow frame",
     "original_image": "PXL_20260101_190812887.MP.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1629151
   },
   {
     "id": "guac_globber",
@@ -371,25 +435,29 @@
     "attacks": [
       {
         "name": "Smothers Enemies",
-        "description": ""
+        "description": "",
+        "base_damage": 744620,
+        "element": "magic"
       },
       {
         "name": "Squelches",
-        "description": ""
+        "description": "",
+        "base_damage": 651682,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Softens Sharp Edges",
-        "description": ""
+        "description": "",
+        "base_protection": 43496,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A green and blue amorphous blob creature with swirling patterns, resembling guacamole",
     "original_image": "PXL_20260101_190818810.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 863276
   },
   {
     "id": "universe_spike_wall",
@@ -403,48 +471,64 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1224209,
+        "element": "mecha"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1285614,
+        "element": "mecha"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1251246,
+        "element": "mecha"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1345402,
+        "element": "mecha"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1987380,
+        "element": "mecha"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1164560,
+        "element": "mecha"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1529884,
+        "element": "mecha"
       },
       {
         "name": "Shooting Stars!",
-        "description": "Literally"
+        "description": "Literally",
+        "base_damage": 1020755,
+        "element": "mecha"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1697016,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A gray/silver spike wall with zigzag spikes around the border, two red glowing eyes, and a pole/stand underneath",
     "original_image": "PXL_20260101_190824822.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1867130
   },
   {
     "id": "water_spike_wall",
@@ -458,48 +542,64 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1291615,
+        "element": "water"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1042863,
+        "element": "water"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1257695,
+        "element": "water"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1334359,
+        "element": "water"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2669218,
+        "element": "water"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1068383,
+        "element": "water"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1640774,
+        "element": "water"
       },
       {
         "name": "Tsunami",
-        "description": ""
+        "description": "",
+        "base_damage": 1395218,
+        "element": "water"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2390565,
+        "element": "water"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A blue water-themed spike wall with zigzag spikes in blue and orange around the border, three eyes, and a pole underneath",
     "original_image": "PXL_20260101_190831743.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1825251
   },
   {
     "id": "lego_wall",
@@ -512,29 +612,35 @@
     "attacks": [
       {
         "name": "Stacking Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 723712,
+        "element": "magic"
       },
       {
         "name": "Sharp Foot Poke",
-        "description": "Don't step on me!"
+        "description": "Don't step on me!",
+        "base_damage": 551271,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Shield Block",
-        "description": ""
+        "description": "",
+        "base_protection": 67358,
+        "element": "magic"
       },
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 54061,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A colorful wall made of interlocking Lego-style bricks in red, blue, yellow, and green",
     "original_image": "PXL_20260101_190837161.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 926063
   },
   {
     "id": "fire_spike_wall",
@@ -548,48 +654,64 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1362435,
+        "element": "fire"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1276558,
+        "element": "fire"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1252802,
+        "element": "fire"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1150972,
+        "element": "fire"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1900450,
+        "element": "fire"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1380571,
+        "element": "fire"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1911184,
+        "element": "fire"
       },
       {
         "name": "Forest Fire",
-        "description": ""
+        "description": "",
+        "base_damage": 1082931,
+        "element": "fire"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2319256,
+        "element": "fire"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. An orange and red fire-themed spike wall with zigzag flames around the border, two eyes, and a pole underneath",
     "original_image": "PXL_20260101_190843259.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1580273
   },
   {
     "id": "sweet_pea_shooter",
@@ -602,25 +724,29 @@
     "attacks": [
       {
         "name": "Exploding Seed Pods",
-        "description": ""
+        "description": "",
+        "base_damage": 768005,
+        "element": "plant"
       },
       {
         "name": "Unbearable Cuteness",
-        "description": ""
+        "description": "",
+        "base_damage": 717014,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Protective Shield",
-        "description": ""
+        "description": "",
+        "base_protection": 76087,
+        "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A green pea pod with four cute smiling pea faces inside, surrounded by colorful confetti/sparkles",
     "original_image": "PXL_20260101_190849439.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 977567
   },
   {
     "id": "snail_trail",
@@ -633,29 +759,35 @@
     "attacks": [
       {
         "name": "Maximum Slime",
-        "description": ""
+        "description": "",
+        "base_damage": 553460,
+        "element": "magic"
       },
       {
         "name": "Blinding Neon Spirals",
-        "description": ""
+        "description": "",
+        "base_damage": 777713,
+        "element": "magic"
       },
       {
         "name": "Spiraling Path Confusion",
-        "description": ""
+        "description": "",
+        "base_damage": 562146,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Protective Shell Shield",
-        "description": ""
+        "description": "",
+        "base_protection": 59987,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A colorful snail with a pink, purple, yellow and orange spiral shell, olive green body, and a wavy slime trail behind it",
     "original_image": "PXL_20260101_190855128.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1050755
   },
   {
     "id": "plant_spike_wall",
@@ -669,44 +801,58 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1366974,
+        "element": "plant"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1007604,
+        "element": "plant"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1101273,
+        "element": "plant"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1070090,
+        "element": "plant"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2255085,
+        "element": "plant"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1078829,
+        "element": "plant"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2797964,
+        "element": "plant"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1644212,
+        "element": "plant"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A green plant-themed spike wall with zigzag vine/leaf patterns around the border, three eyes, and a green pole underneath",
     "original_image": "PXL_20260101_190859757.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1968573
   },
   {
     "id": "earth_spike_wall",
@@ -720,48 +866,64 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1395549,
+        "element": "earth"
       },
       {
         "name": "Swing",
-        "description": ""
+        "description": "",
+        "base_damage": 1171546,
+        "element": "earth"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 1331840,
+        "element": "earth"
       },
       {
         "name": "Lazers",
-        "description": ""
+        "description": "",
+        "base_damage": 1280857,
+        "element": "earth"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1716015,
+        "element": "earth"
       },
       {
         "name": "Charge",
-        "description": ""
+        "description": "",
+        "base_damage": 1041049,
+        "element": "earth"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2147692,
+        "element": "earth"
       },
       {
         "name": "Earth Quake",
-        "description": ""
+        "description": "",
+        "base_damage": 1373479,
+        "element": "earth"
       },
       {
         "name": "Elemental Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1902022,
+        "element": "earth"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A brown/earth-toned spike wall with zigzag rock/earth patterns in brown, orange and yellow around the border, three eyes, and a brown pole underneath",
     "original_image": "PXL_20260101_190906673.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1584695
   },
   {
     "id": "galaxy_black_hole",
@@ -774,24 +936,28 @@
     "attacks": [
       {
         "name": "Infinite Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2401711,
+        "element": "universe"
       },
       {
         "name": "Extreme Gravity",
-        "description": ""
+        "description": "",
+        "base_damage": 1019061,
+        "element": "universe"
       },
       {
         "name": "Shooting Stars!",
-        "description": "Literally"
+        "description": "Literally",
+        "base_damage": 1079079,
+        "element": "universe"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A spiral galaxy with concentric rings in gray, white and brown, with a dark black hole center, surrounded by yellow stars/dots",
     "original_image": "PXL_20260101_190911488.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1693985
   },
   {
     "id": "h13253312",
@@ -804,16 +970,16 @@
     "attacks": [
       {
         "name": "Shapeshift",
-        "description": ""
+        "description": "",
+        "base_damage": 531058,
+        "element": "fire"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A weak creature. An amorphous red and yellow flame-like or lava creature with a dark center",
     "original_image": "PXL_20260101_190917736.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 739523
   },
   {
     "id": "innercore_monster",
@@ -827,32 +993,40 @@
     "attacks": [
       {
         "name": "Triple Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2117999,
+        "element": "air"
       },
       {
         "name": "Mutant Death Ray",
-        "description": ""
+        "description": "",
+        "base_damage": 1143142,
+        "element": "air"
       },
       {
         "name": "Posession",
-        "description": ""
+        "description": "",
+        "base_damage": 1190601,
+        "element": "air"
       },
       {
         "name": "Wormhole",
-        "description": "Sends you back in time"
+        "description": "Sends you back in time",
+        "base_damage": 1305526,
+        "element": "air"
       },
       {
         "name": "Turn Any Monster Card Into Any Other Monster Card",
-        "description": ""
+        "description": "",
+        "base_damage": 1224688,
+        "element": "air"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A chaotic teal/dark blue scribbled creature inside a purple frame with orange cloud-like shapes around it",
     "original_image": "PXL_20260101_190928007.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1976665
   },
   {
     "id": "deadly_top_hat",
@@ -865,20 +1039,22 @@
     "attacks": [
       {
         "name": "Top Haunt",
-        "description": "Destroys the top of your body"
+        "description": "Destroys the top of your body",
+        "base_damage": 665459,
+        "element": "magic"
       },
       {
         "name": "Annoying Laughter",
-        "description": "HEHAHEHEHAHAHEHA HAHA HE HAHE HO HA HE HE HA HO HO HO HE HE HO"
+        "description": "HEHAHEHEHAHAHEHA HAHA HE HAHE HO HA HE HE HA HO HO HO HE HE HO",
+        "base_damage": 798427,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A tiny red creature with eyes peeking out from inside a large red rectangular frame (representing a top hat)",
     "original_image": "PXL_20260101_190932956.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 974180
   },
   {
     "id": "the_summerween_trickster",
@@ -891,28 +1067,34 @@
     "attacks": [
       {
         "name": "Chomp",
-        "description": ""
+        "description": "",
+        "base_damage": 553253,
+        "element": "magic"
       },
       {
         "name": "Candy Dash",
-        "description": ""
+        "description": "",
+        "base_damage": 626237,
+        "element": "magic"
       },
       {
         "name": "Punchy Punchy",
-        "description": ""
+        "description": "",
+        "base_damage": 717068,
+        "element": "magic"
       },
       {
         "name": "Fruit Punch",
-        "description": ""
+        "description": "",
+        "base_damage": 703949,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A large purple/dark creature with a jack-o-lantern-like face and hat, flanked by two scarecrow-like figures on poles, one with a top hat. The entire scene is drawn in red and purple tones",
     "original_image": "PXL_20260101_190937532.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1030192
   },
   {
     "id": "miniature_mini",
@@ -925,19 +1107,27 @@
     "attacks": [
       {
         "name": "Poison Shooter",
-        "description": ""
+        "description": "",
+        "base_damage": 815196,
+        "element": "magic"
       },
       {
         "name": "Cannonball Blaster",
-        "description": ""
+        "description": "",
+        "base_damage": 706834,
+        "element": "magic"
       },
       {
         "name": "Elemental Summoner",
-        "description": ""
+        "description": "",
+        "base_damage": 749220,
+        "element": "magic"
       },
       {
         "name": "Beak Grip",
-        "description": ""
+        "description": "",
+        "base_damage": 966178,
+        "element": "magic"
       }
     ],
     "defenses": [],
@@ -949,9 +1139,7 @@
     ],
     "biography": "A strong creature. A complex creature with multiple colorful components including a red/blue circular eye or core, green serpentine body parts, multiple small creatures or appendages in orange, blue, green, and yellow colors attached by tentacle-like connections, with black and yellow elements shooting outward",
     "original_image": "PXL_20260101_190942829.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1283486
   },
   {
     "id": "2_combined_infinite",
@@ -964,53 +1152,77 @@
     "attacks": [
       {
         "name": "1000000000000000000 Damage (crossed out)",
-        "description": ""
+        "description": "",
+        "base_damage": 1589327,
+        "element": "magic"
       },
       {
         "name": "X Ray Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 1034557,
+        "element": "magic"
       },
       {
         "name": "Infinity Eyeball Strike",
-        "description": ""
+        "description": "",
+        "base_damage": 1348869,
+        "element": "magic"
       },
       {
         "name": "Rainbow Dazzle",
-        "description": ""
+        "description": "",
+        "base_damage": 1288791,
+        "element": "magic"
       },
       {
         "name": "Awesomeness Defeater",
-        "description": ""
+        "description": "",
+        "base_damage": 1212582,
+        "element": "magic"
       },
       {
         "name": "Dream Spitter",
-        "description": ""
+        "description": "",
+        "base_damage": 1297769,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 116033,
+        "element": "magic"
       },
       {
         "name": "Flash",
-        "description": ""
+        "description": "",
+        "base_protection": 112279,
+        "element": "magic"
       },
       {
         "name": "Cloud Strength",
-        "description": ""
+        "description": "",
+        "base_protection": 101996,
+        "element": "magic"
       },
       {
         "name": "Invisibility Hiding Technique",
-        "description": ""
+        "description": "",
+        "base_protection": 154935,
+        "element": "magic"
       },
       {
         "name": "Friend Disabler",
-        "description": ""
+        "description": "",
+        "base_protection": 152740,
+        "element": "magic"
       },
       {
         "name": "Flipper",
-        "description": ""
+        "description": "",
+        "base_protection": 95062,
+        "element": "magic"
       }
     ],
     "special_abilities": [
@@ -1025,9 +1237,7 @@
     ],
     "biography": "A legendary creature. Two connected creatures - a rainbow-striped ghost with zigzag teeth on the left, connected to a pink infinity-symbol shaped brain creature on the right. The ghost has horizontal rainbow stripes (red, orange, yellow, green, blue, purple) and round eyes",
     "original_image": "PXL_20260101_190948447.MP.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1874483
   },
   {
     "id": "earthquake",
@@ -1041,49 +1251,65 @@
     "attacks": [
       {
         "name": "Shrink",
-        "description": ""
+        "description": "",
+        "base_damage": 1009119,
+        "element": "earth"
       },
       {
         "name": "Growing Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 2208850,
+        "element": "earth"
       },
       {
         "name": "Thunderstorm",
-        "description": ""
+        "description": "",
+        "base_damage": 1041407,
+        "element": "earth"
       },
       {
         "name": "Infinity Eyeball Strike",
-        "description": ""
+        "description": "",
+        "base_damage": 1191653,
+        "element": "earth"
       },
       {
         "name": "Spit Fog",
-        "description": ""
+        "description": "",
+        "base_damage": 1014294,
+        "element": "earth"
       },
       {
         "name": "Super Ghost Army Caller",
-        "description": ""
+        "description": "",
+        "base_damage": 1214851,
+        "element": "earth"
       },
       {
         "name": "Double",
-        "description": ""
+        "description": "",
+        "base_damage": 1079685,
+        "element": "earth"
       }
     ],
     "defenses": [
       {
         "name": "Teleportation",
-        "description": ""
+        "description": "",
+        "base_protection": 100169,
+        "element": "earth"
       },
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 111204,
+        "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A legendary creature. A spiky robotic or mechanical creature with a yellow face, multiple red spherical nodes on antenna-like protrusions, gray metallic body with colorful chest elements (blue, purple, rainbow), surrounded by an orange swirling energy mass or explosion",
     "original_image": "PXL_20260101_190953288.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1992994
   },
   {
     "id": "stink_flower",
@@ -1097,24 +1323,28 @@
     "attacks": [
       {
         "name": "Stunk Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 856468,
+        "element": "plant"
       },
       {
         "name": "Growing Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1617715,
+        "element": "plant"
       },
       {
         "name": "Flower Missile",
-        "description": ""
+        "description": "",
+        "base_damage": 742596,
+        "element": "plant"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A strong creature. A colorful flower creature with a purple and yellow petal formation, magenta/pink center, surrounded by various abstract patterns including blue angular shapes, green wavy lines, pink waves, orange dots, and teal/green spirals",
     "original_image": "PXL_20260101_190958753.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1132084
   },
   {
     "id": "poison_shooter",
@@ -1127,13 +1357,17 @@
     "attacks": [
       {
         "name": "Poison Shooter",
-        "description": ""
+        "description": "",
+        "base_damage": 894492,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 73479,
+        "element": "magic"
       }
     ],
     "special_abilities": [
@@ -1144,9 +1378,7 @@
     ],
     "biography": "A strong creature. A green reptilian or dragon-like creature with multiple gray spherical eyes, an orange and blue circular core on its body, red wavy aura surrounding it, lying horizontally with stick-like limbs",
     "original_image": "PXL_20260101_191003303.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1130729
   },
   {
     "id": "shield_attack",
@@ -1160,25 +1392,29 @@
     "attacks": [
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1906940,
+        "element": "air"
       },
       {
         "name": "Tornado",
-        "description": ""
+        "description": "",
+        "base_damage": 855823,
+        "element": "air"
       }
     ],
     "defenses": [
       {
         "name": "Shield Attack",
-        "description": ""
+        "description": "",
+        "base_protection": 63671,
+        "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A strong creature. A ghost-like creature shaped like a rounded arch or dome with a multi-colored rainbow exterior (red, green, blue, yellow segments), gray/dark interior with a face showing dark eyes and yellow lightning bolt-shaped teeth",
     "original_image": "PXL_20260101_191009888.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1169837
   },
   {
     "id": "ultra_fog_lurker",
@@ -1192,29 +1428,35 @@
     "attacks": [
       {
         "name": "Ultra Fog Lurker",
-        "description": ""
+        "description": "",
+        "base_damage": 666933,
+        "element": "air"
       },
       {
         "name": "Lightning",
-        "description": ""
+        "description": "",
+        "base_damage": 698527,
+        "element": "air"
       },
       {
         "name": "Googleplex 10000 Space",
-        "description": ""
+        "description": "",
+        "base_damage": 1138986,
+        "element": "air"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 59477,
+        "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A dark, shadowy lurker creature with a gray/black body against a red and orange/yellow background split diagonally. The creature has a rounded shape with sharp teeth at the bottom and appears ominous",
     "original_image": "PXL_20260101_191015338.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1072304
   },
   {
     "id": "beaked_ghost_2_0",
@@ -1228,25 +1470,29 @@
     "attacks": [
       {
         "name": "Poison Shooter",
-        "description": ""
+        "description": "",
+        "base_damage": 667643,
+        "element": "earth"
       },
       {
         "name": "Earthquake",
-        "description": ""
+        "description": "",
+        "base_damage": 734381,
+        "element": "earth"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back #5 PG",
-        "description": ""
+        "description": "",
+        "base_protection": 49156,
+        "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A teal/blue bird-like ghost creature on a platform or ladder structure, with a beak and round eye, with orange/yellow and blue ghost-like figures hanging below it like appendages or minions",
     "original_image": "PXL_20260101_191021427.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 938858
   },
   {
     "id": "universe_elemental",
@@ -1260,25 +1506,35 @@
     "attacks": [
       {
         "name": "Star Power",
-        "description": ""
+        "description": "",
+        "base_damage": 1059206,
+        "element": "plant"
       },
       {
         "name": "Infinite Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1700689,
+        "element": "plant"
       },
       {
         "name": "Blinding Eye Flashes",
-        "description": ""
+        "description": "",
+        "base_damage": 1278569,
+        "element": "plant"
       },
       {
         "name": "Gravity!",
-        "description": ""
+        "description": "",
+        "base_damage": 1047397,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 147902,
+        "element": "plant"
       }
     ],
     "special_abilities": [
@@ -1289,9 +1545,7 @@
     ],
     "biography": "A legendary creature. Two connected dark space-themed ghost creatures, black with colorful dots representing stars (yellow, red, orange, green, blue), each with yellow square eyes. They appear to be holding hands or connected in the middle",
     "original_image": "PXL_20260101_191027082.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1635280
   },
   {
     "id": "ultra_fire_fog_lurker",
@@ -1305,24 +1559,28 @@
     "attacks": [
       {
         "name": "Magma Beam",
-        "description": ""
+        "description": "",
+        "base_damage": 564762,
+        "element": "fire"
       },
       {
         "name": "Lasers",
-        "description": ""
+        "description": "",
+        "base_damage": 742005,
+        "element": "fire"
       },
       {
         "name": "Lava Knives",
-        "description": ""
+        "description": "",
+        "base_damage": 796316,
+        "element": "fire"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A fire-themed ghost creature made of orange and red colors with lava-like vein patterns throughout its body, a small red eye, and a beak-like protrusion. The creature has a dripping, molten appearance",
     "original_image": "PXL_20260101_191031615.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 854755
   },
   {
     "id": "pacifier_shooter",
@@ -1336,20 +1594,22 @@
     "attacks": [
       {
         "name": "Electric Pulse",
-        "description": ""
+        "description": "",
+        "base_damage": 769835,
+        "element": "mecha"
       },
       {
         "name": "Plugs Its Enemies",
-        "description": ""
+        "description": "",
+        "base_damage": 744370,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A green mechanical or reptilian creature with spiky back, a pink eye, a wheel, shooting pink pacifier-shaped projectiles. The background has rainbow-colored zigzag patterns (yellow, orange, pink, blue, green, purple)",
     "original_image": "PXL_20260101_191038378.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1041211
   },
   {
     "id": "upside_down_rainbow_ghost",
@@ -1363,24 +1623,28 @@
     "attacks": [
       {
         "name": "Confusing Inversions",
-        "description": ""
+        "description": "",
+        "base_damage": 621289,
+        "element": "fire"
       },
       {
         "name": "Color Power",
-        "description": ""
+        "description": "",
+        "base_damage": 718079,
+        "element": "fire"
       },
       {
         "name": "Smile/Frown",
-        "description": ""
+        "description": "",
+        "base_damage": 627834,
+        "element": "fire"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. An inverted rainbow-colored ghost with flame-like spikes pointing upward in multiple colors (green, blue, purple, red, orange, yellow, pink), with green circular eyes and a curved mouth, appearing upside down",
     "original_image": "PXL_20260101_191044301.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 852440
   },
   {
     "id": "poison_shooter_2",
@@ -1393,13 +1657,17 @@
     "attacks": [
       {
         "name": "Poison Shooter",
-        "description": ""
+        "description": "",
+        "base_damage": 896205,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 98231,
+        "element": "plant"
       }
     ],
     "special_abilities": [
@@ -1410,9 +1678,7 @@
     ],
     "biography": "A strong creature. An elephant-shaped creature outlined in orange/red dotted lines with a gray eye, green plant-like growths on its back, and a blue heart shape with orange pattern on its side",
     "original_image": "PXL_20260101_191049092.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1168369
   },
   {
     "id": "spike_wall_2",
@@ -1426,21 +1692,23 @@
     "attacks": [
       {
         "name": "Double Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1639540,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Spike Wall",
-        "description": ""
+        "description": "",
+        "base_protection": 92410,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A strong creature. A long horizontal creature made up of many colorful geometric shapes and ghost-like figures in pink, yellow, red, blue, orange, green, purple, and brown, with zigzag spiky edges on top and bottom forming a wall-like barrier",
     "original_image": "PXL_20260101_191054321.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1140796
   },
   {
     "id": "kaya_rey_z_eyes",
@@ -1454,25 +1722,29 @@
     "attacks": [
       {
         "name": "Confuddle and Compoodle Any Enemy to Attack Its Friends",
-        "description": ""
+        "description": "",
+        "base_damage": 699301,
+        "element": "plant"
       },
       {
         "name": "Cry Loudly (Im Damage to Ears)",
-        "description": ""
+        "description": "",
+        "base_damage": 571263,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 75401,
+        "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. Two large hypnotic eyes with pink spiral patterns around blue irises, appearing to float in space. The eyes have a mesmerizing, psychedelic quality",
     "original_image": "PXL_20260101_191101171.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1041236
   },
   {
     "id": "catadorable_monster",
@@ -1485,24 +1757,28 @@
     "attacks": [
       {
         "name": "Meow Power",
-        "description": ""
+        "description": "",
+        "base_damage": 746636,
+        "element": "magic"
       },
       {
         "name": "Cuteness Overload",
-        "description": ""
+        "description": "",
+        "base_damage": 799519,
+        "element": "magic"
       },
       {
         "name": "Purrrbrations",
-        "description": ""
+        "description": "",
+        "base_damage": 609797,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A cute cat face with pointed ears, blue eyes, gray whiskers, a pink nose, and a small pink tongue sticking out. The face is drawn within an orange/brown rectangular frame",
     "original_image": "PXL_20260101_191106043.MP.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 926706
   },
   {
     "id": "confusion_injector",
@@ -1516,21 +1792,23 @@
     "attacks": [
       {
         "name": "Earthquake",
-        "description": ""
+        "description": "",
+        "base_damage": 568577,
+        "element": "earth"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 39720,
+        "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A complex abstract creature with many colorful geometric patterns, zigzags, circles, and lines in red, blue, yellow, orange, green, pink, and purple. Features include circular eyes in the center and intricate maze-like designs throughout",
     "original_image": "PXL_20260101_191110229.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 697008
   },
   {
     "id": "elemental_trio_water_lurker",
@@ -1543,32 +1821,40 @@
     "attacks": [
       {
         "name": "Dousing Power",
-        "description": ""
+        "description": "",
+        "base_damage": 1377408,
+        "element": "water"
       },
       {
         "name": "Ocean Current Strength",
-        "description": ""
+        "description": "",
+        "base_damage": 1191569,
+        "element": "water"
       },
       {
         "name": "Tidal Attack!",
-        "description": ""
+        "description": "",
+        "base_damage": 1083385,
+        "element": "water"
       },
       {
         "name": "Depth Charge Zap",
-        "description": ""
+        "description": "",
+        "base_damage": 1018918,
+        "element": "water"
       },
       {
         "name": "Tsunami",
-        "description": ""
+        "description": "",
+        "base_damage": 1253684,
+        "element": "water"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A water-themed creature lurking beneath ocean waves. The scene shows blue wavy water with yellow/orange sun or horizon at the top, and two eyes visible in the dark depths below. Multiple shades of blue create a layered ocean effect",
     "original_image": "PXL_20260101_191115890.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1856124
   },
   {
     "id": "rude_dude",
@@ -1582,25 +1868,29 @@
     "attacks": [
       {
         "name": "Extreme Smelliness",
-        "description": ""
+        "description": "",
+        "base_damage": 555804,
+        "element": "air"
       },
       {
         "name": "Potty Language",
-        "description": ""
+        "description": "",
+        "base_damage": 590762,
+        "element": "air"
       }
     ],
     "defenses": [
       {
         "name": "Burp Back",
-        "description": ""
+        "description": "",
+        "base_protection": 56796,
+        "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. Three cloud-like creatures - a pink/orange one in the center with an annoyed expression (X eyes and open mouth), flanked by two multicolored cloud creatures (purple, blue, green, pink) that appear to be releasing gas or air",
     "original_image": "PXL_20260101_191120376.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1039271
   },
   {
     "id": "fog_slurper",
@@ -1614,21 +1904,23 @@
     "attacks": [
       {
         "name": "Spit Fog (Blindness)",
-        "description": ""
+        "description": "",
+        "base_damage": 482795,
+        "element": "air"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 33894,
+        "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A fog creature with an orange/red mouth full of sharp triangular teeth, blue eyes, surrounded by gray swirling fog patterns. The creature appears to be inhaling or slurping fog",
     "original_image": "PXL_20260101_191126542.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 649562
   },
   {
     "id": "grumpy_brow_squiggle_mouth",
@@ -1641,24 +1933,28 @@
     "attacks": [
       {
         "name": "Glare Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 663546,
+        "element": "magic"
       },
       {
         "name": "\"The Look\"",
-        "description": ""
+        "description": "",
+        "base_damage": 649133,
+        "element": "magic"
       },
       {
         "name": "Frownie Pouts",
-        "description": ""
+        "description": "",
+        "base_damage": 670446,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A yellow rectangular face with angry red eyebrows, pink eyes with red pupils, and a pink zigzag/squiggle mouth showing displeasure. The expression is distinctly grumpy and annoyed",
     "original_image": "PXL_20260101_191131366.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 974774
   },
   {
     "id": "ribboner",
@@ -1671,24 +1967,28 @@
     "attacks": [
       {
         "name": "Curly Whirlies",
-        "description": ""
+        "description": "",
+        "base_damage": 660985,
+        "element": "magic"
       },
       {
         "name": "Confusion",
-        "description": ""
+        "description": "",
+        "base_damage": 584810,
+        "element": "magic"
       },
       {
         "name": "Magic Lasso",
-        "description": ""
+        "description": "",
+        "base_damage": 626137,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. An abstract creature made entirely of pink and magenta curling ribbons that swirl and loop throughout the card in an intricate tangled pattern",
     "original_image": "PXL_20260101_191135623.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 924598
   },
   {
     "id": "elemental_trio_earth_shaker",
@@ -1701,32 +2001,40 @@
     "attacks": [
       {
         "name": "Dirt Power",
-        "description": ""
+        "description": "",
+        "base_damage": 1246739,
+        "element": "earth"
       },
       {
         "name": "Mega Stomp",
-        "description": ""
+        "description": "",
+        "base_damage": 1318842,
+        "element": "earth"
       },
       {
         "name": "Mountain Crusher",
-        "description": ""
+        "description": "",
+        "base_damage": 1311314,
+        "element": "earth"
       },
       {
         "name": "Rock Slinger",
-        "description": ""
+        "description": "",
+        "base_damage": 1030963,
+        "element": "earth"
       },
       {
         "name": "Earthquake",
-        "description": ""
+        "description": "",
+        "base_damage": 1238247,
+        "element": "earth"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A mountain landscape scene with a large green and teal mountain in the center, smaller green rolling hills, yellow sky, and wavy green lines suggesting seismic activity or earth movement",
     "original_image": "PXL_20260101_191141024.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1604342
   },
   {
     "id": "razor_clam_boss",
@@ -1739,29 +2047,35 @@
     "attacks": [
       {
         "name": "Spits at Enemies",
-        "description": ""
+        "description": "",
+        "base_damage": 741069,
+        "element": "water"
       },
       {
         "name": "Extra-Sharp Razor Slice",
-        "description": ""
+        "description": "",
+        "base_damage": 562548,
+        "element": "water"
       }
     ],
     "defenses": [
       {
         "name": "1000x Shield Shell",
-        "description": ""
+        "description": "",
+        "base_protection": 79473,
+        "element": "water"
       },
       {
         "name": "Bury to Dodge",
-        "description": ""
+        "description": "",
+        "base_protection": 76197,
+        "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A razor clam creature with a purple and gray elongated shell body, orange curved ends like clam siphons, sitting on sandy substrate with small dots representing sand grains. The creature has a small face with bubbles nearby",
     "original_image": "PXL_20260101_191146649.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1080267
   },
   {
     "id": "dixie_whistler",
@@ -1774,11 +2088,15 @@
     "attacks": [
       {
         "name": "Shoots Superheated Gas Into Eyes",
-        "description": ""
+        "description": "",
+        "base_damage": 640959,
+        "element": "fire"
       },
       {
         "name": "Song Sticker",
-        "description": "Gets a song stuck in enemy's head"
+        "description": "Gets a song stuck in enemy's head",
+        "base_damage": 675400,
+        "element": "fire"
       }
     ],
     "defenses": [],
@@ -1790,9 +2108,7 @@
     ],
     "biography": "A common creature. A yellow/golden bottle or vessel shape with green musical notes floating around it",
     "original_image": "PXL_20260101_191156352.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 924176
   },
   {
     "id": "syrup_guzzler",
@@ -1805,13 +2121,17 @@
     "attacks": [
       {
         "name": "Slurp Up Unlimited Amount of Syrup, Creating a Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1907804,
+        "element": "universe"
       }
     ],
     "defenses": [
       {
         "name": "Sticks Fingers Together",
-        "description": ""
+        "description": "",
+        "base_protection": 107910,
+        "element": "universe"
       }
     ],
     "special_abilities": [
@@ -1822,9 +2142,7 @@
     ],
     "biography": "A strong creature. A brown/copper colored syrup bottle or jug with a handle",
     "original_image": "PXL_20260101_191204612.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1119742
   },
   {
     "id": "cactus_monster",
@@ -1837,25 +2155,29 @@
     "attacks": [
       {
         "name": "Flings Spikes",
-        "description": ""
+        "description": "",
+        "base_damage": 472913,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Impervious to Spike Walls",
-        "description": ""
+        "description": "",
+        "base_protection": 28910,
+        "element": "plant"
       },
       {
         "name": "Stores Water",
-        "description": ""
+        "description": "",
+        "base_protection": 43125,
+        "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A green cactus creature with multiple arms/branches and brown spikes scattered around it, inside an orange border",
     "original_image": "PXL_20260101_191208321.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 736861
   },
   {
     "id": "muddie_puddle",
@@ -1868,13 +2190,17 @@
     "attacks": [
       {
         "name": "Mud Slinger",
-        "description": ""
+        "description": "",
+        "base_damage": 846615,
+        "element": "earth"
       }
     ],
     "defenses": [
       {
         "name": "Stuck in Goop",
-        "description": ""
+        "description": "",
+        "base_protection": 63526,
+        "element": "earth"
       }
     ],
     "special_abilities": [
@@ -1885,9 +2211,7 @@
     ],
     "biography": "A strong creature. A brown muddy blob creature with two white eyes, drawn in varying shades of brown with wood grain-like texture",
     "original_image": "PXL_20260101_191213338.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1146996
   },
   {
     "id": "ultra_bounce",
@@ -1900,25 +2224,29 @@
     "attacks": [
       {
         "name": "Boingy Sound",
-        "description": "Causes temporary insanity"
+        "description": "Causes temporary insanity",
+        "base_damage": 504811,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Deflects Attacks to Another Player, Including the Attacker",
-        "description": ""
+        "description": "",
+        "base_protection": 32078,
+        "element": "magic"
       },
       {
         "name": "Super Jump",
-        "description": "Jump over any attack"
+        "description": "Jump over any attack",
+        "base_protection": 39890,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. Multiple blue circles/balls arranged in a bouncing pattern with dotted lines showing their trajectory, inside an orange border",
     "original_image": "PXL_20260101_191220079.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 662332
   },
   {
     "id": "brain_blaster",
@@ -1931,7 +2259,9 @@
     "attacks": [
       {
         "name": "Blasts Brains",
-        "description": ""
+        "description": "",
+        "base_damage": 580010,
+        "element": "magic"
       }
     ],
     "defenses": [],
@@ -1943,9 +2273,7 @@
     ],
     "biography": "A weak creature. A pink/magenta brain with purple energy rays emanating from it, with a small pink brain icon in the title area",
     "original_image": "PXL_20260101_191224377.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 786494
   },
   {
     "id": "technology_demons",
@@ -1959,25 +2287,29 @@
     "attacks": [
       {
         "name": "Super Distraction",
-        "description": ""
+        "description": "",
+        "base_damage": 560135,
+        "element": "water"
       },
       {
         "name": "Electric Zaps",
-        "description": ""
+        "description": "",
+        "base_damage": 622306,
+        "element": "water"
       }
     ],
     "defenses": [
       {
         "name": "Lightning",
-        "description": ""
+        "description": "",
+        "base_protection": 74743,
+        "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. Various electronic devices including a TV/monitor (pink/magenta), a computer screen (green/yellow), a speaker, and a remote control (brown), inside a yellow border",
     "original_image": "PXL_20260101_191230774.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 893103
   },
   {
     "id": "squelcher",
@@ -1990,25 +2322,29 @@
     "attacks": [
       {
         "name": "Flings Goo",
-        "description": ""
+        "description": "",
+        "base_damage": 557885,
+        "element": "magic"
       },
       {
         "name": "Causes All Attacks to Squelch",
-        "description": ""
+        "description": "",
+        "base_damage": 731765,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Melty",
-        "description": ""
+        "description": "",
+        "base_protection": 52686,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A colorful sponge-like creature with wavy pink/purple outline, yellow and blue interior with green striped pattern",
     "original_image": "PXL_20260101_191237530.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1033283
   },
   {
     "id": "toucan_like_toucan_monster",
@@ -2021,29 +2357,35 @@
     "attacks": [
       {
         "name": "Crushing",
-        "description": ""
+        "description": "",
+        "base_damage": 731880,
+        "element": "magic"
       },
       {
         "name": "Flying",
-        "description": ""
+        "description": "",
+        "base_damage": 654433,
+        "element": "magic"
       },
       {
         "name": "Squawking",
-        "description": ""
+        "description": "",
+        "base_damage": 757533,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Dropping Bird Droppings",
-        "description": ""
+        "description": "",
+        "base_protection": 36399,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A green bird creature resembling a toucan with a long beak, yellow eye marking, drawn in light green/sage color inside a purple border",
     "original_image": "PXL_20260101_191243694.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 949702
   },
   {
     "id": "chomoghost",
@@ -2056,21 +2398,23 @@
     "attacks": [
       {
         "name": "Spits Chunks",
-        "description": ""
+        "description": "",
+        "base_damage": 467283,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Invisible",
-        "description": ""
+        "description": "",
+        "base_protection": 44661,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. An orange/red slug-like ghost creature with antennae and small diamond shapes floating around it, inside an orange border",
     "original_image": "PXL_20260101_191248898.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 728915
   },
   {
     "id": "slurping",
@@ -2083,16 +2427,16 @@
     "attacks": [
       {
         "name": "Earth Quake",
-        "description": ""
+        "description": "",
+        "base_damage": 474463,
+        "element": "earth"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A weak creature. A dark gray/black creature with spiky edges, yellow eyes, and a mouth with teeth, resembling a hedgehog or porcupine shape",
     "original_image": "PXL_20260101_191254214.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 729221
   },
   {
     "id": "frozenly_frigid",
@@ -2106,21 +2450,23 @@
     "attacks": [
       {
         "name": "Melting",
-        "description": ""
+        "description": "",
+        "base_damage": 589175,
+        "element": "water"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 42782,
+        "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. Blue jagged ice/frost shapes resembling lightning bolts or ice shards, with a small purple puddle shape below, inside a blue border",
     "original_image": "PXL_20260101_191258436.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 664977
   },
   {
     "id": "banana_man",
@@ -2133,17 +2479,23 @@
     "attacks": [
       {
         "name": "Peel Slip!",
-        "description": ""
+        "description": "",
+        "base_damage": 793800,
+        "element": "magic"
       },
       {
         "name": "Rotten Mush",
-        "description": ""
+        "description": "",
+        "base_damage": 697863,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Puddle Stuck",
-        "description": ""
+        "description": "",
+        "base_protection": 50887,
+        "element": "magic"
       }
     ],
     "special_abilities": [
@@ -2154,9 +2506,7 @@
     ],
     "biography": "A common creature. A yellow banana with arms and legs, simple cartoon style inside an orange/yellow border",
     "original_image": "PXL_20260101_191304071.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 963598
   },
   {
     "id": "pooper_dooper",
@@ -2169,11 +2519,15 @@
     "attacks": [
       {
         "name": "Turn Hands Into Poop-Covered Danger Spoons",
-        "description": ""
+        "description": "",
+        "base_damage": 779775,
+        "element": "magic"
       },
       {
         "name": "All Monsters and Ghosts Must Change Into New Outfits",
-        "description": ""
+        "description": "",
+        "base_damage": 748615,
+        "element": "magic"
       }
     ],
     "defenses": [],
@@ -2185,9 +2539,7 @@
     ],
     "biography": "A common creature. A brown poop emoji-style creature with stink lines emanating from it, inside a brown/orange border",
     "original_image": "PXL_20260101_191310378.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1006400
   },
   {
     "id": "monstah_thump",
@@ -2200,21 +2552,23 @@
     "attacks": [
       {
         "name": "Earth Quake",
-        "description": ""
+        "description": "",
+        "base_damage": 524417,
+        "element": "earth"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 38322,
+        "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. Concentric curved lines in pink, blue, and purple representing sound waves or vibrations, with green zigzag lines at the bottom representing ground shaking",
     "original_image": "PXL_20260101_191314003.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 670153
   },
   {
     "id": "sslithering_snake_poison",
@@ -2227,25 +2581,29 @@
     "attacks": [
       {
         "name": "Poison",
-        "description": ""
+        "description": "",
+        "base_damage": 593348,
+        "element": "magic"
       },
       {
         "name": "Constriction",
-        "description": ""
+        "description": "",
+        "base_damage": 645677,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 81077,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A green snake in an S-curve pose with a forked tongue, inside a red border",
     "original_image": "PXL_20260101_191321493.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1027748
   },
   {
     "id": "solar_powered_earwig_ghost",
@@ -2258,25 +2616,29 @@
     "attacks": [
       {
         "name": "Pinching",
-        "description": ""
+        "description": "",
+        "base_damage": 596594,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Disappearing",
-        "description": ""
+        "description": "",
+        "base_protection": 33285,
+        "element": "magic"
       },
       {
         "name": "Absorbing Sun Energy",
-        "description": ""
+        "description": "",
+        "base_protection": 29578,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A green earwig-like insect creature with pincers, segmented body, multiple legs, and purple motion lines around it, inside a pink border",
     "original_image": "PXL_20260101_191327237.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 623420
   },
   {
     "id": "ghost_dodger",
@@ -2290,21 +2652,23 @@
     "attacks": [
       {
         "name": "Zigzag Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 570981,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Avoids Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 32288,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. An abstract colorful design with zigzag lines in multiple colors (orange, green, blue, purple, teal) and a red sun/starburst pattern, with yellow dashes scattered around, inside a teal border",
     "original_image": "PXL_20260101_191332141.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 706484
   },
   {
     "id": "thunder_storm",
@@ -2318,7 +2682,9 @@
     "attacks": [
       {
         "name": "Teleportation",
-        "description": ""
+        "description": "",
+        "base_damage": 854039,
+        "element": "air"
       }
     ],
     "defenses": [],
@@ -2330,9 +2696,7 @@
     ],
     "biography": "A strong creature. A dark black/gray creature with colorful accents - pink and teal wings/fins, yellow eyes, orange eye marking, purple jagged mouth, inside a multicolored border (orange, blue, pink, teal)",
     "original_image": "PXL_20260101_191335982.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1130045
   },
   {
     "id": "wonka_wacka_doodle_monster",
@@ -2345,13 +2709,17 @@
     "attacks": [
       {
         "name": "Zigger Zagger Defeats",
-        "description": ""
+        "description": "",
+        "base_damage": 536251,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Doodling",
-        "description": ""
+        "description": "",
+        "base_protection": 39591,
+        "element": "magic"
       }
     ],
     "special_abilities": [
@@ -2362,9 +2730,7 @@
     ],
     "biography": "A weak creature. An abstract colorful pattern with swirling lines in green, orange, yellow, pink, and blue, with triangular shapes scattered throughout, inside a pink border",
     "original_image": "PXL_20260101_191342357.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 704687
   },
   {
     "id": "ice_cream_flinger",
@@ -2378,25 +2744,29 @@
     "attacks": [
       {
         "name": "Yumminess Overload",
-        "description": ""
+        "description": "",
+        "base_damage": 756837,
+        "element": "water"
       },
       {
         "name": "Laser Melt",
-        "description": ""
+        "description": "",
+        "base_damage": 770883,
+        "element": "water"
       }
     ],
     "defenses": [
       {
         "name": "Freeze Ray",
-        "description": ""
+        "description": "",
+        "base_protection": 60062,
+        "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A tall ice cream cone with 5 scoops stacked - chocolate chip (brown with dots), blue, orange/mango, mint green, and pink strawberry with a face (blue eyes), in a waffle cone, inside a purple border",
     "original_image": "PXL_20260101_191346664.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1019978
   },
   {
     "id": "shofario",
@@ -2409,25 +2779,29 @@
     "attacks": [
       {
         "name": "Deafens Enemies",
-        "description": ""
+        "description": "",
+        "base_damage": 857204,
+        "element": "magic"
       },
       {
         "name": "Summons Ghost Army",
-        "description": ""
+        "description": "",
+        "base_damage": 832748,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Sound Wave Emitter",
-        "description": ""
+        "description": "",
+        "base_protection": 52204,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A strong creature. A brown shofar (ram's horn) instrument with red musical notes floating around it, inside a blue border",
     "original_image": "PXL_20260101_191351705.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1193700
   },
   {
     "id": "robo_jolt",
@@ -2441,25 +2815,29 @@
     "attacks": [
       {
         "name": "Shoots Robo Lightning to Electrify Enemies",
-        "description": ""
+        "description": "",
+        "base_damage": 723580,
+        "element": "water"
       },
       {
         "name": "Robo-Voice",
-        "description": "So annoying enemies are instantly destroyed"
+        "description": "So annoying enemies are instantly destroyed",
+        "base_damage": 555488,
+        "element": "water"
       }
     ],
     "defenses": [
       {
         "name": "Robo-Claw",
-        "description": "Pick up ghosts and monsters and give hugs"
+        "description": "Pick up ghosts and monsters and give hugs",
+        "base_protection": 35713,
+        "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A colorful robot with a teal rectangular body, orange hands/feet, purple arms, and a separate orange head unit with multiple eyes/circles, with pink squiggly lines indicating electricity, inside a pink border",
     "original_image": "PXL_20260101_191356760.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1012425
   },
   {
     "id": "saba_nap",
@@ -2472,11 +2850,15 @@
     "attacks": [
       {
         "name": "Sabababababa Ba Baba Baba Bababa",
-        "description": ""
+        "description": "",
+        "base_damage": 769878,
+        "element": "magic"
       },
       {
         "name": "Super Snore",
-        "description": ""
+        "description": "",
+        "base_damage": 917263,
+        "element": "magic"
       }
     ],
     "defenses": [],
@@ -2488,9 +2870,7 @@
     ],
     "biography": "A strong creature. A large smiling orange/yellow face with closed eyes, rosy cheeks (pink heart), and an open mouth showing teeth, inside a blue border",
     "original_image": "PXL_20260101_191401764.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1120334
   },
   {
     "id": "lightning",
@@ -2504,25 +2884,35 @@
     "attacks": [
       {
         "name": "Fire",
-        "description": ""
+        "description": "",
+        "base_damage": 764282,
+        "element": "fire"
       },
       {
         "name": "Grow",
-        "description": ""
+        "description": "",
+        "base_damage": 796159,
+        "element": "fire"
       },
       {
         "name": "Wing",
-        "description": ""
+        "description": "",
+        "base_damage": 983860,
+        "element": "fire"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1187772,
+        "element": "fire"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 71610,
+        "element": "fire"
       }
     ],
     "special_abilities": [
@@ -2533,9 +2923,7 @@
     ],
     "biography": "A strong creature. Abstract colorful composition with orange, purple, blue, green, and yellow swirls and scribbles representing lightning energy, with a dark teal/black cloud-like shape in the center",
     "original_image": "PXL_20260101_191406192.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1127287
   },
   {
     "id": "super_gardener",
@@ -2548,29 +2936,35 @@
     "attacks": [
       {
         "name": "Compost",
-        "description": ""
+        "description": "",
+        "base_damage": 693776,
+        "element": "plant"
       },
       {
         "name": "Hoe Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 731455,
+        "element": "plant"
       },
       {
         "name": "Dig",
-        "description": ""
+        "description": "",
+        "base_damage": 624465,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Garden",
-        "description": ""
+        "description": "",
+        "base_protection": 38264,
+        "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A humanoid figure in a red plaid shirt holding a shovel, standing on green grass lines, appearing to be gardening",
     "original_image": "PXL_20260101_191410839.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1009302
   },
   {
     "id": "double_duty_unlimited",
@@ -2583,20 +2977,22 @@
     "attacks": [
       {
         "name": "The Squeeze",
-        "description": ""
+        "description": "",
+        "base_damage": 652114,
+        "element": "magic"
       },
       {
         "name": "Snooze",
-        "description": ""
+        "description": "",
+        "base_damage": 799221,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. Two colorful monster heads connected by a thin line/neck - both heads have rainbow colors (blue, yellow, red, green, pink/magenta) with jagged teeth and are mirror images of each other",
     "original_image": "PXL_20260101_191418742.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 906126
   },
   {
     "id": "cyclopian",
@@ -2609,25 +3005,29 @@
     "attacks": [
       {
         "name": "Shifter",
-        "description": "Redirect any attack or defense"
+        "description": "Redirect any attack or defense",
+        "base_damage": 690237,
+        "element": "magic"
       },
       {
         "name": "Leg Grow",
-        "description": "Grows extra legs to run faster"
+        "description": "Grows extra legs to run faster",
+        "base_damage": 581072,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Teleport",
-        "description": "Blinks/Winks to instantly go anywhere"
+        "description": "Blinks/Winks to instantly go anywhere",
+        "base_protection": 75615,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A simple stick-figure-like creature drawn in orange/red with a single central eye, antennae on top, and multiple wavy tentacle-like legs at the bottom, set against a pink/magenta background",
     "original_image": "PXL_20260101_191422614.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 891786
   },
   {
     "id": "sucking_vacuum_ghost",
@@ -2641,21 +3041,23 @@
     "attacks": [
       {
         "name": "Dirt Spitting",
-        "description": ""
+        "description": "",
+        "base_damage": 510140,
+        "element": "earth"
       }
     ],
     "defenses": [
       {
         "name": "Sneeze Causer",
-        "description": ""
+        "description": "",
+        "base_protection": 44828,
+        "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A tall, elongated gray-green ghost-like figure with pointed top, single eye and small mouth, resembling a vacuum cleaner shape",
     "original_image": "PXL_20260101_191429249.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 791029
   },
   {
     "id": "flanneler",
@@ -2668,11 +3070,15 @@
     "attacks": [
       {
         "name": "Plaid Power",
-        "description": ""
+        "description": "",
+        "base_damage": 570391,
+        "element": "magic"
       },
       {
         "name": "Overwhelming Fashionability",
-        "description": ""
+        "description": "",
+        "base_damage": 590769,
+        "element": "magic"
       }
     ],
     "defenses": [],
@@ -2684,9 +3090,7 @@
     ],
     "biography": "A common creature. A red and brown plaid/flannel pattern in a rectangular card frame, representing a flannel fabric creature",
     "original_image": "PXL_20260101_191433719.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1091027
   },
   {
     "id": "rainbow_lightning",
@@ -2700,16 +3104,16 @@
     "attacks": [
       {
         "name": "Spit Paint",
-        "description": ""
+        "description": "",
+        "base_damage": 584920,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A weak creature. A colorful rainbow-striped monster head with vertical stripes of blue, pink, orange, yellow, and green, with spiral eyes, black spots, and zigzag green teeth on the side",
     "original_image": "PXL_20260101_191438314.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 699171
   },
   {
     "id": "slippery_slope_soap_ghost",
@@ -2722,21 +3126,23 @@
     "attacks": [
       {
         "name": "Volcano",
-        "description": ""
+        "description": "",
+        "base_damage": 546565,
+        "element": "magic"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 24092,
+        "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A yellow elongated shape with wavy colorful lines (orange, green, red, teal) running across it horizontally, resembling a bar of soap",
     "original_image": "PXL_20260101_191443230.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 615143
   },
   {
     "id": "laser_eyes",
@@ -2749,20 +3155,22 @@
     "attacks": [
       {
         "name": "Shocking",
-        "description": ""
+        "description": "",
+        "base_damage": 725023,
+        "element": "mecha"
       },
       {
         "name": "Blink Attack",
-        "description": ""
+        "description": "",
+        "base_damage": 726731,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. Two circular spiral-patterned eyes in orange/pink with purple outlines, connected by a vertical orange beam/laser, with yellow zigzag lightning effects around them on a light green background",
     "original_image": "PXL_20260101_191446826.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1012802
   },
   {
     "id": "b_unc_e_back",
@@ -2776,20 +3184,22 @@
     "attacks": [
       {
         "name": "Tornado Growin",
-        "description": ""
+        "description": "",
+        "base_damage": 893400,
+        "element": "air"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1866824,
+        "element": "air"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A strong creature. A dark creature with zigzag patterns in yellow and purple/magenta, surrounded by many colorful dots/circles in blue, purple, pink, green, orange, and red against a white background",
     "original_image": "PXL_20260101_191451102.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1193619
   },
   {
     "id": "confusion",
@@ -2803,25 +3213,29 @@
     "attacks": [
       {
         "name": "Injecting",
-        "description": ""
+        "description": "",
+        "base_damage": 796734,
+        "element": "plant"
       },
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1400779,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 68741,
+        "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A strong creature. A colorful monster with zigzag teeth pattern in teal and orange/yellow, with black spots and pink accents. A small red stick figure appears to be bouncing on a spring/coil on top of the creature, against a purple bordered background",
     "original_image": "PXL_20260101_191456393.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1298179
   },
   {
     "id": "extreme_ultra_spike_hurler",
@@ -2834,29 +3248,35 @@
     "attacks": [
       {
         "name": "Hurl Supersonic",
-        "description": "Spikes directly at ghost eyeballs"
+        "description": "Spikes directly at ghost eyeballs",
+        "base_damage": 766585,
+        "element": "plant"
       },
       {
         "name": "Really Annoying",
-        "description": ""
+        "description": "",
+        "base_damage": 644792,
+        "element": "plant"
       },
       {
         "name": "Pokes (Tree)",
-        "description": "Damage"
+        "description": "Damage",
+        "base_damage": 629997,
+        "element": "plant"
       }
     ],
     "defenses": [
       {
         "name": "Nose Plug",
-        "description": ""
+        "description": "",
+        "base_protection": 53713,
+        "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A spiky creature made of small triangular shapes with multiple extending arms/spikes radiating outward, drawn in light green/teal with a wavy border outline",
     "original_image": "PXL_20260101_191500350.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 948476
   },
   {
     "id": "blinding_sunshine_monster",
@@ -2870,20 +3290,22 @@
     "attacks": [
       {
         "name": "Gobbling",
-        "description": "Eats/munches your enemy"
+        "description": "Eats/munches your enemy",
+        "base_damage": 677437,
+        "element": "mecha"
       },
       {
         "name": "Lightning",
-        "description": ""
+        "description": "",
+        "base_damage": 594153,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A bright yellow sun-like creature with a central eye, star and lightning bolt shapes emanating from it, drawn in yellow/gold outline style",
     "original_image": "PXL_20260101_191504701.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 894122
   },
   {
     "id": "foglurker",
@@ -2897,21 +3319,23 @@
     "attacks": [
       {
         "name": "Blinding",
-        "description": ""
+        "description": "",
+        "base_damage": 523790,
+        "element": "air"
       }
     ],
     "defenses": [
       {
         "name": "Levitation",
-        "description": ""
+        "description": "",
+        "base_protection": 48877,
+        "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A weak creature. A dark gray/black shadowy creature with horizontal striped shading, appearing foggy or misty, with small jagged teeth at the bottom edge",
     "original_image": "PXL_20260101_191508577.MP.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 722783
   },
   {
     "id": "elemental_trio_fire_starter",
@@ -2925,32 +3349,40 @@
     "attacks": [
       {
         "name": "Heat Power",
-        "description": ""
+        "description": "",
+        "base_damage": 1086305,
+        "element": "fire"
       },
       {
         "name": "Fireball Max",
-        "description": ""
+        "description": "",
+        "base_damage": 1176767,
+        "element": "fire"
       },
       {
         "name": "Flamethrower",
-        "description": ""
+        "description": "",
+        "base_damage": 1300705,
+        "element": "fire"
       },
       {
         "name": "Steam Inducer",
-        "description": ""
+        "description": "",
+        "base_damage": 1394926,
+        "element": "fire"
       },
       {
         "name": "Lava",
-        "description": ""
+        "description": "",
+        "base_damage": 1124905,
+        "element": "fire"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A legendary creature. A fiery landscape scene with layered waves of orange, yellow, and red colors suggesting flames, lava, and heat - depicting a fire elemental power source",
     "original_image": "PXL_20260101_191628356.jpg",
-    "hp": 100,
-    "attack_power": 25,
-    "defense_power": 20
+    "hp": 1532423
   },
   {
     "id": "double_duty_unlimited_teleportation",
@@ -2964,21 +3396,29 @@
     "attacks": [
       {
         "name": "Tornado",
-        "description": ""
+        "description": "",
+        "base_damage": 933746,
+        "element": "air"
       },
       {
         "name": "Rainbow Space",
-        "description": ""
+        "description": "",
+        "base_damage": 732253,
+        "element": "air"
       },
       {
         "name": "Growing Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1326706,
+        "element": "air"
       }
     ],
     "defenses": [
       {
         "name": "Bounce Back",
-        "description": ""
+        "description": "",
+        "base_protection": 92069,
+        "element": "air"
       }
     ],
     "special_abilities": [
@@ -2989,9 +3429,7 @@
     ],
     "biography": "A strong creature. Two identical colorful monster heads facing each other, connected by a black beam/bar. Each head has orange, pink, purple, teal, and magenta coloring with black spots, zigzag teeth patterns",
     "original_image": "PXL_20260101_191632867.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1113708
   },
   {
     "id": "orange_slice_juice_spitter",
@@ -3005,25 +3443,29 @@
     "attacks": [
       {
         "name": "Spits Extra-Juicy Orange Slices",
-        "description": "To distract and annoy"
+        "description": "To distract and annoy",
+        "base_damage": 570069,
+        "element": "water"
       },
       {
         "name": "Makes a Huge Sticky Mess",
-        "description": "To immobilize any foe"
+        "description": "To immobilize any foe",
+        "base_damage": 750998,
+        "element": "water"
       }
     ],
     "defenses": [
       {
         "name": "Ultra-Thick Skin-Shield",
-        "description": ""
+        "description": "",
+        "base_protection": 76839,
+        "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A common creature. A large orange citrus slice with detailed segment patterns, spitting out smaller orange slice projectiles with motion lines showing them flying through the air",
     "original_image": "PXL_20260101_191637565.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 870282
   },
   {
     "id": "shapeshifter",
@@ -3036,16 +3478,16 @@
     "attacks": [
       {
         "name": "Shapeshifte",
-        "description": ""
+        "description": "",
+        "base_damage": 534242,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A weak creature. An abstract red scribbled creature with chaotic swirling lines creating an amorphous, ever-changing shape in an orange-bordered frame",
     "original_image": "PXL_20260101_191642124.jpg",
-    "hp": 50,
-    "attack_power": 10,
-    "defense_power": 5
+    "hp": 731579
   },
   {
     "id": "doublespike",
@@ -3059,24 +3501,28 @@
     "attacks": [
       {
         "name": "Black Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1852286,
+        "element": "mecha"
       },
       {
         "name": "White Hole",
-        "description": ""
+        "description": "",
+        "base_damage": 1835701,
+        "element": "mecha"
       },
       {
         "name": "Electric Arrows",
-        "description": ""
+        "description": "",
+        "base_damage": 798153,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A strong creature. Two connected dark spikey ball creatures with radiating spikes, drawn in black/dark gray, resembling two spiky spheres joined together",
     "original_image": "PXL_20260101_191646476.jpg",
-    "hp": 80,
-    "attack_power": 20,
-    "defense_power": 15
+    "hp": 1276254
   },
   {
     "id": "the_fierce_scribbler",
@@ -3089,20 +3535,22 @@
     "attacks": [
       {
         "name": "Raaaaawrr",
-        "description": ""
+        "description": "",
+        "base_damage": 653008,
+        "element": "magic"
       },
       {
         "name": "Beakgrip",
-        "description": ""
+        "description": "",
+        "base_damage": 652080,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A colorful creature face with teal/cyan head, purple spiral eyes/glasses, yellow-orange cheeks/features, with radiating lines suggesting energy or fierceness emanating outward, inside a pink bordered frame",
     "original_image": "PXL_20260101_191719639.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 875488
   },
   {
     "id": "unnamed_creature_93",
@@ -3115,24 +3563,28 @@
     "attacks": [
       {
         "name": "Panic Inducing",
-        "description": ""
+        "description": "",
+        "base_damage": 777197,
+        "element": "mecha"
       },
       {
         "name": "Raaaaawwrr",
-        "description": ""
+        "description": "",
+        "base_damage": 749928,
+        "element": "mecha"
       },
       {
         "name": "Beakgrip",
-        "description": ""
+        "description": "",
+        "base_damage": 569124,
+        "element": "mecha"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A mechanical/robotic dinosaur-like creature drawn in orange/yellow outlines with blue accents, featuring angular geometric shapes, zigzag teeth, and a bucket or container hanging from its tail",
     "original_image": "PXL_20260101_191725353.MP.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 920437
   },
   {
     "id": "fierce_cow",
@@ -3145,20 +3597,22 @@
     "attacks": [
       {
         "name": "Raaaaawwrr!",
-        "description": ""
+        "description": "",
+        "base_damage": 798436,
+        "element": "magic"
       },
       {
         "name": "Cow Patty Splat",
-        "description": ""
+        "description": "",
+        "base_damage": 645313,
+        "element": "magic"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A cow face with intense expression, gray/pencil shaded fur, orange nostrils and eye rings, with radiating lines around the head suggesting ferocity or power, in a red bordered frame",
     "original_image": "PXL_20260101_191745542.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1010035
   },
   {
     "id": "the_scribbler",
@@ -3171,20 +3625,22 @@
     "attacks": [
       {
         "name": "Beak Grip",
-        "description": ""
+        "description": "",
+        "base_damage": 624614,
+        "element": "plant"
       },
       {
         "name": "Outside The Lines",
-        "description": ""
+        "description": "",
+        "base_damage": 717641,
+        "element": "plant"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. An abstract bird-like creature made of loose scribbled lines in teal/cyan, purple, and orange, with a curved beak shape, appearing to fly or swoop within a teal bordered frame",
     "original_image": "PXL_20260101_191756977.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 856559
   },
   {
     "id": "dirty_diaper",
@@ -3197,27 +3653,33 @@
     "attacks": [
       {
         "name": "Glitter Poo",
-        "description": ""
+        "description": "",
+        "base_damage": 731398,
+        "element": "earth"
       },
       {
         "name": "Ewwww",
-        "description": ""
+        "description": "",
+        "base_damage": 704664,
+        "element": "earth"
       },
       {
         "name": "Panic Inducing",
-        "description": ""
+        "description": "",
+        "base_damage": 788089,
+        "element": "earth"
       },
       {
         "name": "Smell Horrific",
-        "description": ""
+        "description": "",
+        "base_damage": 799613,
+        "element": "earth"
       }
     ],
     "defenses": [],
     "special_abilities": [],
     "biography": "A common creature. A yellow-green swirled mess pattern with brown dots scattered throughout, representing a dirty diaper, inside a green bordered frame",
     "original_image": "PXL_20260101_191947730.jpg",
-    "hp": 70,
-    "attack_power": 15,
-    "defense_power": 10
+    "hp": 1039642
   }
 ]

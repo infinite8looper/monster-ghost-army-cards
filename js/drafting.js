@@ -34,6 +34,30 @@ const TIER_ORDER = {
 };
 
 /**
+ * Calculate average attack damage from a card's attacks array
+ * @param {Object} card - Card object with attacks array
+ * @returns {number} Average base_damage or 0 if no attacks
+ */
+function getAvgAttack(card) {
+    const attacks = card.attacks || [];
+    if (attacks.length === 0) return 0;
+    const total = attacks.reduce((sum, atk) => sum + (atk.base_damage || 0), 0);
+    return Math.round(total / attacks.length);
+}
+
+/**
+ * Calculate average defense protection from a card's defenses array
+ * @param {Object} card - Card object with defenses array
+ * @returns {number} Average base_protection or 0 if no defenses
+ */
+function getAvgDefense(card) {
+    const defenses = card.defenses || [];
+    if (defenses.length === 0) return 0;
+    const total = defenses.reduce((sum, def) => sum + (def.base_protection || 0), 0);
+    return Math.round(total / defenses.length);
+}
+
+/**
  * Initialize the drafting phase
  * @param {Array} players - Array of player objects with { id, name, isAI, cards: [] }
  */
@@ -271,10 +295,10 @@ function getSortedCards(cards) {
                 comparison = (a.hp || 0) - (b.hp || 0);
                 break;
             case 'attack':
-                comparison = (a.attack_power || 0) - (b.attack_power || 0);
+                comparison = getAvgAttack(a) - getAvgAttack(b);
                 break;
             case 'defense':
-                comparison = (a.defense_power || 0) - (b.defense_power || 0);
+                comparison = getAvgDefense(a) - getAvgDefense(b);
                 break;
             case 'element':
                 comparison = (a.elements[0] || '').localeCompare(b.elements[0] || '');
@@ -369,12 +393,12 @@ function createDraftingCardElement(card) {
 
     const atkSpan = document.createElement('span');
     atkSpan.className = 'stat stat-atk';
-    atkSpan.textContent = 'ATK: ' + (card.attack_power || 0);
+    atkSpan.textContent = 'ATK: ' + formatHP(getAvgAttack(card));
     statsDiv.appendChild(atkSpan);
 
     const defSpan = document.createElement('span');
     defSpan.className = 'stat stat-def';
-    defSpan.textContent = 'DEF: ' + (card.defense_power || 0);
+    defSpan.textContent = 'DEF: ' + formatHP(getAvgDefense(card));
     statsDiv.appendChild(defSpan);
 
     infoDiv.appendChild(statsDiv);
@@ -710,10 +734,10 @@ function selectAICard() {
             case 'weak': score += 10; break;
         }
 
-        // Stat bonuses
-        score += (card.hp || 0) / 1000;
-        score += (card.attack_power || 0) * 2;
-        score += (card.defense_power || 0);
+        // Stat bonuses (scaled for 1M HP / 600K ATK / 60K DEF average)
+        score += (card.hp || 0) / 10000;
+        score += getAvgAttack(card) / 5000;
+        score += getAvgDefense(card) / 1000;
 
         // Small random factor for variety
         score += Math.random() * 20;
