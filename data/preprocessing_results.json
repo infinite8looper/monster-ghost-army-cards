@@ -1,0 +1,238 @@
+[
+  {
+    "card_id": "spike_wall",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_190744411.jpg",
+    "original_size": [
+      3072,
+      4080
+    ],
+    "was_landscape": false,
+    "rotated": false,
+    "rotation_angle": 0,
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/spike_wall_rotated.png",
+    "cropped_size": [
+      2704,
+      1836
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/spike_wall_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/spike_wall_processed.png",
+    "final_size": [
+      2704,
+      1836
+    ]
+  },
+  {
+    "card_id": "dirty_diaper",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191947730.jpg",
+    "original_size": [
+      3072,
+      4080
+    ],
+    "was_landscape": false,
+    "rotated": false,
+    "rotation_angle": 0,
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/dirty_diaper_rotated.png",
+    "cropped_size": [
+      2704,
+      1836
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/dirty_diaper_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/dirty_diaper_processed.png",
+    "final_size": [
+      2704,
+      1836
+    ]
+  },
+  {
+    "card_id": "fierce_cow",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191745542.jpg",
+    "original_size": [
+      3072,
+      4080
+    ],
+    "was_landscape": false,
+    "rotated": false,
+    "rotation_angle": 0,
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/fierce_cow_rotated.png",
+    "cropped_size": [
+      2704,
+      1836
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/fierce_cow_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/fierce_cow_processed.png",
+    "final_size": [
+      2704,
+      1836
+    ]
+  },
+  {
+    "card_id": "ice_cream_flinger",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191346664.jpg",
+    "original_size": [
+      4080,
+      3072
+    ],
+    "was_landscape": true,
+    "rotated": true,
+    "rotation_angle": -90,
+    "size_after_rotation": [
+      3072,
+      4080
+    ],
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/ice_cream_flinger_rotated.png",
+    "cropped_size": [
+      1537,
+      3428
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/ice_cream_flinger_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/ice_cream_flinger_processed.png",
+    "final_size": [
+      1537,
+      3428
+    ]
+  },
+  {
+    "card_id": "box",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_190715764.jpg",
+    "original_size": [
+      3072,
+      4080
+    ],
+    "was_landscape": false,
+    "rotated": false,
+    "rotation_angle": 0,
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/box_rotated.png",
+    "cropped_size": [
+      2704,
+      1836
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/box_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/box_processed.png",
+    "final_size": [
+      2704,
+      1836
+    ]
+  },
+  {
+    "card_id": "shofario",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191351705.jpg",
+    "original_size": [
+      4080,
+      3072
+    ],
+    "was_landscape": true,
+    "rotated": true,
+    "rotation_angle": -90,
+    "size_after_rotation": [
+      3072,
+      4080
+    ],
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/shofario_rotated.png",
+    "cropped_size": [
+      1537,
+      3428
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/shofario_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/shofario_processed.png",
+    "final_size": [
+      1537,
+      3428
+    ]
+  },
+  {
+    "card_id": "the_scribbler",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191756977.jpg",
+    "original_size": [
+      3072,
+      4080
+    ],
+    "was_landscape": false,
+    "rotated": false,
+    "rotation_angle": 0,
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/the_scribbler_rotated.png",
+    "cropped_size": [
+      2888,
+      2244
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/the_scribbler_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/the_scribbler_processed.png",
+    "final_size": [
+      2888,
+      2244
+    ]
+  },
+  {
+    "card_id": "wonka_wacka_doodle_monster",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191342357.jpg",
+    "original_size": [
+      4080,
+      3072
+    ],
+    "was_landscape": true,
+    "rotated": true,
+    "rotation_angle": -90,
+    "size_after_rotation": [
+      3072,
+      4080
+    ],
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/wonka_wacka_doodle_monster_rotated.png",
+    "cropped_size": [
+      1537,
+      3428
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/wonka_wacka_doodle_monster_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/wonka_wacka_doodle_monster_processed.png",
+    "final_size": [
+      1537,
+      3428
+    ]
+  },
+  {
+    "card_id": "robo_jolt",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191356760.jpg",
+    "original_size": [
+      4080,
+      3072
+    ],
+    "was_landscape": true,
+    "rotated": true,
+    "rotation_angle": -90,
+    "size_after_rotation": [
+      3072,
+      4080
+    ],
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/robo_jolt_rotated.png",
+    "cropped_size": [
+      1537,
+      3428
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/robo_jolt_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/robo_jolt_processed.png",
+    "final_size": [
+      1537,
+      3428
+    ]
+  },
+  {
+    "card_id": "doublespike",
+    "source_image": "/Users/jmanning/monster-ghost-army-cards/images/orig/PXL_20260101_191646476.jpg",
+    "original_size": [
+      3072,
+      4080
+    ],
+    "was_landscape": false,
+    "rotated": false,
+    "rotation_angle": 0,
+    "rotated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/doublespike_rotated.png",
+    "cropped_size": [
+      2704,
+      1836
+    ],
+    "cropped_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/cropped/doublespike_cropped.png",
+    "final_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/processed/doublespike_processed.png",
+    "final_size": [
+      2704,
+      1836
+    ]
+  }
+]

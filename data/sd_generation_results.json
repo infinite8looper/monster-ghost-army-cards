@@ -1,0 +1,22 @@
+[
+  {
+    "card_id": "ice_cream_flinger",
+    "card_name": "Ice Cream Flinger",
+    "timestamp": "2026-01-01T23:57:53.662354",
+    "mode": "txt2img",
+    "prompt": "epic fantasy creature portrait of Ice Cream Flinger, A terrifying monster made entirely of melting dripping ice cream, multiple grotesque arms flinging ice cream cones as weapons, face features made of melting neapolitan ice cream with hollow eye sockets, body oozing and dripping colorful ice cream, creepy unsettling creature, horror monster aesthetic, mint chocolate strawberry vanilla colors melting together grotesquely, surrounded by swirling water, ocean waves, ice crystals, gleaming chrome armor, steam and gears, cybernetic enhancements, epic fantasy creature portrait, dramatic lighting, magical aura, highly detailed, digital painting, artstation, concept art, sharp focus, full bleed edge to edge, character fills entire frame, no margins, zoomed in close up, powerful warrior creature, battle-ready",
+    "negative_prompt": "trading card, card frame, card border, card game, playing card, text, title, name, label, watermark, signature, logo, words, letters, numbers, realistic photo, amateur, childish drawing, sketch, doodle, hand-drawn, crayon, simple, flat colors, white background, border, frame, margins, empty space, cropped",
+    "generated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/generated/ice_cream_flinger_generated.png",
+    "success": true
+  },
+  {
+    "card_id": "galaxy_black_hole",
+    "card_name": "Galaxy Black Hole",
+    "timestamp": "2026-01-01T23:58:11.951775",
+    "mode": "txt2img",
+    "prompt": "epic fantasy creature portrait of Galaxy Black Hole, A massive swirling spiral galaxy consuming everything, dark black hole center with intense gravitational pull, stars and cosmic debris being pulled inward, deep space colors of purple blue and orange, fills the entire frame edge to edge, no background visible, cosmic horror scale, cosmic nebula background, stars and galaxies, void energy, epic fantasy creature portrait, dramatic lighting, magical aura, highly detailed, digital painting, artstation, concept art, sharp focus, full bleed edge to edge, character fills entire frame, no margins, zoomed in close up, legendary creature, golden divine light, god-like power, mythical, awe-inspiring",
+    "negative_prompt": "trading card, card frame, card border, card game, playing card, text, title, name, label, watermark, signature, logo, words, letters, numbers, realistic photo, amateur, childish drawing, sketch, doodle, hand-drawn, crayon, simple, flat colors, white background, border, frame, margins, empty space, cropped",
+    "generated_path": "/Users/jmanning/monster-ghost-army-cards/assets/images/generated/galaxy_black_hole_generated.png",
+    "success": true
+  }
+]

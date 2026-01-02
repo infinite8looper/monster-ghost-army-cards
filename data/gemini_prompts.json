@@ -1,0 +1,482 @@
+[
+  {
+    "card_id": "wall_trio",
+    "card_name": "Wall Trio",
+    "prompt": "Generate a dramatic fantasy creature portrait of Wall Trio. Three creatures in a horizontal frame: a blue geometric tree-like figure on the left, a red brick-textured square creature with stick legs in the center, and a fiery sun-like creature with sharp teeth on the right"
+  },
+  {
+    "card_id": "box",
+    "card_name": "Box",
+    "prompt": "Generate a dramatic fantasy creature portrait of Box. A small spiky orange creature with a face inside a teal/blue rectangular frame"
+  },
+  {
+    "card_id": "light_combined_demons",
+    "card_name": "Light Combined Demons",
+    "prompt": "Generate a dramatic fantasy creature portrait of Light Combined Demons. Three yellow ghost-like demons with red horns and orange eyes, connected by a red horizontal bar, all inside a dark-bordered frame"
+  },
+  {
+    "card_id": "fog_trio",
+    "card_name": "Fog Trio",
+    "prompt": "Generate a dramatic fantasy creature portrait of Fog Trio. Three fog/cloud-themed creatures in a purple frame: a dark gray ghost with a yellow eye, a spotted/dotted cloud-like shape, and a blue funnel/tornado shape"
+  },
+  {
+    "card_id": "uber_candle",
+    "card_name": "Uber-Candle",
+    "prompt": "Generate a dramatic fantasy creature portrait of Uber-Candle. Seven colorful candles of varying heights arranged in a row inside a brown frame - colors include blue, orange, pink, teal, purple, and red"
+  },
+  {
+    "card_id": "spike_wall",
+    "card_name": "Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Spike Wall. An orange spike wall creature with zigzag spikes around the border, two eyes on stalks, and a stand/pole underneath"
+  },
+  {
+    "card_id": "dreidel_of_doom",
+    "card_name": "Dreidel-of-Doom",
+    "prompt": "Generate a dramatic fantasy creature portrait of Dreidel-of-Doom. A purple dreidel with Hebrew letters shown next to it (nun, gimel, hey, shin) inside a brown frame"
+  },
+  {
+    "card_id": "sparkler_foe",
+    "card_name": "Sparkler-Foe",
+    "prompt": "Generate a dramatic fantasy creature portrait of Sparkler-Foe. Colorful sparkles and stars in blue, teal, yellow and gold scattered across the frame"
+  },
+  {
+    "card_id": "music_dude",
+    "card_name": "Music-Dude",
+    "prompt": "Generate a dramatic fantasy creature portrait of Music-Dude. Musical notes (eighth notes, quarter note, and other music symbols) in purple/blue inside a brown frame"
+  },
+  {
+    "card_id": "electric_spike_wall",
+    "card_name": "Electric Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Electric Spike Wall. A yellow electric spike wall with zigzag lightning patterns around the border, three eyes, and electricity effects inside a brown and yellow frame"
+  },
+  {
+    "card_id": "guac_globber",
+    "card_name": "Guac Globber",
+    "prompt": "Generate a dramatic fantasy creature portrait of Guac Globber. A green and blue amorphous blob creature with swirling patterns, resembling guacamole"
+  },
+  {
+    "card_id": "universe_spike_wall",
+    "card_name": "Universe Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Universe Spike Wall. A gray/silver spike wall with zigzag spikes around the border, two red glowing eyes, and a pole/stand underneath"
+  },
+  {
+    "card_id": "water_spike_wall",
+    "card_name": "Water Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Water Spike Wall. A blue water-themed spike wall with zigzag spikes in blue and orange around the border, three eyes, and a pole underneath"
+  },
+  {
+    "card_id": "lego_wall",
+    "card_name": "Lego Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Lego Wall. A colorful wall made of interlocking Lego-style bricks in red, blue, yellow, and green"
+  },
+  {
+    "card_id": "fire_spike_wall",
+    "card_name": "Fire Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Fire Spike Wall. An orange and red fire-themed spike wall with zigzag flames around the border, two eyes, and a pole underneath"
+  },
+  {
+    "card_id": "sweet_pea_shooter",
+    "card_name": "Sweet Pea Shooter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Sweet Pea Shooter. A green pea pod with four cute smiling pea faces inside, surrounded by colorful confetti/sparkles"
+  },
+  {
+    "card_id": "snail_trail",
+    "card_name": "Snail Trail",
+    "prompt": "Generate a dramatic fantasy creature portrait of Snail Trail. A colorful snail with a pink, purple, yellow and orange spiral shell, olive green body, and a wavy slime trail behind it"
+  },
+  {
+    "card_id": "plant_spike_wall",
+    "card_name": "Plant Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Plant Spike Wall. A green plant-themed spike wall with zigzag vine/leaf patterns around the border, three eyes, and a green pole underneath"
+  },
+  {
+    "card_id": "earth_spike_wall",
+    "card_name": "Earth Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Earth Spike Wall. A brown/earth-toned spike wall with zigzag rock/earth patterns in brown, orange and yellow around the border, three eyes, and a brown pole underneath"
+  },
+  {
+    "card_id": "galaxy_black_hole",
+    "card_name": "Galaxy Black Hole",
+    "prompt": "Generate a dramatic fantasy creature portrait of Galaxy Black Hole. A massive swirling spiral galaxy consuming everything, dark black hole center with intense gravitational pull, stars and cosmic debris being pulled inward, deep space colors of purple blue and orange, fills the entire frame edge to edge, no background visible, cosmic horror scale"
+  },
+  {
+    "card_id": "h13253312",
+    "card_name": "H13253312",
+    "prompt": "Generate a dramatic fantasy creature portrait of H13253312. An amorphous red and yellow flame-like or lava creature with a dark center"
+  },
+  {
+    "card_id": "innercore_monster",
+    "card_name": "Innercore Monster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Innercore Monster. A chaotic teal/dark blue scribbled creature inside a purple frame with orange cloud-like shapes around it"
+  },
+  {
+    "card_id": "deadly_top_hat",
+    "card_name": "Deadly Top Hat",
+    "prompt": "Generate a dramatic fantasy creature portrait of Deadly Top Hat. A tiny red creature with eyes peeking out from inside a large red rectangular frame (representing a top hat)"
+  },
+  {
+    "card_id": "the_summerween_trickster",
+    "card_name": "The Summerween Trickster",
+    "prompt": "Generate a dramatic fantasy creature portrait of The Summerween Trickster. A large purple/dark creature with a jack-o-lantern-like face and hat, flanked by two scarecrow-like figures on poles, one with a top hat. The entire scene is drawn in red and purple tones"
+  },
+  {
+    "card_id": "miniature_mini",
+    "card_name": "Miniature Mini",
+    "prompt": "Generate a dramatic fantasy creature portrait of Miniature Mini. A complex creature with multiple colorful components including a red/blue circular eye or core, green serpentine body parts, multiple small creatures or appendages in orange, blue, green, and yellow colors attached by tentacle-like connections, with black and yellow elements shooting outward"
+  },
+  {
+    "card_id": "2_combined_infinite",
+    "card_name": "2 Combined Infinite",
+    "prompt": "Generate a dramatic fantasy creature portrait of 2 Combined Infinite. Two connected creatures - a rainbow-striped ghost with zigzag teeth on the left, connected to a pink infinity-symbol shaped brain creature on the right. The ghost has horizontal rainbow stripes (red, orange, yellow, green, blue, purple) and round eyes"
+  },
+  {
+    "card_id": "earthquake",
+    "card_name": "Earthquake",
+    "prompt": "Generate a dramatic fantasy creature portrait of Earthquake. A spiky robotic or mechanical creature with a yellow face, multiple red spherical nodes on antenna-like protrusions, gray metallic body with colorful chest elements (blue, purple, rainbow), surrounded by an orange swirling energy mass or explosion"
+  },
+  {
+    "card_id": "stink_flower",
+    "card_name": "Stink Flower",
+    "prompt": "Generate a dramatic fantasy creature portrait of Stink Flower. A colorful flower creature with a purple and yellow petal formation, magenta/pink center, surrounded by various abstract patterns including blue angular shapes, green wavy lines, pink waves, orange dots, and teal/green spirals"
+  },
+  {
+    "card_id": "poison_shooter",
+    "card_name": "Poison Shooter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Poison Shooter. A green reptilian or dragon-like creature with multiple gray spherical eyes, an orange and blue circular core on its body, red wavy aura surrounding it, lying horizontally with stick-like limbs"
+  },
+  {
+    "card_id": "shield_attack",
+    "card_name": "Shield Attack",
+    "prompt": "Generate a dramatic fantasy creature portrait of Shield Attack. A ghost-like creature shaped like a rounded arch or dome with a multi-colored rainbow exterior (red, green, blue, yellow segments), gray/dark interior with a face showing dark eyes and yellow lightning bolt-shaped teeth"
+  },
+  {
+    "card_id": "ultra_fog_lurker",
+    "card_name": "10000000 Damage",
+    "prompt": "Generate a dramatic fantasy creature portrait of 10000000 Damage. A dark, shadowy lurker creature with a gray/black body against a red and orange/yellow background split diagonally. The creature has a rounded shape with sharp teeth at the bottom and appears ominous"
+  },
+  {
+    "card_id": "beaked_ghost_2_0",
+    "card_name": "Beaked Ghost 2.0",
+    "prompt": "Generate a dramatic fantasy creature portrait of Beaked Ghost 2.0. A teal/blue bird-like ghost creature on a platform or ladder structure, with a beak and round eye, with orange/yellow and blue ghost-like figures hanging below it like appendages or minions"
+  },
+  {
+    "card_id": "universe_elemental",
+    "card_name": "Universe Elemental",
+    "prompt": "Generate a dramatic fantasy creature portrait of Universe Elemental. Two connected dark space-themed ghost creatures, black with colorful dots representing stars (yellow, red, orange, green, blue), each with yellow square eyes. They appear to be holding hands or connected in the middle"
+  },
+  {
+    "card_id": "ultra_fire_fog_lurker",
+    "card_name": "Ultra Fire Fog Lurker",
+    "prompt": "Generate a dramatic fantasy creature portrait of Ultra Fire Fog Lurker. A fire-themed ghost creature made of orange and red colors with lava-like vein patterns throughout its body, a small red eye, and a beak-like protrusion. The creature has a dripping, molten appearance"
+  },
+  {
+    "card_id": "pacifier_shooter",
+    "card_name": "Pacifier Shooter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Pacifier Shooter. A green mechanical or reptilian creature with spiky back, a pink eye, a wheel, shooting pink pacifier-shaped projectiles. The background has rainbow-colored zigzag patterns (yellow, orange, pink, blue, green, purple)"
+  },
+  {
+    "card_id": "upside_down_rainbow_ghost",
+    "card_name": "Upside Down Rainbow Ghost",
+    "prompt": "Generate a dramatic fantasy creature portrait of Upside Down Rainbow Ghost. An inverted rainbow-colored ghost with flame-like spikes pointing upward in multiple colors (green, blue, purple, red, orange, yellow, pink), with green circular eyes and a curved mouth, appearing upside down"
+  },
+  {
+    "card_id": "poison_shooter_2",
+    "card_name": "Poison Shooter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Poison Shooter. An elephant-shaped creature outlined in orange/red dotted lines with a gray eye, green plant-like growths on its back, and a blue heart shape with orange pattern on its side"
+  },
+  {
+    "card_id": "spike_wall_2",
+    "card_name": "Spike Wall",
+    "prompt": "Generate a dramatic fantasy creature portrait of Spike Wall. A long horizontal creature made up of many colorful geometric shapes and ghost-like figures in pink, yellow, red, blue, orange, green, purple, and brown, with zigzag spiky edges on top and bottom forming a wall-like barrier"
+  },
+  {
+    "card_id": "kaya_rey_z_eyes",
+    "card_name": "Kaya-Rey-Z Eyes",
+    "prompt": "Generate a dramatic fantasy creature portrait of Kaya-Rey-Z Eyes. Two large hypnotic eyes with pink spiral patterns around blue irises, appearing to float in space. The eyes have a mesmerizing, psychedelic quality"
+  },
+  {
+    "card_id": "catadorable_monster",
+    "card_name": "Catadorable Monster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Catadorable Monster. A cute cat face with pointed ears, blue eyes, gray whiskers, a pink nose, and a small pink tongue sticking out. The face is drawn within an orange/brown rectangular frame"
+  },
+  {
+    "card_id": "confusion_injector",
+    "card_name": "Confusion Injector",
+    "prompt": "Generate a dramatic fantasy creature portrait of Confusion Injector. A complex abstract creature with many colorful geometric patterns, zigzags, circles, and lines in red, blue, yellow, orange, green, pink, and purple. Features include circular eyes in the center and intricate maze-like designs throughout"
+  },
+  {
+    "card_id": "elemental_trio_water_lurker",
+    "card_name": "Elemental Trio: Water Lurker",
+    "prompt": "Generate a dramatic fantasy creature portrait of Elemental Trio: Water Lurker. A water-themed creature lurking beneath ocean waves. The scene shows blue wavy water with yellow/orange sun or horizon at the top, and two eyes visible in the dark depths below. Multiple shades of blue create a layered ocean effect"
+  },
+  {
+    "card_id": "rude_dude",
+    "card_name": "Rude Dude",
+    "prompt": "Generate a dramatic fantasy creature portrait of Rude Dude. Three cloud-like creatures - a pink/orange one in the center with an annoyed expression (X eyes and open mouth), flanked by two multicolored cloud creatures (purple, blue, green, pink) that appear to be releasing gas or air"
+  },
+  {
+    "card_id": "fog_slurper",
+    "card_name": "Fog Sluuuuuuuuuuurp",
+    "prompt": "Generate a dramatic fantasy creature portrait of Fog Sluuuuuuuuuuurp. A fog creature with an orange/red mouth full of sharp triangular teeth, blue eyes, surrounded by gray swirling fog patterns. The creature appears to be inhaling or slurping fog"
+  },
+  {
+    "card_id": "grumpy_brow_squiggle_mouth",
+    "card_name": "Grumpy Brow Squiggle Mouth",
+    "prompt": "Generate a dramatic fantasy creature portrait of Grumpy Brow Squiggle Mouth. A yellow rectangular face with angry red eyebrows, pink eyes with red pupils, and a pink zigzag/squiggle mouth showing displeasure. The expression is distinctly grumpy and annoyed"
+  },
+  {
+    "card_id": "ribboner",
+    "card_name": "Ribboner",
+    "prompt": "Generate a dramatic fantasy creature portrait of Ribboner. An abstract creature made entirely of pink and magenta curling ribbons that swirl and loop throughout the card in an intricate tangled pattern"
+  },
+  {
+    "card_id": "elemental_trio_earth_shaker",
+    "card_name": "Elemental Trio: Earth Shaker",
+    "prompt": "Generate a dramatic fantasy creature portrait of Elemental Trio: Earth Shaker. A mountain landscape scene with a large green and teal mountain in the center, smaller green rolling hills, yellow sky, and wavy green lines suggesting seismic activity or earth movement"
+  },
+  {
+    "card_id": "razor_clam_boss",
+    "card_name": "Razor Clam Boss",
+    "prompt": "Generate a dramatic fantasy creature portrait of Razor Clam Boss. A razor clam creature with a purple and gray elongated shell body, orange curved ends like clam siphons, sitting on sandy substrate with small dots representing sand grains. The creature has a small face with bubbles nearby"
+  },
+  {
+    "card_id": "dixie_whistler",
+    "card_name": "Dixie Whistler",
+    "prompt": "Generate a dramatic fantasy creature portrait of Dixie Whistler. A yellow/golden bottle or vessel shape with green musical notes floating around it"
+  },
+  {
+    "card_id": "syrup_guzzler",
+    "card_name": "Syrup Guzzler",
+    "prompt": "Generate a dramatic fantasy creature portrait of Syrup Guzzler. A brown/copper colored syrup bottle or jug with a handle"
+  },
+  {
+    "card_id": "cactus_monster",
+    "card_name": "Cactus Monster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Cactus Monster. A green cactus creature with multiple arms/branches and brown spikes scattered around it, inside an orange border"
+  },
+  {
+    "card_id": "muddie_puddle",
+    "card_name": "Muddie Puddle",
+    "prompt": "Generate a dramatic fantasy creature portrait of Muddie Puddle. A brown muddy blob creature with two white eyes, drawn in varying shades of brown with wood grain-like texture"
+  },
+  {
+    "card_id": "ultra_bounce",
+    "card_name": "Ultra Bounce",
+    "prompt": "Generate a dramatic fantasy creature portrait of Ultra Bounce. Multiple blue circles/balls arranged in a bouncing pattern with dotted lines showing their trajectory, inside an orange border"
+  },
+  {
+    "card_id": "brain_blaster",
+    "card_name": "Brain Blaster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Brain Blaster. A pink/magenta brain with purple energy rays emanating from it, with a small pink brain icon in the title area"
+  },
+  {
+    "card_id": "technology_demons",
+    "card_name": "Technology Demons",
+    "prompt": "Generate a dramatic fantasy creature portrait of Technology Demons. Various electronic devices including a TV/monitor (pink/magenta), a computer screen (green/yellow), a speaker, and a remote control (brown), inside a yellow border"
+  },
+  {
+    "card_id": "squelcher",
+    "card_name": "Squelcher",
+    "prompt": "Generate a dramatic fantasy creature portrait of Squelcher. A colorful sponge-like creature with wavy pink/purple outline, yellow and blue interior with green striped pattern"
+  },
+  {
+    "card_id": "toucan_like_toucan_monster",
+    "card_name": "Toucan-like Toucan Monster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Toucan-like Toucan Monster. A green bird creature resembling a toucan with a long beak, yellow eye marking, drawn in light green/sage color inside a purple border"
+  },
+  {
+    "card_id": "chomoghost",
+    "card_name": "Chomoghost",
+    "prompt": "Generate a dramatic fantasy creature portrait of Chomoghost. An orange/red slug-like ghost creature with antennae and small diamond shapes floating around it, inside an orange border"
+  },
+  {
+    "card_id": "slurping",
+    "card_name": "Slurping",
+    "prompt": "Generate a dramatic fantasy creature portrait of Slurping. A dark gray/black creature with spiky edges, yellow eyes, and a mouth with teeth, resembling a hedgehog or porcupine shape"
+  },
+  {
+    "card_id": "frozenly_frigid",
+    "card_name": "Frozenly Frigid",
+    "prompt": "Generate a dramatic fantasy creature portrait of Frozenly Frigid. Blue jagged ice/frost shapes resembling lightning bolts or ice shards, with a small purple puddle shape below, inside a blue border"
+  },
+  {
+    "card_id": "banana_man",
+    "card_name": "Banana Man",
+    "prompt": "Generate a dramatic fantasy creature portrait of Banana Man. A yellow banana with arms and legs, simple cartoon style inside an orange/yellow border"
+  },
+  {
+    "card_id": "pooper_dooper",
+    "card_name": "Pooper Dooper",
+    "prompt": "Generate a dramatic fantasy creature portrait of Pooper Dooper. A brown poop emoji-style creature with stink lines emanating from it, inside a brown/orange border"
+  },
+  {
+    "card_id": "monstah_thump",
+    "card_name": "Monstah Thump",
+    "prompt": "Generate a dramatic fantasy creature portrait of Monstah Thump. Concentric curved lines in pink, blue, and purple representing sound waves or vibrations, with green zigzag lines at the bottom representing ground shaking"
+  },
+  {
+    "card_id": "sslithering_snake_poison",
+    "card_name": "Ssslithering Sssssnake",
+    "prompt": "Generate a dramatic fantasy creature portrait of Ssslithering Sssssnake. A green snake in an S-curve pose with a forked tongue, inside a red border"
+  },
+  {
+    "card_id": "solar_powered_earwig_ghost",
+    "card_name": "Solar-Powered Earwig Ghost",
+    "prompt": "Generate a dramatic fantasy creature portrait of Solar-Powered Earwig Ghost. A green earwig-like insect creature with pincers, segmented body, multiple legs, and purple motion lines around it, inside a pink border"
+  },
+  {
+    "card_id": "ghost_dodger",
+    "card_name": "Ghost Dodger",
+    "prompt": "Generate a dramatic fantasy creature portrait of Ghost Dodger. An abstract colorful design with zigzag lines in multiple colors (orange, green, blue, purple, teal) and a red sun/starburst pattern, with yellow dashes scattered around, inside a teal border"
+  },
+  {
+    "card_id": "thunder_storm",
+    "card_name": "Thunder Storm",
+    "prompt": "Generate a dramatic fantasy creature portrait of Thunder Storm. A dark black/gray creature with colorful accents - pink and teal wings/fins, yellow eyes, orange eye marking, purple jagged mouth, inside a multicolored border (orange, blue, pink, teal)"
+  },
+  {
+    "card_id": "wonka_wacka_doodle_monster",
+    "card_name": "Wonka-Wacka-Doodle Monster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Wonka-Wacka-Doodle Monster. An abstract colorful pattern with swirling lines in green, orange, yellow, pink, and blue, with triangular shapes scattered throughout, inside a pink border"
+  },
+  {
+    "card_id": "ice_cream_flinger",
+    "card_name": "Ice Cream Flinger",
+    "prompt": "Generate a dramatic fantasy creature portrait of Ice Cream Flinger. A terrifying monster made entirely of melting dripping ice cream, multiple grotesque arms flinging ice cream cones as weapons, face features made of melting neapolitan ice cream with hollow eye sockets, body oozing and dripping colorful ice cream, creepy unsettling creature, horror monster aesthetic, mint chocolate strawberry vanilla colors melting together grotesquely"
+  },
+  {
+    "card_id": "shofario",
+    "card_name": "Shofario",
+    "prompt": "Generate a dramatic fantasy creature portrait of Shofario. A brown shofar (ram's horn) instrument with red musical notes floating around it, inside a blue border"
+  },
+  {
+    "card_id": "robo_jolt",
+    "card_name": "Robo-Jolt",
+    "prompt": "Generate a dramatic fantasy creature portrait of Robo-Jolt. A colorful robot with a teal rectangular body, orange hands/feet, purple arms, and a separate orange head unit with multiple eyes/circles, with pink squiggly lines indicating electricity, inside a pink border"
+  },
+  {
+    "card_id": "saba_nap",
+    "card_name": "Saba Nap",
+    "prompt": "Generate a dramatic fantasy creature portrait of Saba Nap. A large smiling orange/yellow face with closed eyes, rosy cheeks (pink heart), and an open mouth showing teeth, inside a blue border"
+  },
+  {
+    "card_id": "lightning",
+    "card_name": "Lightning",
+    "prompt": "Generate a dramatic fantasy creature portrait of Lightning. Abstract colorful composition with orange, purple, blue, green, and yellow swirls and scribbles representing lightning energy, with a dark teal/black cloud-like shape in the center"
+  },
+  {
+    "card_id": "super_gardener",
+    "card_name": "Super Gardener",
+    "prompt": "Generate a dramatic fantasy creature portrait of Super Gardener. A humanoid figure in a red plaid shirt holding a shovel, standing on green grass lines, appearing to be gardening"
+  },
+  {
+    "card_id": "double_duty_unlimited",
+    "card_name": "Double Duty Unlimited",
+    "prompt": "Generate a dramatic fantasy creature portrait of Double Duty Unlimited. Two colorful monster heads connected by a thin line/neck - both heads have rainbow colors (blue, yellow, red, green, pink/magenta) with jagged teeth and are mirror images of each other"
+  },
+  {
+    "card_id": "cyclopian",
+    "card_name": "Cyclopian",
+    "prompt": "Generate a dramatic fantasy creature portrait of Cyclopian. A simple stick-figure-like creature drawn in orange/red with a single central eye, antennae on top, and multiple wavy tentacle-like legs at the bottom, set against a pink/magenta background"
+  },
+  {
+    "card_id": "sucking_vacuum_ghost",
+    "card_name": "Sucking Vacuum Ghost",
+    "prompt": "Generate a dramatic fantasy creature portrait of Sucking Vacuum Ghost. A tall, elongated gray-green ghost-like figure with pointed top, single eye and small mouth, resembling a vacuum cleaner shape"
+  },
+  {
+    "card_id": "flanneler",
+    "card_name": "Flanneler",
+    "prompt": "Generate a dramatic fantasy creature portrait of Flanneler. A red and brown plaid/flannel pattern in a rectangular card frame, representing a flannel fabric creature"
+  },
+  {
+    "card_id": "rainbow_lightning",
+    "card_name": "Rainbow Lightning",
+    "prompt": "Generate a dramatic fantasy creature portrait of Rainbow Lightning. A colorful rainbow-striped monster head with vertical stripes of blue, pink, orange, yellow, and green, with spiral eyes, black spots, and zigzag green teeth on the side"
+  },
+  {
+    "card_id": "slippery_slope_soap_ghost",
+    "card_name": "Slippery Slope Soap Ghost",
+    "prompt": "Generate a dramatic fantasy creature portrait of Slippery Slope Soap Ghost. A yellow elongated shape with wavy colorful lines (orange, green, red, teal) running across it horizontally, resembling a bar of soap"
+  },
+  {
+    "card_id": "laser_eyes",
+    "card_name": "Laser Eyes",
+    "prompt": "Generate a dramatic fantasy creature portrait of Laser Eyes. Two circular spiral-patterned eyes in orange/pink with purple outlines, connected by a vertical orange beam/laser, with yellow zigzag lightning effects around them on a light green background"
+  },
+  {
+    "card_id": "b_unc_e_back",
+    "card_name": "B*unc E Back",
+    "prompt": "Generate a dramatic fantasy creature portrait of B*unc E Back. A dark creature with zigzag patterns in yellow and purple/magenta, surrounded by many colorful dots/circles in blue, purple, pink, green, orange, and red against a white background"
+  },
+  {
+    "card_id": "confusion",
+    "card_name": "Confusion",
+    "prompt": "Generate a dramatic fantasy creature portrait of Confusion. A colorful monster with zigzag teeth pattern in teal and orange/yellow, with black spots and pink accents. A small red stick figure appears to be bouncing on a spring/coil on top of the creature, against a purple bordered background"
+  },
+  {
+    "card_id": "extreme_ultra_spike_hurler",
+    "card_name": "Extreme Ultra-Spike Hurler",
+    "prompt": "Generate a dramatic fantasy creature portrait of Extreme Ultra-Spike Hurler. A spiky creature made of small triangular shapes with multiple extending arms/spikes radiating outward, drawn in light green/teal with a wavy border outline"
+  },
+  {
+    "card_id": "blinding_sunshine_monster",
+    "card_name": "Blinding Sunshine Monster",
+    "prompt": "Generate a dramatic fantasy creature portrait of Blinding Sunshine Monster. A bright yellow sun-like creature with a central eye, star and lightning bolt shapes emanating from it, drawn in yellow/gold outline style"
+  },
+  {
+    "card_id": "foglurker",
+    "card_name": "Foglurker",
+    "prompt": "Generate a dramatic fantasy creature portrait of Foglurker. A dark gray/black shadowy creature with horizontal striped shading, appearing foggy or misty, with small jagged teeth at the bottom edge"
+  },
+  {
+    "card_id": "elemental_trio_fire_starter",
+    "card_name": "Elemental Trio: Fire Starter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Elemental Trio: Fire Starter. A fiery landscape scene with layered waves of orange, yellow, and red colors suggesting flames, lava, and heat - depicting a fire elemental power source"
+  },
+  {
+    "card_id": "double_duty_unlimited_teleportation",
+    "card_name": "Teleportation Bounce Back Tornado Rainbow Space Growing Black Hole",
+    "prompt": "Generate a dramatic fantasy creature portrait of Teleportation Bounce Back Tornado Rainbow Space Growing Black Hole. Two identical colorful monster heads facing each other, connected by a black beam/bar. Each head has orange, pink, purple, teal, and magenta coloring with black spots, zigzag teeth patterns"
+  },
+  {
+    "card_id": "orange_slice_juice_spitter",
+    "card_name": "Orange Slice Juice-Spitter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Orange Slice Juice-Spitter. A large orange citrus slice with detailed segment patterns, spitting out smaller orange slice projectiles with motion lines showing them flying through the air"
+  },
+  {
+    "card_id": "shapeshifter",
+    "card_name": "Shapeshifter",
+    "prompt": "Generate a dramatic fantasy creature portrait of Shapeshifter. An abstract red scribbled creature with chaotic swirling lines creating an amorphous, ever-changing shape in an orange-bordered frame"
+  },
+  {
+    "card_id": "doublespike",
+    "card_name": "Doublespike",
+    "prompt": "Generate a dramatic fantasy creature portrait of Doublespike. Two connected dark spikey ball creatures with radiating spikes, drawn in black/dark gray, resembling two spiky spheres joined together"
+  },
+  {
+    "card_id": "the_fierce_scribbler",
+    "card_name": "The Fierce Scribbler",
+    "prompt": "Generate a dramatic fantasy creature portrait of The Fierce Scribbler. A colorful creature face with teal/cyan head, purple spiral eyes/glasses, yellow-orange cheeks/features, with radiating lines suggesting energy or fierceness emanating outward, inside a pink bordered frame"
+  },
+  {
+    "card_id": "unnamed_creature_93",
+    "card_name": "Unnamed Creature 93",
+    "prompt": "Generate a dramatic fantasy creature portrait of Unnamed Creature 93. A mechanical/robotic dinosaur-like creature drawn in orange/yellow outlines with blue accents, featuring angular geometric shapes, zigzag teeth, and a bucket or container hanging from its tail"
+  },
+  {
+    "card_id": "fierce_cow",
+    "card_name": "Fierce Cow",
+    "prompt": "Generate a dramatic fantasy creature portrait of Fierce Cow. A cow face with intense expression, gray/pencil shaded fur, orange nostrils and eye rings, with radiating lines around the head suggesting ferocity or power, in a red bordered frame"
+  },
+  {
+    "card_id": "the_scribbler",
+    "card_name": "The Scribbler",
+    "prompt": "Generate a dramatic fantasy creature portrait of The Scribbler. An abstract bird-like creature made of loose scribbled lines in teal/cyan, purple, and orange, with a curved beak shape, appearing to fly or swoop within a teal bordered frame"
+  },
+  {
+    "card_id": "dirty_diaper",
+    "card_name": "Dirty Diaper",
+    "prompt": "Generate a dramatic fantasy creature portrait of Dirty Diaper. A yellow-green swirled mess pattern with brown dots scattered throughout, representing a dirty diaper, inside a green bordered frame"
+  }
+]

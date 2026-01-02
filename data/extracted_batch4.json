@@ -1,0 +1,503 @@
+[
+  {
+    "filename": "PXL_20260101_191406192.jpg",
+    "card_name": "Lightning",
+    "visual_description": "Abstract colorful composition with orange, purple, blue, green, and yellow swirls and scribbles representing lightning energy, with a dark teal/black cloud-like shape in the center",
+    "attacks": [
+      {
+        "name": "Fire",
+        "description": null
+      },
+      {
+        "name": "Grow",
+        "description": null
+      },
+      {
+        "name": "Wing",
+        "description": null
+      },
+      {
+        "name": "Black Hole",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": [
+      {
+        "name": "Sun",
+        "description": null
+      }
+    ]
+  },
+  {
+    "filename": "PXL_20260101_191410839.jpg",
+    "card_name": "Super Gardener",
+    "visual_description": "A humanoid figure in a red plaid shirt holding a shovel, standing on green grass lines, appearing to be gardening",
+    "attacks": [
+      {
+        "name": "Compost",
+        "description": null
+      },
+      {
+        "name": "Hoe Attack",
+        "description": null
+      },
+      {
+        "name": "Dig",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Garden",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191418742.jpg",
+    "card_name": "Double Duty Unlimited",
+    "visual_description": "Two colorful monster heads connected by a thin line/neck - both heads have rainbow colors (blue, yellow, red, green, pink/magenta) with jagged teeth and are mirror images of each other",
+    "attacks": [
+      {
+        "name": "The Squeeze",
+        "description": null
+      },
+      {
+        "name": "Snooze",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191422614.jpg",
+    "card_name": "Cyclopian",
+    "visual_description": "A simple stick-figure-like creature drawn in orange/red with a single central eye, antennae on top, and multiple wavy tentacle-like legs at the bottom, set against a pink/magenta background",
+    "attacks": [
+      {
+        "name": "Shifter",
+        "description": "Redirect any attack or defense"
+      },
+      {
+        "name": "Leg Grow",
+        "description": "Grows extra legs to run faster"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Teleport",
+        "description": "Blinks/Winks to instantly go anywhere"
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191429249.jpg",
+    "card_name": "Sucking Vacuum Ghost",
+    "visual_description": "A tall, elongated gray-green ghost-like figure with pointed top, single eye and small mouth, resembling a vacuum cleaner shape",
+    "attacks": [
+      {
+        "name": "Dirt Spitting",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sneeze Causer",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191433719.jpg",
+    "card_name": "Flanneler",
+    "visual_description": "A red and brown plaid/flannel pattern in a rectangular card frame, representing a flannel fabric creature",
+    "attacks": [
+      {
+        "name": "Plaid Power",
+        "description": null
+      },
+      {
+        "name": "Overwhelming Fashionability",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": [
+      {
+        "name": "Teleportation",
+        "description": null
+      }
+    ]
+  },
+  {
+    "filename": "PXL_20260101_191438314.jpg",
+    "card_name": "Rainbow Lightning",
+    "visual_description": "A colorful rainbow-striped monster head with vertical stripes of blue, pink, orange, yellow, and green, with spiral eyes, black spots, and zigzag green teeth on the side",
+    "attacks": [
+      {
+        "name": "Spit Paint",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191443230.jpg",
+    "card_name": "Slippery Slope Soap Ghost",
+    "visual_description": "A yellow elongated shape with wavy colorful lines (orange, green, red, teal) running across it horizontally, resembling a bar of soap",
+    "attacks": [
+      {
+        "name": "Volcano",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191446826.jpg",
+    "card_name": "Laser Eyes",
+    "visual_description": "Two circular spiral-patterned eyes in orange/pink with purple outlines, connected by a vertical orange beam/laser, with yellow zigzag lightning effects around them on a light green background",
+    "attacks": [
+      {
+        "name": "Shocking",
+        "description": null
+      },
+      {
+        "name": "Blink Attack",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191451102.jpg",
+    "card_name": "B*unc E Back",
+    "visual_description": "A dark creature with zigzag patterns in yellow and purple/magenta, surrounded by many colorful dots/circles in blue, purple, pink, green, orange, and red against a white background",
+    "attacks": [
+      {
+        "name": "Tornado Growin",
+        "description": null
+      },
+      {
+        "name": "Black Hole",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191456393.jpg",
+    "card_name": "Confusion",
+    "visual_description": "A colorful monster with zigzag teeth pattern in teal and orange/yellow, with black spots and pink accents. A small red stick figure appears to be bouncing on a spring/coil on top of the creature, against a purple bordered background",
+    "attacks": [
+      {
+        "name": "Injecting",
+        "description": null
+      },
+      {
+        "name": "Black Hole",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191500350.jpg",
+    "card_name": "Extreme Ultra-Spike Hurler",
+    "visual_description": "A spiky creature made of small triangular shapes with multiple extending arms/spikes radiating outward, drawn in light green/teal with a wavy border outline",
+    "attacks": [
+      {
+        "name": "Hurl Supersonic",
+        "description": "Spikes directly at ghost eyeballs"
+      },
+      {
+        "name": "Really Annoying",
+        "description": null
+      },
+      {
+        "name": "Pokes (Tree)",
+        "description": "Damage"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Nose Plug",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191504701.jpg",
+    "card_name": "Blinding Sunshine Monster",
+    "visual_description": "A bright yellow sun-like creature with a central eye, star and lightning bolt shapes emanating from it, drawn in yellow/gold outline style",
+    "attacks": [
+      {
+        "name": "Gobbling",
+        "description": "Eats/munches your enemy"
+      },
+      {
+        "name": "Lightning",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191508577.MP.jpg",
+    "card_name": "Foglurker",
+    "visual_description": "A dark gray/black shadowy creature with horizontal striped shading, appearing foggy or misty, with small jagged teeth at the bottom edge",
+    "attacks": [
+      {
+        "name": "Blinding",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Levitation",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191628356.jpg",
+    "card_name": "Elemental Trio: Fire Starter",
+    "visual_description": "A fiery landscape scene with layered waves of orange, yellow, and red colors suggesting flames, lava, and heat - depicting a fire elemental power source",
+    "attacks": [
+      {
+        "name": "Heat Power",
+        "description": null
+      },
+      {
+        "name": "Fireball Max",
+        "description": null
+      },
+      {
+        "name": "Flamethrower",
+        "description": null
+      },
+      {
+        "name": "Steam Inducer",
+        "description": null
+      },
+      {
+        "name": "Lava",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191632867.jpg",
+    "card_name": "Teleportation Bounce Back Tornado Rainbow Space Growing Black Hole",
+    "visual_description": "Two identical colorful monster heads facing each other, connected by a black beam/bar. Each head has orange, pink, purple, teal, and magenta coloring with black spots, zigzag teeth patterns",
+    "attacks": [
+      {
+        "name": "Tornado",
+        "description": null
+      },
+      {
+        "name": "Rainbow Space",
+        "description": null
+      },
+      {
+        "name": "Growing Black Hole",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": [
+      {
+        "name": "Teleportation",
+        "description": null
+      }
+    ]
+  },
+  {
+    "filename": "PXL_20260101_191637565.jpg",
+    "card_name": "Orange Slice Juice-Spitter",
+    "visual_description": "A large orange citrus slice with detailed segment patterns, spitting out smaller orange slice projectiles with motion lines showing them flying through the air",
+    "attacks": [
+      {
+        "name": "Spits Extra-Juicy Orange Slices",
+        "description": "To distract and annoy"
+      },
+      {
+        "name": "Makes a Huge Sticky Mess",
+        "description": "To immobilize any foe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Ultra-Thick Skin-Shield",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191642124.jpg",
+    "card_name": "Shapeshifter",
+    "visual_description": "An abstract red scribbled creature with chaotic swirling lines creating an amorphous, ever-changing shape in an orange-bordered frame",
+    "attacks": [
+      {
+        "name": "Shapeshifte",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191646476.jpg",
+    "card_name": "Doublespike",
+    "visual_description": "Two connected dark spikey ball creatures with radiating spikes, drawn in black/dark gray, resembling two spiky spheres joined together",
+    "attacks": [
+      {
+        "name": "Black Hole",
+        "description": null
+      },
+      {
+        "name": "White Hole",
+        "description": null
+      },
+      {
+        "name": "Electric Arrows",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191719639.jpg",
+    "card_name": "The Fierce Scribbler",
+    "visual_description": "A colorful creature face with teal/cyan head, purple spiral eyes/glasses, yellow-orange cheeks/features, with radiating lines suggesting energy or fierceness emanating outward, inside a pink bordered frame",
+    "attacks": [
+      {
+        "name": "Raaaaawrr",
+        "description": null
+      },
+      {
+        "name": "Beakgrip",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191725353.MP.jpg",
+    "card_name": null,
+    "visual_description": "A mechanical/robotic dinosaur-like creature drawn in orange/yellow outlines with blue accents, featuring angular geometric shapes, zigzag teeth, and a bucket or container hanging from its tail",
+    "attacks": [
+      {
+        "name": "Panic Inducing",
+        "description": null
+      },
+      {
+        "name": "Raaaaawwrr",
+        "description": null
+      },
+      {
+        "name": "Beakgrip",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191745542.jpg",
+    "card_name": "Fierce Cow",
+    "visual_description": "A cow face with intense expression, gray/pencil shaded fur, orange nostrils and eye rings, with radiating lines around the head suggesting ferocity or power, in a red bordered frame",
+    "attacks": [
+      {
+        "name": "Raaaaawwrr!",
+        "description": null
+      },
+      {
+        "name": "Cow Patty Splat",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191756977.jpg",
+    "card_name": "The Scribbler",
+    "visual_description": "An abstract bird-like creature made of loose scribbled lines in teal/cyan, purple, and orange, with a curved beak shape, appearing to fly or swoop within a teal bordered frame",
+    "attacks": [
+      {
+        "name": "Beak Grip",
+        "description": null
+      },
+      {
+        "name": "Outside The Lines",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "filename": "PXL_20260101_191947730.jpg",
+    "card_name": "Dirty Diaper",
+    "visual_description": "A yellow-green swirled mess pattern with brown dots scattered throughout, representing a dirty diaper, inside a green bordered frame",
+    "attacks": [
+      {
+        "name": "Glitter Poo",
+        "description": null
+      },
+      {
+        "name": "Ewwww",
+        "description": null
+      },
+      {
+        "name": "Panic Inducing",
+        "description": null
+      },
+      {
+        "name": "Smell Horrific",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  }
+]

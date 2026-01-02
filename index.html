@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monster Ghost Army Cards - An epic deck building battle game for 2-8 players">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Monster Ghost Army Cards</title>
+
+    <!-- Google Fonts - Fantasy style fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=3">
+</head>
+<body>
+    <!-- Game Container -->
+    <div id="game-container">
+
+        <!-- Header / Title Area -->
+        <header id="game-header">
+            <h1 class="game-title">Monster Ghost Army Cards</h1>
+            <div id="game-info">
+                <span id="round-counter">Round: 1</span>
+                <span id="turn-indicator">Current Turn: Player 1</span>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main id="game-main">
+
+            <!-- Opponent Area (Top) - Shows opponent cards face-down or minimized -->
+            <section id="opponent-area">
+                <h2 class="area-title">Opponents</h2>
+                <div id="opponent-cards" class="card-row">
+                    <!-- Opponent cards will be rendered here -->
+                    <div class="card-placeholder opponent-card">
+                        <div class="card-back">
+                            <span class="card-back-text">?</span>
+                        </div>
+                    </div>
+                    <div class="card-placeholder opponent-card">
+                        <div class="card-back">
+                            <span class="card-back-text">?</span>
+                        </div>
+                    </div>
+                    <div class="card-placeholder opponent-card">
+                        <div class="card-back">
+                            <span class="card-back-text">?</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Battle Arena (Center) - Shows cards in active combat -->
+            <section id="battle-arena">
+                <h2 class="area-title">Battle Arena</h2>
+                <div id="arena-content">
+                    <div id="attacker-slot" class="arena-slot">
+                        <span class="slot-label">Attacker</span>
+                        <div class="card-placeholder arena-card">
+                            <span class="placeholder-text">Select a card to attack</span>
+                        </div>
+                    </div>
+
+                    <div id="battle-effects">
+                        <div id="vs-indicator">VS</div>
+                        <div id="damage-display" class="hidden">
+                            <span id="damage-amount">-0</span>
+                        </div>
+                    </div>
+
+                    <div id="defender-slot" class="arena-slot">
+                        <span class="slot-label">Defender</span>
+                        <div class="card-placeholder arena-card">
+                            <span class="placeholder-text">Select a target</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attack/Defense Selection Panel -->
+                <div id="action-panel" class="hidden">
+                    <div id="attack-options">
+                        <h3>Choose Attack</h3>
+                        <div id="attack-buttons" class="action-buttons">
+                            <!-- Attack buttons will be dynamically generated -->
+                        </div>
+                    </div>
+                    <div id="defense-options">
+                        <h3>Choose Defense</h3>
+                        <div id="defense-buttons" class="action-buttons">
+                            <!-- Defense buttons will be dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Player Area (Bottom) - Shows current player's hand -->
+            <section id="player-area">
+                <h2 class="area-title">Your Army</h2>
+                <div id="player-cards" class="card-row">
+                    <!-- Player cards will be rendered here -->
+                    <div class="card-placeholder player-card" data-card-id="placeholder-1">
+                        <span class="placeholder-text">Card 1</span>
+                    </div>
+                    <div class="card-placeholder player-card" data-card-id="placeholder-2">
+                        <span class="placeholder-text">Card 2</span>
+                    </div>
+                    <div class="card-placeholder player-card" data-card-id="placeholder-3">
+                        <span class="placeholder-text">Card 3</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Game Controls -->
+        <aside id="game-controls">
+            <h2 class="area-title">Controls</h2>
+            <div id="control-buttons">
+                <button id="btn-draw" class="control-btn" title="Draw a card from the deck">
+                    Draw Card
+                </button>
+                <button id="btn-attack" class="control-btn btn-attack" title="Execute the selected attack">
+                    Attack!
+                </button>
+                <button id="btn-defend" class="control-btn btn-defend" title="Use a defense move">
+                    Defend
+                </button>
+                <button id="btn-end-turn" class="control-btn btn-end-turn" title="End your turn">
+                    End Turn
+                </button>
+            </div>
+            <div id="special-actions">
+                <button id="btn-special" class="control-btn btn-special" disabled title="Use special ability">
+                    Special Ability
+                </button>
+            </div>
+        </aside>
+
+        <!-- Game Log / Status Area -->
+        <aside id="game-log">
+            <h2 class="area-title">Battle Log</h2>
+            <div id="log-content">
+                <div class="log-entry log-system">Welcome to Monster Ghost Army Cards!</div>
+                <div class="log-entry log-system">Loading cards...</div>
+            </div>
+        </aside>
+
+        <!-- Card Detail Modal (Zoom View) -->
+        <div id="card-modal" class="modal hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <div id="modal-card-front" class="modal-card-view">
+                    <!-- Front of card with image, name, HP, elements -->
+                </div>
+                <div id="modal-card-back" class="modal-card-view hidden">
+                    <!-- Back of card with attacks, defenses, biography -->
+                </div>
+                <button id="btn-flip-card" class="control-btn">Flip Card</button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen">
+            <div class="loading-content">
+                <h2 class="loading-title">Summoning Your Army...</h2>
+                <div class="loading-spinner"></div>
+                <p id="loading-status">Loading card data...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/game.js?v=3"></script>
+</body>
+</html>

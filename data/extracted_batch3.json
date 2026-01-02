@@ -1,0 +1,533 @@
+[
+  {
+    "card_number": 49,
+    "image_file": "PXL_20260101_191156352.jpg",
+    "card_name": "Dixie Whistler",
+    "visual_description": "A yellow/golden bottle or vessel shape with green musical notes floating around it",
+    "attacks": [
+      {
+        "name": "Shoots Superheated Gas Into Eyes",
+        "description": null
+      },
+      {
+        "name": "Song Sticker",
+        "description": "Gets a song stuck in enemy's head"
+      }
+    ],
+    "defenses": [],
+    "special_abilities": [
+      {
+        "name": "Musicify",
+        "description": "Teleport anything into an alternate universe where everything is music"
+      }
+    ]
+  },
+  {
+    "card_number": 50,
+    "image_file": "PXL_20260101_191204612.jpg",
+    "card_name": "Syrup Guzzler",
+    "visual_description": "A brown/copper colored syrup bottle or jug with a handle",
+    "attacks": [
+      {
+        "name": "Slurp Up Unlimited Amount of Syrup, Creating a Black Hole",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sticks Fingers Together",
+        "description": null
+      }
+    ],
+    "special_abilities": [
+      {
+        "name": "Really Yummy",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 51,
+    "image_file": "PXL_20260101_191208321.jpg",
+    "card_name": "Cactus Monster",
+    "visual_description": "A green cactus creature with multiple arms/branches and brown spikes scattered around it, inside an orange border",
+    "attacks": [
+      {
+        "name": "Flings Spikes",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Impervious to Spike Walls",
+        "description": null
+      },
+      {
+        "name": "Stores Water",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 52,
+    "image_file": "PXL_20260101_191213338.jpg",
+    "card_name": "Muddie Puddle",
+    "visual_description": "A brown muddy blob creature with two white eyes, drawn in varying shades of brown with wood grain-like texture",
+    "attacks": [
+      {
+        "name": "Mud Slinger",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Stuck in Goop",
+        "description": null
+      }
+    ],
+    "special_abilities": [
+      {
+        "name": "Infinite Black Hole",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 53,
+    "image_file": "PXL_20260101_191220079.jpg",
+    "card_name": "Ultra Bounce",
+    "visual_description": "Multiple blue circles/balls arranged in a bouncing pattern with dotted lines showing their trajectory, inside an orange border",
+    "attacks": [
+      {
+        "name": "Boingy Sound",
+        "description": "Causes temporary insanity"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Deflects Attacks to Another Player, Including the Attacker",
+        "description": null
+      },
+      {
+        "name": "Super Jump",
+        "description": "Jump over any attack"
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 54,
+    "image_file": "PXL_20260101_191224377.jpg",
+    "card_name": "Brain Blaster",
+    "visual_description": "A pink/magenta brain with purple energy rays emanating from it, with a small pink brain icon in the title area",
+    "attacks": [
+      {
+        "name": "Blasts Brains",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": [
+      {
+        "name": "Extremely Clever",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 55,
+    "image_file": "PXL_20260101_191230774.jpg",
+    "card_name": "Technology Demons",
+    "visual_description": "Various electronic devices including a TV/monitor (pink/magenta), a computer screen (green/yellow), a speaker, and a remote control (brown), inside a yellow border",
+    "attacks": [
+      {
+        "name": "Super Distraction",
+        "description": null
+      },
+      {
+        "name": "Electric Zaps",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Lightning",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 56,
+    "image_file": "PXL_20260101_191237530.jpg",
+    "card_name": "Squelcher",
+    "visual_description": "A colorful sponge-like creature with wavy pink/purple outline, yellow and blue interior with green striped pattern",
+    "attacks": [
+      {
+        "name": "Flings Goo",
+        "description": null
+      },
+      {
+        "name": "Causes All Attacks to Squelch",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Melty",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 57,
+    "image_file": "PXL_20260101_191243694.jpg",
+    "card_name": "Toucan-like Toucan Monster",
+    "visual_description": "A green bird creature resembling a toucan with a long beak, yellow eye marking, drawn in light green/sage color inside a purple border",
+    "attacks": [
+      {
+        "name": "Crushing",
+        "description": null
+      },
+      {
+        "name": "Flying",
+        "description": null
+      },
+      {
+        "name": "Squawking",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Dropping Bird Droppings",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 58,
+    "image_file": "PXL_20260101_191248898.jpg",
+    "card_name": "Chomoghost",
+    "visual_description": "An orange/red slug-like ghost creature with antennae and small diamond shapes floating around it, inside an orange border",
+    "attacks": [
+      {
+        "name": "Spits Chunks",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Invisible",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 59,
+    "image_file": "PXL_20260101_191254214.jpg",
+    "card_name": "Slurping",
+    "visual_description": "A dark gray/black creature with spiky edges, yellow eyes, and a mouth with teeth, resembling a hedgehog or porcupine shape",
+    "attacks": [
+      {
+        "name": "Earth Quake",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 60,
+    "image_file": "PXL_20260101_191258436.jpg",
+    "card_name": "Frozenly Frigid",
+    "visual_description": "Blue jagged ice/frost shapes resembling lightning bolts or ice shards, with a small purple puddle shape below, inside a blue border",
+    "attacks": [
+      {
+        "name": "Melting",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 61,
+    "image_file": "PXL_20260101_191304071.jpg",
+    "card_name": "Banana Man",
+    "visual_description": "A yellow banana with arms and legs, simple cartoon style inside an orange/yellow border",
+    "attacks": [
+      {
+        "name": "Peel Slip!",
+        "description": null
+      },
+      {
+        "name": "Rotten Mush",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Puddle Stuck",
+        "description": null
+      }
+    ],
+    "special_abilities": [
+      {
+        "name": "Bakes Into Bread",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 62,
+    "image_file": "PXL_20260101_191310378.jpg",
+    "card_name": "Pooper Dooper",
+    "visual_description": "A brown poop emoji-style creature with stink lines emanating from it, inside a brown/orange border",
+    "attacks": [
+      {
+        "name": "Turn Hands Into Poop-Covered Danger Spoons",
+        "description": null
+      },
+      {
+        "name": "All Monsters and Ghosts Must Change Into New Outfits",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": [
+      {
+        "name": "Smells Narsty",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 63,
+    "image_file": "PXL_20260101_191314003.jpg",
+    "card_name": "Monstah Thump",
+    "visual_description": "Concentric curved lines in pink, blue, and purple representing sound waves or vibrations, with green zigzag lines at the bottom representing ground shaking",
+    "attacks": [
+      {
+        "name": "Earth Quake",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 64,
+    "image_file": "PXL_20260101_191321493.jpg",
+    "card_name": "Ssslithering Sssssnake",
+    "visual_description": "A green snake in an S-curve pose with a forked tongue, inside a red border",
+    "attacks": [
+      {
+        "name": "Poison",
+        "description": null
+      },
+      {
+        "name": "Constriction",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 65,
+    "image_file": "PXL_20260101_191327237.jpg",
+    "card_name": "Solar-Powered Earwig Ghost",
+    "visual_description": "A green earwig-like insect creature with pincers, segmented body, multiple legs, and purple motion lines around it, inside a pink border",
+    "attacks": [
+      {
+        "name": "Pinching",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Disappearing",
+        "description": null
+      },
+      {
+        "name": "Absorbing Sun Energy",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 66,
+    "image_file": "PXL_20260101_191332141.jpg",
+    "card_name": "Ghost Dodger",
+    "visual_description": "An abstract colorful design with zigzag lines in multiple colors (orange, green, blue, purple, teal) and a red sun/starburst pattern, with yellow dashes scattered around, inside a teal border",
+    "attacks": [
+      {
+        "name": "Zigzag Attack",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Avoids Bounce Back",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 67,
+    "image_file": "PXL_20260101_191335982.jpg",
+    "card_name": "Thunder Storm",
+    "visual_description": "A dark black/gray creature with colorful accents - pink and teal wings/fins, yellow eyes, orange eye marking, purple jagged mouth, inside a multicolored border (orange, blue, pink, teal)",
+    "attacks": [
+      {
+        "name": "Teleportation",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": [
+      {
+        "name": "Black Hole",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 68,
+    "image_file": "PXL_20260101_191342357.jpg",
+    "card_name": "Wonka-Wacka-Doodle Monster",
+    "visual_description": "An abstract colorful pattern with swirling lines in green, orange, yellow, pink, and blue, with triangular shapes scattered throughout, inside a pink border",
+    "attacks": [
+      {
+        "name": "Zigger Zagger Defeats",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Doodling",
+        "description": null
+      }
+    ],
+    "special_abilities": [
+      {
+        "name": "Tornado",
+        "description": null
+      }
+    ]
+  },
+  {
+    "card_number": 69,
+    "image_file": "PXL_20260101_191346664.jpg",
+    "card_name": "Ice Cream Flinger",
+    "visual_description": "A tall ice cream cone with 5 scoops stacked - chocolate chip (brown with dots), blue, orange/mango, mint green, and pink strawberry with a face (blue eyes), in a waffle cone, inside a purple border",
+    "attacks": [
+      {
+        "name": "Yumminess Overload",
+        "description": null
+      },
+      {
+        "name": "Laser Melt",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Freeze Ray",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 70,
+    "image_file": "PXL_20260101_191351705.jpg",
+    "card_name": "Shofario",
+    "visual_description": "A brown shofar (ram's horn) instrument with red musical notes floating around it, inside a blue border",
+    "attacks": [
+      {
+        "name": "Deafens Enemies",
+        "description": null
+      },
+      {
+        "name": "Summons Ghost Army",
+        "description": null
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sound Wave Emitter",
+        "description": null
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 71,
+    "image_file": "PXL_20260101_191356760.jpg",
+    "card_name": "Robo-Jolt",
+    "visual_description": "A colorful robot with a teal rectangular body, orange hands/feet, purple arms, and a separate orange head unit with multiple eyes/circles, with pink squiggly lines indicating electricity, inside a pink border",
+    "attacks": [
+      {
+        "name": "Shoots Robo Lightning to Electrify Enemies",
+        "description": null
+      },
+      {
+        "name": "Robo-Voice",
+        "description": "So annoying enemies are instantly destroyed"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Robo-Claw",
+        "description": "Pick up ghosts and monsters and give hugs"
+      }
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 72,
+    "image_file": "PXL_20260101_191401764.jpg",
+    "card_name": "Saba Nap",
+    "visual_description": "A large smiling orange/yellow face with closed eyes, rosy cheeks (pink heart), and an open mouth showing teeth, inside a blue border",
+    "attacks": [
+      {
+        "name": "Sabababababa Ba Baba Baba Bababa",
+        "description": null
+      },
+      {
+        "name": "Super Snore",
+        "description": null
+      }
+    ],
+    "defenses": [],
+    "special_abilities": [
+      {
+        "name": "Black Hole",
+        "description": null
+      }
+    ]
+  }
+]

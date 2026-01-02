@@ -1,0 +1,357 @@
+[
+  {
+    "card_number": 25,
+    "image_file": "PXL_20260101_190942829.jpg",
+    "card_name": "Miniature Mini",
+    "visual_description": "A complex creature with multiple colorful components including a red/blue circular eye or core, green serpentine body parts, multiple small creatures or appendages in orange, blue, green, and yellow colors attached by tentacle-like connections, with black and yellow elements shooting outward",
+    "attacks": [
+      "Poison Shooter",
+      "Cannonball Blaster",
+      "Elemental Summoner",
+      "Beak Grip"
+    ],
+    "defenses": [],
+    "special_abilities": [
+      "Ghost Army Caller"
+    ]
+  },
+  {
+    "card_number": 26,
+    "image_file": "PXL_20260101_190948447.MP.jpg",
+    "card_name": "2 Combined Infinite",
+    "visual_description": "Two connected creatures - a rainbow-striped ghost with zigzag teeth on the left, connected to a pink infinity-symbol shaped brain creature on the right. The ghost has horizontal rainbow stripes (red, orange, yellow, green, blue, purple) and round eyes",
+    "attacks": [
+      "1000000000000000000 Damage (crossed out)",
+      "X Ray Attack",
+      "Infinity Eyeball Strike",
+      "Rainbow Dazzle",
+      "Awesomeness Defeater",
+      "Dream Spitter"
+    ],
+    "defenses": [
+      "Bounce Back",
+      "Flash",
+      "Cloud Strength",
+      "Invisibility Hiding Technique",
+      "Friend Disabler",
+      "Flipper"
+    ],
+    "special_abilities": [
+      "Ghost Army Caller",
+      "Doubler"
+    ]
+  },
+  {
+    "card_number": 27,
+    "image_file": "PXL_20260101_190953288.jpg",
+    "card_name": "Earthquake",
+    "visual_description": "A spiky robotic or mechanical creature with a yellow face, multiple red spherical nodes on antenna-like protrusions, gray metallic body with colorful chest elements (blue, purple, rainbow), surrounded by an orange swirling energy mass or explosion",
+    "attacks": [
+      "Shrink",
+      "Growing Black Hole",
+      "Thunderstorm",
+      "Infinity Eyeball Strike",
+      "Spit Fog",
+      "Super Ghost Army Caller",
+      "Double"
+    ],
+    "defenses": [
+      "Teleportation",
+      "Bounce Back"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 28,
+    "image_file": "PXL_20260101_190958753.jpg",
+    "card_name": "Stink Flower",
+    "visual_description": "A colorful flower creature with a purple and yellow petal formation, magenta/pink center, surrounded by various abstract patterns including blue angular shapes, green wavy lines, pink waves, orange dots, and teal/green spirals",
+    "attacks": [
+      "Stunk Attack",
+      "Growing Black Hole",
+      "Flower Missile"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 29,
+    "image_file": "PXL_20260101_191003303.jpg",
+    "card_name": "Poison Shooter",
+    "visual_description": "A green reptilian or dragon-like creature with multiple gray spherical eyes, an orange and blue circular core on its body, red wavy aura surrounding it, lying horizontally with stick-like limbs",
+    "attacks": [
+      "Poison Shooter"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": [
+      "Ghost Army Caller"
+    ]
+  },
+  {
+    "card_number": 30,
+    "image_file": "PXL_20260101_191009888.jpg",
+    "card_name": "Shield Attack",
+    "visual_description": "A ghost-like creature shaped like a rounded arch or dome with a multi-colored rainbow exterior (red, green, blue, yellow segments), gray/dark interior with a face showing dark eyes and yellow lightning bolt-shaped teeth",
+    "attacks": [
+      "Black Hole",
+      "Tornado"
+    ],
+    "defenses": [
+      "Shield Attack"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 31,
+    "image_file": "PXL_20260101_191015338.jpg",
+    "card_name": "10000000 Damage",
+    "visual_description": "A dark, shadowy lurker creature with a gray/black body against a red and orange/yellow background split diagonally. The creature has a rounded shape with sharp teeth at the bottom and appears ominous",
+    "attacks": [
+      "Ultra Fog Lurker",
+      "Lightning",
+      "Googleplex 10000 Space"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 32,
+    "image_file": "PXL_20260101_191021427.jpg",
+    "card_name": "Beaked Ghost 2.0",
+    "visual_description": "A teal/blue bird-like ghost creature on a platform or ladder structure, with a beak and round eye, with orange/yellow and blue ghost-like figures hanging below it like appendages or minions",
+    "attacks": [
+      "Poison Shooter",
+      "Earthquake"
+    ],
+    "defenses": [
+      "Bounce Back #5 PG"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 33,
+    "image_file": "PXL_20260101_191027082.jpg",
+    "card_name": "Universe Elemental",
+    "visual_description": "Two connected dark space-themed ghost creatures, black with colorful dots representing stars (yellow, red, orange, green, blue), each with yellow square eyes. They appear to be holding hands or connected in the middle",
+    "attacks": [
+      "Star Power",
+      "Infinite Black Hole",
+      "Blinding Eye Flashes",
+      "Gravity!"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": [
+      "Ghost Army Caller"
+    ]
+  },
+  {
+    "card_number": 34,
+    "image_file": "PXL_20260101_191031615.jpg",
+    "card_name": "Ultra Fire Fog Lurker",
+    "visual_description": "A fire-themed ghost creature made of orange and red colors with lava-like vein patterns throughout its body, a small red eye, and a beak-like protrusion. The creature has a dripping, molten appearance",
+    "attacks": [
+      "Magma Beam",
+      "Lasers",
+      "Lava Knives"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 35,
+    "image_file": "PXL_20260101_191038378.jpg",
+    "card_name": "Pacifier Shooter",
+    "visual_description": "A green mechanical or reptilian creature with spiky back, a pink eye, a wheel, shooting pink pacifier-shaped projectiles. The background has rainbow-colored zigzag patterns (yellow, orange, pink, blue, green, purple)",
+    "attacks": [
+      "Electric Pulse",
+      "Plugs Its Enemies"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 36,
+    "image_file": "PXL_20260101_191044301.jpg",
+    "card_name": "Upside Down Rainbow Ghost",
+    "visual_description": "An inverted rainbow-colored ghost with flame-like spikes pointing upward in multiple colors (green, blue, purple, red, orange, yellow, pink), with green circular eyes and a curved mouth, appearing upside down",
+    "attacks": [
+      "Confusing Inversions",
+      "Color Power",
+      "Smile/Frown"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 37,
+    "image_file": "PXL_20260101_191049092.jpg",
+    "card_name": "Poison Shooter",
+    "visual_description": "An elephant-shaped creature outlined in orange/red dotted lines with a gray eye, green plant-like growths on its back, and a blue heart shape with orange pattern on its side",
+    "attacks": [
+      "Poison Shooter"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": [
+      "Ghost Army Caller"
+    ]
+  },
+  {
+    "card_number": 38,
+    "image_file": "PXL_20260101_191054321.jpg",
+    "card_name": "Spike Wall",
+    "visual_description": "A long horizontal creature made up of many colorful geometric shapes and ghost-like figures in pink, yellow, red, blue, orange, green, purple, and brown, with zigzag spiky edges on top and bottom forming a wall-like barrier",
+    "attacks": [
+      "Double Black Hole"
+    ],
+    "defenses": [
+      "Spike Wall"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 39,
+    "image_file": "PXL_20260101_191101171.jpg",
+    "card_name": "Kaya-Rey-Z Eyes",
+    "visual_description": "Two large hypnotic eyes with pink spiral patterns around blue irises, appearing to float in space. The eyes have a mesmerizing, psychedelic quality",
+    "attacks": [
+      "Confuddle and Compoodle Any Enemy to Attack Its Friends",
+      "Cry Loudly (Im Damage to Ears)"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 40,
+    "image_file": "PXL_20260101_191106043.MP.jpg",
+    "card_name": "Catadorable Monster",
+    "visual_description": "A cute cat face with pointed ears, blue eyes, gray whiskers, a pink nose, and a small pink tongue sticking out. The face is drawn within an orange/brown rectangular frame",
+    "attacks": [
+      "Meow Power",
+      "Cuteness Overload",
+      "Purrrbrations"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 41,
+    "image_file": "PXL_20260101_191110229.jpg",
+    "card_name": "Confusion Injector",
+    "visual_description": "A complex abstract creature with many colorful geometric patterns, zigzags, circles, and lines in red, blue, yellow, orange, green, pink, and purple. Features include circular eyes in the center and intricate maze-like designs throughout",
+    "attacks": [
+      "Earthquake"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 42,
+    "image_file": "PXL_20260101_191115890.jpg",
+    "card_name": "Elemental Trio: Water Lurker",
+    "visual_description": "A water-themed creature lurking beneath ocean waves. The scene shows blue wavy water with yellow/orange sun or horizon at the top, and two eyes visible in the dark depths below. Multiple shades of blue create a layered ocean effect",
+    "attacks": [
+      "Dousing Power",
+      "Ocean Current Strength",
+      "Tidal Attack!",
+      "Depth Charge Zap",
+      "Tsunami"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 43,
+    "image_file": "PXL_20260101_191120376.jpg",
+    "card_name": "Rude Dude",
+    "visual_description": "Three cloud-like creatures - a pink/orange one in the center with an annoyed expression (X eyes and open mouth), flanked by two multicolored cloud creatures (purple, blue, green, pink) that appear to be releasing gas or air",
+    "attacks": [
+      "Extreme Smelliness",
+      "Potty Language"
+    ],
+    "defenses": [
+      "Burp Back"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 44,
+    "image_file": "PXL_20260101_191126542.jpg",
+    "card_name": "Fog Sluuuuuuuuuuurp",
+    "visual_description": "A fog creature with an orange/red mouth full of sharp triangular teeth, blue eyes, surrounded by gray swirling fog patterns. The creature appears to be inhaling or slurping fog",
+    "attacks": [
+      "Spit Fog (Blindness)"
+    ],
+    "defenses": [
+      "Bounce Back"
+    ],
+    "special_abilities": []
+  },
+  {
+    "card_number": 45,
+    "image_file": "PXL_20260101_191131366.jpg",
+    "card_name": "Grumpy Brow Squiggle Mouth",
+    "visual_description": "A yellow rectangular face with angry red eyebrows, pink eyes with red pupils, and a pink zigzag/squiggle mouth showing displeasure. The expression is distinctly grumpy and annoyed",
+    "attacks": [
+      "Glare Attack",
+      "\"The Look\"",
+      "Frownie Pouts"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 46,
+    "image_file": "PXL_20260101_191135623.jpg",
+    "card_name": "Ribboner",
+    "visual_description": "An abstract creature made entirely of pink and magenta curling ribbons that swirl and loop throughout the card in an intricate tangled pattern",
+    "attacks": [
+      "Curly Whirlies",
+      "Confusion",
+      "Magic Lasso"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 47,
+    "image_file": "PXL_20260101_191141024.jpg",
+    "card_name": "Elemental Trio: Earth Shaker",
+    "visual_description": "A mountain landscape scene with a large green and teal mountain in the center, smaller green rolling hills, yellow sky, and wavy green lines suggesting seismic activity or earth movement",
+    "attacks": [
+      "Dirt Power",
+      "Mega Stomp",
+      "Mountain Crusher",
+      "Rock Slinger",
+      "Earthquake"
+    ],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "card_number": 48,
+    "image_file": "PXL_20260101_191146649.jpg",
+    "card_name": "Razor Clam Boss",
+    "visual_description": "A razor clam creature with a purple and gray elongated shell body, orange curved ends like clam siphons, sitting on sandy substrate with small dots representing sand grains. The creature has a small face with bubbles nearby",
+    "attacks": [
+      "Spits at Enemies",
+      "Extra-Sharp Razor Slice"
+    ],
+    "defenses": [
+      "1000x Shield Shell",
+      "Bury to Dodge"
+    ],
+    "special_abilities": []
+  }
+]

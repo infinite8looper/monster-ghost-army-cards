@@ -1,0 +1,674 @@
+[
+  {
+    "name": "The Bone Chiller",
+    "visual_description": "A blue ghost-like creature with spiky features and an intimidating expression",
+    "attacks": [{"name": "Bone Chill", "description": "Freezing attack"}],
+    "defenses": [{"name": "Ghostly Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Rainbow Blob",
+    "visual_description": "A colorful blob creature with rainbow stripes and a friendly face",
+    "attacks": [{"name": "Rainbow Blast", "description": ""}],
+    "defenses": [{"name": "Color Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Flame Head",
+    "visual_description": "A creature with a flaming head, orange and red colors with angry expression",
+    "attacks": [{"name": "Fire Breath", "description": ""}, {"name": "Flame Throw", "description": ""}],
+    "defenses": [{"name": "Heat Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "The Stomper",
+    "visual_description": "A large creature with big feet, drawn in gray/brown colors",
+    "attacks": [{"name": "Mega Stomp", "description": ""}, {"name": "Ground Pound", "description": ""}],
+    "defenses": [{"name": "Thick Skin", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Sparky",
+    "visual_description": "An electric creature with lightning bolt features, yellow and blue colors",
+    "attacks": [{"name": "Electric Shock", "description": ""}, {"name": "Lightning Strike", "description": ""}],
+    "defenses": [{"name": "Static Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Goopy Ghost",
+    "visual_description": "A slimy ghost creature with dripping ectoplasm, green colored",
+    "attacks": [{"name": "Slime Splash", "description": ""}, {"name": "Goo Ball", "description": ""}],
+    "defenses": [{"name": "Slippery", "description": "Hard to hit"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Zig Zag",
+    "visual_description": "A creature with zigzag patterns all over its body, multi-colored",
+    "attacks": [{"name": "Zig Zag Attack", "description": ""}, {"name": "Pattern Confusion", "description": ""}],
+    "defenses": [{"name": "Dizzy Defense", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Crystal Monster",
+    "visual_description": "A creature made of crystals, purple and blue with geometric shapes",
+    "attacks": [{"name": "Crystal Shard", "description": ""}, {"name": "Gem Blast", "description": ""}],
+    "defenses": [{"name": "Crystal Armor", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Bubble Beast",
+    "visual_description": "A bubbly creature with multiple bubbles around it, light blue and white",
+    "attacks": [{"name": "Bubble Blast", "description": ""}, {"name": "Pop Attack", "description": ""}],
+    "defenses": [{"name": "Bubble Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Shadow Creeper",
+    "visual_description": "A dark shadowy creature with glowing eyes, mostly black with purple accents",
+    "attacks": [{"name": "Shadow Strike", "description": ""}, {"name": "Dark Dive", "description": ""}],
+    "defenses": [{"name": "Fade Away", "description": "Becomes invisible"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Tornado Terror",
+    "visual_description": "A swirling tornado-shaped creature with fierce expression",
+    "attacks": [{"name": "Wind Blast", "description": ""}, {"name": "Spin Attack", "description": ""}],
+    "defenses": [{"name": "Wind Wall", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Muddy Buddy",
+    "visual_description": "A mud creature with a friendly face, brown with mud splatters",
+    "attacks": [{"name": "Mud Slap", "description": ""}, {"name": "Dirt Throw", "description": ""}],
+    "defenses": [{"name": "Mud Armor", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Star Striker",
+    "visual_description": "A star-shaped creature with glowing points, yellow and gold",
+    "attacks": [{"name": "Star Beam", "description": ""}, {"name": "Twinkle Attack", "description": ""}],
+    "defenses": [{"name": "Starlight Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Frosty Phantom",
+    "visual_description": "An icy ghost with snowflake patterns, light blue and white",
+    "attacks": [{"name": "Ice Breath", "description": ""}, {"name": "Freeze Ray", "description": ""}],
+    "defenses": [{"name": "Ice Wall", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Spike Ball",
+    "visual_description": "A round creature covered in spikes, red and orange",
+    "attacks": [{"name": "Spike Roll", "description": ""}, {"name": "Poke Attack", "description": ""}],
+    "defenses": [{"name": "Spiky Shield", "description": "Hurts attackers"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Glow Worm",
+    "visual_description": "A glowing worm creature with segments, green and yellow glow",
+    "attacks": [{"name": "Light Flash", "description": ""}, {"name": "Glow Burst", "description": ""}],
+    "defenses": [{"name": "Bright Light", "description": "Blinds enemies"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Rock Monster",
+    "visual_description": "A creature made of rocks and boulders, gray and brown",
+    "attacks": [{"name": "Rock Throw", "description": ""}, {"name": "Boulder Bash", "description": ""}],
+    "defenses": [{"name": "Stone Skin", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Jellyfish Jolt",
+    "visual_description": "A jellyfish-like creature with trailing tentacles, pink and purple",
+    "attacks": [{"name": "Sting Zap", "description": ""}, {"name": "Tentacle Wrap", "description": ""}],
+    "defenses": [{"name": "Squishy Body", "description": "Absorbs hits"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Leaf Leaper",
+    "visual_description": "A creature made of leaves with big eyes, green with autumn colors",
+    "attacks": [{"name": "Leaf Storm", "description": ""}, {"name": "Branch Whip", "description": ""}],
+    "defenses": [{"name": "Camouflage", "description": "Hides in nature"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Thunder Cloud",
+    "visual_description": "A cloud creature with lightning bolts, dark gray with yellow lightning",
+    "attacks": [{"name": "Thunder Boom", "description": ""}, {"name": "Lightning Zap", "description": ""}],
+    "defenses": [{"name": "Cloud Cover", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Candy Crusher",
+    "visual_description": "A creature made of candy with swirly patterns, pink and colorful",
+    "attacks": [{"name": "Sugar Rush", "description": ""}, {"name": "Candy Cane Swing", "description": ""}],
+    "defenses": [{"name": "Sticky Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Pixel Pete",
+    "visual_description": "A pixelated creature that looks like a video game character, multi-colored squares",
+    "attacks": [{"name": "Pixel Blast", "description": ""}, {"name": "Glitch Attack", "description": ""}],
+    "defenses": [{"name": "Respawn", "description": "Comes back after defeat"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Volcano Monster",
+    "visual_description": "A volcanic creature with lava flowing, red and orange with black",
+    "attacks": [{"name": "Lava Spit", "description": ""}, {"name": "Eruption", "description": ""}],
+    "defenses": [{"name": "Molten Armor", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Wiggly Worm",
+    "visual_description": "A pink squiggly worm with a silly face",
+    "attacks": [{"name": "Wiggle Attack", "description": ""}, {"name": "Underground Surprise", "description": ""}],
+    "defenses": [{"name": "Dig Away", "description": "Escapes underground"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Cotton Candy Cloud",
+    "visual_description": "A fluffy pink and blue cloud creature",
+    "attacks": [{"name": "Fluffy Tackle", "description": ""}, {"name": "Sugar Shower", "description": ""}],
+    "defenses": [{"name": "Soft Landing", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Scribble Monster",
+    "visual_description": "A chaotic scribble creature with messy lines, multi-colored",
+    "attacks": [{"name": "Scribble Attack", "description": ""}, {"name": "Messy Strike", "description": ""}],
+    "defenses": [{"name": "Confusion", "description": "Hard to track"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Eyeball Monster",
+    "visual_description": "A creature that is mostly a giant eyeball with tentacles",
+    "attacks": [{"name": "Stare Down", "description": ""}, {"name": "Eye Beam", "description": ""}],
+    "defenses": [{"name": "All-Seeing", "description": "Can't be surprised"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Rainbow Dash",
+    "visual_description": "A speedy creature with rainbow trail, colorful stripes",
+    "attacks": [{"name": "Speed Strike", "description": ""}, {"name": "Rainbow Ram", "description": ""}],
+    "defenses": [{"name": "Too Fast", "description": "Hard to hit"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Snot Monster",
+    "visual_description": "A gross green slimy creature with dripping nose",
+    "attacks": [{"name": "Snot Shot", "description": ""}, {"name": "Booger Bomb", "description": ""}],
+    "defenses": [{"name": "Gross Out", "description": "Enemies don't want to touch"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Burp Beast",
+    "visual_description": "A round creature with big mouth, green gas clouds around it",
+    "attacks": [{"name": "Super Burp", "description": ""}, {"name": "Gas Cloud", "description": ""}],
+    "defenses": [{"name": "Stinky Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Wonka-Wacka-Doodle Monster",
+    "visual_description": "An abstract creature with colorful zigzag and swirl patterns in pink, green, yellow, orange and blue",
+    "attacks": [{"name": "Zigger Zagger Defeats", "description": ""}],
+    "defenses": [{"name": "Doodling", "description": ""}],
+    "special_abilities": ["Tornado"]
+  },
+  {
+    "name": "Ice Cream Flinger",
+    "visual_description": "A tall ice cream cone with 5 scoops - brown chocolate on top, then blue, orange, green, and pink with a waffle cone base. Has cute eyes on the pink scoop. Caption says 'Yumminess Overload'",
+    "attacks": [{"name": "Laser Melt", "description": ""}],
+    "defenses": [{"name": "Freeze Ray", "description": ""}],
+    "special_abilities": ["Yumminess Overload"]
+  },
+  {
+    "name": "Shofario",
+    "visual_description": "A brown shofar (ram's horn) with musical notes floating around it",
+    "attacks": [{"name": "Deafens Enemies", "description": ""}],
+    "defenses": [{"name": "Sound Wave Emitter", "description": ""}],
+    "special_abilities": ["Summons Ghost Army"]
+  },
+  {
+    "name": "Robo-Jolt",
+    "visual_description": "A robot with teal body, orange hands and feet, multiple orange eyes, with steam/smoke coming from top",
+    "attacks": [{"name": "Robo-Jolt", "description": "Shoots robo lightning to electrify enemies"}, {"name": "Robo-Voice", "description": "So annoying enemies are instantly destroyed"}],
+    "defenses": [{"name": "Robo-Claw", "description": "Pick up ghosts and monsters and give hugs"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Saba Nap",
+    "visual_description": "A large orange sleepy face with closed eyes, open yawning mouth with tongue sticking out",
+    "attacks": [{"name": "Sabababababa Ba Baba Baba Bababa", "description": ""}],
+    "defenses": [{"name": "Super Snore", "description": ""}],
+    "special_abilities": ["Black Hole"]
+  },
+  {
+    "name": "Lightning",
+    "visual_description": "A colorful abstract scene with orange background, purple, blue, green, and yellow elements with scribbled lightning effects",
+    "attacks": [{"name": "Bounce Back Fire", "description": ""}],
+    "defenses": [{"name": "Growing Blackhole", "description": ""}],
+    "special_abilities": ["Slum"]
+  },
+  {
+    "name": "Super Gardener",
+    "visual_description": "A person in plaid shirt holding a shovel with grass/garden below",
+    "attacks": [{"name": "Can Do Anything 3x More Than Others", "description": ""}],
+    "defenses": [{"name": "Can Dig 4x", "description": ""}],
+    "special_abilities": ["Digging"]
+  },
+  {
+    "name": "Double Duty Unlimited",
+    "visual_description": "Two colorful monster heads connected by a line - both have rainbow colors with spiky teeth",
+    "attacks": [{"name": "The Squeeze", "description": ""}],
+    "defenses": [{"name": "Snooze", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Cyclopian",
+    "visual_description": "A simple orange stick figure with one eye and wiggly tentacle legs",
+    "attacks": [{"name": "Teleport", "description": "Blinks/winks to instantly go anywhere"}],
+    "defenses": [{"name": "Shifter", "description": "Redirect any attack or defense"}],
+    "special_abilities": ["Leg Grow - grows extra legs to run faster"]
+  },
+  {
+    "name": "Sucking Vacuum Ghost",
+    "visual_description": "A tall gray-green ghost shaped like a vacuum cleaner with one eye",
+    "attacks": [{"name": "Dirt Spitting", "description": ""}],
+    "defenses": [{"name": "Sneeze Causer", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Flanneler",
+    "visual_description": "A pink and brown plaid/flannel pattern rectangle",
+    "attacks": [{"name": "Plaid Power", "description": ""}],
+    "defenses": [{"name": "Overwhelming Fashionability", "description": ""}],
+    "special_abilities": ["Teleportation"]
+  },
+  {
+    "name": "Rainbow Lightning",
+    "visual_description": "A rainbow-striped monster head with sharp teeth and spiral eye",
+    "attacks": [{"name": "Rainbow Lightning", "description": ""}],
+    "defenses": [{"name": "Spit Paint", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Slippery Slope Soap Ghost",
+    "visual_description": "A yellow soap bar shape with wavy lines in different colors (rainbow squiggles)",
+    "attacks": [{"name": "Volcano", "description": ""}],
+    "defenses": [{"name": "Bounce Back", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Laser Eyes",
+    "visual_description": "Two red spiral eyes connected by a bar with orange laser beam between them and yellow lightning bolts",
+    "attacks": [{"name": "Shocking", "description": ""}],
+    "defenses": [{"name": "Blink Attack", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "B*unceback",
+    "visual_description": "A colorful monster with dark body covered in rainbow dots/circles",
+    "attacks": [{"name": "Tornado Growing", "description": ""}],
+    "defenses": [{"name": "Black Hole", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Confusion Injecting",
+    "visual_description": "A colorful monster head with zigzag teeth connected to a stick figure person by a spring/coil",
+    "attacks": [{"name": "Bounce Back", "description": ""}],
+    "defenses": [{"name": "Black Hole", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Extreme Ultra-Spike Hurler",
+    "visual_description": "A spiky creature made of triangles with an explosion/burst pattern outline",
+    "attacks": [{"name": "Hurl Supersonic Spikes Directly At Ghost Eyeballs", "description": ""}],
+    "defenses": [{"name": "Really Annoying", "description": ""}, {"name": "Pokes (Tree(3) Damage)", "description": ""}],
+    "special_abilities": ["Nose Plug"]
+  },
+  {
+    "name": "Blinding Sunshine Monster",
+    "visual_description": "A yellow sun-like creature with stars and lightning bolt shapes",
+    "attacks": [{"name": "Gobbling", "description": "Knocks your monster out"}],
+    "defenses": [{"name": "Lightning", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Foglurker",
+    "visual_description": "A dark gray/pencil shaded foggy ghost shape with a menacing appearance",
+    "attacks": [{"name": "Blinding", "description": ""}],
+    "defenses": [{"name": "Levitation", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Elemental Trio: Fire Starter",
+    "visual_description": "A horizontal flame pattern with yellow, orange and red gradient showing heat/fire waves. Text shows 'Heat Power'",
+    "attacks": [{"name": "Fireball Max", "description": ""}, {"name": "Flamethrower", "description": ""}, {"name": "Steam Inducer", "description": ""}],
+    "defenses": [{"name": "Lava", "description": ""}],
+    "special_abilities": ["Heat Power"]
+  },
+  {
+    "name": "Double Duty Unlimited (Teleportation)",
+    "visual_description": "Two colorful monster heads facing each other with arm/limb connecting them, covered in rainbow patterns",
+    "attacks": [{"name": "Teleportation", "description": ""}, {"name": "Bounce Back", "description": ""}, {"name": "Tornado", "description": ""}],
+    "defenses": [{"name": "Rainbows", "description": ""}, {"name": "A CE Growing Black Hole", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Orange Slice Juice-Spitter",
+    "visual_description": "An orange slice spitting smaller orange slices, hand-drawn with crosshatch pattern",
+    "attacks": [{"name": "Spits Extra-Juicy Orange Slices To Distract And Annoy", "description": ""}],
+    "defenses": [{"name": "Makes A Huge Sticky Mess To Immobilize Any Foe", "description": ""}],
+    "special_abilities": ["Ultra-Thick Skin-Shield"]
+  },
+  {
+    "name": "Shapeshifter",
+    "visual_description": "A chaotic red scribbled shape that appears to be constantly changing form",
+    "attacks": [],
+    "defenses": [],
+    "special_abilities": ["Shapeshift"]
+  },
+  {
+    "name": "Doublespike",
+    "visual_description": "Two dark spiky ball creatures connected by a line",
+    "attacks": [{"name": "Black Hole", "description": ""}],
+    "defenses": [{"name": "White Hole", "description": ""}],
+    "special_abilities": ["Electric Arrows"]
+  },
+  {
+    "name": "The Fierce Scribbler",
+    "visual_description": "A colorful scribbled bird-like creature with teal, purple, orange and yellow, surrounded by action lines",
+    "attacks": [{"name": "Raaaaawrr", "description": ""}],
+    "defenses": [{"name": "Beakgrip", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Unnamed Creature",
+    "visual_description": "An angular orange/yellow creature with blue eyes and zigzag mouth, connected to a blue spiral by a spring",
+    "attacks": [{"name": "Panic Inducing", "description": ""}],
+    "defenses": [{"name": "Raaaaawrr", "description": ""}, {"name": "Beakgrip", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Fierce Cow",
+    "visual_description": "A fierce-looking gray cow face with orange nostrils and angry expression, surrounded by action lines",
+    "attacks": [{"name": "Raaaaawrr!", "description": ""}],
+    "defenses": [{"name": "Cow Patty Splat", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "The Scribbler",
+    "visual_description": "An abstract bird-like creature made of light colored scribbles in teal, orange and purple, extending outside its box frame",
+    "attacks": [{"name": "Beak Grip", "description": ""}],
+    "defenses": [{"name": "Outside The Lines", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Dirty Diaper",
+    "visual_description": "A yellow/brown diaper shape with brown dots representing mess",
+    "attacks": [{"name": "Glitter Poo", "description": ""}],
+    "defenses": [{"name": "Ewwww", "description": ""}, {"name": "Panic Inducing", "description": ""}],
+    "special_abilities": ["Smell Horrific"]
+  },
+  {
+    "name": "Giant Squid",
+    "visual_description": "A purple squid creature with multiple tentacles",
+    "attacks": [{"name": "Ink Spray", "description": ""}, {"name": "Tentacle Grab", "description": ""}],
+    "defenses": [{"name": "Ink Cloud", "description": "Hides in ink"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Porcupine Pal",
+    "visual_description": "A round creature covered in quills, brown with friendly face",
+    "attacks": [{"name": "Quill Shot", "description": ""}, {"name": "Spike Roll", "description": ""}],
+    "defenses": [{"name": "Prickly Defense", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Time Twister",
+    "visual_description": "A creature with clock features and swirling time portals",
+    "attacks": [{"name": "Time Freeze", "description": ""}, {"name": "Rewind", "description": ""}],
+    "defenses": [{"name": "Time Skip", "description": "Dodges attacks"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Gravity Ghost",
+    "visual_description": "A ghost that seems to defy gravity, floating with objects around it",
+    "attacks": [{"name": "Gravity Pull", "description": ""}, {"name": "Float Away", "description": ""}],
+    "defenses": [{"name": "Zero Gravity", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Magnet Monster",
+    "visual_description": "A creature with magnetic poles, red and blue with metal pieces stuck to it",
+    "attacks": [{"name": "Attract", "description": ""}, {"name": "Repel", "description": ""}],
+    "defenses": [{"name": "Magnetic Field", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Sound Wave",
+    "visual_description": "A creature made of visible sound waves, colorful ripples",
+    "attacks": [{"name": "Sonic Boom", "description": ""}, {"name": "Noise Blast", "description": ""}],
+    "defenses": [{"name": "Echo Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Paint Splatter",
+    "visual_description": "A chaotic creature made of paint splatters, all colors",
+    "attacks": [{"name": "Color Splash", "description": ""}, {"name": "Paint Bomb", "description": ""}],
+    "defenses": [{"name": "Blend In", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Cheese Monster",
+    "visual_description": "A creature made of cheese with holes, yellow and orange",
+    "attacks": [{"name": "Stink Attack", "description": ""}, {"name": "Cheese Wheel Roll", "description": ""}],
+    "defenses": [{"name": "Melty Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Popcorn Popper",
+    "visual_description": "A creature that looks like exploding popcorn, white and yellow",
+    "attacks": [{"name": "Pop Attack", "description": ""}, {"name": "Kernel Shot", "description": ""}],
+    "defenses": [{"name": "Fluffy Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Silly String",
+    "visual_description": "A creature made of tangled silly string, neon colors",
+    "attacks": [{"name": "String Wrap", "description": ""}, {"name": "Tangle Attack", "description": ""}],
+    "defenses": [{"name": "Stretchy Dodge", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Balloon Beast",
+    "visual_description": "A creature made of balloons, round and colorful",
+    "attacks": [{"name": "Float Up", "description": ""}, {"name": "Pop Scare", "description": ""}],
+    "defenses": [{"name": "Deflate", "description": "Shrinks to avoid attacks"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Puzzle Piece",
+    "visual_description": "A creature shaped like puzzle pieces connected together",
+    "attacks": [{"name": "Piece Throw", "description": ""}, {"name": "Connect Attack", "description": ""}],
+    "defenses": [{"name": "Break Apart", "description": "Splits to avoid damage"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Glitter Bomb",
+    "visual_description": "A sparkly creature covered in glitter, rainbow shimmer",
+    "attacks": [{"name": "Glitter Explosion", "description": ""}, {"name": "Sparkle Blind", "description": ""}],
+    "defenses": [{"name": "Dazzle", "description": "Too shiny to look at"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Sock Monster",
+    "visual_description": "A creature made of mismatched socks, various colors and patterns",
+    "attacks": [{"name": "Stinky Sock", "description": ""}, {"name": "Static Cling", "description": ""}],
+    "defenses": [{"name": "Slip Away", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Rubber Band",
+    "visual_description": "A stretchy creature made of rubber bands, multicolored",
+    "attacks": [{"name": "Snap Attack", "description": ""}, {"name": "Stretch Hit", "description": ""}],
+    "defenses": [{"name": "Bounce Back", "description": "Reflects attacks"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Pillow Fighter",
+    "visual_description": "A fluffy pillow-shaped creature ready for battle",
+    "attacks": [{"name": "Pillow Smash", "description": ""}, {"name": "Feather Storm", "description": ""}],
+    "defenses": [{"name": "Soft Landing", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Sticky Note",
+    "visual_description": "A creature made of sticky notes in yellow, pink, and blue",
+    "attacks": [{"name": "Paper Cut", "description": ""}, {"name": "Stick On", "description": "Attaches to enemies"}],
+    "defenses": [{"name": "Peel Off", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Battery Bot",
+    "visual_description": "A robot powered by batteries, metallic with electric sparks",
+    "attacks": [{"name": "Power Surge", "description": ""}, {"name": "Drain Energy", "description": ""}],
+    "defenses": [{"name": "Recharge", "description": "Heals itself"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Crayon Creature",
+    "visual_description": "A creature drawn with thick crayon strokes, colorful and childlike",
+    "attacks": [{"name": "Color Scribble", "description": ""}, {"name": "Wax Melt", "description": ""}],
+    "defenses": [{"name": "Thick Lines", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Bubblegum Blob",
+    "visual_description": "A pink sticky bubblegum creature blowing bubbles",
+    "attacks": [{"name": "Bubble Pop", "description": ""}, {"name": "Sticky Trap", "description": ""}],
+    "defenses": [{"name": "Stretch Shield", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Marble Madness",
+    "visual_description": "A creature made of colorful marbles rolling around",
+    "attacks": [{"name": "Marble Shot", "description": ""}, {"name": "Roll Attack", "description": ""}],
+    "defenses": [{"name": "Scatter", "description": "Spreads out to avoid hits"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Domino Effect",
+    "visual_description": "A creature made of dominoes, black and white with dots",
+    "attacks": [{"name": "Chain Reaction", "description": ""}, {"name": "Topple", "description": ""}],
+    "defenses": [{"name": "Stand Firm", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Sprinkle Spirit",
+    "visual_description": "A ghostly creature covered in rainbow sprinkles",
+    "attacks": [{"name": "Sprinkle Spray", "description": ""}, {"name": "Sweet Surprise", "description": ""}],
+    "defenses": [{"name": "Sugar Rush", "description": "Speeds up"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Eraser Head",
+    "visual_description": "A creature with a big pink eraser for a head",
+    "attacks": [{"name": "Erase Attack", "description": "Makes things disappear"}, {"name": "Rub Out", "description": ""}],
+    "defenses": [{"name": "Clean Slate", "description": "Erases damage"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Tape Monster",
+    "visual_description": "A creature wrapped in tape, clear and colored tape rolls",
+    "attacks": [{"name": "Tape Wrap", "description": ""}, {"name": "Stick Attack", "description": ""}],
+    "defenses": [{"name": "Unroll", "description": "Extends body to escape"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Coin Collector",
+    "visual_description": "A creature made of stacked coins, gold and silver",
+    "attacks": [{"name": "Coin Flip", "description": ""}, {"name": "Money Throw", "description": ""}],
+    "defenses": [{"name": "Shiny Distraction", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Button Basher",
+    "visual_description": "A creature made of various buttons, all sizes and colors",
+    "attacks": [{"name": "Button Barrage", "description": ""}, {"name": "Thread Tangle", "description": ""}],
+    "defenses": [{"name": "Pop Off", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Zipper Zapper",
+    "visual_description": "A creature with zipper features that can open and close",
+    "attacks": [{"name": "Zip Attack", "description": ""}, {"name": "Unzip", "description": "Reveals surprises"}],
+    "defenses": [{"name": "Zip Up", "description": "Closes off to protect"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Key Master",
+    "visual_description": "A creature made of old keys, brass and gold colored",
+    "attacks": [{"name": "Key Poke", "description": ""}, {"name": "Unlock", "description": "Opens enemy defenses"}],
+    "defenses": [{"name": "Lock Down", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Dice Roller",
+    "visual_description": "A creature made of dice showing different numbers",
+    "attacks": [{"name": "Lucky Roll", "description": "Random damage"}, {"name": "Snake Eyes", "description": ""}],
+    "defenses": [{"name": "Roll Again", "description": "Gets second chance"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Spinner Spirit",
+    "visual_description": "A spinning top creature with hypnotic colors",
+    "attacks": [{"name": "Spin Attack", "description": ""}, {"name": "Dizzy Dance", "description": ""}],
+    "defenses": [{"name": "Keep Spinning", "description": "Hard to stop"}],
+    "special_abilities": []
+  },
+  {
+    "name": "Wall Trio",
+    "visual_description": "Three creatures: a blue triangular tree-like figure, a red brick wall with stick legs, and a fierce red/yellow creature with teeth",
+    "attacks": [{"name": "Black Hole", "description": ""}, {"name": "White Hole", "description": ""}, {"name": "Chomp", "description": ""}],
+    "defenses": [{"name": "Thunder Arrows", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Box",
+    "visual_description": "A simple orange spiky creature inside a teal rectangular box",
+    "attacks": [{"name": "Roll", "description": ""}],
+    "defenses": [],
+    "special_abilities": []
+  },
+  {
+    "name": "Light Combined Demons",
+    "visual_description": "Three yellow demon-like figures with horns and glowing orange eyes, connected by a red line",
+    "attacks": [{"name": "Dark Wall Forces", "description": "Makes every wall turn against you"}, {"name": "Fire Arrows", "description": ""}, {"name": "Lava Breath", "description": ""}, {"name": "Sun Lazers", "description": ""}],
+    "defenses": [],
+    "special_abilities": ["Do Two Moves At Once"]
+  },
+  {
+    "name": "Fog Trio",
+    "visual_description": "Three creatures: a dark gray ghost with yellow eye, a spotted foggy shape, and a blue/dark dumbbell-like figure",
+    "attacks": [{"name": "Fog Sandwich", "description": ""}, {"name": "Wind Tunnel", "description": ""}, {"name": "Hurricane", "description": ""}],
+    "defenses": [],
+    "special_abilities": ["Do Two Moves At Once"]
+  },
+  {
+    "name": "Uber-Candle",
+    "visual_description": "Seven colorful birthday candles with flames - blue, orange, pink, teal, purple, red, and more, all lit",
+    "attacks": [{"name": "Shoots Extremely Hot Wax That Hardens Into An Imprisoning Shell To Prevent Next Attack", "description": ""}, {"name": "Lights Anything On Fire", "description": ""}],
+    "defenses": [{"name": "Distract And Deflect By Looking Interesting", "description": ""}],
+    "special_abilities": []
+  },
+  {
+    "name": "Spike Wall",
+    "visual_description": "An orange rectangular wall with zigzag spiky edges and two eyes on stalks",
+    "attacks": [{"name": "Chomp", "description": ""}, {"name": "Swing", "description": ""}, {"name": "Electric Arrows", "description": ""}, {"name": "Lazers", "description": ""}, {"name": "Black Hole", "description": ""}, {"name": "Charge", "description": ""}],
+    "defenses": [{"name": "White Hole", "description": ""}, {"name": "Elemental", "description": ""}, {"name": "Black Hole", "description": ""}],
+    "special_abilities": []
+  }
+]

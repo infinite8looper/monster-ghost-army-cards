@@ -1,0 +1,249 @@
+{
+  "analysis_date": "2026-01-01",
+  "total_cards_analyzed": 10,
+  "cards": {
+    "spike_wall": {
+      "image_file": "PXL_20260101_190744411.jpg",
+      "orientation": "portrait",
+      "needs_rotation": false,
+      "rotation_direction": "none",
+      "character_box": {
+        "top_percent": 12,
+        "bottom_percent": 52,
+        "left_percent": 8,
+        "right_percent": 8
+      },
+      "border_color": "orange with zigzag pattern",
+      "border_style": "double border - outer zigzag orange, inner solid dark brown/black",
+      "notes": "Card is already in portrait orientation. Character box has distinctive double border with outer orange zigzag spikes and inner rectangular frame. The wall creature with eye stalks is centered in the box. Title 'SPIKE WALL' at top ~8% of card. Abilities listed below box starting at ~55%."
+    },
+    "dirty_diaper": {
+      "image_file": "PXL_20260101_191947730.jpg",
+      "orientation": "portrait",
+      "needs_rotation": false,
+      "rotation_direction": "none",
+      "character_box": {
+        "top_percent": 10,
+        "bottom_percent": 48,
+        "left_percent": 8,
+        "right_percent": 8
+      },
+      "border_color": "dark green/teal",
+      "border_style": "simple solid rectangular border",
+      "notes": "Card is already in portrait orientation. Clean rectangular green border around the diaper drawing. Title 'DIRTY DIAPER' at top in red. Character box is well-defined with solid teal/green lines. Abilities start at ~52% from top."
+    },
+    "fierce_cow": {
+      "image_file": "PXL_20260101_191745542.jpg",
+      "orientation": "portrait",
+      "needs_rotation": false,
+      "rotation_direction": "none",
+      "character_box": {
+        "top_percent": 10,
+        "bottom_percent": 55,
+        "left_percent": 10,
+        "right_percent": 10
+      },
+      "border_color": "red/pink",
+      "border_style": "simple solid rectangular border",
+      "notes": "Card is already in portrait orientation. Red/pink rectangular border. The cow drawing has action lines extending outside the box frame (artistic choice). Title 'FIERCE COW' at top. Character box is well-proportioned. Action lines from cow extend beyond box edges."
+    },
+    "ice_cream_flinger": {
+      "image_file": "PXL_20260101_191346664.jpg",
+      "orientation": "landscape",
+      "needs_rotation": true,
+      "rotation_direction": "90_ccw",
+      "character_box": {
+        "top_percent": 8,
+        "bottom_percent": 8,
+        "left_percent": 28,
+        "right_percent": 28,
+        "note": "These percentages are AFTER rotation to portrait"
+      },
+      "border_color": "purple/violet",
+      "border_style": "simple solid rectangular border",
+      "notes": "CRITICAL: Image is in LANDSCAPE orientation and needs 90 degree counter-clockwise rotation to become portrait. After rotation: title 'ICE CREAM FLINGER' would be at top, purple character box in center with 5-scoop ice cream cone, abilities on right side. The current image has text running vertically on left and right sides."
+    },
+    "box": {
+      "image_file": "PXL_20260101_190715764.jpg",
+      "orientation": "portrait",
+      "needs_rotation": false,
+      "rotation_direction": "none",
+      "character_box": {
+        "top_percent": 10,
+        "bottom_percent": 50,
+        "left_percent": 8,
+        "right_percent": 8
+      },
+      "border_color": "teal/cyan",
+      "border_style": "thick solid rectangular border",
+      "notes": "Card is already in portrait orientation. Thick teal/cyan rectangular border. Simple orange spiky creature inside. Title 'BOX' at top. Large empty space below character box where abilities would go (only has '1 ROLL'). Character box takes up less vertical space proportionally."
+    },
+    "shofario": {
+      "image_file": "PXL_20260101_191351705.jpg",
+      "orientation": "landscape",
+      "needs_rotation": true,
+      "rotation_direction": "90_ccw",
+      "character_box": {
+        "top_percent": 8,
+        "bottom_percent": 8,
+        "left_percent": 22,
+        "right_percent": 35,
+        "note": "These percentages are AFTER rotation to portrait"
+      },
+      "border_color": "light blue/cyan",
+      "border_style": "simple solid rectangular border",
+      "notes": "CRITICAL: Image is in LANDSCAPE orientation and needs 90 degree counter-clockwise rotation. After rotation: title 'SHOFARIO' at top, light blue character box with shofar drawing and musical notes, abilities on right side. Text currently runs vertically."
+    },
+    "the_scribbler": {
+      "image_file": "PXL_20260101_191756977.jpg",
+      "orientation": "portrait",
+      "needs_rotation": false,
+      "rotation_direction": "none",
+      "character_box": {
+        "top_percent": 8,
+        "bottom_percent": 45,
+        "left_percent": 8,
+        "right_percent": 8
+      },
+      "border_color": "teal/cyan",
+      "border_style": "simple solid rectangular border",
+      "notes": "Card is already in portrait orientation. Teal rectangular border. SPECIAL CONSIDERATION: The scribbler artwork intentionally extends OUTSIDE the box frame (orange line goes above, purple line extends below and outside). This is thematic - 'Outside the Lines' is one of the abilities. Cropping must be careful not to cut off the intentional overflow."
+    },
+    "wonka_wacka_doodle_monster": {
+      "image_file": "PXL_20260101_191342357.jpg",
+      "orientation": "landscape",
+      "needs_rotation": true,
+      "rotation_direction": "90_ccw",
+      "character_box": {
+        "top_percent": 5,
+        "bottom_percent": 5,
+        "left_percent": 18,
+        "right_percent": 40,
+        "note": "These percentages are AFTER rotation to portrait"
+      },
+      "border_color": "pink/magenta",
+      "border_style": "simple solid rectangular border",
+      "notes": "CRITICAL: Image is in LANDSCAPE orientation and needs 90 degree counter-clockwise rotation. After rotation: title 'WONKA-WACKA-DOODLE MONSTER' at top, pink character box filled with colorful abstract zigzag patterns, abilities on right side. Very colorful interior with multiple colors (blue, green, yellow, orange, pink)."
+    },
+    "robo_jolt": {
+      "image_file": "PXL_20260101_191356760.jpg",
+      "orientation": "landscape",
+      "needs_rotation": true,
+      "rotation_direction": "90_ccw",
+      "character_box": {
+        "top_percent": 8,
+        "bottom_percent": 8,
+        "left_percent": 15,
+        "right_percent": 45,
+        "note": "These percentages are AFTER rotation to portrait"
+      },
+      "border_color": "pink/magenta",
+      "border_style": "simple solid rectangular border",
+      "notes": "CRITICAL: Image is in LANDSCAPE orientation and needs 90 degree counter-clockwise rotation. After rotation: title 'ROBO-JOLT' at top, pink character box with robot drawing (teal body, orange hands/feet, multiple orange eyes), abilities on right side. Robot has antenna with wavy lines."
+    },
+    "doublespike": {
+      "image_file": "PXL_20260101_191646476.jpg",
+      "orientation": "portrait",
+      "needs_rotation": false,
+      "rotation_direction": "none",
+      "character_box": {
+        "top_percent": 8,
+        "bottom_percent": 62,
+        "left_percent": 8,
+        "right_percent": 8
+      },
+      "border_color": "gray/pencil",
+      "border_style": "simple pencil-drawn rectangular border",
+      "notes": "Card is already in portrait orientation. Light gray/pencil drawn rectangular border (less saturated than other cards). Two dark spiky ball creatures connected by a line inside box. Title 'DOUBLESPIKE' at top in red. Character box is shorter/wider proportionally. Gray border may be harder to detect with color-based algorithms."
+    }
+  },
+  "patterns": {
+    "rotation_pattern": "4 of 10 cards (40%) are in LANDSCAPE orientation and require 90 degree counter-clockwise rotation: ice_cream_flinger, shofario, wonka_wacka_doodle_monster, robo_jolt. The remaining 6 cards are already in correct PORTRAIT orientation. The current detect_rotation() function correctly identifies landscape images but the rotation may not be applying correctly.",
+    "orientation_detection": "Simple width > height check is CORRECT for detecting landscape images. All landscape images consistently need 90_ccw rotation to orient properly.",
+    "border_colors_observed": [
+      "orange (spike_wall)",
+      "dark green/teal (dirty_diaper)",
+      "red/pink (fierce_cow)",
+      "purple/violet (ice_cream_flinger)",
+      "teal/cyan (box, the_scribbler)",
+      "light blue/cyan (shofario)",
+      "pink/magenta (wonka_wacka_doodle_monster, robo_jolt)",
+      "gray/pencil (doublespike)"
+    ],
+    "cropping_recommendation": {
+      "portrait_cards": {
+        "top_percent": 10,
+        "bottom_percent": 45,
+        "left_percent": 6,
+        "right_percent": 6,
+        "description": "For already-portrait cards, crop from ~10% from top (below title) to ~45% from bottom (above abilities). Side margins of ~6% work well."
+      },
+      "landscape_cards_after_rotation": {
+        "top_percent": 8,
+        "bottom_percent": 8,
+        "left_percent": 15,
+        "right_percent": 35,
+        "description": "After rotating landscape cards, the character box is more centered but abilities text takes up significant right portion. Need asymmetric crop."
+      },
+      "universal_safe_crop": {
+        "top_percent": 12,
+        "bottom_percent": 38,
+        "left_percent": 8,
+        "right_percent": 8,
+        "description": "A conservative universal crop that should capture the character box on most cards without cutting into it. May include some title/ability text on edge cases."
+      }
+    },
+    "issues_found": [
+      "ROTATION ISSUE: The current script rotates by 90 degrees counter-clockwise which should be correct, but PIL's rotate() with expand=True may have unexpected behavior. Need to verify the rotation is actually being applied and saved correctly.",
+      "CROPPING RATIOS WRONG: Current heuristic uses top_margin=12%, bottom_margin=38% which leaves only 50% of height. For portrait cards, character box is typically from ~10% to ~55% (45% of card height). The current bottom_margin of 38% is cutting into character boxes.",
+      "LANDSCAPE CARD LAYOUT DIFFERENT: Landscape cards (after rotation) have a different layout - the character box is more square/centered with abilities text to the side rather than below. The same cropping ratios will not work.",
+      "COLOR DETECTION UNRELIABLE: The doublespike card has a gray/pencil border with low saturation. Color-based border detection may fail on this card. The find_colored_border_box() function's min_saturation=50 threshold may miss it.",
+      "SPECIAL CASES: the_scribbler has intentional artwork extending outside the box frame. Aggressive cropping will cut off important visual elements.",
+      "BOX ASPECT RATIOS VARY: Some character boxes are more rectangular/wide (spike_wall, box, doublespike) while others are more square. A fixed crop ratio cannot accommodate all."
+    ],
+    "script_bugs_identified": [
+      {
+        "location": "detect_rotation() line 71-77",
+        "issue": "Function returns 90 for landscape images, intending CCW rotation. However, need to verify this is the correct direction for all landscape cards.",
+        "recommendation": "Test with actual images to confirm 90 CCW produces correct orientation."
+      },
+      {
+        "location": "find_character_box() lines 128-138",
+        "issue": "Heuristic ratios are incorrect. top_margin=12%, bottom_margin=38% means the crop box is from y=12% to y=62% of image height. This should be adjusted.",
+        "recommendation": "Change to top_margin=10%, bottom_margin=45% for portrait cards to capture full character box."
+      },
+      {
+        "location": "find_colored_border_box() line 166",
+        "issue": "min_saturation=50 may be too high for pencil/gray borders like doublespike card.",
+        "recommendation": "Lower to min_saturation=30 or add edge detection as fallback."
+      },
+      {
+        "location": "crop_to_character_box() uses 'heuristic' method",
+        "issue": "The heuristic method does not account for the different layouts between portrait-shot and landscape-shot cards.",
+        "recommendation": "After rotation, detect if the original was landscape and use different crop ratios."
+      }
+    ],
+    "recommended_fixes": {
+      "1_rotation": "Keep current rotation logic (90 CCW for landscape) but add metadata tracking to know if image was originally landscape.",
+      "2_cropping_portrait": "For cards that were already portrait: top=10%, bottom=45%, left=6%, right=6%",
+      "3_cropping_rotated_landscape": "For cards that were rotated from landscape: top=8%, bottom=8%, left=15%, right=35% - this accounts for the different layout where abilities are on the side.",
+      "4_border_detection": "Improve border detection by: (a) lowering saturation threshold to 30, (b) adding edge detection fallback, (c) looking for rectangular shapes rather than just color.",
+      "5_special_cases": "Add card-specific overrides for cards like the_scribbler that have artwork extending outside the box."
+    }
+  },
+  "card_layout_summary": {
+    "portrait_shot_cards": {
+      "count": 6,
+      "cards": ["spike_wall", "dirty_diaper", "fierce_cow", "box", "the_scribbler", "doublespike"],
+      "layout": "Title at top (~8-10%), character box below (~10-55%), abilities below box (~55-100%)",
+      "recommended_crop": "top=10%, bottom=45%, left=6%, right=6%"
+    },
+    "landscape_shot_cards": {
+      "count": 4,
+      "cards": ["ice_cream_flinger", "shofario", "wonka_wacka_doodle_monster", "robo_jolt"],
+      "layout_after_rotation": "Title on left side (now top after rotation), character box center-left, abilities on right side (now bottom after rotation)",
+      "recommended_crop": "These cards have a fundamentally different layout after rotation. The character box is more centered and abilities wrap around it differently. May need card-specific handling.",
+      "alternative": "Consider not rotating and instead extracting the character box from the landscape orientation directly."
+    }
+  }
+}

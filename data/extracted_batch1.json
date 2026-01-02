@@ -1,0 +1,369 @@
+{
+  "batch": 1,
+  "extraction_date": "2026-01-01",
+  "cards": [
+    {
+      "id": 1,
+      "filename": "PXL_20260101_190708125.jpg",
+      "name": "Wall Trio",
+      "visual_description": "Three creatures in a horizontal frame: a blue geometric tree-like figure on the left, a red brick-textured square creature with stick legs in the center, and a fiery sun-like creature with sharp teeth on the right",
+      "attacks": [
+        {"number": 1, "name": "Black Hole", "description": null},
+        {"number": 2, "name": "White Hole", "description": null},
+        {"number": 3, "name": "Chomp", "description": null},
+        {"number": 4, "name": "Thunder Arrows", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 2,
+      "filename": "PXL_20260101_190715764.jpg",
+      "name": "Box",
+      "visual_description": "A small spiky orange creature with a face inside a teal/blue rectangular frame",
+      "attacks": [
+        {"number": 1, "name": "Roll", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 3,
+      "filename": "PXL_20260101_190723114.jpg",
+      "name": "Light Combined Demons",
+      "visual_description": "Three yellow ghost-like demons with red horns and orange eyes, connected by a red horizontal bar, all inside a dark-bordered frame",
+      "attacks": [
+        {"number": 1, "name": "Dark Wall Forces", "description": "Makes every wall turn against you"},
+        {"number": 2, "name": "Fire Arrows", "description": null},
+        {"number": 3, "name": "Lava Breath", "description": null},
+        {"number": 4, "name": "Sun Lazers", "description": null},
+        {"number": 5, "name": "Do Two Moves At Once", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 4,
+      "filename": "PXL_20260101_190728932.jpg",
+      "name": "Fog Trio",
+      "visual_description": "Three fog/cloud-themed creatures in a purple frame: a dark gray ghost with a yellow eye, a spotted/dotted cloud-like shape, and a blue funnel/tornado shape",
+      "attacks": [
+        {"number": 1, "name": "Fog Sandwich", "description": null},
+        {"number": 2, "name": "Wind Tunnel", "description": null},
+        {"number": 3, "name": "Hurricane", "description": null},
+        {"number": 4, "name": "Do Two Moves At Once", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 5,
+      "filename": "PXL_20260101_190737413.jpg",
+      "name": "Uber-Candle",
+      "visual_description": "Seven colorful candles of varying heights arranged in a row inside a brown frame - colors include blue, orange, pink, teal, purple, and red",
+      "attacks": [
+        {"number": 1, "name": "Shoots Extremely Hot Wax", "description": "That hardens into an imprisoning shell to prevent next attack"},
+        {"number": 2, "name": "Lights Anything On Fire", "description": null}
+      ],
+      "defenses": [
+        {"number": 3, "name": "Distract And Deflect", "description": "By looking interesting"}
+      ],
+      "special_abilities": []
+    },
+    {
+      "id": 6,
+      "filename": "PXL_20260101_190744411.jpg",
+      "name": "Spike Wall",
+      "visual_description": "An orange spike wall creature with zigzag spikes around the border, two eyes on stalks, and a stand/pole underneath",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Elemental Black Hole", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 7,
+      "filename": "PXL_20260101_190751214.jpg",
+      "name": "Dreidel-of-Doom",
+      "visual_description": "A purple dreidel with Hebrew letters shown next to it (nun, gimel, hey, shin) inside a brown frame",
+      "attacks": [
+        {"number": 1, "name": "Ultra Spin Attack", "description": null},
+        {"number": 2, "name": "Enrage Enemies", "description": "To distract them by landing on W (nun) every time"},
+        {"number": 3, "name": "Summon Daemon", "description": "To help cook latkes (splatters of oil are very painful)"}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 8,
+      "filename": "PXL_20260101_190758053.jpg",
+      "name": "Sparkler-Foe",
+      "visual_description": "Colorful sparkles and stars in blue, teal, yellow and gold scattered across the frame",
+      "attacks": [
+        {"number": 1, "name": "Super Bright", "description": "Hurts any eye"},
+        {"number": 2, "name": "Spawn Firewalker Army", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": [
+        {"number": 3, "name": "Teleports", "description": "Up to 10 miles away"}
+      ]
+    },
+    {
+      "id": 9,
+      "filename": "PXL_20260101_190806305.jpg",
+      "name": "Music-Dude",
+      "visual_description": "Musical notes (eighth notes, quarter note, and other music symbols) in purple/blue inside a brown frame",
+      "attacks": [
+        {"number": 1, "name": "Very Loud", "description": "Hurts ears"},
+        {"number": 3, "name": "Puts All Babies That Are Nearby To Sleep", "description": "Next attack is 100x stronger"}
+      ],
+      "defenses": [
+        {"number": 2, "name": "Cannot Be Damaged While In \"Singing\" Form", "description": null}
+      ],
+      "special_abilities": []
+    },
+    {
+      "id": 10,
+      "filename": "PXL_20260101_190812887.MP.jpg",
+      "name": "Electric Spike Wall",
+      "visual_description": "A yellow electric spike wall with zigzag lightning patterns around the border, three eyes, and electricity effects inside a brown and yellow frame",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Elemental Black Hole", "description": null},
+        {"number": 9, "name": "Lightning", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 11,
+      "filename": "PXL_20260101_190818810.jpg",
+      "name": "Guac Globber",
+      "visual_description": "A green and blue amorphous blob creature with swirling patterns, resembling guacamole",
+      "attacks": [
+        {"number": 1, "name": "Smothers Enemies", "description": null},
+        {"number": 2, "name": "Squelches", "description": null}
+      ],
+      "defenses": [
+        {"number": 3, "name": "Softens Sharp Edges", "description": null}
+      ],
+      "special_abilities": []
+    },
+    {
+      "id": 12,
+      "filename": "PXL_20260101_190824822.jpg",
+      "name": "Universe Spike Wall",
+      "visual_description": "A gray/silver spike wall with zigzag spikes around the border, two red glowing eyes, and a pole/stand underneath",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Shooting Stars!", "description": "Literally"},
+        {"number": 9, "name": "Elemental Black Hole", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 13,
+      "filename": "PXL_20260101_190831743.jpg",
+      "name": "Water Spike Wall",
+      "visual_description": "A blue water-themed spike wall with zigzag spikes in blue and orange around the border, three eyes, and a pole underneath",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Tsunami", "description": null},
+        {"number": 9, "name": "Elemental Black Hole", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 14,
+      "filename": "PXL_20260101_190837161.jpg",
+      "name": "Lego Wall",
+      "visual_description": "A colorful wall made of interlocking Lego-style bricks in red, blue, yellow, and green",
+      "attacks": [
+        {"number": 2, "name": "Stacking Attack", "description": null},
+        {"number": 3, "name": "Sharp Foot Poke", "description": "Don't step on me!"}
+      ],
+      "defenses": [
+        {"number": 1, "name": "Shield Block", "description": null},
+        {"number": 4, "name": "Bounce Back", "description": null}
+      ],
+      "special_abilities": []
+    },
+    {
+      "id": 15,
+      "filename": "PXL_20260101_190843259.jpg",
+      "name": "Fire Spike Wall",
+      "visual_description": "An orange and red fire-themed spike wall with zigzag flames around the border, two eyes, and a pole underneath",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Forest Fire", "description": null},
+        {"number": 9, "name": "Elemental Black Hole", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 16,
+      "filename": "PXL_20260101_190849439.jpg",
+      "name": "Sweet Pea Shooter",
+      "visual_description": "A green pea pod with four cute smiling pea faces inside, surrounded by colorful confetti/sparkles",
+      "attacks": [
+        {"number": 1, "name": "Exploding Seed Pods", "description": null},
+        {"number": 2, "name": "Unbearable Cuteness", "description": null}
+      ],
+      "defenses": [
+        {"number": 3, "name": "Protective Shield", "description": null}
+      ],
+      "special_abilities": []
+    },
+    {
+      "id": 17,
+      "filename": "PXL_20260101_190855128.jpg",
+      "name": "Snail Trail",
+      "visual_description": "A colorful snail with a pink, purple, yellow and orange spiral shell, olive green body, and a wavy slime trail behind it",
+      "attacks": [
+        {"number": 1, "name": "Maximum Slime", "description": null},
+        {"number": 2, "name": "Blinding Neon Spirals", "description": null},
+        {"number": 4, "name": "Spiraling Path Confusion", "description": null}
+      ],
+      "defenses": [
+        {"number": 3, "name": "Protective Shell Shield", "description": null}
+      ],
+      "special_abilities": []
+    },
+    {
+      "id": 18,
+      "filename": "PXL_20260101_190859757.jpg",
+      "name": "Plant Spike Wall",
+      "visual_description": "A green plant-themed spike wall with zigzag vine/leaf patterns around the border, three eyes, and a green pole underneath",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Elemental Black Hole", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 19,
+      "filename": "PXL_20260101_190906673.jpg",
+      "name": "Earth Spike Wall",
+      "visual_description": "A brown/earth-toned spike wall with zigzag rock/earth patterns in brown, orange and yellow around the border, three eyes, and a brown pole underneath",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Swing", "description": null},
+        {"number": 3, "name": "Electric Arrows", "description": null},
+        {"number": 4, "name": "Lazers", "description": null},
+        {"number": 5, "name": "Black Hole", "description": null},
+        {"number": 6, "name": "Charge", "description": null},
+        {"number": 7, "name": "White Hole", "description": null},
+        {"number": 8, "name": "Earth Quake", "description": null},
+        {"number": 9, "name": "Elemental Black Hole", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 20,
+      "filename": "PXL_20260101_190911488.jpg",
+      "name": "Galaxy Black Hole",
+      "visual_description": "A spiral galaxy with concentric rings in gray, white and brown, with a dark black hole center, surrounded by yellow stars/dots",
+      "attacks": [
+        {"number": 1, "name": "Infinite Black Hole", "description": null},
+        {"number": 2, "name": "Extreme Gravity", "description": null},
+        {"number": 3, "name": "Shooting Stars!", "description": "Literally"}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 21,
+      "filename": "PXL_20260101_190917736.jpg",
+      "name": "H13253312",
+      "visual_description": "An amorphous red and yellow flame-like or lava creature with a dark center",
+      "attacks": [
+        {"number": 1, "name": "Shapeshift", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 22,
+      "filename": "PXL_20260101_190928007.jpg",
+      "name": "Innercore Monster",
+      "visual_description": "A chaotic teal/dark blue scribbled creature inside a purple frame with orange cloud-like shapes around it",
+      "attacks": [
+        {"number": 1, "name": "Triple Black Hole", "description": null},
+        {"number": 2, "name": "Mutant Death Ray", "description": null},
+        {"number": 3, "name": "Posession", "description": null},
+        {"number": 4, "name": "Wormhole", "description": "Sends you back in time"},
+        {"number": 5, "name": "Turn Any Monster Card Into Any Other Monster Card", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 23,
+      "filename": "PXL_20260101_190932956.jpg",
+      "name": "Deadly Top Hat",
+      "visual_description": "A tiny red creature with eyes peeking out from inside a large red rectangular frame (representing a top hat)",
+      "attacks": [
+        {"number": 1, "name": "Top Haunt", "description": "Destroys the top of your body"},
+        {"number": 2, "name": "Annoying Laughter", "description": "HEHAHEHEHAHAHEHA HAHA HE HAHE HO HA HE HE HA HO HO HO HE HE HO"}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    },
+    {
+      "id": 24,
+      "filename": "PXL_20260101_190937532.jpg",
+      "name": "The Summerween Trickster",
+      "visual_description": "A large purple/dark creature with a jack-o-lantern-like face and hat, flanked by two scarecrow-like figures on poles, one with a top hat. The entire scene is drawn in red and purple tones",
+      "attacks": [
+        {"number": 1, "name": "Chomp", "description": null},
+        {"number": 2, "name": "Candy Dash", "description": null},
+        {"number": 3, "name": "Punchy Punchy", "description": null},
+        {"number": 4, "name": "Fruit Punch", "description": null}
+      ],
+      "defenses": [],
+      "special_abilities": []
+    }
+  ]
+}

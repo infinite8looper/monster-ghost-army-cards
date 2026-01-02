@@ -1,0 +1,376 @@
+/**
+ * Monster Ghost Army Cards - Card Loading and Management Module
+ *
+ * This module handles loading card data from JSON, card rendering,
+ * and card-related utilities.
+ */
+
+// Element configuration with colors and relationships
+export const ELEMENTS = {
+    air: {
+        color: '#87CEEB',
+        opposite: 'earth',
+        complement: 'universe',
+        icon: 'A'
+    },
+    water: {
+        color: '#4169E1',
+        opposite: 'fire',
+        complement: 'plant',
+        icon: 'W'
+    },
+    fire: {
+        color: '#FF4500',
+        opposite: 'water',
+        complement: 'magic',
+        icon: 'F'
+    },
+    earth: {
+        color: '#8B4513',
+        opposite: 'air',
+        complement: 'mecha',
+        icon: 'E'
+    },
+    universe: {
+        color: '#9400D3',
+        opposite: 'mecha',
+        complement: 'air',
+        icon: 'U'
+    },
+    plant: {
+        color: '#228B22',
+        opposite: 'magic',
+        complement: 'water',
+        icon: 'P'
+    },
+    mecha: {
+        color: '#C0C0C0',
+        opposite: 'universe',
+        complement: 'earth',
+        icon: 'M'
+    },
+    magic: {
+        color: '#FF69B4',
+        opposite: 'plant',
+        complement: 'fire',
+        icon: '*'
+    }
+};
+
+// Tier configuration
+export const TIERS = {
+    legendary: {
+        borderClass: 'tier-legendary',
+        hpMultiplier: 1.0,
+        label: 'Legendary'
+    },
+    common: {
+        borderClass: 'tier-common',
+        hpMultiplier: 1.0,
+        label: 'Common'
+    },
+    weak: {
+        borderClass: 'tier-weak',
+        hpMultiplier: 1.0,
+        label: 'Weak'
+    }
+};
+
+// Special abilities that have limited uses
+export const SPECIAL_ABILITIES = {
+    BLACK_HOLE: 'Black Hole',
+    SUMMON_GHOST_ARMY: 'Summon Ghost Army',
+    BOUNCE_BACK: 'Bounce Back',
+    TELEPORT: 'Teleport'
+};
+
+// Card data storage
+let allCards = [];
+let cardsByElement = {};
+let cardsByTier = {};
+
+/**
+ * Load card data from JSON file
+ * @returns {Promise<Array>} Array of card objects
+ */
+export async function loadCards() {
+    try {
+        const response = await fetch('data/cards.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load cards: ${response.status}`);
+        }
+        allCards = await response.json();
+
+        // Index cards by element and tier for quick lookup
+        indexCards();
+
+        console.log(`Loaded ${allCards.length} cards successfully`);
+        return allCards;
+    } catch (error) {
+        console.error('Error loading cards:', error);
+        throw error;
+    }
+}
+
+/**
+ * Index cards by element and tier for quick filtering
+ */
+function indexCards() {
+    cardsByElement = {};
+    cardsByTier = {};
+
+    allCards.forEach(card => {
+        // Index by element
+        card.elements.forEach(element => {
+            if (!cardsByElement[element]) {
+                cardsByElement[element] = [];
+            }
+            cardsByElement[element].push(card);
+        });
+
+        // Index by tier
+        const tier = card.tier || 'common';
+        if (!cardsByTier[tier]) {
+            cardsByTier[tier] = [];
+        }
+        cardsByTier[tier].push(card);
+    });
+}
+
+/**
+ * Get all loaded cards
+ * @returns {Array} All card objects
+ */
+export function getAllCards() {
+    return allCards;
+}
+
+/**
+ * Get card by ID
+ * @param {string} id - Card ID
+ * @returns {Object|null} Card object or null if not found
+ */
+export function getCardById(id) {
+    return allCards.find(card => card.id === id) || null;
+}
+
+/**
+ * Get cards by element
+ * @param {string} element - Element name
+ * @returns {Array} Cards with the specified element
+ */
+export function getCardsByElement(element) {
+    return cardsByElement[element] || [];
+}
+
+/**
+ * Get cards by tier
+ * @param {string} tier - Tier name (legendary, common, weak)
+ * @returns {Array} Cards with the specified tier
+ */
+export function getCardsByTier(tier) {
+    return cardsByTier[tier] || [];
+}
+
+/**
+ * Format HP value for display (e.g., 1000000 -> "1M", 250000 -> "250K")
+ * @param {number} hp - HP value
+ * @returns {string} Formatted HP string
+ */
+export function formatHP(hp) {
+    if (hp >= 1000000) {
+        return (hp / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    } else if (hp >= 1000) {
+        return (hp / 1000).toFixed(0) + 'K';
+    }
+    return hp.toString();
+}
+
+/**
+ * Create element icon HTML
+ * @param {string} element - Element name
+ * @returns {string} HTML string for element icon
+ */
+export function createElementIcon(element) {
+    const config = ELEMENTS[element];
+    if (!config) return '';
+
+    return `<span class="element-icon ${element}" title="${element}">${config.icon}</span>`;
+}
+
+/**
+ * Render a card as HTML
+ * @param {Object} card - Card data object
+ * @param {Object} options - Rendering options
+ * @param {number} options.currentHP - Current HP (defaults to card.hp)
+ * @param {boolean} options.showBack - Show back of card
+ * @param {boolean} options.isLarge - Render as large card (for arena)
+ * @param {string} options.additionalClasses - Additional CSS classes
+ * @returns {string} HTML string for the card
+ */
+export function renderCard(card, options = {}) {
+    const {
+        currentHP = card.hp,
+        showBack = false,
+        isLarge = false,
+        additionalClasses = ''
+    } = options;
+
+    const tierClass = TIERS[card.tier]?.borderClass || 'tier-common';
+    const hpPercent = Math.max(0, Math.min(100, (currentHP / card.hp) * 100));
+    const sizeClass = isLarge ? 'card-large' : '';
+
+    // Element icons
+    const elementIcons = card.elements.map(el => createElementIcon(el)).join('');
+
+    // Image path - use generated images if available
+    const imagePath = `assets/images/generated/${card.id}_generated.png`;
+
+    if (showBack) {
+        return renderCardBack(card, { tierClass, sizeClass, additionalClasses });
+    }
+
+    return `
+        <div class="game-card ${tierClass} ${sizeClass} ${additionalClasses}"
+             data-card-id="${card.id}"
+             data-tier="${card.tier}"
+             title="Click to view details">
+            <div class="card-image">
+                <img src="${imagePath}"
+                     alt="${card.name}"
+                     onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="card-image-placeholder" style="display:none;">No Image</div>
+            </div>
+            <div class="card-name">${card.name}</div>
+            <div class="card-elements">${elementIcons}</div>
+            <div class="card-hp-bar">
+                <div class="card-hp-fill" style="width: ${hpPercent}%"></div>
+            </div>
+            <div class="card-hp-text">${formatHP(currentHP)} / ${formatHP(card.hp)}</div>
+        </div>
+    `;
+}
+
+/**
+ * Render the back of a card (attacks, defenses, biography)
+ * @param {Object} card - Card data object
+ * @param {Object} options - Rendering options
+ * @returns {string} HTML string for card back
+ */
+export function renderCardBack(card, options = {}) {
+    const { tierClass = '', sizeClass = '', additionalClasses = '' } = options;
+
+    // Render attacks
+    const attacksHTML = card.attacks.map(attack => `
+        <div class="card-attack">
+            <span class="attack-name">${attack.name}</span>
+            <span class="attack-element element-icon ${attack.element}">${ELEMENTS[attack.element]?.icon || '?'}</span>
+            <span class="attack-damage">${formatHP(attack.base_damage)}</span>
+            ${attack.limited_uses ? `<span class="attack-uses">(${attack.limited_uses}x)</span>` : ''}
+        </div>
+    `).join('');
+
+    // Render defenses
+    const defensesHTML = card.defenses.map(defense => `
+        <div class="card-defense">
+            <span class="defense-name">${defense.name}</span>
+            <span class="defense-element element-icon ${defense.element}">${ELEMENTS[defense.element]?.icon || '?'}</span>
+            <span class="defense-protection">${formatHP(defense.base_protection)}</span>
+            ${defense.special_type ? `<span class="defense-special">[${defense.special_type}]</span>` : ''}
+        </div>
+    `).join('');
+
+    // Render special abilities
+    const specialsHTML = card.special_abilities && card.special_abilities.length > 0
+        ? card.special_abilities.map(ability => `
+            <div class="card-special">
+                <span class="special-name">${ability.name}</span>
+                ${ability.uses ? `<span class="special-uses">(${ability.uses}x)</span>` : ''}
+            </div>
+        `).join('')
+        : '';
+
+    return `
+        <div class="game-card card-back-view ${tierClass} ${sizeClass} ${additionalClasses}"
+             data-card-id="${card.id}">
+            <div class="card-back-content">
+                <div class="card-back-name">${card.name}</div>
+
+                <div class="card-attacks-section">
+                    <h4>Attacks</h4>
+                    ${attacksHTML || '<p class="no-items">No attacks</p>'}
+                </div>
+
+                <div class="card-defenses-section">
+                    <h4>Defenses</h4>
+                    ${defensesHTML || '<p class="no-items">No defenses</p>'}
+                </div>
+
+                ${specialsHTML ? `
+                    <div class="card-specials-section">
+                        <h4>Special</h4>
+                        ${specialsHTML}
+                    </div>
+                ` : ''}
+
+                <div class="card-biography">
+                    <p>${card.biography || ''}</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Render a card placeholder
+ * @param {string} text - Placeholder text
+ * @param {string} additionalClasses - Additional CSS classes
+ * @returns {string} HTML string for placeholder
+ */
+export function renderCardPlaceholder(text = 'Empty Slot', additionalClasses = '') {
+    return `
+        <div class="card-placeholder ${additionalClasses}">
+            <span class="placeholder-text">${text}</span>
+        </div>
+    `;
+}
+
+/**
+ * Create a card detail view for the modal
+ * @param {Object} card - Card data object
+ * @param {Object} gameState - Current game state for HP tracking
+ * @returns {Object} Object with front and back HTML
+ */
+export function createCardDetailView(card, gameState = {}) {
+    const currentHP = gameState.cardHP?.[card.id] ?? card.hp;
+
+    return {
+        front: renderCard(card, { currentHP, isLarge: true }),
+        back: renderCardBack(card, { isLarge: true })
+    };
+}
+
+/**
+ * Shuffle an array (Fisher-Yates algorithm)
+ * @param {Array} array - Array to shuffle
+ * @returns {Array} Shuffled array (mutates original)
+ */
+export function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+/**
+ * Draw random cards from the deck
+ * @param {number} count - Number of cards to draw
+ * @param {Array} excludeIds - Card IDs to exclude
+ * @returns {Array} Array of drawn card objects
+ */
+export function drawRandomCards(count, excludeIds = []) {
+    const available = allCards.filter(card => !excludeIds.includes(card.id));
+    const shuffled = shuffleArray([...available]);
+    return shuffled.slice(0, count);
+}

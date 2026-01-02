@@ -1,0 +1,62 @@
+{
+  "spike_wall": {
+    "left": 8,
+    "top": 12,
+    "right": 8,
+    "bottom": 48
+  },
+  "dirty_diaper": {
+    "left": 8,
+    "top": 10,
+    "right": 6,
+    "bottom": 58
+  },
+  "fierce_cow": {
+    "left": 10,
+    "top": 14,
+    "right": 8,
+    "bottom": 52
+  },
+  "ice_cream_flinger": {
+    "left": 6,
+    "top": 24,
+    "right": 6,
+    "bottom": 44
+  },
+  "box": {
+    "left": 8,
+    "top": 14,
+    "right": 6,
+    "bottom": 50
+  },
+  "shofario": {
+    "left": 7,
+    "top": 11,
+    "right": 6,
+    "bottom": 60
+  },
+  "the_scribbler": {
+    "left": 5,
+    "top": 7,
+    "right": 3,
+    "bottom": 42
+  },
+  "wonka_wacka_doodle_monster": {
+    "left": 6,
+    "top": 14,
+    "right": 6,
+    "bottom": 52
+  },
+  "robo_jolt": {
+    "left": 6,
+    "top": 17,
+    "right": 5,
+    "bottom": 42
+  },
+  "doublespike": {
+    "left": 8,
+    "top": 10,
+    "right": 6,
+    "bottom": 62
+  }
+}

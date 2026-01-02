@@ -1,0 +1,28 @@
+{
+  "description": "Mapping of test batch card IDs to their original image files",
+  "created": "2026-01-01",
+  "mappings": {
+    "spike_wall": "PXL_20260101_190744411.jpg",
+    "dirty_diaper": "PXL_20260101_191947730.jpg",
+    "fierce_cow": "PXL_20260101_191745542.jpg",
+    "ice_cream_flinger": "PXL_20260101_191346664.jpg",
+    "box": "PXL_20260101_190715764.jpg",
+    "shofario": "PXL_20260101_191351705.jpg",
+    "the_scribbler": "PXL_20260101_191756977.jpg",
+    "wonka_wacka_doodle_monster": "PXL_20260101_191342357.jpg",
+    "robo_jolt": "PXL_20260101_191356760.jpg",
+    "doublespike": "PXL_20260101_191646476.jpg"
+  },
+  "notes": {
+    "spike_wall": "Orange rectangular wall with zigzag spiky edges and eyes on stalks - legendary card with Double Black Hole ability",
+    "dirty_diaper": "Yellow/brown diaper with brown dots - has Glitter Poo ability",
+    "fierce_cow": "Gray cow face with orange nostrils, angry expression with action lines - has Cow Patty Splat defense",
+    "ice_cream_flinger": "5-scoop colorful ice cream cone (chocolate, blue, orange, green, pink) - has Laser Melt and Freeze Ray",
+    "box": "Simple orange spiky creature inside teal rectangular box - weakest card with Roll ability",
+    "shofario": "Brown shofar (ram's horn) with musical notes - legendary card with Summons Ghost Army ability",
+    "the_scribbler": "Abstract bird-like scribbles in teal/orange/purple extending outside box frame - has Outside the Lines ability",
+    "wonka_wacka_doodle_monster": "Abstract zigzag/swirl patterns in multiple colors - has Zigger Zagger Defeats and Doodling abilities",
+    "robo_jolt": "Robot with teal body, orange hands/feet, multiple orange eyes - has Robo-Voice and Robo-Claw abilities",
+    "doublespike": "Two dark spiky ball creatures connected by a line - has Black Hole ability"
+  }
+}

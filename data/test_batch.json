@@ -1,0 +1,81 @@
+{
+  "description": "Test batch of 10 diverse cards for image pipeline testing",
+  "selection_criteria": {
+    "tiers": "Mix of legendary, common, weak",
+    "elements": "Coverage of all 8 elements",
+    "art_styles": "Mix of scribbles, detailed, abstract, simple",
+    "special_features": "Some with potential rotation issues"
+  },
+  "cards": [
+    {
+      "id": "spike_wall",
+      "name": "Spike Wall",
+      "tier": "legendary",
+      "elements": ["earth", "universe"],
+      "reason": "Highest HP legendary, detailed drawing with spiky edges"
+    },
+    {
+      "id": "dirty_diaper",
+      "name": "Dirty Diaper",
+      "tier": "common",
+      "elements": ["plant", "water"],
+      "reason": "Classic potty humor card, tests Glitter Poo whimsy"
+    },
+    {
+      "id": "fierce_cow",
+      "name": "Fierce Cow",
+      "tier": "common",
+      "elements": ["earth", "plant"],
+      "reason": "Cow Patty Splat defense, likely action lines"
+    },
+    {
+      "id": "ice_cream_flinger",
+      "name": "Ice Cream Flinger",
+      "tier": "common",
+      "elements": ["water", "magic"],
+      "reason": "5-scoop colorful design, tests multi-element rendering"
+    },
+    {
+      "id": "box",
+      "name": "Box",
+      "tier": "weak",
+      "elements": ["earth"],
+      "reason": "Weakest card, simple design - tests minimal art"
+    },
+    {
+      "id": "shofario",
+      "name": "Shofario",
+      "tier": "legendary",
+      "elements": ["air", "magic"],
+      "reason": "Jewish cultural reference, musical notes, Ghost Army"
+    },
+    {
+      "id": "the_scribbler",
+      "name": "The Scribbler",
+      "tier": "common",
+      "elements": ["magic", "air"],
+      "reason": "Extends outside box frame - tests unconventional bounds"
+    },
+    {
+      "id": "wonka_wacka_doodle_monster",
+      "name": "Wonka-Wacka-Doodle Monster",
+      "tier": "common",
+      "elements": ["magic", "air"],
+      "reason": "Abstract chaotic design, zigzag/swirl patterns"
+    },
+    {
+      "id": "robo_jolt",
+      "name": "Robo-Jolt",
+      "tier": "common",
+      "elements": ["mecha", "fire"],
+      "reason": "Mechanical design with steam, tests mecha element"
+    },
+    {
+      "id": "doublespike",
+      "name": "Doublespike",
+      "tier": "common",
+      "elements": ["earth", "universe"],
+      "reason": "Two connected entities, Black Hole ability"
+    }
+  ]
+}
