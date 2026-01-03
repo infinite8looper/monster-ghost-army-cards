@@ -1381,33 +1381,77 @@
 
     <script>
         /**
+         * Game phase storage key
+         */
+        const GAME_PHASE_KEY = 'monsterGhostArmy_gamePhase';
+
+        /**
+         * Get the current game phase from localStorage
+         * @returns {string|null} The game phase or null if not set
+         */
+        function getGamePhase() {
+            try {
+                return localStorage.getItem(GAME_PHASE_KEY);
+            } catch (e) {
+                console.warn('Unable to access localStorage:', e);
+                return null;
+            }
+        }
+
+        /**
          * Return to the game page without resetting state.
          * Uses history.back() if we came from the game, otherwise navigates to index.html
          */
         function returnToGame() {
-            // Check if there's navigation history from the game
-            if (document.referrer && document.referrer.includes('index.html')) {
+            const gamePhase = getGamePhase();
+
+            // If there's a game in progress (any phase that isn't setup or null), go back
+            if (gamePhase && gamePhase !== 'loading' && document.referrer && document.referrer.includes('index.html')) {
                 // User came from the game, go back to preserve state
                 history.back();
-            } else if (window.opener || (history.length > 1 && document.referrer)) {
+            } else if (window.opener || (history.length > 1 && document.referrer && document.referrer.includes('index.html'))) {
                 // Likely came from the game via navigation
                 history.back();
             } else {
-                // No history, navigate to the game
+                // No history or no game started, navigate to the game
                 window.location.href = 'index.html';
             }
         }
 
-        // Update button text based on how user arrived
+        /**
+         * Get button text based on game phase
+         * @param {string|null} phase - The current game phase
+         * @returns {string} The appropriate button text
+         */
+        function getButtonText(phase) {
+            switch (phase) {
+                case 'setup':
+                    return 'Return to Setup';
+                case 'drafting':
+                    return 'Return to Drafting';
+                case 'playing':
+                case 'battle':
+                    return 'Return to Battle';
+                case 'ended':
+                    return 'Return to Game';
+                default:
+                    return 'Start Playing';
+            }
+        }
+
+        // Update button text based on game phase
         document.addEventListener('DOMContentLoaded', function() {
             const button = document.getElementById('btn-return-to-game');
             if (button) {
-                // Check if user likely came from an active game
-                if (document.referrer && document.referrer.includes('index.html')) {
-                    button.querySelector('span').textContent = 'Return to Game';
-                } else {
-                    button.querySelector('span').textContent = 'Start Playing';
+                const gamePhase = getGamePhase();
+                const buttonTextSpan = button.querySelector('span');
+
+                if (buttonTextSpan) {
+                    buttonTextSpan.textContent = getButtonText(gamePhase);
                 }
+
+                // Log for debugging
+                console.log('Game phase from localStorage:', gamePhase);
             }
         });
     </script>

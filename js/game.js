@@ -42,6 +42,10 @@ import {
     setControlStates,
     openCardModal,
     highlightCard,
+    highlightAttackerCard,
+    highlightDefenderCard,
+    clearAttackerHighlight,
+    clearDefenderHighlight,
     clearHighlights,
     updateCardHP,
     removeCard,
@@ -52,6 +56,30 @@ import {
 import { showSetupScreen, hideSetupScreen, getPlayerConfigs, setTotalCards } from './setup.js';
 import { startDraftingPhase } from './drafting.js';
 import { getAIAttackChoice, getAIDefenseChoice, getAISpecialAbilityChoice, isAIPlayer, delay } from './ai.js';
+
+// LocalStorage key for game phase
+const GAME_PHASE_KEY = 'monsterGhostArmy_gamePhase';
+
+/**
+ * Store the game phase in localStorage for the rules page to read
+ * @param {string} phase - The current game phase
+ */
+function storeGamePhase(phase) {
+    try {
+        localStorage.setItem(GAME_PHASE_KEY, phase);
+    } catch (e) {
+        console.warn('Unable to store game phase in localStorage:', e);
+    }
+}
+
+/**
+ * Set the game phase and store it in localStorage
+ * @param {string} newPhase - The new game phase
+ */
+function setGamePhase(newPhase) {
+    gameState.phase = newPhase;
+    storeGamePhase(newPhase);
+}
 
 // Game state object
 const gameState = {
@@ -107,6 +135,9 @@ let uiElements = null;
 async function initGame() {
     console.log('Initializing Monster Ghost Army Cards...');
 
+    // Store initial loading phase
+    storeGamePhase('loading');
+
     try {
         // Initialize UI
         uiElements = initUI();
@@ -139,7 +170,7 @@ async function initGame() {
         addLogEntry('Welcome to Monster Ghost Army Cards!', 'system');
 
         // Move to setup phase
-        gameState.phase = 'setup';
+        setGamePhase('setup');
 
         // Listen for setup completion
         document.addEventListener('gameSetupComplete', handleGameSetupComplete);
@@ -236,7 +267,7 @@ function handleGameSetupComplete(event) {
     addLogEntry(`Turn order: ${gameState.turnOrder.map(i => players[i].name).join(' -> ')}`, 'system');
 
     // Move to drafting phase
-    gameState.phase = 'drafting';
+    setGamePhase('drafting');
     addLogEntry('Entering drafting phase...', 'system');
     addLogEntry('Each player will take turns drafting cards to build their deck.', 'system');
 
@@ -296,7 +327,7 @@ function handleDraftingComplete(event) {
     gameState.pendingCoreMeltdown = {};
 
     // Move to playing phase
-    gameState.phase = 'playing';
+    setGamePhase('playing');
 
     // Reinitialize HP for drafted cards
     const allCards = getAllCards();
@@ -362,7 +393,7 @@ function setupDemoGameWithPlayers(playerConfigs) {
     });
 
     gameState.currentPlayerIndex = 0;
-    gameState.phase = 'playing';
+    setGamePhase('playing');
 
     // Render initial state
     renderGameState();
@@ -411,7 +442,7 @@ function setupDemoGame() {
     ];
 
     gameState.currentPlayerIndex = 0;
-    gameState.phase = 'playing';
+    setGamePhase('playing');
 
     // Render initial state
     renderGameState();
@@ -865,10 +896,20 @@ function handleCardClick(cardId, source, targetPlayer = null) {
     console.log(`Card clicked: ${card.name} (${source})`);
 
     if (source === 'player' && currentPlayer.cards.includes(cardId)) {
+        // Clear previous attacker highlight if selecting a different one
+        if (gameState.selectedAttacker && gameState.selectedAttacker !== cardId) {
+            clearAttackerHighlight();
+        }
+
+        // Clear selected attack when changing attacker
+        if (gameState.selectedAttacker !== cardId) {
+            gameState.selectedAttack = null;
+        }
+
         // Selecting attacker from own cards
         gameState.selectedAttacker = cardId;
         setAttackerCard(card, gameState);
-        highlightCard(cardId);
+        highlightAttackerCard(cardId);
 
         addLogEntry(`Selected ${card.name} as attacker`, 'system');
 
@@ -882,6 +923,11 @@ function handleCardClick(cardId, source, targetPlayer = null) {
         const abilities = getAvailableAbilities(card, gameState);
         if (abilities.length > 0) {
             showSpecialAbilityOptions(abilities, (abilityId) => handleSpecialAbilitySelect(card, abilityId));
+        }
+
+        // Show helpful hint if defender not yet selected
+        if (!gameState.selectedDefender) {
+            addLogEntry('Select an attack, then click an opponent\'s card to target', 'system');
         }
 
     } else if (source === 'opponent') {
@@ -904,16 +950,7 @@ function handleCardClick(cardId, source, targetPlayer = null) {
             return;
         }
 
-        // Selecting defender from opponent's cards
-        if (!gameState.selectedAttacker) {
-            addLogEntry('Select one of your cards first!', 'system');
-            return;
-        }
-        if (!gameState.selectedAttack) {
-            addLogEntry('Select an attack first!', 'system');
-            return;
-        }
-
+        // Selecting defender from opponent's cards - can be done in any order
         // Find which player owns this card if not provided
         const ownerPlayer = targetPlayer || gameState.players.find(p =>
             p.cards.includes(cardId) && p.id !== currentPlayer.id
@@ -921,12 +958,24 @@ function handleCardClick(cardId, source, targetPlayer = null) {
 
         if (!ownerPlayer) return;
 
+        // Clear previous defender highlight if selecting a different one
+        if (gameState.selectedDefender && gameState.selectedDefender !== cardId) {
+            clearDefenderHighlight();
+        }
+
         gameState.selectedDefender = cardId;
         gameState.selectedDefenderPlayer = ownerPlayer;
         setDefenderCard(card, gameState);
-        highlightCard(cardId);
+        highlightDefenderCard(cardId);
 
         addLogEntry(`Targeting ${card.name} (${ownerPlayer.name})`, 'system');
+
+        // Show helpful hint if attacker not yet selected
+        if (!gameState.selectedAttacker) {
+            addLogEntry('Now select one of your cards to attack with', 'system');
+        } else if (!gameState.selectedAttack) {
+            addLogEntry('Now select an attack to use', 'system');
+        }
     }
 
     updateControlStates();
@@ -1497,7 +1546,7 @@ function checkGameOver() {
     const activePlayers = gameState.players.filter(p => p.cards.length > 0);
 
     if (activePlayers.length <= 1) {
-        gameState.phase = 'ended';
+        setGamePhase('ended');
 
         if (activePlayers.length === 1) {
             const winner = activePlayers[0];
@@ -1571,7 +1620,7 @@ function showVictoryScreen(winner) {
  */
 function resetGame() {
     // Reset game state
-    gameState.phase = 'setup';
+    setGamePhase('setup');
     gameState.players = [];
     gameState.currentPlayerIndex = 0;
     gameState.round = 1;
