@@ -36,6 +36,11 @@ Added new CSS section "Battle Mode Cards - Consistent with Draft Mode" with:
 - Updated `highlightCard()` to support both `.game-card` and `.battle-card` elements
 - Updated `clearHighlights()` to clear both card types
 - Updated `updateCardHP()` to update both old-style HP bars and new external HP displays
+- **NEW:** Replaced `renderPlayerHand()` to use DOM-based `createPlayerBattleCardElement()` instead of HTML templates
+  - Now renders player cards with full flip animation support (matching draft mode)
+  - Info button flips the card to show back face
+  - Double-click opens card detail modal
+  - Click selects the card for attack
 
 ## Card Structure Comparison
 

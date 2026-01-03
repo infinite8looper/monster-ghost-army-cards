@@ -3225,6 +3225,76 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-accent);
 }
 
+/* Battle Mode Drag and Drop Styles */
+.battle-card.dragging,
+.battle-card-wrapper.dragging .battle-card,
+.game-card.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+    box-shadow: 0 0 20px var(--text-accent);
+}
+
+.battle-card-wrapper.dragging {
+    opacity: 0.5;
+}
+
+/* Arena drop zone highlighting */
+.arena-slot.drag-over {
+    background: rgba(233, 69, 96, 0.15);
+    border: 3px dashed var(--text-accent);
+    border-radius: var(--spacing-md);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+    transition: all 0.2s ease;
+}
+
+.arena-slot.drag-over .card-placeholder {
+    border-color: var(--text-accent);
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.arena-slot.drag-over .placeholder-text {
+    color: var(--text-accent);
+}
+
+/* Attacker slot specific styling (green highlight) */
+#attacker-slot.drag-over {
+    background: rgba(46, 204, 113, 0.15);
+    border-color: var(--color-plant);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+}
+
+#attacker-slot.drag-over .card-placeholder {
+    border-color: var(--color-plant);
+    background: rgba(46, 204, 113, 0.1);
+}
+
+#attacker-slot.drag-over .placeholder-text {
+    color: var(--color-plant);
+}
+
+/* Defender slot specific styling (red highlight) */
+#defender-slot.drag-over {
+    background: rgba(231, 76, 60, 0.15);
+    border-color: var(--color-fire);
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.3);
+}
+
+#defender-slot.drag-over .card-placeholder {
+    border-color: var(--color-fire);
+    background: rgba(231, 76, 60, 0.1);
+}
+
+#defender-slot.drag-over .placeholder-text {
+    color: var(--color-fire);
+}
+
+/* Invalid drop zone styling */
+.arena-slot.drag-invalid {
+    background: rgba(100, 100, 100, 0.1);
+    border: 3px dashed var(--text-secondary);
+    opacity: 0.5;
+}
+
 /* Drafting Actions */
 .drafting-actions {
     margin-top: var(--spacing-md);
@@ -3706,11 +3776,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ==========================================================================
    Card Texture Overlay - Makes cards feel more tactile
+   Applied at 5% alpha on ALL card types (front and back faces)
    ========================================================================== */
-/* Subtle paper/linen texture for tactile card feel */
+
+/* Game cards and card placeholders (non-flippable) */
 .game-card::after,
-.card-placeholder::after,
-.drafting-card::after {
+.card-placeholder::after {
     content: '';
     position: absolute;
     top: 0;
@@ -3718,24 +3789,32 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image: url('../assets/images/card-texture.png');
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    opacity: 0.12;
+    background-size: cover;
+    opacity: 0.05;
     pointer-events: none;
     border-radius: inherit;
-    mix-blend-mode: soft-light;
     z-index: 2;
 }
 
-/* Slightly stronger texture on hover for tactile feedback */
-.game-card:hover::after,
-.drafting-card:hover::after {
-    opacity: 0.08;
+/* Drafting cards - texture on card-flipper so it applies to both front and back */
+.drafting-card .card-flipper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/card-texture.png');
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 2;
 }
 
-/* Arena cards get slightly more visible texture */
+/* Arena cards get the same 5% texture */
 .arena-card.game-card::after {
-    opacity: 0.06;
+    opacity: 0.05;
 }
 
 /* Card back design - diagonal pattern with texture overlay */
@@ -3788,14 +3867,14 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image: url('../assets/images/card-texture.png');
-    background-size: 200px 300px;
+    background-size: cover;
     opacity: 0.05;
     pointer-events: none;
     border-radius: var(--card-border-radius);
     z-index: 1;
 }
 
-/* Texture on modal-card-container (new flip-based modal) - matches drafting cards */
+/* Texture on modal-card-container (flip-based modal) - 5% alpha on both faces */
 .modal-card-container .card-flipper::after {
     content: '';
     position: absolute;
@@ -3804,12 +3883,10 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image: url('../assets/images/card-texture.png');
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    opacity: 0.12;
+    background-size: cover;
+    opacity: 0.05;
     pointer-events: none;
     border-radius: inherit;
-    mix-blend-mode: soft-light;
     z-index: 2;
 }
 
@@ -4113,35 +4190,89 @@ h1, h2, h3, h4, h5, h6 {
     flex-shrink: 0;
 }
 
-/* Tier styling for battle cards */
+/* Tier styling for battle cards - matches drafting cards exactly */
 .battle-card.tier-weak { --tier-border-color: var(--tier-border-weak); }
 .battle-card.tier-common { --tier-border-color: var(--tier-border-common); }
 .battle-card.tier-strong { --tier-border-color: var(--tier-border-strong); }
 .battle-card.tier-legendary { --tier-border-color: var(--tier-border-legendary); }
 
+/* Weak Tier - Muted brown (matching drafting cards) */
 .battle-card.tier-weak .card-flipper {
     border-color: #8B5A2B;
     background: var(--tier-bg-weak), var(--bg-tertiary);
 }
 
+.battle-card.tier-weak:hover:not(.defeated):not(.unavailable) .card-flipper {
+    box-shadow: 0 0 12px rgba(139, 90, 43, 0.3), 0 15px 30px var(--shadow-color);
+}
+
+.battle-card.tier-weak .card-image {
+    box-shadow: inset 0 0 8px rgba(139, 90, 43, 0.3);
+}
+
+/* Common Tier - Steel blue (matching drafting cards) */
 .battle-card.tier-common .card-flipper {
     border-color: #5f9ea0;
     background: var(--tier-bg-common), var(--bg-tertiary);
 }
 
+.battle-card.tier-common:hover:not(.defeated):not(.unavailable) .card-flipper {
+    box-shadow: 0 0 15px rgba(100, 149, 237, 0.4), 0 15px 30px var(--shadow-color);
+}
+
+.battle-card.tier-common .card-image {
+    box-shadow: inset 0 0 8px rgba(70, 130, 180, 0.4);
+}
+
+/* Strong Tier - Purple (matching drafting cards) */
 .battle-card.tier-strong .card-flipper {
     border-color: #9400D3;
     background: var(--tier-bg-strong), var(--bg-tertiary);
-    box-shadow: 0 0 8px rgba(148, 0, 211, 0.3);
+    box-shadow: 0 0 10px rgba(148, 0, 211, 0.3);
 }
 
+.battle-card.tier-strong:hover:not(.defeated):not(.unavailable) .card-flipper {
+    box-shadow: 0 0 25px rgba(148, 0, 211, 0.5), 0 15px 30px var(--shadow-color);
+}
+
+.battle-card.tier-strong .card-image {
+    box-shadow: inset 0 0 10px rgba(148, 0, 211, 0.4);
+}
+
+/* Legendary Tier - Gold with glow (matching drafting cards) */
 .battle-card.tier-legendary .card-flipper {
     border: 3px solid transparent;
     background-image: var(--tier-legendary), var(--tier-bg-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
     background-origin: border-box;
     background-clip: padding-box, padding-box, border-box;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2);
     animation: legendaryPulse 3s ease-in-out infinite;
+}
+
+.battle-card.tier-legendary:hover:not(.defeated):not(.unavailable) .card-flipper {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.4), 0 15px 30px var(--shadow-color);
+}
+
+.battle-card.tier-legendary .card-image {
+    box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Defeated/Unavailable battle cards - grayscale + reduced opacity */
+.battle-card.defeated,
+.battle-card.unavailable {
+    opacity: 0.4;
+    pointer-events: none;
+    filter: grayscale(80%);
+}
+
+.battle-card.defeated:hover,
+.battle-card.unavailable:hover {
+    transform: none;
+}
+
+.battle-card.defeated .card-info-btn,
+.battle-card.unavailable .card-info-btn {
+    opacity: 0.4;
 }
 
 /* External HP display below battle cards */
@@ -4198,7 +4329,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1);
 }
 
-/* Card texture on battle cards */
+/* Card texture on battle cards - 5% alpha on both front and back faces */
 .battle-card .card-flipper::after {
     content: '';
     position: absolute;
@@ -4207,12 +4338,10 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image: url('../assets/images/card-texture.png');
-    background-size: 150px 150px;
-    background-repeat: repeat;
-    opacity: 0.1;
+    background-size: cover;
+    opacity: 0.05;
     pointer-events: none;
     border-radius: inherit;
-    mix-blend-mode: soft-light;
     z-index: 2;
 }
 

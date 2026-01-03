@@ -775,6 +775,57 @@ function createBattleCardElement(card, gs, onCardClick, additionalClasses = '') 
         });
     }
 
+    // Add drag functionality for opponent cards
+    wrapper.draggable = true;
+    wrapper.dataset.cardType = 'opponent';
+    let currentDragImage = null;
+
+    wrapper.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', card.id);
+        e.dataTransfer.setData('application/x-card-type', 'opponent');
+        e.dataTransfer.effectAllowed = 'move';
+        wrapper.classList.add('dragging');
+
+        // Create custom drag image
+        const dragImage = wrapper.cloneNode(true);
+        dragImage.style.position = 'absolute';
+        dragImage.style.top = '-9999px';
+        dragImage.style.left = '-9999px';
+        dragImage.style.opacity = '0.8';
+        dragImage.style.transform = 'scale(0.7)';
+        dragImage.style.pointerEvents = 'none';
+        dragImage.classList.remove('dragging');
+        document.body.appendChild(dragImage);
+        currentDragImage = dragImage;
+
+        const rect = wrapper.getBoundingClientRect();
+        e.dataTransfer.setDragImage(dragImage, rect.width / 2, rect.height / 2);
+
+        // Highlight valid drop zone (defender slot for opponent cards)
+        const defenderSlot = document.getElementById('defender-slot');
+        if (defenderSlot) {
+            defenderSlot.classList.add('drag-target');
+        }
+    });
+
+    wrapper.addEventListener('dragend', () => {
+        wrapper.classList.remove('dragging');
+        if (currentDragImage && currentDragImage.parentNode) {
+            currentDragImage.parentNode.removeChild(currentDragImage);
+            currentDragImage = null;
+        }
+
+        // Remove drop zone highlights
+        const attackerSlot = document.getElementById('attacker-slot');
+        const defenderSlot = document.getElementById('defender-slot');
+        if (attackerSlot) {
+            attackerSlot.classList.remove('drag-target', 'drag-over');
+        }
+        if (defenderSlot) {
+            defenderSlot.classList.remove('drag-target', 'drag-over');
+        }
+    });
+
     wrapper.appendChild(cardDiv);
 
     // External HP display BELOW the card
@@ -990,6 +1041,93 @@ function handleCardDoubleClick(cardId) {
     if (!card) return;
 
     openCardModal(card, gameState);
+}
+
+/**
+ * Handle card drop from drag-and-drop onto battle slots
+ * @param {string} cardId - ID of dropped card
+ * @param {string} slotType - 'attacker' or 'defender'
+ */
+function handleBattleCardDrop(cardId, slotType) {
+    const card = getCardById(cardId);
+    if (!card) return;
+
+    if (gameState.phase !== 'playing') return;
+
+    const currentPlayer = gameState.players[gameState.currentPlayerIndex];
+
+    // Don't allow drops if it's AI's turn
+    if (currentPlayer.isAI) return;
+
+    console.log(`Card dropped: ${card.name} on ${slotType} slot`);
+
+    if (slotType === 'attacker') {
+        // Verify card belongs to current player
+        if (!currentPlayer.cards.includes(cardId)) return;
+
+        // Clear previous attacker highlight if selecting a different one
+        if (gameState.selectedAttacker && gameState.selectedAttacker !== cardId) {
+            clearAttackerHighlight();
+        }
+
+        // Clear selected attack when changing attacker
+        if (gameState.selectedAttacker !== cardId) {
+            gameState.selectedAttack = null;
+        }
+
+        // Selecting attacker from own cards
+        gameState.selectedAttacker = cardId;
+        setAttackerCard(card, gameState);
+        highlightAttackerCard(cardId);
+
+        addLogEntry(`Placed ${card.name} as attacker`, 'system');
+
+        // Show attack options
+        const attacks = getValidAttacks(card, gameState, gameState.players.length);
+        if (attacks.length > 0) {
+            showAttackOptions(attacks, handleAttackSelect);
+        }
+
+        // Check for special abilities and show them
+        const abilities = getAvailableAbilities(card, gameState);
+        if (abilities.length > 0) {
+            showSpecialAbilityOptions(abilities, (abilityId) => handleSpecialAbilitySelect(card, abilityId));
+        }
+
+        // Show helpful hint if defender not yet selected
+        if (!gameState.selectedDefender) {
+            addLogEntry('Drag an opponent\'s card to the defender slot, or select an attack first', 'system');
+        }
+
+    } else if (slotType === 'defender') {
+        // Find which player owns the target card (must not be current player)
+        const ownerPlayer = gameState.players.find(p =>
+            p.cards.includes(cardId) && p.id !== currentPlayer.id
+        );
+
+        if (!ownerPlayer) return;
+
+        // Clear previous defender highlight if selecting a different one
+        if (gameState.selectedDefender && gameState.selectedDefender !== cardId) {
+            clearDefenderHighlight();
+        }
+
+        gameState.selectedDefender = cardId;
+        gameState.selectedDefenderPlayer = ownerPlayer;
+        setDefenderCard(card, gameState);
+        highlightDefenderCard(cardId);
+
+        addLogEntry(`Placed ${card.name} (${ownerPlayer.name}) as target`, 'system');
+
+        // Show helpful hint if attacker not yet selected
+        if (!gameState.selectedAttacker) {
+            addLogEntry('Now drag one of your cards to the attacker slot', 'system');
+        } else if (!gameState.selectedAttack) {
+            addLogEntry('Now select an attack to use', 'system');
+        }
+    }
+
+    updateControlStates();
 }
 
 /**
@@ -1658,3 +1796,4 @@ document.addEventListener('DOMContentLoaded', initGame);
 window.gameState = gameState;
 window.resetGame = resetGame;
 window.handleCardDoubleClick = handleCardDoubleClick;
+window.handleBattleCardDrop = handleBattleCardDrop;
