@@ -390,6 +390,159 @@ export function hideActionPanel() {
     if (elements.actionPanel) {
         elements.actionPanel.classList.add('hidden');
     }
+    // Also hide special abilities panel
+    const specialPanel = document.getElementById('special-abilities-panel');
+    if (specialPanel) {
+        specialPanel.classList.add('hidden');
+    }
+}
+
+/**
+ * Show special ability options
+ * @param {Array} abilities - Array of available ability objects
+ * @param {Function} onSelect - Callback when an ability is selected
+ */
+export function showSpecialAbilityOptions(abilities, onSelect) {
+    // Find or create special abilities panel
+    let specialPanel = document.getElementById('special-abilities-panel');
+    if (!specialPanel) {
+        specialPanel = document.createElement('div');
+        specialPanel.id = 'special-abilities-panel';
+        specialPanel.className = 'special-abilities-panel';
+
+        // Add it after the action panel
+        const actionPanel = elements.actionPanel || document.getElementById('action-panel');
+        if (actionPanel && actionPanel.parentNode) {
+            actionPanel.parentNode.insertBefore(specialPanel, actionPanel.nextSibling);
+        } else {
+            document.body.appendChild(specialPanel);
+        }
+    }
+
+    // Build abilities HTML
+    const abilitiesHtml = abilities.map(ability => {
+        const typeClass = `ability-type-${ability.type}`;
+        const usesText = ability.remainingUses === Infinity ? '' :
+            ` (${ability.remainingUses} use${ability.remainingUses !== 1 ? 's' : ''} left)`;
+        const disabledClass = ability.canUse ? '' : 'disabled';
+
+        return `
+            <button class="special-ability-btn ${typeClass} ${disabledClass}"
+                    data-ability-id="${ability.id}"
+                    ${!ability.canUse ? 'disabled' : ''}>
+                <span class="ability-name">${ability.name}</span>
+                <span class="ability-description">${ability.description}</span>
+                <span class="ability-uses">${usesText}</span>
+            </button>
+        `;
+    }).join('');
+
+    specialPanel.innerHTML = `
+        <div class="special-abilities-header">
+            <h3>Special Abilities</h3>
+        </div>
+        <div class="special-abilities-list">
+            ${abilitiesHtml}
+        </div>
+    `;
+
+    // Add click listeners
+    specialPanel.querySelectorAll('.special-ability-btn').forEach(btn => {
+        if (!btn.disabled) {
+            btn.addEventListener('click', () => {
+                const abilityId = btn.dataset.abilityId;
+                onSelect(abilityId);
+            });
+        }
+    });
+
+    specialPanel.classList.remove('hidden');
+}
+
+/**
+ * Show status effects on cards (visual indicators)
+ * @param {Object} statusEffects - Status effects state
+ * @param {string} cardId - Card ID to show effects for
+ */
+export function showStatusEffects(statusEffects, cardId) {
+    if (!statusEffects) return;
+
+    const cardWrapper = document.querySelector(`.battle-card-wrapper[data-card-id="${cardId}"]`);
+    if (!cardWrapper) return;
+
+    // Remove existing status indicators
+    const existingIndicators = cardWrapper.querySelectorAll('.status-indicator');
+    existingIndicators.forEach(el => el.remove());
+
+    const indicators = [];
+
+    // Check for buffs
+    const buffs = statusEffects.buffs?.[cardId] || [];
+    buffs.forEach(buff => {
+        indicators.push({
+            type: 'buff',
+            icon: '+',
+            title: buff.abilityId
+        });
+    });
+
+    // Check for debuffs
+    const debuffs = statusEffects.debuffs?.[cardId] || [];
+    debuffs.forEach(debuff => {
+        indicators.push({
+            type: 'debuff',
+            icon: '-',
+            title: debuff.abilityId
+        });
+    });
+
+    // Check for shields
+    const shield = statusEffects.shields?.[cardId];
+    if (shield) {
+        indicators.push({
+            type: 'shield',
+            icon: 'S',
+            title: shield.abilityId
+        });
+    }
+
+    // Check for stuns
+    const stun = statusEffects.stuns?.[cardId];
+    if (stun && stun.remainingTurns > 0) {
+        indicators.push({
+            type: 'stun',
+            icon: '!',
+            title: 'Stunned'
+        });
+    }
+
+    // Check for DoTs
+    const dots = statusEffects.dots?.[cardId] || [];
+    dots.forEach(dot => {
+        if (dot.remainingDuration > 0) {
+            indicators.push({
+                type: 'dot',
+                icon: 'F',
+                title: 'Burning'
+            });
+        }
+    });
+
+    // Add indicators to card
+    if (indicators.length > 0) {
+        const indicatorContainer = document.createElement('div');
+        indicatorContainer.className = 'status-indicators';
+
+        indicators.forEach(ind => {
+            const indicator = document.createElement('span');
+            indicator.className = `status-indicator status-${ind.type}`;
+            indicator.textContent = ind.icon;
+            indicator.title = ind.title;
+            indicatorContainer.appendChild(indicator);
+        });
+
+        cardWrapper.appendChild(indicatorContainer);
+    }
 }
 
 /**

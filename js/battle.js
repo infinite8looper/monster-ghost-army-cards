@@ -6,6 +6,23 @@
  */
 
 import { ELEMENTS } from './cards.js';
+import {
+    createStatusEffectsState,
+    getAttackModifier,
+    getDefenseModifier,
+    getCardShield,
+    consumeShieldCharge,
+    consumeAttackModifier,
+    consumeDefenseModifier,
+    isCardStunned,
+    canCardDodge,
+    processStartOfTurn,
+    checkPhaseShift,
+    processOnAttackEffects,
+    processChainLightning,
+    processCoreMeltdown,
+    LEGENDARY_ABILITIES
+} from './specialAbilities.js';
 
 // Special abilities that have limited uses
 export const SPECIAL_ABILITIES = {
@@ -267,6 +284,20 @@ export function calculateDamage(attack, attacker, defender, defense = null, game
         value: baseDamage
     });
 
+    // Apply status effect attack modifiers (buffs/debuffs from special abilities)
+    if (gameState.statusEffects) {
+        const statusMod = getAttackModifier(gameState.statusEffects, attacker.id);
+        if (statusMod !== 1.0) {
+            const modifiedDamage = baseDamage * statusMod;
+            breakdown.push({
+                label: statusMod > 1.0 ? 'Attack buff' : 'Attack debuff',
+                value: Math.round(modifiedDamage - baseDamage),
+                modifier: statusMod
+            });
+            baseDamage = modifiedDamage;
+        }
+    }
+
     // Apply attack element modifier
     const attackMod = calculateAttackModifier(normalizedAttack.element, defender.elements);
     let damage = baseDamage * attackMod.modifier;
@@ -296,13 +327,26 @@ export function calculateDamage(attack, attacker, defender, defense = null, game
         const defenseMod = calculateDefenseModifier(normalizedDefense.element, normalizedAttack.element);
         let protection = normalizedDefense.base_protection;
 
+        // Apply status effect defense modifiers (debuffs like Undertow)
+        if (gameState.statusEffects) {
+            const defStatusMod = getDefenseModifier(gameState.statusEffects, defender.id);
+            if (defStatusMod !== 1.0) {
+                protection = protection * defStatusMod;
+                breakdown.push({
+                    label: 'Defense debuff (Undertow)',
+                    value: Math.round(protection - normalizedDefense.base_protection),
+                    modifier: defStatusMod
+                });
+            }
+        }
+
         // Subtract protection from damage
         const protectionEffect = protection;
         damage = Math.max(0, damage - protectionEffect);
 
         breakdown.push({
             label: `${defense.name} (${normalizedDefense.element})`,
-            value: -protectionEffect
+            value: -Math.round(protectionEffect)
         });
 
         // Apply defense element modifier to remaining damage
@@ -637,8 +681,15 @@ export function processBattleRound(attacker, attack, defender, defense, gameStat
         defenderDefeated: false,
         attackerDefeated: false,
         specialEffects: [],
-        log: []
+        log: [],
+        chainDamage: null,  // For chain lightning
+        additionalDamage: {} // For AoE effects
     };
+
+    // Initialize status effects if not present
+    if (!gameState.statusEffects) {
+        gameState.statusEffects = createStatusEffectsState();
+    }
 
     // Record attack ability use if it's limited
     const normalizedAttack = normalizeAttack(attack, attacker);
@@ -647,17 +698,44 @@ export function processBattleRound(attacker, attack, defender, defense, gameStat
         result.log.push(`${attacker.name} used ${attack.name}! (Limited use expended)`);
     }
 
+    // Check for passive Phase Shift dodge (50% chance)
+    if (checkPhaseShift(defender, gameState)) {
+        result.log.push(`${defender.name} phase shifts! Attack passes through harmlessly!`);
+        result.specialEffects.push('phase_shift');
+        return result; // No damage dealt
+    }
+
+    // Check for active shield (Cosmic Barrier, Burrow)
+    const defenderShield = getCardShield(gameState.statusEffects, defender.id);
+    if (defenderShield) {
+        if (defenderShield.effect.immuneToAttacks || defenderShield.effect.autoDodge) {
+            consumeShieldCharge(gameState.statusEffects, defender.id);
+            const shieldName = LEGENDARY_ABILITIES[defenderShield.abilityId]?.name || 'Shield';
+            result.log.push(`${defender.name}'s ${shieldName} blocks the attack!`);
+            result.specialEffects.push(defenderShield.abilityId);
+            return result; // No damage dealt
+        }
+    }
+
+    // Check if defender can dodge (Gravity Well prevents this)
+    const canDodge = canCardDodge(gameState.statusEffects, defender.id);
+
     // Handle special defense types first
     if (defense) {
         const normalizedDefense = normalizeDefense(defense, defender);
 
-        // Teleport - complete dodge
+        // Teleport - complete dodge (but check Gravity Well)
         if (normalizedDefense.special_type === SPECIAL_ABILITIES.TELEPORT) {
-            recordAbilityUse(defender, SPECIAL_ABILITIES.TELEPORT, gameState);
-            const teleportResult = processTeleport();
-            result.log.push(teleportResult.message);
-            result.specialEffects.push('teleport');
-            return result; // No damage dealt
+            if (!canDodge) {
+                result.log.push(`${defender.name} is trapped by Gravity Well and cannot teleport!`);
+                // Fall through to normal damage
+            } else {
+                recordAbilityUse(defender, SPECIAL_ABILITIES.TELEPORT, gameState);
+                const teleportResult = processTeleport();
+                result.log.push(teleportResult.message);
+                result.specialEffects.push('teleport');
+                return result; // No damage dealt
+            }
         }
 
         // Bounce Back
@@ -690,7 +768,35 @@ export function processBattleRound(attacker, attack, defender, defense, gameStat
 
     // Normal damage calculation
     const damageResult = calculateDamage(attack, attacker, defender, defense, gameState);
-    result.damageToDefender = damageResult.finalDamage;
+    let finalDamage = damageResult.finalDamage;
+
+    // Check for Core Meltdown (200% damage, 25% recoil)
+    const meltdownResult = processCoreMeltdown({ attacker, originalDamage: finalDamage, gameState });
+    if (meltdownResult) {
+        finalDamage = meltdownResult.boostedDamage;
+        result.damageToAttacker = (result.damageToAttacker || 0) + meltdownResult.recoilDamage;
+        result.log.push(...meltdownResult.logs);
+        result.specialEffects.push('core_meltdown');
+
+        // Check if attacker killed self with recoil
+        const attackerHP = gameState.cardHP?.[attacker.id] ?? attacker.hp;
+        if (meltdownResult.recoilDamage >= attackerHP) {
+            result.attackerDefeated = true;
+            result.log.push(`${attacker.name} was destroyed by Core Meltdown recoil!`);
+        }
+    }
+
+    // Check for Spike Shield reflection
+    const attackerShield = getCardShield(gameState.statusEffects, defender.id);
+    if (attackerShield && attackerShield.effect.reflectPercent) {
+        const reflectedDamage = Math.round(finalDamage * attackerShield.effect.reflectPercent);
+        result.damageToAttacker = (result.damageToAttacker || 0) + reflectedDamage;
+        consumeShieldCharge(gameState.statusEffects, defender.id);
+        result.log.push(`Spike Shield reflects ${reflectedDamage.toLocaleString()} damage back!`);
+        result.specialEffects.push('spike_shield');
+    }
+
+    result.damageToDefender = finalDamage;
     result.breakdown = damageResult.breakdown;
     result.isCritical = damageResult.isCritical;
     result.isResisted = damageResult.isResisted;
@@ -706,9 +812,38 @@ export function processBattleRound(attacker, attack, defender, defense, gameStat
 
     // Check if defender is defeated
     const defenderHP = gameState.cardHP?.[defender.id] ?? defender.hp;
-    if (damageResult.finalDamage >= defenderHP) {
+    if (finalDamage >= defenderHP) {
         result.defenderDefeated = true;
         result.log.push(`${defender.name} has been defeated!`);
+    }
+
+    // Process on-attack effects (Ignite, Tremor)
+    const onAttackLogs = processOnAttackEffects(attacker, defender, gameState);
+    result.log.push(...onAttackLogs);
+
+    // Process Chain Lightning
+    const chainResult = processChainLightning({
+        attacker,
+        attack,
+        defender,
+        originalDamage: finalDamage,
+        gameState
+    });
+    if (chainResult && chainResult.success) {
+        result.chainDamage = {
+            targetCardId: chainResult.targetCardId,
+            damage: chainResult.damage
+        };
+        result.log.push(...chainResult.logs);
+        result.specialEffects.push('chain_lightning');
+    }
+
+    // Consume attack modifiers after attack
+    consumeAttackModifier(gameState.statusEffects, attacker.id);
+
+    // Consume defense modifiers after defense
+    if (defense) {
+        consumeDefenseModifier(gameState.statusEffects, defender.id);
     }
 
     // Record defense ability use if applicable
@@ -718,6 +853,35 @@ export function processBattleRound(attacker, attack, defender, defense, gameStat
             recordAbilityUse(defender, normalizedDefense.special_type, gameState);
         }
     }
+
+    return result;
+}
+
+/**
+ * Process start of turn for a card (DoTs, stuns, etc)
+ * @param {string} cardId - Card whose turn is starting
+ * @param {Object} gameState - Game state
+ * @returns {Object} { canAct: boolean, logs: string[] }
+ */
+export function processCardTurnStart(cardId, gameState) {
+    const result = {
+        canAct: true,
+        logs: []
+    };
+
+    if (!gameState.statusEffects) {
+        return result;
+    }
+
+    // Check for stun
+    if (isCardStunned(gameState.statusEffects, cardId)) {
+        result.canAct = false;
+        result.logs.push('Stunned! Turn skipped.');
+    }
+
+    // Process start of turn effects (DoTs, duration reduction)
+    const turnLogs = processStartOfTurn(gameState.statusEffects, cardId, gameState);
+    result.logs.push(...turnLogs);
 
     return result;
 }

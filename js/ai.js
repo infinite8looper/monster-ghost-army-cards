@@ -1,12 +1,13 @@
 /**
  * Monster Ghost Army Cards - AI Logic Module
  *
- * This module handles AI decision-making for attacks and defenses.
+ * This module handles AI decision-making for attacks, defenses, and special abilities.
  * All choices are random from valid options with configurable delays.
  */
 
 import { getValidAttacks, getValidDefenses, canBounceBack, SPECIAL_ABILITIES } from './battle.js';
 import { getCardById } from './cards.js';
+import { getAvailableAbilities, LEGENDARY_ABILITIES } from './specialAbilities.js';
 
 // AI delay configuration (in milliseconds)
 const AI_DELAYS = {
@@ -259,6 +260,151 @@ export function evaluateAttack(attack, attacker, target) {
  */
 export function isAIPlayer(player) {
     return player.isAI === true;
+}
+
+/**
+ * Get AI special ability choice
+ * @param {Object} player - AI player object
+ * @param {Object} gameState - Current game state
+ * @returns {Promise<Object|null>} Object with { card, abilityId, target, targetPlayer } or null
+ */
+export async function getAISpecialAbilityChoice(player, gameState) {
+    // Add thinking delay
+    await delay(getRandomDelay());
+
+    // Get all cards the AI player has
+    const aiCards = player.cards
+        .map(cardId => getCardById(cardId))
+        .filter(card => card !== null);
+
+    if (aiCards.length === 0) {
+        return null;
+    }
+
+    // Find cards with available special abilities
+    const cardsWithAbilities = [];
+    for (const card of aiCards) {
+        const abilities = getAvailableAbilities(card, gameState);
+        const usableAbilities = abilities.filter(a => a.canUse && a.trigger === 'active');
+
+        if (usableAbilities.length > 0) {
+            cardsWithAbilities.push({
+                card,
+                abilities: usableAbilities
+            });
+        }
+    }
+
+    if (cardsWithAbilities.length === 0) {
+        return null;
+    }
+
+    // AI has a chance to use special ability vs regular attack
+    // Higher HP = less likely to use defensive abilities
+    // Lower HP = more likely to use healing/defensive abilities
+    const useAbilityChance = 0.3; // 30% chance to consider using ability
+
+    if (Math.random() > useAbilityChance) {
+        return null; // AI chooses to attack instead
+    }
+
+    // Randomly select a card and ability
+    const cardData = randomChoice(cardsWithAbilities);
+    const ability = randomChoice(cardData.abilities);
+
+    // Check if ability needs a target
+    const abilityConfig = LEGENDARY_ABILITIES[ability.id];
+    let target = null;
+    let targetPlayer = null;
+
+    const needsEnemyTarget = ['undertow', 'sticky_trap', 'gravity_well', 'flame_aura', 'earthquake_stun'].includes(ability.id);
+    const needsAllyTarget = ability.id === 'unlock_potential';
+
+    if (needsEnemyTarget) {
+        // Get a random enemy target
+        const targetOptions = [];
+        for (const otherPlayer of gameState.players) {
+            if (otherPlayer.id === player.id) continue;
+            if (otherPlayer.cards.length === 0) continue;
+
+            for (const cardId of otherPlayer.cards) {
+                const card = getCardById(cardId);
+                if (card && gameState.cardHP[cardId] > 0) {
+                    targetOptions.push({ card, player: otherPlayer });
+                }
+            }
+        }
+
+        if (targetOptions.length === 0) {
+            return null;
+        }
+
+        const targetData = randomChoice(targetOptions);
+        target = targetData.card;
+        targetPlayer = targetData.player;
+    } else if (needsAllyTarget) {
+        // Get a random ally target (excluding the card using the ability)
+        const allyOptions = player.cards
+            .filter(id => id !== cardData.card.id && gameState.cardHP[id] > 0)
+            .map(id => getCardById(id))
+            .filter(c => c !== null);
+
+        if (allyOptions.length === 0) {
+            return null;
+        }
+
+        target = randomChoice(allyOptions);
+        targetPlayer = player;
+    }
+
+    return {
+        card: cardData.card,
+        abilityId: ability.id,
+        target,
+        targetPlayer
+    };
+}
+
+/**
+ * Evaluate if AI should use a special ability based on game situation
+ * @param {Object} ability - Ability to evaluate
+ * @param {Object} card - Card that has the ability
+ * @param {Object} gameState - Current game state
+ * @param {Object} player - AI player
+ * @returns {number} Score for using this ability (higher = more likely to use)
+ */
+function evaluateAbilityUse(ability, card, gameState, player) {
+    let score = 50; // Base score
+
+    const cardHP = gameState.cardHP[card.id] || card.hp;
+    const hpPercent = cardHP / card.hp;
+
+    // Healing abilities are more valuable at low HP
+    if (ability.type === 'buff' && ability.effect?.healPercent) {
+        score += (1 - hpPercent) * 100; // More valuable when HP is low
+    }
+
+    // Defensive abilities more valuable when low HP
+    if (ability.type === 'defense_dodge') {
+        score += (1 - hpPercent) * 80;
+    }
+
+    // Damage abilities more valuable when enemies are low
+    if (ability.type === 'damage_modifier') {
+        score += 30; // Always somewhat valuable
+    }
+
+    // Debuffs are good early game
+    if (ability.type === 'debuff') {
+        score += 40;
+    }
+
+    // Reduce score if few uses left
+    if (ability.remainingUses !== Infinity && ability.remainingUses <= 1) {
+        score *= 0.7; // Be more conservative with last use
+    }
+
+    return score;
 }
 
 /**

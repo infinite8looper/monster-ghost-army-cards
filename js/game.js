@@ -11,11 +11,18 @@ import {
     getValidAttacks,
     getValidDefenses,
     processBattleRound,
+    processCardTurnStart,
     normalizeAttack,
     normalizeDefense,
     SPECIAL_ABILITIES,
     canBounceBack
 } from './battle.js';
+import {
+    createStatusEffectsState,
+    getAvailableAbilities,
+    executeSpecialAbility,
+    LEGENDARY_ABILITIES
+} from './specialAbilities.js';
 import {
     initUI,
     updateLoadingStatus,
@@ -26,6 +33,7 @@ import {
     setDefenderCard,
     showAttackOptions,
     showDefenseOptions,
+    showSpecialAbilityOptions,
     hideActionPanel,
     showDamageAnimation,
     updateRoundCounter,
@@ -38,11 +46,12 @@ import {
     updateCardHP,
     removeCard,
     showMessage,
+    showStatusEffects,
     getElements
 } from './ui.js';
 import { showSetupScreen, hideSetupScreen, getPlayerConfigs, setTotalCards } from './setup.js';
 import { startDraftingPhase } from './drafting.js';
-import { getAIAttackChoice, getAIDefenseChoice, isAIPlayer, delay } from './ai.js';
+import { getAIAttackChoice, getAIDefenseChoice, getAISpecialAbilityChoice, isAIPlayer, delay } from './ai.js';
 
 // Game state object
 const gameState = {
@@ -73,6 +82,9 @@ const gameState = {
     // Special ability tracking
     abilityUses: {},        // { cardId_abilityName: usesCount }
     slimeSpikeTargets: [],  // Attacks weakened by slime spike
+    statusEffects: null,    // Status effects state (initialized on game start)
+    pendingChainLightning: {}, // Cards with chain lightning ready
+    pendingCoreMeltdown: {},   // Cards with core meltdown ready
 
     // Stats tracking
     stats: {
@@ -277,6 +289,11 @@ function handleDraftingComplete(event) {
         gameState.stats.totalDamageDealt[p.id] = 0;
         gameState.stats.cardsDefeated[p.id] = 0;
     });
+
+    // Initialize status effects for special abilities
+    gameState.statusEffects = createStatusEffectsState();
+    gameState.pendingChainLightning = {};
+    gameState.pendingCoreMeltdown = {};
 
     // Move to playing phase
     gameState.phase = 'playing';
@@ -861,10 +878,39 @@ function handleCardClick(cardId, source, targetPlayer = null) {
             showAttackOptions(attacks, handleAttackSelect);
         }
 
+        // Check for special abilities and show them
+        const abilities = getAvailableAbilities(card, gameState);
+        if (abilities.length > 0) {
+            showSpecialAbilityOptions(abilities, (abilityId) => handleSpecialAbilitySelect(card, abilityId));
+        }
+
     } else if (source === 'opponent') {
+        // Check if we're targeting for a special ability
+        if (gameState.pendingAbility && gameState.pendingAbility.needsEnemy) {
+            const { card: abilityCard, abilityId } = gameState.pendingAbility;
+
+            // Find which player owns the target card
+            const ownerPlayer = targetPlayer || gameState.players.find(p =>
+                p.cards.includes(cardId) && p.id !== currentPlayer.id
+            );
+
+            if (ownerPlayer) {
+                gameState.selectedDefender = cardId;
+                gameState.selectedDefenderPlayer = ownerPlayer;
+
+                // Execute the ability with the selected target
+                executeAbility(abilityCard, abilityId, card);
+            }
+            return;
+        }
+
         // Selecting defender from opponent's cards
         if (!gameState.selectedAttacker) {
             addLogEntry('Select one of your cards first!', 'system');
+            return;
+        }
+        if (!gameState.selectedAttack) {
+            addLogEntry('Select an attack first!', 'system');
             return;
         }
 
@@ -1197,6 +1243,30 @@ async function advanceToNextTurn() {
 async function executeAITurn(player) {
     addLogEntry(`${player.name} is thinking...`, 'system');
 
+    // First, check if AI wants to use a special ability
+    const abilityChoice = await getAISpecialAbilityChoice(player, gameState);
+
+    if (abilityChoice) {
+        const { card, abilityId, target, targetPlayer: abilityTargetPlayer } = abilityChoice;
+
+        addLogEntry(`${player.name} activates a special ability!`, 'special');
+
+        // Set up the target if needed
+        if (target) {
+            gameState.selectedDefender = target.id;
+            gameState.selectedDefenderPlayer = abilityTargetPlayer;
+        }
+
+        // Execute the ability
+        await executeAbility(card, abilityId, target);
+
+        // Clear selections and advance turn
+        clearBattleSelections();
+        await delay(500);
+        advanceToNextTurn();
+        return;
+    }
+
     // Get AI attack choice
     const choice = await getAIAttackChoice(player, gameState);
 
@@ -1265,10 +1335,142 @@ function handleNewGame() {
 }
 
 /**
- * Handle special ability button
+ * Handle special ability button (legacy - now handled through card selection)
  */
 function handleSpecialAbility() {
-    addLogEntry('Special abilities coming soon!', 'system');
+    if (!gameState.selectedAttacker) {
+        addLogEntry('Select a card first to use its special abilities!', 'system');
+        return;
+    }
+
+    const card = getCardById(gameState.selectedAttacker);
+    if (!card) return;
+
+    const abilities = getAvailableAbilities(card, gameState);
+    if (abilities.length === 0) {
+        addLogEntry(`${card.name} has no special abilities available!`, 'system');
+        return;
+    }
+
+    showSpecialAbilityOptions(abilities, (abilityId) => handleSpecialAbilitySelect(card, abilityId));
+}
+
+/**
+ * Handle special ability selection
+ * @param {Object} card - Card using the ability
+ * @param {string} abilityId - ID of the ability to use
+ */
+async function handleSpecialAbilitySelect(card, abilityId) {
+    const ability = LEGENDARY_ABILITIES[abilityId];
+    if (!ability) {
+        addLogEntry('Unknown ability!', 'system');
+        return;
+    }
+
+    // Check if ability needs a target
+    const needsTarget = ['undertow', 'sticky_trap', 'gravity_well', 'unlock_potential', 'flame_aura', 'earthquake_stun'].includes(abilityId);
+    const needsAllyTarget = abilityId === 'unlock_potential';
+
+    if (needsTarget) {
+        if (needsAllyTarget) {
+            // Need to select an ally card
+            addLogEntry(`Select an ally card to receive ${ability.name}`, 'system');
+            gameState.pendingAbility = { card, abilityId, needsAlly: true };
+            // Enable clicking on own cards for target selection
+            return;
+        } else {
+            // Need to select an enemy card
+            if (!gameState.selectedDefender) {
+                addLogEntry(`Select an enemy target for ${ability.name}`, 'system');
+                gameState.pendingAbility = { card, abilityId, needsEnemy: true };
+                return;
+            }
+        }
+    }
+
+    // Execute the ability
+    await executeAbility(card, abilityId, null);
+}
+
+/**
+ * Execute a special ability
+ * @param {Object} card - Card using the ability
+ * @param {string} abilityId - Ability ID
+ * @param {Object} target - Target card (if required)
+ */
+async function executeAbility(card, abilityId, target) {
+    const currentPlayer = gameState.players[gameState.currentPlayerIndex];
+
+    // Find target card object if we have a target ID
+    let targetCard = target;
+    if (gameState.selectedDefender && !targetCard) {
+        targetCard = getCardById(gameState.selectedDefender);
+    }
+
+    // Execute the ability
+    const result = executeSpecialAbility({
+        card,
+        abilityId,
+        target: targetCard,
+        targetPlayer: gameState.selectedDefenderPlayer,
+        gameState
+    });
+
+    // Log all messages
+    result.logs.forEach(log => addLogEntry(log, 'special'));
+
+    if (!result.success) {
+        addLogEntry(result.message, 'system');
+        return;
+    }
+
+    // Handle damage dealt
+    for (const [cardId, damage] of Object.entries(result.damageDealt || {})) {
+        const affectedCard = getCardById(cardId);
+        if (affectedCard) {
+            showDamageAnimation(damage, false, false);
+            updateCardHP(cardId, gameState.cardHP[cardId], affectedCard.hp);
+
+            // Check if card is defeated
+            if (gameState.cardHP[cardId] <= 0) {
+                removeCard(cardId);
+                // Remove from player's cards
+                for (const player of gameState.players) {
+                    const idx = player.cards.indexOf(cardId);
+                    if (idx !== -1) {
+                        player.cards.splice(idx, 1);
+                        addLogEntry(`${affectedCard.name} has been defeated!`, 'damage');
+                        gameState.stats.cardsDefeated[currentPlayer.id] =
+                            (gameState.stats.cardsDefeated[currentPlayer.id] || 0) + 1;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    // Handle healing
+    for (const [cardId, healing] of Object.entries(result.healing || {})) {
+        const healedCard = getCardById(cardId);
+        if (healedCard) {
+            updateCardHP(cardId, gameState.cardHP[cardId], healedCard.hp);
+        }
+    }
+
+    // Clear pending ability
+    gameState.pendingAbility = null;
+
+    // Hide action panel
+    hideActionPanel();
+
+    // Check for game over
+    const gameOver = checkGameOver();
+
+    if (!gameOver) {
+        // Re-render
+        await delay(500);
+        renderGameState();
+    }
 }
 
 /**
@@ -1377,6 +1579,10 @@ function resetGame() {
     gameState.turnOrder = [];
     gameState.abilityUses = {};
     gameState.slimeSpikeTargets = [];
+    gameState.statusEffects = null;
+    gameState.pendingChainLightning = {};
+    gameState.pendingCoreMeltdown = {};
+    gameState.pendingAbility = null;
     gameState.pendingDefensePrompt = null;
     gameState.stats = {
         totalDamageDealt: {},

@@ -4828,7 +4828,7 @@
     "special_abilities": [
       {
         "name": "Whirlwind",
-        "description": "Randomly swap the order of opponent's cards, disrupting their strategy. Usable once per game.",
+        "description": "Randomly shuffles card ownership among all enemies - each enemy keeps the same number of cards but may end up with different ones. All card stats (including current HP) are preserved. Usable once per game.",
         "element": "air"
       }
     ],
