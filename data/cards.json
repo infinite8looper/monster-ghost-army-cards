@@ -12,25 +12,25 @@
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1688042,
+        "base_damage": 1688,
         "element": "plant"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 1942766,
+        "base_damage": 1943,
         "element": "plant"
       },
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 981358,
+        "base_damage": 981,
         "element": "plant"
       },
       {
         "name": "Thunder Arrows",
         "description": "",
-        "base_damage": 955664,
+        "base_damage": 956,
         "element": "plant"
       }
     ],
@@ -38,7 +38,7 @@
     "special_abilities": [],
     "biography": "Three elemental guardians united in defense: a crystal tree, a brick golem, and a solar beast.",
     "original_image": "PXL_20260101_190708125.jpg",
-    "hp": 1289759
+    "hp": 1290
   },
   {
     "id": "box",
@@ -52,7 +52,7 @@
       {
         "name": "Roll",
         "description": "",
-        "base_damage": 540213,
+        "base_damage": 540,
         "element": "magic"
       }
     ],
@@ -60,7 +60,7 @@
     "special_abilities": [],
     "biography": "A mysterious spiky creature trapped within a magical teal container, waiting to be unleashed.",
     "original_image": "PXL_20260101_190715764.jpg",
-    "hp": 765170
+    "hp": 765
   },
   {
     "id": "light_combined_demons",
@@ -75,31 +75,31 @@
       {
         "name": "Dark Wall Forces",
         "description": "Makes every wall turn against you",
-        "base_damage": 953853,
+        "base_damage": 954,
         "element": "fire"
       },
       {
         "name": "Fire Arrows",
         "description": "",
-        "base_damage": 830309,
+        "base_damage": 830,
         "element": "fire"
       },
       {
         "name": "Lava Breath",
         "description": "",
-        "base_damage": 992790,
+        "base_damage": 993,
         "element": "fire"
       },
       {
         "name": "Sun Lazers",
         "description": "",
-        "base_damage": 814623,
+        "base_damage": 815,
         "element": "fire"
       },
       {
         "name": "Do Two Moves At Once",
         "description": "",
-        "base_damage": 907224,
+        "base_damage": 907,
         "element": "fire"
       }
     ],
@@ -107,7 +107,7 @@
     "special_abilities": [],
     "biography": "Three infernal spirits bound together by dark magic, their combined flames burn with unholy intensity.",
     "original_image": "PXL_20260101_190723114.jpg",
-    "hp": 1132523
+    "hp": 1133
   },
   {
     "id": "fog_trio",
@@ -122,25 +122,25 @@
       {
         "name": "Fog Sandwich",
         "description": "",
-        "base_damage": 745142,
+        "base_damage": 745,
         "element": "air"
       },
       {
         "name": "Wind Tunnel",
         "description": "",
-        "base_damage": 728304,
+        "base_damage": 728,
         "element": "air"
       },
       {
         "name": "Hurricane",
         "description": "",
-        "base_damage": 656624,
+        "base_damage": 657,
         "element": "air"
       },
       {
         "name": "Do Two Moves At Once",
         "description": "",
-        "base_damage": 783323,
+        "base_damage": 783,
         "element": "air"
       }
     ],
@@ -148,7 +148,7 @@
     "special_abilities": [],
     "biography": "A trinity of mist spirits that work in perfect harmony to blanket the battlefield in confusion.",
     "original_image": "PXL_20260101_190728932.jpg",
-    "hp": 997110
+    "hp": 997
   },
   {
     "id": "uber_candle",
@@ -162,13 +162,13 @@
       {
         "name": "Shoots Extremely Hot Wax",
         "description": "That hardens into an imprisoning shell to prevent next attack",
-        "base_damage": 742104,
+        "base_damage": 742,
         "element": "fire"
       },
       {
         "name": "Lights Anything On Fire",
         "description": "",
-        "base_damage": 798991,
+        "base_damage": 799,
         "element": "fire"
       }
     ],
@@ -176,14 +176,14 @@
       {
         "name": "Distract And Deflect",
         "description": "By looking interesting",
-        "base_protection": 70260,
+        "base_protection": 70,
         "element": "fire"
       }
     ],
     "special_abilities": [],
     "biography": "Seven enchanted candles that burn with eternal flames, each color representing a different magical power.",
     "original_image": "PXL_20260101_190737413.jpg",
-    "hp": 876013
+    "hp": 876
   },
   {
     "id": "spike_wall",
@@ -198,49 +198,49 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1359285,
+        "base_damage": 1359,
         "element": "mecha"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1230398,
+        "base_damage": 1230,
         "element": "mecha"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1135113,
+        "base_damage": 1135,
         "element": "mecha"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1163139,
+        "base_damage": 1163,
         "element": "mecha"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 2294436,
+        "base_damage": 2294,
         "element": "mecha"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1069587,
+        "base_damage": 1070,
         "element": "mecha"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 2642117,
+        "base_damage": 2642,
         "element": "mecha"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 2366386,
+        "base_damage": 2366,
         "element": "mecha"
       }
     ],
@@ -248,7 +248,7 @@
     "special_abilities": [],
     "biography": "A legendary mechanical fortress that crushes all who dare approach its electrified spikes.",
     "original_image": "PXL_20260101_190744411.jpg",
-    "hp": 1698820
+    "hp": 1699
   },
   {
     "id": "dreidel_of_doom",
@@ -262,19 +262,19 @@
       {
         "name": "Ultra Spin Attack",
         "description": "",
-        "base_damage": 738284,
+        "base_damage": 738,
         "element": "magic"
       },
       {
         "name": "Enrage Enemies",
         "description": "To distract them by landing on W (nun) every time",
-        "base_damage": 612995,
+        "base_damage": 613,
         "element": "magic"
       },
       {
         "name": "Summon Daemon",
         "description": "To help cook latkes (splatters of oil are very painful)",
-        "base_damage": 616497,
+        "base_damage": 616,
         "element": "magic"
       }
     ],
@@ -282,7 +282,7 @@
     "special_abilities": [],
     "biography": "An ancient spinning artifact imbued with mystical Hebrew letters, each spin deciding the fate of its enemies.",
     "original_image": "PXL_20260101_190751214.jpg",
-    "hp": 850192
+    "hp": 850
   },
   {
     "id": "sparkler_foe",
@@ -297,13 +297,13 @@
       {
         "name": "Super Bright",
         "description": "Hurts any eye",
-        "base_damage": 553366,
+        "base_damage": 553,
         "element": "fire"
       },
       {
         "name": "Spawn Firewalker Army",
         "description": "",
-        "base_damage": 606140,
+        "base_damage": 606,
         "element": "fire"
       }
     ],
@@ -316,7 +316,7 @@
     ],
     "biography": "A dazzling display of cosmic sparks that blinds enemies with its brilliant starlight.",
     "original_image": "PXL_20260101_190758053.jpg",
-    "hp": 867568
+    "hp": 868
   },
   {
     "id": "music_dude",
@@ -330,13 +330,13 @@
       {
         "name": "Very Loud",
         "description": "Hurts ears",
-        "base_damage": 780187,
+        "base_damage": 780,
         "element": "magic"
       },
       {
         "name": "Puts All Babies That Are Nearby To Sleep",
         "description": "Next attack is 100x stronger",
-        "base_damage": 660340,
+        "base_damage": 660,
         "element": "magic"
       }
     ],
@@ -344,14 +344,14 @@
       {
         "name": "Cannot Be Damaged While In \"Singing\" Form",
         "description": "",
-        "base_protection": 71802,
+        "base_protection": 72,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A melodic spirit whose haunting songs can either soothe or shatter the minds of those who listen.",
     "original_image": "PXL_20260101_190806305.jpg",
-    "hp": 1060817
+    "hp": 1061
   },
   {
     "id": "electric_spike_wall",
@@ -366,55 +366,55 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1177978,
+        "base_damage": 1178,
         "element": "mecha"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1290296,
+        "base_damage": 1290,
         "element": "mecha"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1130456,
+        "base_damage": 1130,
         "element": "mecha"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1149016,
+        "base_damage": 1149,
         "element": "mecha"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 2602894,
+        "base_damage": 2603,
         "element": "mecha"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1065432,
+        "base_damage": 1065,
         "element": "mecha"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 2682844,
+        "base_damage": 2683,
         "element": "mecha"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 2160993,
+        "base_damage": 2161,
         "element": "mecha"
       },
       {
         "name": "Lightning",
         "description": "",
-        "base_damage": 1360389,
+        "base_damage": 1360,
         "element": "mecha"
       }
     ],
@@ -422,7 +422,7 @@
     "special_abilities": [],
     "biography": "A living fortress of crackling lightning and razor-sharp spikes that guards the cosmic gates.",
     "original_image": "PXL_20260101_190812887.MP.jpg",
-    "hp": 1629151
+    "hp": 1629
   },
   {
     "id": "guac_globber",
@@ -436,13 +436,13 @@
       {
         "name": "Smothers Enemies",
         "description": "",
-        "base_damage": 744620,
+        "base_damage": 745,
         "element": "magic"
       },
       {
         "name": "Squelches",
         "description": "",
-        "base_damage": 651682,
+        "base_damage": 652,
         "element": "magic"
       }
     ],
@@ -450,14 +450,14 @@
       {
         "name": "Softens Sharp Edges",
         "description": "",
-        "base_protection": 43496,
+        "base_protection": 43,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "An amorphous blob of magical guacamole that smothers its enemies in creamy doom.",
     "original_image": "PXL_20260101_190818810.jpg",
-    "hp": 863276
+    "hp": 863
   },
   {
     "id": "universe_spike_wall",
@@ -472,55 +472,55 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1224209,
+        "base_damage": 1224,
         "element": "mecha"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1285614,
+        "base_damage": 1286,
         "element": "mecha"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1251246,
+        "base_damage": 1251,
         "element": "mecha"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1345402,
+        "base_damage": 1345,
         "element": "mecha"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1987380,
+        "base_damage": 1987,
         "element": "mecha"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1164560,
+        "base_damage": 1165,
         "element": "mecha"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 1529884,
+        "base_damage": 1530,
         "element": "mecha"
       },
       {
         "name": "Shooting Stars!",
         "description": "Literally",
-        "base_damage": 1020755,
+        "base_damage": 1021,
         "element": "mecha"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 1697016,
+        "base_damage": 1697,
         "element": "mecha"
       }
     ],
@@ -528,7 +528,7 @@
     "special_abilities": [],
     "biography": "A cosmic defender whose spikes are forged from the very fabric of space-time.",
     "original_image": "PXL_20260101_190824822.jpg",
-    "hp": 1867130
+    "hp": 1867
   },
   {
     "id": "water_spike_wall",
@@ -543,55 +543,55 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1291615,
+        "base_damage": 1292,
         "element": "water"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1042863,
+        "base_damage": 1043,
         "element": "water"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1257695,
+        "base_damage": 1258,
         "element": "water"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1334359,
+        "base_damage": 1334,
         "element": "water"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 2669218,
+        "base_damage": 2669,
         "element": "water"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1068383,
+        "base_damage": 1068,
         "element": "water"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 1640774,
+        "base_damage": 1641,
         "element": "water"
       },
       {
         "name": "Tsunami",
         "description": "",
-        "base_damage": 1395218,
+        "base_damage": 1395,
         "element": "water"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 2390565,
+        "base_damage": 2391,
         "element": "water"
       }
     ],
@@ -599,7 +599,7 @@
     "special_abilities": [],
     "biography": "An aquatic fortress that combines crushing waves with piercing spikes.",
     "original_image": "PXL_20260101_190831743.jpg",
-    "hp": 1825251
+    "hp": 1825
   },
   {
     "id": "lego_wall",
@@ -613,13 +613,13 @@
       {
         "name": "Stacking Attack",
         "description": "",
-        "base_damage": 723712,
+        "base_damage": 724,
         "element": "magic"
       },
       {
         "name": "Sharp Foot Poke",
         "description": "Don't step on me!",
-        "base_damage": 551271,
+        "base_damage": 551,
         "element": "magic"
       }
     ],
@@ -627,20 +627,20 @@
       {
         "name": "Shield Block",
         "description": "",
-        "base_protection": 67358,
+        "base_protection": 67,
         "element": "magic"
       },
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 54061,
+        "base_protection": 54,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A colorful construction of interlocking magical bricks that builds itself higher with each battle.",
     "original_image": "PXL_20260101_190837161.jpg",
-    "hp": 926063
+    "hp": 926
   },
   {
     "id": "fire_spike_wall",
@@ -655,55 +655,55 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1362435,
+        "base_damage": 1362,
         "element": "fire"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1276558,
+        "base_damage": 1277,
         "element": "fire"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1252802,
+        "base_damage": 1253,
         "element": "fire"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1150972,
+        "base_damage": 1151,
         "element": "fire"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1900450,
+        "base_damage": 1900,
         "element": "fire"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1380571,
+        "base_damage": 1381,
         "element": "fire"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 1911184,
+        "base_damage": 1911,
         "element": "fire"
       },
       {
         "name": "Forest Fire",
         "description": "",
-        "base_damage": 1082931,
+        "base_damage": 1083,
         "element": "fire"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 2319256,
+        "base_damage": 2319,
         "element": "fire"
       }
     ],
@@ -711,7 +711,7 @@
     "special_abilities": [],
     "biography": "A blazing barrier of molten metal and searing flames that incinerates all attackers.",
     "original_image": "PXL_20260101_190843259.jpg",
-    "hp": 1580273
+    "hp": 1580
   },
   {
     "id": "sweet_pea_shooter",
@@ -725,13 +725,13 @@
       {
         "name": "Exploding Seed Pods",
         "description": "",
-        "base_damage": 768005,
+        "base_damage": 768,
         "element": "plant"
       },
       {
         "name": "Unbearable Cuteness",
         "description": "",
-        "base_damage": 717014,
+        "base_damage": 717,
         "element": "plant"
       }
     ],
@@ -739,14 +739,14 @@
       {
         "name": "Protective Shield",
         "description": "",
-        "base_protection": 76087,
+        "base_protection": 76,
         "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "Four adorable pea siblings who weaponize their cuteness while launching explosive seed pods.",
     "original_image": "PXL_20260101_190849439.jpg",
-    "hp": 977567
+    "hp": 978
   },
   {
     "id": "snail_trail",
@@ -760,19 +760,19 @@
       {
         "name": "Maximum Slime",
         "description": "",
-        "base_damage": 553460,
+        "base_damage": 553,
         "element": "magic"
       },
       {
         "name": "Blinding Neon Spirals",
         "description": "",
-        "base_damage": 777713,
+        "base_damage": 778,
         "element": "magic"
       },
       {
         "name": "Spiraling Path Confusion",
         "description": "",
-        "base_damage": 562146,
+        "base_damage": 562,
         "element": "magic"
       }
     ],
@@ -780,14 +780,14 @@
       {
         "name": "Protective Shell Shield",
         "description": "",
-        "base_protection": 59987,
+        "base_protection": 60,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A psychedelic snail that leaves trails of disorienting slime and blinding neon spirals.",
     "original_image": "PXL_20260101_190855128.jpg",
-    "hp": 1050755
+    "hp": 1051
   },
   {
     "id": "plant_spike_wall",
@@ -802,49 +802,49 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1366974,
+        "base_damage": 1367,
         "element": "plant"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1007604,
+        "base_damage": 1008,
         "element": "plant"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1101273,
+        "base_damage": 1101,
         "element": "plant"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1070090,
+        "base_damage": 1070,
         "element": "plant"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 2255085,
+        "base_damage": 2255,
         "element": "plant"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1078829,
+        "base_damage": 1079,
         "element": "plant"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 2797964,
+        "base_damage": 2798,
         "element": "plant"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 1644212,
+        "base_damage": 1644,
         "element": "plant"
       }
     ],
@@ -852,7 +852,7 @@
     "special_abilities": [],
     "biography": "A living fortress of thorny vines and mechanical gears that grows stronger with each sunrise.",
     "original_image": "PXL_20260101_190859757.jpg",
-    "hp": 1968573
+    "hp": 1969
   },
   {
     "id": "earth_spike_wall",
@@ -867,55 +867,55 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 1395549,
+        "base_damage": 1396,
         "element": "earth"
       },
       {
         "name": "Swing",
         "description": "",
-        "base_damage": 1171546,
+        "base_damage": 1172,
         "element": "earth"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 1331840,
+        "base_damage": 1332,
         "element": "earth"
       },
       {
         "name": "Lazers",
         "description": "",
-        "base_damage": 1280857,
+        "base_damage": 1281,
         "element": "earth"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1716015,
+        "base_damage": 1716,
         "element": "earth"
       },
       {
         "name": "Charge",
         "description": "",
-        "base_damage": 1041049,
+        "base_damage": 1041,
         "element": "earth"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 2147692,
+        "base_damage": 2148,
         "element": "earth"
       },
       {
         "name": "Earth Quake",
         "description": "",
-        "base_damage": 1373479,
+        "base_damage": 1373,
         "element": "earth"
       },
       {
         "name": "Elemental Black Hole",
         "description": "",
-        "base_damage": 1902022,
+        "base_damage": 1902,
         "element": "earth"
       }
     ],
@@ -923,7 +923,7 @@
     "special_abilities": [],
     "biography": "A mountain of mechanical might, with rocky spikes that can trigger devastating earthquakes.",
     "original_image": "PXL_20260101_190906673.jpg",
-    "hp": 1584695
+    "hp": 1585
   },
   {
     "id": "galaxy_black_hole",
@@ -937,19 +937,19 @@
       {
         "name": "Infinite Black Hole",
         "description": "",
-        "base_damage": 2401711,
+        "base_damage": 2402,
         "element": "universe"
       },
       {
         "name": "Extreme Gravity",
         "description": "",
-        "base_damage": 1019061,
+        "base_damage": 1019,
         "element": "universe"
       },
       {
         "name": "Shooting Stars!",
         "description": "Literally",
-        "base_damage": 1079079,
+        "base_damage": 1079,
         "element": "universe"
       }
     ],
@@ -957,7 +957,7 @@
     "special_abilities": [],
     "biography": "An all-consuming cosmic horror that devours stars and bends reality to its will.",
     "original_image": "PXL_20260101_190911488.jpg",
-    "hp": 1693985
+    "hp": 1694
   },
   {
     "id": "h13253312",
@@ -971,7 +971,7 @@
       {
         "name": "Shapeshift",
         "description": "",
-        "base_damage": 531058,
+        "base_damage": 531,
         "element": "fire"
       }
     ],
@@ -979,7 +979,7 @@
     "special_abilities": [],
     "biography": "An ever-shifting creature of living flame that morphs between shapes.",
     "original_image": "PXL_20260101_190917736.jpg",
-    "hp": 739523
+    "hp": 740
   },
   {
     "id": "innercore_monster",
@@ -994,31 +994,31 @@
       {
         "name": "Triple Black Hole",
         "description": "",
-        "base_damage": 2117999,
+        "base_damage": 2118,
         "element": "air"
       },
       {
         "name": "Mutant Death Ray",
         "description": "",
-        "base_damage": 1143142,
+        "base_damage": 1143,
         "element": "air"
       },
       {
         "name": "Posession",
         "description": "",
-        "base_damage": 1190601,
+        "base_damage": 1191,
         "element": "air"
       },
       {
         "name": "Wormhole",
         "description": "Sends you back in time",
-        "base_damage": 1305526,
+        "base_damage": 1306,
         "element": "air"
       },
       {
         "name": "Transmogrify",
         "description": "Transforms any creature into another form",
-        "base_damage": 1224688,
+        "base_damage": 1225,
         "element": "air"
       }
     ],
@@ -1026,7 +1026,7 @@
     "special_abilities": [],
     "biography": "A chaotic entity from the depths of a dying star, wielding the power to warp time itself.",
     "original_image": "PXL_20260101_190928007.jpg",
-    "hp": 1976665
+    "hp": 1977
   },
   {
     "id": "deadly_top_hat",
@@ -1040,13 +1040,13 @@
       {
         "name": "Top Haunt",
         "description": "Destroys the top of your body",
-        "base_damage": 665459,
+        "base_damage": 665,
         "element": "magic"
       },
       {
         "name": "Annoying Laughter",
         "description": "HEHAHEHEHAHAHEHA HAHA HE HAHE HO HA HE HE HA HO HO HO HE HE HO",
-        "base_damage": 798427,
+        "base_damage": 798,
         "element": "magic"
       }
     ],
@@ -1054,7 +1054,7 @@
     "special_abilities": [],
     "biography": "A mischievous creature hiding within an oversized hat, its laughter driving enemies to madness.",
     "original_image": "PXL_20260101_190932956.jpg",
-    "hp": 974180
+    "hp": 974
   },
   {
     "id": "the_summerween_trickster",
@@ -1068,25 +1068,25 @@
       {
         "name": "Chomp",
         "description": "",
-        "base_damage": 553253,
+        "base_damage": 553,
         "element": "magic"
       },
       {
         "name": "Candy Dash",
         "description": "",
-        "base_damage": 626237,
+        "base_damage": 626,
         "element": "magic"
       },
       {
         "name": "Punchy Punchy",
         "description": "",
-        "base_damage": 717068,
+        "base_damage": 717,
         "element": "magic"
       },
       {
         "name": "Fruit Punch",
         "description": "",
-        "base_damage": 703949,
+        "base_damage": 704,
         "element": "magic"
       }
     ],
@@ -1094,7 +1094,7 @@
     "special_abilities": [],
     "biography": "A festive fiend that punishes those who disrespect the sacred candy holiday.",
     "original_image": "PXL_20260101_190937532.jpg",
-    "hp": 1030192
+    "hp": 1030
   },
   {
     "id": "miniature_mini",
@@ -1108,25 +1108,25 @@
       {
         "name": "Poison Shooter",
         "description": "",
-        "base_damage": 815196,
+        "base_damage": 815,
         "element": "magic"
       },
       {
         "name": "Cannonball Blaster",
         "description": "",
-        "base_damage": 706834,
+        "base_damage": 707,
         "element": "magic"
       },
       {
         "name": "Elemental Summoner",
         "description": "",
-        "base_damage": 749220,
+        "base_damage": 749,
         "element": "magic"
       },
       {
         "name": "Beak Grip",
         "description": "",
-        "base_damage": 966178,
+        "base_damage": 966,
         "element": "magic"
       }
     ],
@@ -1139,7 +1139,7 @@
     ],
     "biography": "A bizarre amalgamation of colorful creatures fused into one unpredictable being.",
     "original_image": "PXL_20260101_190942829.jpg",
-    "hp": 1283486
+    "hp": 1283
   },
   {
     "id": "2_combined_infinite",
@@ -1153,37 +1153,37 @@
       {
         "name": "Infinity Burst",
         "description": "Unleashes a blast of infinite energy",
-        "base_damage": 1589327,
+        "base_damage": 1589,
         "element": "magic"
       },
       {
         "name": "X Ray Attack",
         "description": "",
-        "base_damage": 1034557,
+        "base_damage": 1035,
         "element": "magic"
       },
       {
         "name": "Infinity Eyeball Strike",
         "description": "",
-        "base_damage": 1348869,
+        "base_damage": 1349,
         "element": "magic"
       },
       {
         "name": "Rainbow Dazzle",
         "description": "",
-        "base_damage": 1288791,
+        "base_damage": 1289,
         "element": "magic"
       },
       {
         "name": "Awesomeness Defeater",
         "description": "",
-        "base_damage": 1212582,
+        "base_damage": 1213,
         "element": "magic"
       },
       {
         "name": "Dream Spitter",
         "description": "",
-        "base_damage": 1297769,
+        "base_damage": 1298,
         "element": "magic"
       }
     ],
@@ -1191,37 +1191,37 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 116033,
+        "base_protection": 116,
         "element": "magic"
       },
       {
         "name": "Flash",
         "description": "",
-        "base_protection": 112279,
+        "base_protection": 112,
         "element": "magic"
       },
       {
         "name": "Cloud Strength",
         "description": "",
-        "base_protection": 101996,
+        "base_protection": 102,
         "element": "magic"
       },
       {
         "name": "Invisibility Hiding Technique",
         "description": "",
-        "base_protection": 154935,
+        "base_protection": 155,
         "element": "magic"
       },
       {
         "name": "Friend Disabler",
         "description": "",
-        "base_protection": 152740,
+        "base_protection": 153,
         "element": "magic"
       },
       {
         "name": "Flipper",
         "description": "",
-        "base_protection": 95062,
+        "base_protection": 95,
         "element": "magic"
       }
     ],
@@ -1237,7 +1237,7 @@
     ],
     "biography": "A legendary fusion of rainbow ghost and cosmic brain, wielding infinite arcane power.",
     "original_image": "PXL_20260101_190948447.MP.jpg",
-    "hp": 1874483
+    "hp": 1874
   },
   {
     "id": "earthquake",
@@ -1252,43 +1252,43 @@
       {
         "name": "Shrink",
         "description": "",
-        "base_damage": 1009119,
+        "base_damage": 1009,
         "element": "earth"
       },
       {
         "name": "Growing Black Hole",
         "description": "",
-        "base_damage": 2208850,
+        "base_damage": 2209,
         "element": "earth"
       },
       {
         "name": "Thunderstorm",
         "description": "",
-        "base_damage": 1041407,
+        "base_damage": 1041,
         "element": "earth"
       },
       {
         "name": "Infinity Eyeball Strike",
         "description": "",
-        "base_damage": 1191653,
+        "base_damage": 1192,
         "element": "earth"
       },
       {
         "name": "Spit Fog",
         "description": "",
-        "base_damage": 1014294,
+        "base_damage": 1014,
         "element": "earth"
       },
       {
         "name": "Super Ghost Army Caller",
         "description": "",
-        "base_damage": 1214851,
+        "base_damage": 1215,
         "element": "earth"
       },
       {
         "name": "Double",
         "description": "",
-        "base_damage": 1079685,
+        "base_damage": 1080,
         "element": "earth"
       }
     ],
@@ -1296,20 +1296,20 @@
       {
         "name": "Teleportation",
         "description": "",
-        "base_protection": 100169,
+        "base_protection": 100,
         "element": "earth"
       },
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 111204,
+        "base_protection": 111,
         "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A seismic titan that shakes the very foundations of reality with its thunderous movements.",
     "original_image": "PXL_20260101_190953288.jpg",
-    "hp": 1992994
+    "hp": 1993
   },
   {
     "id": "stink_flower",
@@ -1324,19 +1324,19 @@
       {
         "name": "Stunk Attack",
         "description": "",
-        "base_damage": 856468,
+        "base_damage": 856,
         "element": "plant"
       },
       {
         "name": "Growing Black Hole",
         "description": "",
-        "base_damage": 1617715,
+        "base_damage": 1618,
         "element": "plant"
       },
       {
         "name": "Flower Missile",
         "description": "",
-        "base_damage": 742596,
+        "base_damage": 743,
         "element": "plant"
       }
     ],
@@ -1344,7 +1344,7 @@
     "special_abilities": [],
     "biography": "A beautiful yet foul-smelling blossom that weaponizes its noxious perfume.",
     "original_image": "PXL_20260101_190958753.jpg",
-    "hp": 1132084
+    "hp": 1132
   },
   {
     "id": "poison_shooter",
@@ -1358,7 +1358,7 @@
       {
         "name": "Poison Shooter",
         "description": "",
-        "base_damage": 894492,
+        "base_damage": 894,
         "element": "magic"
       }
     ],
@@ -1366,7 +1366,7 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 73479,
+        "base_protection": 73,
         "element": "magic"
       }
     ],
@@ -1378,7 +1378,7 @@
     ],
     "biography": "A venomous reptilian creature with multiple eyes that never misses its toxic target.",
     "original_image": "PXL_20260101_191003303.jpg",
-    "hp": 1130729
+    "hp": 1131
   },
   {
     "id": "shield_attack",
@@ -1393,13 +1393,13 @@
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1906940,
+        "base_damage": 1907,
         "element": "air"
       },
       {
         "name": "Tornado",
         "description": "",
-        "base_damage": 855823,
+        "base_damage": 856,
         "element": "air"
       }
     ],
@@ -1407,14 +1407,14 @@
       {
         "name": "Shield Attack",
         "description": "",
-        "base_protection": 63671,
+        "base_protection": 64,
         "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A rainbow-armored ghost whose defense is its greatest offense.",
     "original_image": "PXL_20260101_191009888.jpg",
-    "hp": 1169837
+    "hp": 1170
   },
   {
     "id": "ultra_fog_lurker",
@@ -1429,19 +1429,19 @@
       {
         "name": "Ultra Fog Lurker",
         "description": "",
-        "base_damage": 666933,
+        "base_damage": 667,
         "element": "air"
       },
       {
         "name": "Lightning",
         "description": "",
-        "base_damage": 698527,
+        "base_damage": 699,
         "element": "air"
       },
       {
         "name": "Void Strike",
         "description": "Channels the power of infinite space into a single devastating blow",
-        "base_damage": 1138986,
+        "base_damage": 1139,
         "element": "air"
       }
     ],
@@ -1449,14 +1449,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 59477,
+        "base_protection": 59,
         "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A shadowy predator that lurks within dense fog, waiting to strike with devastating force.",
     "original_image": "PXL_20260101_191015338.jpg",
-    "hp": 1072304
+    "hp": 1072
   },
   {
     "id": "beaked_ghost_2_0",
@@ -1471,13 +1471,13 @@
       {
         "name": "Poison Shooter",
         "description": "",
-        "base_damage": 667643,
+        "base_damage": 668,
         "element": "earth"
       },
       {
         "name": "Earthquake",
         "description": "",
-        "base_damage": 734381,
+        "base_damage": 734,
         "element": "earth"
       }
     ],
@@ -1485,14 +1485,14 @@
       {
         "name": "Spectral Deflection",
         "description": "Redirects attacks through the spirit realm",
-        "base_protection": 49156,
+        "base_protection": 49,
         "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "An evolved spirit that commands lesser ghosts from its perch, striking with spectral precision.",
     "original_image": "PXL_20260101_191021427.jpg",
-    "hp": 938858
+    "hp": 939
   },
   {
     "id": "universe_elemental",
@@ -1507,25 +1507,25 @@
       {
         "name": "Star Power",
         "description": "",
-        "base_damage": 1059206,
+        "base_damage": 1059,
         "element": "plant"
       },
       {
         "name": "Infinite Black Hole",
         "description": "",
-        "base_damage": 1700689,
+        "base_damage": 1701,
         "element": "plant"
       },
       {
         "name": "Blinding Eye Flashes",
         "description": "",
-        "base_damage": 1278569,
+        "base_damage": 1279,
         "element": "plant"
       },
       {
         "name": "Gravity!",
         "description": "",
-        "base_damage": 1047397,
+        "base_damage": 1047,
         "element": "plant"
       }
     ],
@@ -1533,7 +1533,7 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 147902,
+        "base_protection": 148,
         "element": "plant"
       }
     ],
@@ -1545,7 +1545,7 @@
     ],
     "biography": "Twin cosmic spirits that hold the power of the stars within their connected forms.",
     "original_image": "PXL_20260101_191027082.jpg",
-    "hp": 1635280
+    "hp": 1635
   },
   {
     "id": "ultra_fire_fog_lurker",
@@ -1560,19 +1560,19 @@
       {
         "name": "Magma Beam",
         "description": "",
-        "base_damage": 564762,
+        "base_damage": 565,
         "element": "fire"
       },
       {
         "name": "Lasers",
         "description": "",
-        "base_damage": 742005,
+        "base_damage": 742,
         "element": "fire"
       },
       {
         "name": "Lava Knives",
         "description": "",
-        "base_damage": 796316,
+        "base_damage": 796,
         "element": "fire"
       }
     ],
@@ -1580,7 +1580,7 @@
     "special_abilities": [],
     "biography": "A molten phantom that drifts through ash and smoke, leaving destruction in its wake.",
     "original_image": "PXL_20260101_191031615.jpg",
-    "hp": 854755
+    "hp": 855
   },
   {
     "id": "pacifier_shooter",
@@ -1595,13 +1595,13 @@
       {
         "name": "Electric Pulse",
         "description": "",
-        "base_damage": 769835,
+        "base_damage": 770,
         "element": "mecha"
       },
       {
         "name": "Plugs Its Enemies",
         "description": "",
-        "base_damage": 744370,
+        "base_damage": 744,
         "element": "mecha"
       }
     ],
@@ -1609,7 +1609,7 @@
     "special_abilities": [],
     "biography": "A mechanical beast that silences enemies with its pacifying projectiles.",
     "original_image": "PXL_20260101_191038378.jpg",
-    "hp": 1041211
+    "hp": 1041
   },
   {
     "id": "upside_down_rainbow_ghost",
@@ -1624,19 +1624,19 @@
       {
         "name": "Confusing Inversions",
         "description": "",
-        "base_damage": 621289,
+        "base_damage": 621,
         "element": "fire"
       },
       {
         "name": "Color Power",
         "description": "",
-        "base_damage": 718079,
+        "base_damage": 718,
         "element": "fire"
       },
       {
         "name": "Smile/Frown",
         "description": "",
-        "base_damage": 627834,
+        "base_damage": 628,
         "element": "fire"
       }
     ],
@@ -1644,7 +1644,7 @@
     "special_abilities": [],
     "biography": "An inverted spirit of prismatic flames whose disorienting appearance confuses all who see it.",
     "original_image": "PXL_20260101_191044301.jpg",
-    "hp": 852440
+    "hp": 852
   },
   {
     "id": "poison_shooter_2",
@@ -1658,7 +1658,7 @@
       {
         "name": "Poison Shooter",
         "description": "",
-        "base_damage": 896205,
+        "base_damage": 896,
         "element": "plant"
       }
     ],
@@ -1666,7 +1666,7 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 98231,
+        "base_protection": 98,
         "element": "plant"
       }
     ],
@@ -1678,7 +1678,7 @@
     ],
     "biography": "A ghostly elephant that spreads toxic spores from the plants growing on its back.",
     "original_image": "PXL_20260101_191049092.jpg",
-    "hp": 1168369
+    "hp": 1168
   },
   {
     "id": "spike_wall_2",
@@ -1693,7 +1693,7 @@
       {
         "name": "Double Black Hole",
         "description": "",
-        "base_damage": 1639540,
+        "base_damage": 1640,
         "element": "magic"
       }
     ],
@@ -1701,14 +1701,14 @@
       {
         "name": "Spike Wall",
         "description": "",
-        "base_protection": 92410,
+        "base_protection": 92,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A living barrier of colorful spirits that blocks all who dare approach.",
     "original_image": "PXL_20260101_191054321.jpg",
-    "hp": 1140796
+    "hp": 1141
   },
   {
     "id": "kaya_rey_z_eyes",
@@ -1723,13 +1723,13 @@
       {
         "name": "Mind Control",
         "description": "Forces an enemy to attack its own allies",
-        "base_damage": 699301,
+        "base_damage": 699,
         "element": "plant"
       },
       {
         "name": "Sonic Wail",
         "description": "A piercing cry that damages all who hear it",
-        "base_damage": 571263,
+        "base_damage": 571,
         "element": "plant"
       }
     ],
@@ -1737,14 +1737,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 75401,
+        "base_protection": 75,
         "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "Floating eyes that pierce the mind with hypnotic spirals, turning allies into enemies.",
     "original_image": "PXL_20260101_191101171.jpg",
-    "hp": 1041236
+    "hp": 1041
   },
   {
     "id": "catadorable_monster",
@@ -1758,19 +1758,19 @@
       {
         "name": "Meow Power",
         "description": "",
-        "base_damage": 746636,
+        "base_damage": 747,
         "element": "magic"
       },
       {
         "name": "Cuteness Overload",
         "description": "",
-        "base_damage": 799519,
+        "base_damage": 800,
         "element": "magic"
       },
       {
         "name": "Purrrbrations",
         "description": "",
-        "base_damage": 609797,
+        "base_damage": 610,
         "element": "magic"
       }
     ],
@@ -1778,7 +1778,7 @@
     "special_abilities": [],
     "biography": "An irresistibly cute cat whose adorable appearance disarms even the fiercest foes.",
     "original_image": "PXL_20260101_191106043.MP.jpg",
-    "hp": 926706
+    "hp": 927
   },
   {
     "id": "confusion_injector",
@@ -1793,7 +1793,7 @@
       {
         "name": "Earthquake",
         "description": "",
-        "base_damage": 568577,
+        "base_damage": 569,
         "element": "earth"
       }
     ],
@@ -1801,14 +1801,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 39720,
+        "base_protection": 40,
         "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A maze-like creature that injects pure confusion into the minds of its enemies.",
     "original_image": "PXL_20260101_191110229.jpg",
-    "hp": 697008
+    "hp": 697
   },
   {
     "id": "elemental_trio_water_lurker",
@@ -1822,31 +1822,31 @@
       {
         "name": "Dousing Power",
         "description": "",
-        "base_damage": 1377408,
+        "base_damage": 1377,
         "element": "water"
       },
       {
         "name": "Ocean Current Strength",
         "description": "",
-        "base_damage": 1191569,
+        "base_damage": 1192,
         "element": "water"
       },
       {
         "name": "Tidal Attack!",
         "description": "",
-        "base_damage": 1083385,
+        "base_damage": 1083,
         "element": "water"
       },
       {
         "name": "Depth Charge Zap",
         "description": "",
-        "base_damage": 1018918,
+        "base_damage": 1019,
         "element": "water"
       },
       {
         "name": "Tsunami",
         "description": "",
-        "base_damage": 1253684,
+        "base_damage": 1254,
         "element": "water"
       }
     ],
@@ -1854,7 +1854,7 @@
     "special_abilities": [],
     "biography": "An ancient water elemental that rules the deepest ocean trenches with tidal fury.",
     "original_image": "PXL_20260101_191115890.jpg",
-    "hp": 1856124
+    "hp": 1856
   },
   {
     "id": "rude_dude",
@@ -1869,13 +1869,13 @@
       {
         "name": "Extreme Smelliness",
         "description": "",
-        "base_damage": 555804,
+        "base_damage": 556,
         "element": "air"
       },
       {
         "name": "Potty Language",
         "description": "",
-        "base_damage": 590762,
+        "base_damage": 591,
         "element": "air"
       }
     ],
@@ -1883,14 +1883,14 @@
       {
         "name": "Burp Back",
         "description": "",
-        "base_protection": 56796,
+        "base_protection": 57,
         "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "Three gassy cloud creatures whose offensive odors and crude behavior repel all enemies.",
     "original_image": "PXL_20260101_191120376.jpg",
-    "hp": 1039271
+    "hp": 1039
   },
   {
     "id": "fog_slurper",
@@ -1905,7 +1905,7 @@
       {
         "name": "Spit Fog (Blindness)",
         "description": "",
-        "base_damage": 482795,
+        "base_damage": 483,
         "element": "air"
       }
     ],
@@ -1913,14 +1913,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 33894,
+        "base_protection": 34,
         "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A misty creature that inhales fog to fuel its attacks, leaving enemies blind and confused.",
     "original_image": "PXL_20260101_191126542.jpg",
-    "hp": 649562
+    "hp": 650
   },
   {
     "id": "grumpy_brow_squiggle_mouth",
@@ -1934,19 +1934,19 @@
       {
         "name": "Glare Attack",
         "description": "",
-        "base_damage": 663546,
+        "base_damage": 664,
         "element": "magic"
       },
       {
         "name": "\"The Look\"",
         "description": "",
-        "base_damage": 649133,
+        "base_damage": 649,
         "element": "magic"
       },
       {
         "name": "Frownie Pouts",
         "description": "",
-        "base_damage": 670446,
+        "base_damage": 670,
         "element": "magic"
       }
     ],
@@ -1954,7 +1954,7 @@
     "special_abilities": [],
     "biography": "A perpetually annoyed face whose withering glare can stop enemies in their tracks.",
     "original_image": "PXL_20260101_191131366.jpg",
-    "hp": 974774
+    "hp": 975
   },
   {
     "id": "ribboner",
@@ -1968,19 +1968,19 @@
       {
         "name": "Curly Whirlies",
         "description": "",
-        "base_damage": 660985,
+        "base_damage": 661,
         "element": "magic"
       },
       {
         "name": "Confusion",
         "description": "",
-        "base_damage": 584810,
+        "base_damage": 585,
         "element": "magic"
       },
       {
         "name": "Magic Lasso",
         "description": "",
-        "base_damage": 626137,
+        "base_damage": 626,
         "element": "magic"
       }
     ],
@@ -1988,7 +1988,7 @@
     "special_abilities": [],
     "biography": "An ethereal creature made of flowing magical ribbons that entangle and confuse its prey.",
     "original_image": "PXL_20260101_191135623.jpg",
-    "hp": 924598
+    "hp": 925
   },
   {
     "id": "elemental_trio_earth_shaker",
@@ -2002,31 +2002,31 @@
       {
         "name": "Dirt Power",
         "description": "",
-        "base_damage": 1246739,
+        "base_damage": 1247,
         "element": "earth"
       },
       {
         "name": "Mega Stomp",
         "description": "",
-        "base_damage": 1318842,
+        "base_damage": 1319,
         "element": "earth"
       },
       {
         "name": "Mountain Crusher",
         "description": "",
-        "base_damage": 1311314,
+        "base_damage": 1311,
         "element": "earth"
       },
       {
         "name": "Rock Slinger",
         "description": "",
-        "base_damage": 1030963,
+        "base_damage": 1031,
         "element": "earth"
       },
       {
         "name": "Earthquake",
         "description": "",
-        "base_damage": 1238247,
+        "base_damage": 1238,
         "element": "earth"
       }
     ],
@@ -2034,7 +2034,7 @@
     "special_abilities": [],
     "biography": "A primordial mountain spirit whose footsteps trigger devastating earthquakes.",
     "original_image": "PXL_20260101_191141024.jpg",
-    "hp": 1604342
+    "hp": 1604
   },
   {
     "id": "razor_clam_boss",
@@ -2048,13 +2048,13 @@
       {
         "name": "Spits at Enemies",
         "description": "",
-        "base_damage": 741069,
+        "base_damage": 741,
         "element": "water"
       },
       {
         "name": "Extra-Sharp Razor Slice",
         "description": "",
-        "base_damage": 562548,
+        "base_damage": 563,
         "element": "water"
       }
     ],
@@ -2062,20 +2062,20 @@
       {
         "name": "1000x Shield Shell",
         "description": "",
-        "base_protection": 79473,
+        "base_protection": 79,
         "element": "water"
       },
       {
         "name": "Bury to Dodge",
         "description": "",
-        "base_protection": 76197,
+        "base_protection": 76,
         "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A razor-sharp shellfish warrior that slices through enemies with surgical precision.",
     "original_image": "PXL_20260101_191146649.jpg",
-    "hp": 1080267
+    "hp": 1080
   },
   {
     "id": "dixie_whistler",
@@ -2089,13 +2089,13 @@
       {
         "name": "Shoots Superheated Gas Into Eyes",
         "description": "",
-        "base_damage": 640959,
+        "base_damage": 641,
         "element": "fire"
       },
       {
         "name": "Song Sticker",
         "description": "Gets a song stuck in enemy's head",
-        "base_damage": 675400,
+        "base_damage": 675,
         "element": "fire"
       }
     ],
@@ -2108,7 +2108,7 @@
     ],
     "biography": "A musical vessel that shoots superheated steam while playing tunes that stick in your head forever.",
     "original_image": "PXL_20260101_191156352.jpg",
-    "hp": 924176
+    "hp": 924
   },
   {
     "id": "syrup_guzzler",
@@ -2122,7 +2122,7 @@
       {
         "name": "Slurp Up Unlimited Amount of Syrup, Creating a Black Hole",
         "description": "",
-        "base_damage": 1907804,
+        "base_damage": 1908,
         "element": "universe"
       }
     ],
@@ -2130,7 +2130,7 @@
       {
         "name": "Sticks Fingers Together",
         "description": "",
-        "base_protection": 107910,
+        "base_protection": 108,
         "element": "universe"
       }
     ],
@@ -2142,7 +2142,7 @@
     ],
     "biography": "An insatiable container that drinks all syrup in existence, creating sticky black holes.",
     "original_image": "PXL_20260101_191204612.jpg",
-    "hp": 1119742
+    "hp": 1120
   },
   {
     "id": "cactus_monster",
@@ -2156,7 +2156,7 @@
       {
         "name": "Flings Spikes",
         "description": "",
-        "base_damage": 472913,
+        "base_damage": 473,
         "element": "plant"
       }
     ],
@@ -2164,20 +2164,20 @@
       {
         "name": "Impervious to Spike Walls",
         "description": "",
-        "base_protection": 28910,
+        "base_protection": 29,
         "element": "plant"
       },
       {
         "name": "Stores Water",
         "description": "",
-        "base_protection": 43125,
+        "base_protection": 43,
         "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A prickly desert guardian whose spines fly with deadly accuracy.",
     "original_image": "PXL_20260101_191208321.jpg",
-    "hp": 736861
+    "hp": 737
   },
   {
     "id": "muddie_puddle",
@@ -2191,7 +2191,7 @@
       {
         "name": "Mud Slinger",
         "description": "",
-        "base_damage": 846615,
+        "base_damage": 847,
         "element": "earth"
       }
     ],
@@ -2199,7 +2199,7 @@
       {
         "name": "Stuck in Goop",
         "description": "",
-        "base_protection": 63526,
+        "base_protection": 64,
         "element": "earth"
       }
     ],
@@ -2211,7 +2211,7 @@
     ],
     "biography": "A sentient mud pool that can trap enemies in its endless murky depths.",
     "original_image": "PXL_20260101_191213338.jpg",
-    "hp": 1146996
+    "hp": 1147
   },
   {
     "id": "ultra_bounce",
@@ -2225,7 +2225,7 @@
       {
         "name": "Boingy Sound",
         "description": "Causes temporary insanity",
-        "base_damage": 504811,
+        "base_damage": 505,
         "element": "magic"
       }
     ],
@@ -2233,20 +2233,20 @@
       {
         "name": "Deflects Attacks to Another Player, Including the Attacker",
         "description": "",
-        "base_protection": 32078,
+        "base_protection": 32,
         "element": "magic"
       },
       {
         "name": "Super Jump",
         "description": "Jump over any attack",
-        "base_protection": 39890,
+        "base_protection": 40,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A cluster of bouncing spheres whose chaotic movements drive enemies to temporary insanity.",
     "original_image": "PXL_20260101_191220079.jpg",
-    "hp": 662332
+    "hp": 662
   },
   {
     "id": "brain_blaster",
@@ -2260,7 +2260,7 @@
       {
         "name": "Blasts Brains",
         "description": "",
-        "base_damage": 580010,
+        "base_damage": 580,
         "element": "magic"
       }
     ],
@@ -2273,7 +2273,7 @@
     ],
     "biography": "A floating brain of pure psychic energy that overloads the minds of its enemies.",
     "original_image": "PXL_20260101_191224377.jpg",
-    "hp": 786494
+    "hp": 786
   },
   {
     "id": "technology_demons",
@@ -2288,13 +2288,13 @@
       {
         "name": "Super Distraction",
         "description": "",
-        "base_damage": 560135,
+        "base_damage": 560,
         "element": "water"
       },
       {
         "name": "Electric Zaps",
         "description": "",
-        "base_damage": 622306,
+        "base_damage": 622,
         "element": "water"
       }
     ],
@@ -2302,14 +2302,14 @@
       {
         "name": "Lightning",
         "description": "",
-        "base_protection": 74743,
+        "base_protection": 75,
         "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "Possessed electronic devices that distract and electrocute their victims.",
     "original_image": "PXL_20260101_191230774.jpg",
-    "hp": 893103
+    "hp": 893
   },
   {
     "id": "squelcher",
@@ -2323,13 +2323,13 @@
       {
         "name": "Flings Goo",
         "description": "",
-        "base_damage": 557885,
+        "base_damage": 558,
         "element": "magic"
       },
       {
         "name": "Causes All Attacks to Squelch",
         "description": "",
-        "base_damage": 731765,
+        "base_damage": 732,
         "element": "magic"
       }
     ],
@@ -2337,14 +2337,14 @@
       {
         "name": "Melty",
         "description": "",
-        "base_protection": 52686,
+        "base_protection": 53,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A soggy sponge creature that absorbs attacks and returns them with a satisfying squelch.",
     "original_image": "PXL_20260101_191237530.jpg",
-    "hp": 1033283
+    "hp": 1033
   },
   {
     "id": "toucan_like_toucan_monster",
@@ -2358,19 +2358,19 @@
       {
         "name": "Crushing",
         "description": "",
-        "base_damage": 731880,
+        "base_damage": 732,
         "element": "magic"
       },
       {
         "name": "Flying",
         "description": "",
-        "base_damage": 654433,
+        "base_damage": 654,
         "element": "magic"
       },
       {
         "name": "Squawking",
         "description": "",
-        "base_damage": 757533,
+        "base_damage": 758,
         "element": "magic"
       }
     ],
@@ -2378,14 +2378,14 @@
       {
         "name": "Dropping Bird Droppings",
         "description": "",
-        "base_protection": 36399,
+        "base_protection": 36,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A tropical bird spirit with a crushing beak and an annoying squawk.",
     "original_image": "PXL_20260101_191243694.jpg",
-    "hp": 949702
+    "hp": 950
   },
   {
     "id": "chomoghost",
@@ -2399,7 +2399,7 @@
       {
         "name": "Spits Chunks",
         "description": "",
-        "base_damage": 467283,
+        "base_damage": 467,
         "element": "magic"
       }
     ],
@@ -2407,14 +2407,14 @@
       {
         "name": "Invisible",
         "description": "",
-        "base_protection": 44661,
+        "base_protection": 45,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A spectral slug that phases through defenses while spitting ectoplasmic chunks.",
     "original_image": "PXL_20260101_191248898.jpg",
-    "hp": 728915
+    "hp": 729
   },
   {
     "id": "slurping",
@@ -2428,7 +2428,7 @@
       {
         "name": "Earth Quake",
         "description": "",
-        "base_damage": 474463,
+        "base_damage": 474,
         "element": "earth"
       }
     ],
@@ -2436,7 +2436,7 @@
     "special_abilities": [],
     "biography": "A spiky hedgehog creature that shakes the earth with every step.",
     "original_image": "PXL_20260101_191254214.jpg",
-    "hp": 729221
+    "hp": 729
   },
   {
     "id": "frozenly_frigid",
@@ -2451,7 +2451,7 @@
       {
         "name": "Melting",
         "description": "",
-        "base_damage": 589175,
+        "base_damage": 589,
         "element": "water"
       }
     ],
@@ -2459,14 +2459,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 42782,
+        "base_protection": 43,
         "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "Jagged shards of living ice that freeze and shatter all they touch.",
     "original_image": "PXL_20260101_191258436.jpg",
-    "hp": 664977
+    "hp": 665
   },
   {
     "id": "banana_man",
@@ -2480,13 +2480,13 @@
       {
         "name": "Peel Slip!",
         "description": "",
-        "base_damage": 793800,
+        "base_damage": 794,
         "element": "magic"
       },
       {
         "name": "Rotten Mush",
         "description": "",
-        "base_damage": 697863,
+        "base_damage": 698,
         "element": "magic"
       }
     ],
@@ -2494,7 +2494,7 @@
       {
         "name": "Puddle Stuck",
         "description": "",
-        "base_protection": 50887,
+        "base_protection": 51,
         "element": "magic"
       }
     ],
@@ -2506,7 +2506,7 @@
     ],
     "biography": "A slippery fruit warrior whose peels have toppled empires.",
     "original_image": "PXL_20260101_191304071.jpg",
-    "hp": 963598
+    "hp": 964
   },
   {
     "id": "pooper_dooper",
@@ -2520,13 +2520,13 @@
       {
         "name": "Turn Hands Into Poop-Covered Danger Spoons",
         "description": "",
-        "base_damage": 779775,
+        "base_damage": 780,
         "element": "magic"
       },
       {
         "name": "All Monsters and Ghosts Must Change Into New Outfits",
         "description": "",
-        "base_damage": 748615,
+        "base_damage": 749,
         "element": "magic"
       }
     ],
@@ -2539,7 +2539,7 @@
     ],
     "biography": "A stinky but strangely powerful creature that weaponizes its grossness.",
     "original_image": "PXL_20260101_191310378.jpg",
-    "hp": 1006400
+    "hp": 1006
   },
   {
     "id": "monstah_thump",
@@ -2553,7 +2553,7 @@
       {
         "name": "Earth Quake",
         "description": "",
-        "base_damage": 524417,
+        "base_damage": 524,
         "element": "earth"
       }
     ],
@@ -2561,14 +2561,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 38322,
+        "base_protection": 38,
         "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "Pure seismic energy given form, its vibrations can level mountains.",
     "original_image": "PXL_20260101_191314003.jpg",
-    "hp": 670153
+    "hp": 670
   },
   {
     "id": "sslithering_snake_poison",
@@ -2582,13 +2582,13 @@
       {
         "name": "Poison",
         "description": "",
-        "base_damage": 593348,
+        "base_damage": 593,
         "element": "magic"
       },
       {
         "name": "Constriction",
         "description": "",
-        "base_damage": 645677,
+        "base_damage": 646,
         "element": "magic"
       }
     ],
@@ -2596,14 +2596,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 81077,
+        "base_protection": 81,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A venomous serpent whose hypnotic movements hide deadly intentions.",
     "original_image": "PXL_20260101_191321493.jpg",
-    "hp": 1027748
+    "hp": 1028
   },
   {
     "id": "solar_powered_earwig_ghost",
@@ -2617,7 +2617,7 @@
       {
         "name": "Pinching",
         "description": "",
-        "base_damage": 596594,
+        "base_damage": 597,
         "element": "magic"
       }
     ],
@@ -2625,20 +2625,20 @@
       {
         "name": "Disappearing",
         "description": "",
-        "base_protection": 33285,
+        "base_protection": 33,
         "element": "magic"
       },
       {
         "name": "Absorbing Sun Energy",
         "description": "",
-        "base_protection": 29578,
+        "base_protection": 30,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A spectral insect that draws power from the sun to fuel its painful pinches.",
     "original_image": "PXL_20260101_191327237.jpg",
-    "hp": 623420
+    "hp": 623
   },
   {
     "id": "ghost_dodger",
@@ -2653,7 +2653,7 @@
       {
         "name": "Zigzag Attack",
         "description": "",
-        "base_damage": 570981,
+        "base_damage": 571,
         "element": "magic"
       }
     ],
@@ -2661,14 +2661,14 @@
       {
         "name": "Avoids Bounce Back",
         "description": "",
-        "base_protection": 32288,
+        "base_protection": 32,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "An elusive spirit that dances between dimensions, impossible to hit.",
     "original_image": "PXL_20260101_191332141.jpg",
-    "hp": 706484
+    "hp": 706
   },
   {
     "id": "thunder_storm",
@@ -2683,7 +2683,7 @@
       {
         "name": "Teleportation",
         "description": "",
-        "base_damage": 854039,
+        "base_damage": 854,
         "element": "air"
       }
     ],
@@ -2696,7 +2696,7 @@
     ],
     "biography": "A tempestuous creature of wind and lightning that brings chaos wherever it flies.",
     "original_image": "PXL_20260101_191335982.jpg",
-    "hp": 1130045
+    "hp": 1130
   },
   {
     "id": "wonka_wacka_doodle_monster",
@@ -2710,7 +2710,7 @@
       {
         "name": "Zigger Zagger Defeats",
         "description": "",
-        "base_damage": 536251,
+        "base_damage": 536,
         "element": "magic"
       }
     ],
@@ -2718,7 +2718,7 @@
       {
         "name": "Doodling",
         "description": "",
-        "base_protection": 39591,
+        "base_protection": 40,
         "element": "magic"
       }
     ],
@@ -2730,7 +2730,7 @@
     ],
     "biography": "A chaotic scribble creature that confuses enemies with its nonsensical patterns.",
     "original_image": "PXL_20260101_191342357.jpg",
-    "hp": 704687
+    "hp": 705
   },
   {
     "id": "ice_cream_flinger",
@@ -2745,13 +2745,13 @@
       {
         "name": "Yumminess Overload",
         "description": "",
-        "base_damage": 756837,
+        "base_damage": 757,
         "element": "water"
       },
       {
         "name": "Laser Melt",
         "description": "",
-        "base_damage": 770883,
+        "base_damage": 771,
         "element": "water"
       }
     ],
@@ -2759,14 +2759,14 @@
       {
         "name": "Freeze Ray",
         "description": "",
-        "base_protection": 60062,
+        "base_protection": 60,
         "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A delicious yet deadly dessert monster that hurls frozen treats with precision.",
     "original_image": "PXL_20260101_191346664.jpg",
-    "hp": 1019978
+    "hp": 1020
   },
   {
     "id": "shofario",
@@ -2780,13 +2780,13 @@
       {
         "name": "Deafens Enemies",
         "description": "",
-        "base_damage": 857204,
+        "base_damage": 857,
         "element": "magic"
       },
       {
         "name": "Summons Ghost Army",
         "description": "",
-        "base_damage": 832748,
+        "base_damage": 833,
         "element": "magic"
       }
     ],
@@ -2794,14 +2794,14 @@
       {
         "name": "Sound Wave Emitter",
         "description": "",
-        "base_protection": 52204,
+        "base_protection": 52,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A mystical horn that summons ghostly armies with its ancient call.",
     "original_image": "PXL_20260101_191351705.jpg",
-    "hp": 1193700
+    "hp": 1194
   },
   {
     "id": "robo_jolt",
@@ -2816,13 +2816,13 @@
       {
         "name": "Shoots Robo Lightning to Electrify Enemies",
         "description": "",
-        "base_damage": 723580,
+        "base_damage": 724,
         "element": "water"
       },
       {
         "name": "Robo-Voice",
         "description": "So annoying enemies are instantly destroyed",
-        "base_damage": 555488,
+        "base_damage": 555,
         "element": "water"
       }
     ],
@@ -2830,14 +2830,14 @@
       {
         "name": "Robo-Claw",
         "description": "Pick up ghosts and monsters and give hugs",
-        "base_protection": 35713,
+        "base_protection": 36,
         "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A colorful robot whose electric hugs are shockingly powerful.",
     "original_image": "PXL_20260101_191356760.jpg",
-    "hp": 1012425
+    "hp": 1012
   },
   {
     "id": "saba_nap",
@@ -2851,13 +2851,13 @@
       {
         "name": "Dream Babble",
         "description": "Confuses enemies with nonsensical dream-speak",
-        "base_damage": 769878,
+        "base_damage": 770,
         "element": "magic"
       },
       {
         "name": "Super Snore",
         "description": "",
-        "base_damage": 917263,
+        "base_damage": 917,
         "element": "magic"
       }
     ],
@@ -2870,7 +2870,7 @@
     ],
     "biography": "A jolly sleeping face whose thunderous snores can shake the cosmos.",
     "original_image": "PXL_20260101_191401764.jpg",
-    "hp": 1120334
+    "hp": 1120
   },
   {
     "id": "lightning",
@@ -2885,25 +2885,25 @@
       {
         "name": "Fire",
         "description": "",
-        "base_damage": 764282,
+        "base_damage": 764,
         "element": "fire"
       },
       {
         "name": "Grow",
         "description": "",
-        "base_damage": 796159,
+        "base_damage": 796,
         "element": "fire"
       },
       {
         "name": "Wing",
         "description": "",
-        "base_damage": 983860,
+        "base_damage": 984,
         "element": "fire"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1187772,
+        "base_damage": 1188,
         "element": "fire"
       }
     ],
@@ -2911,7 +2911,7 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 71610,
+        "base_protection": 72,
         "element": "fire"
       }
     ],
@@ -2923,7 +2923,7 @@
     ],
     "biography": "A storm elemental that channels the raw fury of thunderclouds.",
     "original_image": "PXL_20260101_191406192.jpg",
-    "hp": 1127287
+    "hp": 1127
   },
   {
     "id": "super_gardener",
@@ -2937,19 +2937,19 @@
       {
         "name": "Compost",
         "description": "",
-        "base_damage": 693776,
+        "base_damage": 694,
         "element": "plant"
       },
       {
         "name": "Hoe Attack",
         "description": "",
-        "base_damage": 731455,
+        "base_damage": 731,
         "element": "plant"
       },
       {
         "name": "Dig",
         "description": "",
-        "base_damage": 624465,
+        "base_damage": 624,
         "element": "plant"
       }
     ],
@@ -2957,14 +2957,14 @@
       {
         "name": "Garden",
         "description": "",
-        "base_protection": 38264,
+        "base_protection": 38,
         "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A humble farmer whose connection to the earth grants supernatural gardening powers.",
     "original_image": "PXL_20260101_191410839.jpg",
-    "hp": 1009302
+    "hp": 1009
   },
   {
     "id": "double_duty_unlimited",
@@ -2978,13 +2978,13 @@
       {
         "name": "The Squeeze",
         "description": "",
-        "base_damage": 652114,
+        "base_damage": 652,
         "element": "magic"
       },
       {
         "name": "Snooze",
         "description": "",
-        "base_damage": 799221,
+        "base_damage": 799,
         "element": "magic"
       }
     ],
@@ -2992,7 +2992,7 @@
     "special_abilities": [],
     "biography": "Twin monster heads that share thoughts and squeeze enemies from both sides.",
     "original_image": "PXL_20260101_191418742.jpg",
-    "hp": 906126
+    "hp": 906
   },
   {
     "id": "cyclopian",
@@ -3006,13 +3006,13 @@
       {
         "name": "Shifter",
         "description": "Redirect any attack or defense",
-        "base_damage": 690237,
+        "base_damage": 690,
         "element": "magic"
       },
       {
         "name": "Leg Grow",
         "description": "Grows extra legs to run faster",
-        "base_damage": 581072,
+        "base_damage": 581,
         "element": "magic"
       }
     ],
@@ -3020,14 +3020,14 @@
       {
         "name": "Teleport",
         "description": "Blinks/Winks to instantly go anywhere",
-        "base_protection": 75615,
+        "base_protection": 76,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A one-eyed creature whose many legs carry it faster than the eye can follow.",
     "original_image": "PXL_20260101_191422614.jpg",
-    "hp": 891786
+    "hp": 892
   },
   {
     "id": "sucking_vacuum_ghost",
@@ -3042,7 +3042,7 @@
       {
         "name": "Dirt Spitting",
         "description": "",
-        "base_damage": 510140,
+        "base_damage": 510,
         "element": "earth"
       }
     ],
@@ -3050,14 +3050,14 @@
       {
         "name": "Sneeze Causer",
         "description": "",
-        "base_protection": 44828,
+        "base_protection": 45,
         "element": "earth"
       }
     ],
     "special_abilities": [],
     "biography": "A hollow spirit that inhales dirt and spits it back with explosive force.",
     "original_image": "PXL_20260101_191429249.jpg",
-    "hp": 791029
+    "hp": 791
   },
   {
     "id": "flanneler",
@@ -3071,13 +3071,13 @@
       {
         "name": "Plaid Power",
         "description": "",
-        "base_damage": 570391,
+        "base_damage": 570,
         "element": "magic"
       },
       {
         "name": "Overwhelming Fashionability",
         "description": "",
-        "base_damage": 590769,
+        "base_damage": 591,
         "element": "magic"
       }
     ],
@@ -3090,7 +3090,7 @@
     ],
     "biography": "A cozy fabric creature whose overwhelming fashion sense stuns all who behold it.",
     "original_image": "PXL_20260101_191433719.jpg",
-    "hp": 1091027
+    "hp": 1091
   },
   {
     "id": "rainbow_lightning",
@@ -3105,7 +3105,7 @@
       {
         "name": "Spit Paint",
         "description": "",
-        "base_damage": 584920,
+        "base_damage": 585,
         "element": "mecha"
       }
     ],
@@ -3113,7 +3113,7 @@
     "special_abilities": [],
     "biography": "A colorful bolt of living electricity that paints targets before striking.",
     "original_image": "PXL_20260101_191438314.jpg",
-    "hp": 699171
+    "hp": 699
   },
   {
     "id": "slippery_slope_soap_ghost",
@@ -3127,7 +3127,7 @@
       {
         "name": "Volcano",
         "description": "",
-        "base_damage": 546565,
+        "base_damage": 547,
         "element": "magic"
       }
     ],
@@ -3135,14 +3135,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 24092,
+        "base_protection": 24,
         "element": "magic"
       }
     ],
     "special_abilities": [],
     "biography": "A slick spectral soap that makes everything impossibly slippery.",
     "original_image": "PXL_20260101_191443230.jpg",
-    "hp": 615143
+    "hp": 615
   },
   {
     "id": "laser_eyes",
@@ -3156,13 +3156,13 @@
       {
         "name": "Shocking",
         "description": "",
-        "base_damage": 725023,
+        "base_damage": 725,
         "element": "mecha"
       },
       {
         "name": "Blink Attack",
         "description": "",
-        "base_damage": 726731,
+        "base_damage": 727,
         "element": "mecha"
       }
     ],
@@ -3170,7 +3170,7 @@
     "special_abilities": [],
     "biography": "Twin hypnotic eyes connected by a beam of pure destructive energy.",
     "original_image": "PXL_20260101_191446826.jpg",
-    "hp": 1012802
+    "hp": 1013
   },
   {
     "id": "b_unc_e_back",
@@ -3185,13 +3185,13 @@
       {
         "name": "Tornado Growin",
         "description": "",
-        "base_damage": 893400,
+        "base_damage": 893,
         "element": "air"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1866824,
+        "base_damage": 1867,
         "element": "air"
       }
     ],
@@ -3199,7 +3199,7 @@
     "special_abilities": [],
     "biography": "A powerful cosmic entity that deflects attacks back to their source with devastating force.",
     "original_image": "PXL_20260101_191451102.jpg",
-    "hp": 1193619
+    "hp": 1194
   },
   {
     "id": "confusion",
@@ -3214,13 +3214,13 @@
       {
         "name": "Injecting",
         "description": "",
-        "base_damage": 796734,
+        "base_damage": 797,
         "element": "plant"
       },
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1400779,
+        "base_damage": 1401,
         "element": "plant"
       }
     ],
@@ -3228,14 +3228,14 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 68741,
+        "base_protection": 69,
         "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A mind-bending creature that injects chaos directly into enemy thoughts.",
     "original_image": "PXL_20260101_191456393.jpg",
-    "hp": 1298179
+    "hp": 1298
   },
   {
     "id": "extreme_ultra_spike_hurler",
@@ -3249,19 +3249,19 @@
       {
         "name": "Hurl Supersonic",
         "description": "Spikes directly at ghost eyeballs",
-        "base_damage": 766585,
+        "base_damage": 767,
         "element": "plant"
       },
       {
         "name": "Really Annoying",
         "description": "",
-        "base_damage": 644792,
+        "base_damage": 645,
         "element": "plant"
       },
       {
         "name": "Pokes (Tree)",
         "description": "Damage",
-        "base_damage": 629997,
+        "base_damage": 630,
         "element": "plant"
       }
     ],
@@ -3269,14 +3269,14 @@
       {
         "name": "Nose Plug",
         "description": "",
-        "base_protection": 53713,
+        "base_protection": 54,
         "element": "plant"
       }
     ],
     "special_abilities": [],
     "biography": "A spiny plant creature that launches needle-sharp projectiles at supersonic speeds.",
     "original_image": "PXL_20260101_191500350.jpg",
-    "hp": 948476
+    "hp": 948
   },
   {
     "id": "blinding_sunshine_monster",
@@ -3291,13 +3291,13 @@
       {
         "name": "Gobbling",
         "description": "Eats/munches your enemy",
-        "base_damage": 677437,
+        "base_damage": 677,
         "element": "mecha"
       },
       {
         "name": "Lightning",
         "description": "",
-        "base_damage": 594153,
+        "base_damage": 594,
         "element": "mecha"
       }
     ],
@@ -3305,7 +3305,7 @@
     "special_abilities": [],
     "biography": "A solar entity whose brilliant light can vaporize shadows and blind enemies.",
     "original_image": "PXL_20260101_191504701.jpg",
-    "hp": 894122
+    "hp": 894
   },
   {
     "id": "foglurker",
@@ -3320,7 +3320,7 @@
       {
         "name": "Blinding",
         "description": "",
-        "base_damage": 523790,
+        "base_damage": 524,
         "element": "air"
       }
     ],
@@ -3328,14 +3328,14 @@
       {
         "name": "Levitation",
         "description": "",
-        "base_protection": 48877,
+        "base_protection": 49,
         "element": "air"
       }
     ],
     "special_abilities": [],
     "biography": "A dark mist creature that lurks at the edge of visibility, waiting to strike.",
     "original_image": "PXL_20260101_191508577.MP.jpg",
-    "hp": 722783
+    "hp": 723
   },
   {
     "id": "elemental_trio_fire_starter",
@@ -3350,31 +3350,31 @@
       {
         "name": "Heat Power",
         "description": "",
-        "base_damage": 1086305,
+        "base_damage": 1086,
         "element": "fire"
       },
       {
         "name": "Fireball Max",
         "description": "",
-        "base_damage": 1176767,
+        "base_damage": 1177,
         "element": "fire"
       },
       {
         "name": "Flamethrower",
         "description": "",
-        "base_damage": 1300705,
+        "base_damage": 1301,
         "element": "fire"
       },
       {
         "name": "Steam Inducer",
         "description": "",
-        "base_damage": 1394926,
+        "base_damage": 1395,
         "element": "fire"
       },
       {
         "name": "Lava",
         "description": "",
-        "base_damage": 1124905,
+        "base_damage": 1125,
         "element": "fire"
       }
     ],
@@ -3382,7 +3382,7 @@
     "special_abilities": [],
     "biography": "A primordial flame spirit that ignites all it touches with eternal fire.",
     "original_image": "PXL_20260101_191628356.jpg",
-    "hp": 1532423
+    "hp": 1532
   },
   {
     "id": "double_duty_unlimited_teleportation",
@@ -3397,19 +3397,19 @@
       {
         "name": "Tornado",
         "description": "",
-        "base_damage": 933746,
+        "base_damage": 934,
         "element": "air"
       },
       {
         "name": "Rainbow Space",
         "description": "",
-        "base_damage": 732253,
+        "base_damage": 732,
         "element": "air"
       },
       {
         "name": "Growing Black Hole",
         "description": "",
-        "base_damage": 1326706,
+        "base_damage": 1327,
         "element": "air"
       }
     ],
@@ -3417,7 +3417,7 @@
       {
         "name": "Bounce Back",
         "description": "",
-        "base_protection": 92069,
+        "base_protection": 92,
         "element": "air"
       }
     ],
@@ -3429,7 +3429,7 @@
     ],
     "biography": "Twin-headed cosmic entity that harnesses the power of space-time to create devastating vortexes.",
     "original_image": "PXL_20260101_191632867.jpg",
-    "hp": 1113708
+    "hp": 1114
   },
   {
     "id": "orange_slice_juice_spitter",
@@ -3444,13 +3444,13 @@
       {
         "name": "Spits Extra-Juicy Orange Slices",
         "description": "To distract and annoy",
-        "base_damage": 570069,
+        "base_damage": 570,
         "element": "water"
       },
       {
         "name": "Makes a Huge Sticky Mess",
         "description": "To immobilize any foe",
-        "base_damage": 750998,
+        "base_damage": 751,
         "element": "water"
       }
     ],
@@ -3458,14 +3458,14 @@
       {
         "name": "Ultra-Thick Skin-Shield",
         "description": "",
-        "base_protection": 76839,
+        "base_protection": 77,
         "element": "water"
       }
     ],
     "special_abilities": [],
     "biography": "A citrus warrior that weaponizes its tangy juices and sticky residue.",
     "original_image": "PXL_20260101_191637565.jpg",
-    "hp": 870282
+    "hp": 870
   },
   {
     "id": "shapeshifter",
@@ -3479,7 +3479,7 @@
       {
         "name": "Shapeshifte",
         "description": "",
-        "base_damage": 534242,
+        "base_damage": 534,
         "element": "magic"
       }
     ],
@@ -3487,7 +3487,7 @@
     "special_abilities": [],
     "biography": "An ever-changing mass of energy that takes on countless terrifying forms.",
     "original_image": "PXL_20260101_191642124.jpg",
-    "hp": 731579
+    "hp": 732
   },
   {
     "id": "doublespike",
@@ -3502,19 +3502,19 @@
       {
         "name": "Black Hole",
         "description": "",
-        "base_damage": 1852286,
+        "base_damage": 1852,
         "element": "mecha"
       },
       {
         "name": "White Hole",
         "description": "",
-        "base_damage": 1835701,
+        "base_damage": 1836,
         "element": "mecha"
       },
       {
         "name": "Electric Arrows",
         "description": "",
-        "base_damage": 798153,
+        "base_damage": 798,
         "element": "mecha"
       }
     ],
@@ -3522,7 +3522,7 @@
     "special_abilities": [],
     "biography": "Twin spiked orbs of cosmic metal that orbit each other with destructive force.",
     "original_image": "PXL_20260101_191646476.jpg",
-    "hp": 1276254
+    "hp": 1276
   },
   {
     "id": "the_fierce_scribbler",
@@ -3536,13 +3536,13 @@
       {
         "name": "Raaaaawrr",
         "description": "",
-        "base_damage": 653008,
+        "base_damage": 653,
         "element": "magic"
       },
       {
         "name": "Beakgrip",
         "description": "",
-        "base_damage": 652080,
+        "base_damage": 652,
         "element": "magic"
       }
     ],
@@ -3550,7 +3550,7 @@
     "special_abilities": [],
     "biography": "A colorful creature whose raw artistic energy manifests as physical attacks.",
     "original_image": "PXL_20260101_191719639.jpg",
-    "hp": 875488
+    "hp": 875
   },
   {
     "id": "unnamed_creature_93",
@@ -3564,19 +3564,19 @@
       {
         "name": "Panic Inducing",
         "description": "",
-        "base_damage": 777197,
+        "base_damage": 777,
         "element": "mecha"
       },
       {
         "name": "Raaaaawwrr",
         "description": "",
-        "base_damage": 749928,
+        "base_damage": 750,
         "element": "mecha"
       },
       {
         "name": "Beakgrip",
         "description": "",
-        "base_damage": 569124,
+        "base_damage": 569,
         "element": "mecha"
       }
     ],
@@ -3584,7 +3584,7 @@
     "special_abilities": [],
     "biography": "A mechanical dinosaur construct that carries mysterious cargo in its hanging bucket.",
     "original_image": "PXL_20260101_191725353.MP.jpg",
-    "hp": 920437
+    "hp": 920
   },
   {
     "id": "fierce_cow",
@@ -3598,13 +3598,13 @@
       {
         "name": "Raaaaawwrr!",
         "description": "",
-        "base_damage": 798436,
+        "base_damage": 798,
         "element": "magic"
       },
       {
         "name": "Cow Patty Splat",
         "description": "",
-        "base_damage": 645313,
+        "base_damage": 645,
         "element": "magic"
       }
     ],
@@ -3612,7 +3612,7 @@
     "special_abilities": [],
     "biography": "An enraged bovine whose thunderous moo can shake mountains.",
     "original_image": "PXL_20260101_191745542.jpg",
-    "hp": 1010035
+    "hp": 1010
   },
   {
     "id": "the_scribbler",
@@ -3626,13 +3626,13 @@
       {
         "name": "Beak Grip",
         "description": "",
-        "base_damage": 624614,
+        "base_damage": 625,
         "element": "plant"
       },
       {
         "name": "Outside The Lines",
         "description": "",
-        "base_damage": 717641,
+        "base_damage": 718,
         "element": "plant"
       }
     ],
@@ -3640,7 +3640,7 @@
     "special_abilities": [],
     "biography": "A loosely drawn bird spirit whose unpredictable lines confuse and entrap enemies.",
     "original_image": "PXL_20260101_191756977.jpg",
-    "hp": 856559
+    "hp": 857
   },
   {
     "id": "dirty_diaper",
@@ -3654,25 +3654,25 @@
       {
         "name": "Glitter Poo",
         "description": "",
-        "base_damage": 731398,
+        "base_damage": 731,
         "element": "earth"
       },
       {
         "name": "Ewwww",
         "description": "",
-        "base_damage": 704664,
+        "base_damage": 705,
         "element": "earth"
       },
       {
         "name": "Panic Inducing",
         "description": "",
-        "base_damage": 788089,
+        "base_damage": 788,
         "element": "earth"
       },
       {
         "name": "Smell Horrific",
         "description": "",
-        "base_damage": 799613,
+        "base_damage": 800,
         "element": "earth"
       }
     ],
@@ -3680,6 +3680,2846 @@
     "special_abilities": [],
     "biography": "A truly foul weapon of last resort that defeats enemies through sheer disgust.",
     "original_image": "PXL_20260101_191947730.jpg",
-    "hp": 1039642
+    "hp": 1040
+  },
+  {
+    "id": "balloon_beast",
+    "name": "Balloon Beast",
+    "visual_description": "A whimsical creature composed of various colorful, inflated balloons, giving it a light and airy appearance with a friendly, goofy expression",
+    "elements": [
+      "air",
+      "magic"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Inflation Burst",
+        "description": "Expands rapidly to knock enemies back",
+        "base_damage": 1189,
+        "element": "air"
+      },
+      {
+        "name": "Float Away",
+        "description": "Lifts enemies into the sky",
+        "base_damage": 944,
+        "element": "air"
+      },
+      {
+        "name": "Static Cling",
+        "description": "Zaps with balloon static electricity",
+        "base_damage": 928,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Pop-Proof Membrane",
+        "description": "Rubbery skin deflects attacks",
+        "base_protection": 85,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A bouncy balloon creature that floats through the sky spreading joy and static shocks to its enemies.",
+    "original_image": null,
+    "hp": 1013
+  },
+  {
+    "id": "battery_bot",
+    "name": "Battery Bot",
+    "visual_description": "A small, compact robot whose torso is a classic AA battery with simple, functional limbs and a single, expressive light for an eye",
+    "elements": [
+      "mecha"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Energy Drain",
+        "description": "Saps power from mechanical foes",
+        "base_damage": 786,
+        "element": "mecha"
+      },
+      {
+        "name": "Volt Tackle",
+        "description": "Charges forward with electric force",
+        "base_damage": 546,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Full Charge",
+        "description": "Stores energy for protection",
+        "base_protection": 79,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A tiny robot powered by an oversized battery, always ready to give enemies a shocking surprise.",
+    "original_image": null,
+    "hp": 754
+  },
+  {
+    "id": "bounceback",
+    "name": "Bounceback",
+    "visual_description": "A creature that appears to be a tightly wound, springy coil of metallic or rubbery substance with a determined look, ready to leap or rebound",
+    "elements": [
+      "mecha",
+      "universe"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Coil Crush",
+        "description": "Springs into enemies with crushing force",
+        "base_damage": 549,
+        "element": "mecha"
+      },
+      {
+        "name": "Ricochet Slam",
+        "description": "Bounces off walls to strike from multiple angles",
+        "base_damage": 615,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bounce Back",
+        "description": "Reflects 75% of damage back to attacker",
+        "base_protection": 55,
+        "element": "universe"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A springy warrior that never stays down, bouncing back from any attack with double the energy.",
+    "original_image": null,
+    "hp": 716
+  },
+  {
+    "id": "bubble_beast",
+    "name": "Bubble Beast",
+    "visual_description": "A monster made of iridescent soap bubbles with a vaguely humanoid shape, translucent and constantly shifting with smaller bubbles coalescing and popping",
+    "elements": [
+      "water",
+      "air"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Bubble Burst",
+        "description": "Explosive bubble barrage",
+        "base_damage": 794,
+        "element": "water"
+      },
+      {
+        "name": "Foam Spray",
+        "description": "Blasts enemies with sudsy foam",
+        "base_damage": 604,
+        "element": "water"
+      },
+      {
+        "name": "Sudsy Slick",
+        "description": "Creates a slippery surface to trip foes",
+        "base_damage": 786,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bubble Shield",
+        "description": "Surrounds self in protective bubbles",
+        "base_protection": 67,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A bubbly creature that looks harmless until it bursts into a foam-filled fury of attacks.",
+    "original_image": null,
+    "hp": 714
+  },
+  {
+    "id": "bubblegum_blob",
+    "name": "Bubblegum Blob",
+    "visual_description": "A pink, amorphous blob-like creature resembling a large, chewed piece of bubblegum with a sticky, malleable texture and a simple, vacant expression",
+    "elements": [
+      "magic",
+      "plant"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Sticky Slap",
+        "description": "Adheres to enemies and slaps repeatedly",
+        "base_damage": 503,
+        "element": "magic"
+      },
+      {
+        "name": "Sugar Rush",
+        "description": "Hyperactive attack fueled by sweetness",
+        "base_damage": 584,
+        "element": "plant"
+      },
+      {
+        "name": "Gumball Gatling",
+        "description": "Rapid-fires hardened gumballs",
+        "base_damage": 722,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Gooey Guard",
+        "description": "Absorbs impacts with stretchy body",
+        "base_protection": 62,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A stretchy pink blob that sticks to everything and never lets go of a fight.",
+    "original_image": null,
+    "hp": 846
+  },
+  {
+    "id": "burp_beast",
+    "name": "Burp Beast",
+    "visual_description": "A green, round, slimy creature with a huge, open mouth as if in the middle of a powerful burp, with small beady eyes and a gelatinous body",
+    "elements": [
+      "plant",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Belch Blast",
+        "description": "A devastating sonic burp attack",
+        "base_damage": 676,
+        "element": "plant"
+      },
+      {
+        "name": "Acidic Spew",
+        "description": "Sprays corrosive stomach acids",
+        "base_damage": 554,
+        "element": "water"
+      },
+      {
+        "name": "Sonic Burp",
+        "description": "Releases a deafening gaseous roar",
+        "base_damage": 549,
+        "element": "plant"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Slime Shield",
+        "description": "Coats itself in protective slime",
+        "base_protection": 65,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "The grossest monster in the deck, this burping beast clears rooms with its noxious attacks.",
+    "original_image": null,
+    "hp": 813
+  },
+  {
+    "id": "button_basher",
+    "name": "Button Basher",
+    "visual_description": "A robotic, humanoid figure with a determined look whose torso is covered in colorful buttons with clenched fists ready for action",
+    "elements": [
+      "mecha",
+      "fire"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Combo Crush",
+        "description": "Executes a devastating button combo",
+        "base_damage": 639,
+        "element": "mecha"
+      },
+      {
+        "name": "Button Barrage",
+        "description": "Fires buttons like projectiles",
+        "base_damage": 523,
+        "element": "mecha"
+      },
+      {
+        "name": "Rapid Fire Fists",
+        "description": "Punches with machine-gun speed",
+        "base_damage": 741,
+        "element": "fire"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Steel Plating",
+        "description": "Reinforced metal armor",
+        "base_protection": 75,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A robot gamer who turned button-mashing into a martial art, comboing enemies into oblivion.",
+    "original_image": null,
+    "hp": 880
+  },
+  {
+    "id": "candy_crusher",
+    "name": "Candy Crusher",
+    "visual_description": "A monstrous creature composed of various types of candy with a large, toothy mouth and a body made of swirled lollipops and candy canes",
+    "elements": [
+      "magic",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Sugar Rush",
+        "description": "Hyperactive candy-fueled assault",
+        "base_damage": 541,
+        "element": "magic"
+      },
+      {
+        "name": "Jawbreaker Barrage",
+        "description": "Launches rock-hard candy projectiles",
+        "base_damage": 789,
+        "element": "earth"
+      },
+      {
+        "name": "Gummy Grip",
+        "description": "Traps enemies in sticky candy",
+        "base_damage": 654,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Hard Candy Armor",
+        "description": "Shell of crystallized sugar",
+        "base_protection": 64,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A sweet nightmare that crushes enemies with candy-coated chaos and sugar-powered strength.",
+    "original_image": null,
+    "hp": 898
+  },
+  {
+    "id": "cheese_monster",
+    "name": "Cheese Monster",
+    "visual_description": "A creature made of molten, dripping yellow cheese with an amorphous body pocked with holes like Swiss cheese and two simple eyes peering out",
+    "elements": [
+      "earth",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Fondue Flood",
+        "description": "Drowns enemies in melted cheese",
+        "base_damage": 524,
+        "element": "water"
+      },
+      {
+        "name": "Gouda Geyser",
+        "description": "Erupts with a spray of hot cheese",
+        "base_damage": 619,
+        "element": "earth"
+      },
+      {
+        "name": "Cheesy Spray",
+        "description": "Blasts gooey cheese at foes",
+        "base_damage": 652,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "String Cheese Shield",
+        "description": "Stretchy cheese absorbs blows",
+        "base_protection": 45,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A gooey monster that melts hearts and enemies alike with its cheesy attacks.",
+    "original_image": null,
+    "hp": 736
+  },
+  {
+    "id": "coin_collector",
+    "name": "Coin Collector",
+    "visual_description": "A metallic, almost robotic creature with a single, large eye and a coin slot mouth, happily hoarding gold coins with a coppery sheen",
+    "elements": [
+      "mecha",
+      "universe"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Coin Cannon",
+        "description": "Fires coins at high velocity",
+        "base_damage": 999,
+        "element": "mecha"
+      },
+      {
+        "name": "Penny Pummel",
+        "description": "Rains down copper coins on enemies",
+        "base_damage": 946,
+        "element": "mecha"
+      },
+      {
+        "name": "Ricochet Shot",
+        "description": "Bounces coins off surfaces to hit multiple targets",
+        "base_damage": 1038,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Gilded Guard",
+        "description": "Gold plating deflects attacks",
+        "base_protection": 112,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A treasure-obsessed robot that attacks with its valuable hoard of shiny coins.",
+    "original_image": null,
+    "hp": 1053
+  },
+  {
+    "id": "confusion_injecting",
+    "name": "Confusion Injecting",
+    "visual_description": "A mechanical, cyclopean entity with a large central yellow eye and a chaotic assembly of blue and gray wires, tubes, and a prominent syringe appendage",
+    "elements": [
+      "mecha",
+      "magic"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Mind Scramble",
+        "description": "Injects confusion serum into enemies",
+        "base_damage": 994,
+        "element": "magic"
+      },
+      {
+        "name": "Confusion Injection",
+        "description": "Delivers a disorienting payload",
+        "base_damage": 986,
+        "element": "magic"
+      },
+      {
+        "name": "Psy-Syringe",
+        "description": "Pierces defenses with psychic needle",
+        "base_damage": 910,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Mental Shield",
+        "description": "Blocks psychic counterattacks",
+        "base_protection": 114,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A medical nightmare that injects pure confusion directly into its enemies minds.",
+    "original_image": null,
+    "hp": 1085
+  },
+  {
+    "id": "cotton_candy_cloud",
+    "name": "Cotton Candy Cloud",
+    "visual_description": "A fluffy, buoyant creature made of pink and blue cotton candy with large, innocent eyes and a cheerful smile, floating in the air",
+    "elements": [
+      "air",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Sugar Rush",
+        "description": "Hyperactive sweet attack",
+        "base_damage": 590,
+        "element": "magic"
+      },
+      {
+        "name": "Sticky Fluff",
+        "description": "Wraps enemies in sugary strands",
+        "base_damage": 780,
+        "element": "magic"
+      },
+      {
+        "name": "Sweet Cloud",
+        "description": "Engulfs foes in pink mist",
+        "base_damage": 628,
+        "element": "air"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Fluffy Guard",
+        "description": "Soft body absorbs impacts",
+        "base_protection": 51,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A deliciously deceptive cloud that looks sweet but packs a sugary punch.",
+    "original_image": null,
+    "hp": 737
+  },
+  {
+    "id": "crayon_creature",
+    "name": "Crayon Creature",
+    "visual_description": "A monstrous being formed from melted, multicolored crayons with a wide, menacing mouth of sharp, waxy teeth and mismatched eyes",
+    "elements": [
+      "magic",
+      "fire"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Waxy Barrage",
+        "description": "Flings hot wax projectiles",
+        "base_damage": 792,
+        "element": "fire"
+      },
+      {
+        "name": "Color Melt",
+        "description": "Melts crayons into burning streams",
+        "base_damage": 615,
+        "element": "fire"
+      },
+      {
+        "name": "Rainbow Rend",
+        "description": "Slashes with sharp crayon claws",
+        "base_damage": 670,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Crayon Wall",
+        "description": "Draws a protective barrier",
+        "base_protection": 44,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A colorful monster born from a childs art supplies, bringing drawings to terrifying life.",
+    "original_image": null,
+    "hp": 842
+  },
+  {
+    "id": "crystal_monster",
+    "name": "Crystal Monster",
+    "visual_description": "A formidable creature composed of sharp, jagged purple and blue crystals with glowing white eyes and a sinister grin",
+    "elements": [
+      "earth",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Crystal Shard",
+        "description": "Launches razor-sharp crystal fragments",
+        "base_damage": 665,
+        "element": "earth"
+      },
+      {
+        "name": "Geode Crush",
+        "description": "Slams with crystal-encrusted fists",
+        "base_damage": 710,
+        "element": "earth"
+      },
+      {
+        "name": "Razor Edge",
+        "description": "Slices with crystalline blades",
+        "base_damage": 640,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Crystalline Armor",
+        "description": "Body of unbreakable crystal",
+        "base_protection": 44,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A glittering monster whose beautiful crystals hide deadly sharp edges and powerful magic.",
+    "original_image": null,
+    "hp": 717
+  },
+  {
+    "id": "dice_roller",
+    "name": "Dice Roller",
+    "visual_description": "A cartoonish, anthropomorphic six-sided die with a single large eye on its 5-face, with simple arms and legs giving it a playful character",
+    "elements": [
+      "magic",
+      "universe"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Roll of Fate",
+        "description": "Random damage based on the roll",
+        "base_damage": 665,
+        "element": "magic"
+      },
+      {
+        "name": "Pip Pummel",
+        "description": "Strikes with corner force",
+        "base_damage": 611,
+        "element": "magic"
+      },
+      {
+        "name": "Gamblers Gambit",
+        "description": "High-risk, high-reward attack",
+        "base_damage": 762,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Evasive Roll",
+        "description": "Tumbles away from attacks",
+        "base_protection": 66,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A lucky little die that leaves every battle up to chance, for better or worse.",
+    "original_image": null,
+    "hp": 997
+  },
+  {
+    "id": "disco_dragon",
+    "name": "Disco Dragon",
+    "visual_description": "A vibrant, multi-colored dragon shimmering with iridescent disco ball light, scales forming a mosaic of bright colors in a dynamic dance pose",
+    "elements": [
+      "magic",
+      "fire"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Disco Inferno",
+        "description": "Blazing dance floor attack",
+        "base_damage": 875,
+        "element": "fire"
+      },
+      {
+        "name": "Prismatic Breath",
+        "description": "Breathes rainbow fire",
+        "base_damage": 939,
+        "element": "magic"
+      },
+      {
+        "name": "Glitter Bomb",
+        "description": "Explosive sparkle attack",
+        "base_damage": 873,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Mirror Ball Shield",
+        "description": "Reflects attacks with disco light",
+        "base_protection": 86,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A groovy dragon that brings the party wherever it goes, dancing enemies into defeat.",
+    "original_image": null,
+    "hp": 1241
+  },
+  {
+    "id": "domino_effect",
+    "name": "Domino Effect",
+    "visual_description": "A humanoid figure constructed from black and white dominoes with a single, large, off-center eye, appearing in perpetual imbalance",
+    "elements": [
+      "mecha",
+      "magic"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Toppling Strike",
+        "description": "Knocks enemies down like dominoes",
+        "base_damage": 938,
+        "element": "mecha"
+      },
+      {
+        "name": "Chain Reaction",
+        "description": "Attack spreads to nearby foes",
+        "base_damage": 1192,
+        "element": "magic"
+      },
+      {
+        "name": "Domino Drop",
+        "description": "Crushing domino avalanche",
+        "base_damage": 1106,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sturdy Stance",
+        "description": "Refuses to fall down",
+        "base_protection": 98,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A carefully balanced domino warrior that causes chain reactions of destruction when it finally falls.",
+    "original_image": null,
+    "hp": 1283
+  },
+  {
+    "id": "eraser_head",
+    "name": "Eraser Head",
+    "visual_description": "A melancholic figure with a large, pink rubber eraser for a head and a sketchy, indistinct body as if drawn with pencil and partially smudged",
+    "elements": [
+      "magic",
+      "universe"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Mistake Erased",
+        "description": "Removes enemies from existence",
+        "base_damage": 990,
+        "element": "universe"
+      },
+      {
+        "name": "Smudge Out",
+        "description": "Blurs and disorients foes",
+        "base_damage": 915,
+        "element": "magic"
+      },
+      {
+        "name": "Pencil Jab",
+        "description": "Sharp graphite strike",
+        "base_damage": 873,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Rubber Guard",
+        "description": "Bouncy eraser deflects attacks",
+        "base_protection": 103,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A mysterious creature that can erase anything from reality, including its enemies mistakes.",
+    "original_image": null,
+    "hp": 1209
+  },
+  {
+    "id": "eyeball_monster",
+    "name": "Eyeball Monster",
+    "visual_description": "A grotesque, fleshy mound composed of countless eyeballs of varying sizes with a central gaping maw revealing even more eyes within",
+    "elements": [
+      "water",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Thousand-Stare",
+        "description": "Hypnotic gaze from countless eyes",
+        "base_damage": 557,
+        "element": "magic"
+      },
+      {
+        "name": "Optic Blast",
+        "description": "Laser beams from multiple eyes",
+        "base_damage": 580,
+        "element": "magic"
+      },
+      {
+        "name": "Gaze of Madness",
+        "description": "Drives enemies insane with staring",
+        "base_damage": 584,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "All-Seeing Shield",
+        "description": "Spots all incoming attacks",
+        "base_protection": 68,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A creepy collection of eyeballs that sees everything and forgets nothing.",
+    "original_image": null,
+    "hp": 725
+  },
+  {
+    "id": "face_thwapper",
+    "name": "Face Thwapper",
+    "visual_description": "A lanky, comical creature whose head is a large, flat, hand-like appendage with a simple face on the palm, ready to swing in a slapping motion",
+    "elements": [
+      "air",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Five-Finger Slap",
+        "description": "Full-palm devastating slap",
+        "base_damage": 700,
+        "element": "air"
+      },
+      {
+        "name": "Thwack Attack",
+        "description": "Quick successive slaps",
+        "base_damage": 745,
+        "element": "air"
+      },
+      {
+        "name": "Palm Pummel",
+        "description": "Ground-shaking palm strike",
+        "base_damage": 777,
+        "element": "earth"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "High Five Block",
+        "description": "Catches attacks with palm",
+        "base_protection": 56,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A silly creature that settles all disputes with a good old-fashioned face slap.",
+    "original_image": null,
+    "hp": 902
+  },
+  {
+    "id": "fire_spike",
+    "name": "Fire Spike",
+    "visual_description": "A small, aggressive-looking creature made of fire with a spiky head and a single glowing yellow eye, body a swirling vortex of flames with a wide toothy grin",
+    "elements": [
+      "fire",
+      "magic"
+    ],
+    "tier": "legendary",
+    "attacks": [
+      {
+        "name": "Spike Singe",
+        "description": "Burns with flaming spikes",
+        "base_damage": 1357,
+        "element": "fire"
+      },
+      {
+        "name": "Ember Jab",
+        "description": "Quick fiery pokes",
+        "base_damage": 1378,
+        "element": "fire"
+      },
+      {
+        "name": "Fiery Spin",
+        "description": "Whirls in a burning tornado",
+        "base_damage": 1060,
+        "element": "fire"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Flame Shield",
+        "description": "Barrier of intense flames",
+        "base_protection": 145,
+        "element": "fire"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A tiny terror of flames and spikes that burns anything foolish enough to get close.",
+    "original_image": null,
+    "hp": 1306
+  },
+  {
+    "id": "flame_head",
+    "name": "Flame Head",
+    "visual_description": "A disembodied head made of roiling flames with two bright, fiery eyes and a mouth agape as if screaming or breathing fire",
+    "elements": [
+      "fire",
+      "air"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Searing Gaze",
+        "description": "Burns with intense eye contact",
+        "base_damage": 1136,
+        "element": "fire"
+      },
+      {
+        "name": "Cinder Breath",
+        "description": "Exhales burning embers",
+        "base_damage": 978,
+        "element": "fire"
+      },
+      {
+        "name": "Fireball",
+        "description": "Spits concentrated flame orbs",
+        "base_damage": 858,
+        "element": "fire"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Wall of Fire",
+        "description": "Surrounds self with flames",
+        "base_protection": 89,
+        "element": "fire"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A floating head of pure flame that lights up every battle with its fiery personality.",
+    "original_image": null,
+    "hp": 1140
+  },
+  {
+    "id": "frosty_phantom",
+    "name": "Frosty Phantom",
+    "visual_description": "An ethereal, ghostly figure composed of ice and snow with glowing blue eyes in a shadowy face and a jagged smiling mouth dripping with icicles",
+    "elements": [
+      "water",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Frostbite",
+        "description": "Freezing touch attack",
+        "base_damage": 502,
+        "element": "water"
+      },
+      {
+        "name": "Ice Shard",
+        "description": "Launches frozen projectiles",
+        "base_damage": 638,
+        "element": "water"
+      },
+      {
+        "name": "Glacial Grasp",
+        "description": "Grabs and freezes enemies solid",
+        "base_damage": 762,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Arctic Aura",
+        "description": "Cold field slows attackers",
+        "base_protection": 52,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A chilling ghost that brings eternal winter wherever it haunts.",
+    "original_image": null,
+    "hp": 938
+  },
+  {
+    "id": "geode_splitter",
+    "name": "Geode Splitter",
+    "visual_description": "A creature with a body like a cracked-open geode, rough brown rock exterior with sparkling purple and blue crystal interior, crystal mouth and expressive eyes",
+    "elements": [
+      "earth",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Crystal Shard",
+        "description": "Fires sharp crystal fragments",
+        "base_damage": 656,
+        "element": "earth"
+      },
+      {
+        "name": "Geode Slam",
+        "description": "Crushing rock attack",
+        "base_damage": 766,
+        "element": "earth"
+      },
+      {
+        "name": "Gemstone Barrage",
+        "description": "Rains precious stones on foes",
+        "base_damage": 604,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Rock-Hard Shell",
+        "description": "Tough outer stone protection",
+        "base_protection": 50,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A walking treasure chest of crystals that shares its gems through high-velocity attacks.",
+    "original_image": null,
+    "hp": 756
+  },
+  {
+    "id": "giant_squid",
+    "name": "Giant Squid",
+    "visual_description": "A massive, cartoonish squid with a single, large, curious eye in the center of its mantle, vibrant purple skin and tentacles poised for movement",
+    "elements": [
+      "water",
+      "universe"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Tentacle Lash",
+        "description": "Whips with powerful arms",
+        "base_damage": 783,
+        "element": "water"
+      },
+      {
+        "name": "Ink Cloud",
+        "description": "Blinds enemies with dark ink",
+        "base_damage": 778,
+        "element": "water"
+      },
+      {
+        "name": "Abyssal Squeeze",
+        "description": "Crushing deep-sea grip",
+        "base_damage": 500,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Deep Dive",
+        "description": "Escapes into the depths",
+        "base_protection": 79,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A mysterious creature from the darkest ocean depths with tentacles that reach across dimensions.",
+    "original_image": null,
+    "hp": 785
+  },
+  {
+    "id": "glitter_bomb",
+    "name": "Glitter Bomb",
+    "visual_description": "A spherical, bomb-like creature covered in sparkling, multi-colored glitter with a lit fuse and a mischievous, wide-eyed expression",
+    "elements": [
+      "magic",
+      "fire"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Glitter Explosion",
+        "description": "Detonates in a sparkly blast",
+        "base_damage": 559,
+        "element": "fire"
+      },
+      {
+        "name": "Sparkle Storm",
+        "description": "Showers enemies in sharp glitter",
+        "base_damage": 690,
+        "element": "magic"
+      },
+      {
+        "name": "Confetti Blast",
+        "description": "Party-themed explosive attack",
+        "base_damage": 661,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Dazzling Display",
+        "description": "Blinds attackers with sparkles",
+        "base_protection": 56,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A glittery explosive that turns every battle into a fabulous disaster for enemies.",
+    "original_image": null,
+    "hp": 710
+  },
+  {
+    "id": "glow_worm",
+    "name": "Glow Worm",
+    "visual_description": "A segmented, worm-like creature that emits a soft, greenish-yellow bioluminescent glow from within, with a simple friendly face and small dark eyes",
+    "elements": [
+      "plant",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Luminous Spit",
+        "description": "Glowing acidic projectile",
+        "base_damage": 541,
+        "element": "plant"
+      },
+      {
+        "name": "Glow Bite",
+        "description": "Biting attack that leaves a mark",
+        "base_damage": 545,
+        "element": "plant"
+      },
+      {
+        "name": "Tail Flash",
+        "description": "Blinding light burst",
+        "base_damage": 755,
+        "element": "plant"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bioluminescent Blind",
+        "description": "Flashes to distract attackers",
+        "base_protection": 45,
+        "element": "plant"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A friendly glowing worm that lights up the darkness and the enemies it faces.",
+    "original_image": null,
+    "hp": 997
+  },
+  {
+    "id": "goopy_ghost",
+    "name": "Goopy Ghost",
+    "visual_description": "An amorphous, translucent ghost made of thick, dripping green slime with a slightly sad facial expression and body pooling at the base",
+    "elements": [
+      "water",
+      "magic"
+    ],
+    "tier": "legendary",
+    "attacks": [
+      {
+        "name": "Slime Shot",
+        "description": "Launches gobs of ectoplasm",
+        "base_damage": 1402,
+        "element": "water"
+      },
+      {
+        "name": "Ectoplasmic Slam",
+        "description": "Heavy ghostly body slam",
+        "base_damage": 1066,
+        "element": "magic"
+      },
+      {
+        "name": "Goop Puddle",
+        "description": "Creates sticky trap on ground",
+        "base_damage": 1067,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sticky Shield",
+        "description": "Attacks get stuck in slime",
+        "base_protection": 143,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A melancholy ghost that cant stop dripping, leaving a trail of supernatural slime everywhere.",
+    "original_image": null,
+    "hp": 1579
+  },
+  {
+    "id": "gravity_ghost",
+    "name": "Gravity Ghost",
+    "visual_description": "A spectral entity with a dark, shadowy core and glowing purple eyes, surrounded by a swirling galaxy-like ring of cosmic dust and small planetoids",
+    "elements": [
+      "universe",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Gravitational Pull",
+        "description": "Draws enemies in for crushing",
+        "base_damage": 587,
+        "element": "universe"
+      },
+      {
+        "name": "Meteor Slam",
+        "description": "Pulls space rocks onto foes",
+        "base_damage": 639,
+        "element": "universe"
+      },
+      {
+        "name": "Orbital Strike",
+        "description": "Sends objects into deadly orbit",
+        "base_damage": 777,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Zero-G Field",
+        "description": "Floats attacks harmlessly away",
+        "base_protection": 80,
+        "element": "universe"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A cosmic phantom that bends gravity itself, pulling enemies into its inescapable orbit.",
+    "original_image": null,
+    "hp": 988
+  },
+  {
+    "id": "jellyfish_jolt",
+    "name": "Jellyfish Jolt",
+    "visual_description": "A jellyfish-like creature whose bell and tentacles are composed of crackling blue and purple electricity, floating and pulsing with energy",
+    "elements": [
+      "water",
+      "air"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Thunder Tentacle",
+        "description": "Electrified whip attack",
+        "base_damage": 783,
+        "element": "water"
+      },
+      {
+        "name": "Jolt Shock",
+        "description": "Stunning electrical burst",
+        "base_damage": 605,
+        "element": "air"
+      },
+      {
+        "name": "Ion Blast",
+        "description": "Concentrated electric beam",
+        "base_damage": 663,
+        "element": "air"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Static Field",
+        "description": "Electric barrier around body",
+        "base_protection": 66,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "An electrifying jellyfish that floats through the air, shocking everything in its path.",
+    "original_image": null,
+    "hp": 811
+  },
+  {
+    "id": "key_master",
+    "name": "Key Master",
+    "visual_description": "A humanoid figure whose body is entirely composed of a jumble of antique and modern keys of various shapes and sizes, forming head, torso, and limbs",
+    "elements": [
+      "mecha",
+      "magic"
+    ],
+    "tier": "legendary",
+    "attacks": [
+      {
+        "name": "Lock Down",
+        "description": "Immobilizes enemies completely",
+        "base_damage": 1196,
+        "element": "magic"
+      },
+      {
+        "name": "Skeleton Key Strike",
+        "description": "Unlocks enemy defenses",
+        "base_damage": 1230,
+        "element": "mecha"
+      },
+      {
+        "name": "Key-Blade Barrage",
+        "description": "Launches sharp keys as projectiles",
+        "base_damage": 1472,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Deadbolt Defense",
+        "description": "Locks up tight against attacks",
+        "base_protection": 134,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "The guardian of all locks and doors, this key creature can open any defense.",
+    "original_image": null,
+    "hp": 1641
+  },
+  {
+    "id": "leaf_leaper",
+    "name": "Leaf Leaper",
+    "visual_description": "A small, agile creature made of overlapping green leaves giving it a textured, camouflaged appearance with bright curious eyes, poised for a jump",
+    "elements": [
+      "plant",
+      "air"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "description": "Slices with sharp leaf edges",
+        "base_damage": 618,
+        "element": "plant"
+      },
+      {
+        "name": "Seed Shot",
+        "description": "Fires hard seeds at enemies",
+        "base_damage": 534,
+        "element": "plant"
+      },
+      {
+        "name": "Vine Lash",
+        "description": "Whips with extending vines",
+        "base_damage": 677,
+        "element": "plant"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Forest Camouflage",
+        "description": "Blends in to avoid attacks",
+        "base_protection": 41,
+        "element": "plant"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A nimble forest creature that leaps from leaf to leaf, striking before vanishing.",
+    "original_image": null,
+    "hp": 830
+  },
+  {
+    "id": "magnet_monster",
+    "name": "Magnet Monster",
+    "visual_description": "A bulky, robotic monster with a metallic body featuring large, red U-shaped magnets as hands and a single glowing eye in center of its head",
+    "elements": [
+      "mecha",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Polarity Pulse",
+        "description": "Magnetic field disruption",
+        "base_damage": 615,
+        "element": "mecha"
+      },
+      {
+        "name": "Scrap Slam",
+        "description": "Attracts metal debris to crush foes",
+        "base_damage": 504,
+        "element": "earth"
+      },
+      {
+        "name": "Magnetic Crush",
+        "description": "Pulls enemies together violently",
+        "base_damage": 537,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Repelling Field",
+        "description": "Pushes metal attacks away",
+        "base_protection": 44,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A powerful magnetic robot that attracts trouble and repels anyone who challenges it.",
+    "original_image": null,
+    "hp": 821
+  },
+  {
+    "id": "marble_madness",
+    "name": "Marble Madness",
+    "visual_description": "A chaotic, swirling mass of colorful glass marbles forming a vaguely monstrous shape with light reflecting and refracting through its formless body",
+    "elements": [
+      "magic",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Marble Scattershot",
+        "description": "Explodes into bouncing projectiles",
+        "base_damage": 673,
+        "element": "earth"
+      },
+      {
+        "name": "Glass Gatling",
+        "description": "Rapid-fire marble barrage",
+        "base_damage": 537,
+        "element": "earth"
+      },
+      {
+        "name": "Cats Eye Crash",
+        "description": "Special marble mega-strike",
+        "base_damage": 770,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Rolling Barricade",
+        "description": "Marbles form protective barrier",
+        "base_protection": 56,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A chaotic collection of marbles that rolls into battle with unpredictable bouncing attacks.",
+    "original_image": null,
+    "hp": 716
+  },
+  {
+    "id": "muddy_buddy",
+    "name": "Muddy Buddy",
+    "visual_description": "A friendly-looking, golem-like creature made of thick, brown mud with a simple, smiling face with wide eyes, lumpy and soft body",
+    "elements": [
+      "earth",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Mud Slap",
+        "description": "Splatters enemies with wet earth",
+        "base_damage": 612,
+        "element": "earth"
+      },
+      {
+        "name": "Sludge Bomb",
+        "description": "Explosive mud projectile",
+        "base_damage": 783,
+        "element": "water"
+      },
+      {
+        "name": "Bog Down",
+        "description": "Traps foes in sticky mud",
+        "base_damage": 569,
+        "element": "earth"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Mud Wall",
+        "description": "Raises earthen barrier",
+        "base_protection": 77,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A friendly mud creature that just wants to play but always makes a huge mess.",
+    "original_image": null,
+    "hp": 954
+  },
+  {
+    "id": "paint_splatter",
+    "name": "Paint Splatter",
+    "visual_description": "A chaotic, vaguely humanoid figure made of vibrant, multi-colored paint splatters with large googly eyes and a fluid, artistic form",
+    "elements": [
+      "magic",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Rainbow Blast",
+        "description": "Explosive burst of all colors",
+        "base_damage": 748,
+        "element": "magic"
+      },
+      {
+        "name": "Splatter Shot",
+        "description": "Launches paint projectiles",
+        "base_damage": 713,
+        "element": "water"
+      },
+      {
+        "name": "Pigment Punch",
+        "description": "Colorful close-range strike",
+        "base_damage": 600,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Canvas Camouflage",
+        "description": "Blends into surroundings",
+        "base_protection": 46,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A living abstract painting that creates chaos and art wherever it splatters.",
+    "original_image": null,
+    "hp": 827
+  },
+  {
+    "id": "pillow_fighter",
+    "name": "Pillow Fighter",
+    "visual_description": "A soft, plush creature resembling a pillow with stitched eyes and a playful expression, fluffy and ready for a slumber party battle",
+    "elements": [
+      "air",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Pillow Pummel",
+        "description": "Soft but surprisingly powerful hits",
+        "base_damage": 686,
+        "element": "air"
+      },
+      {
+        "name": "Feather Flurry",
+        "description": "Storm of fluffy feathers",
+        "base_damage": 722,
+        "element": "air"
+      },
+      {
+        "name": "Sleepy Slap",
+        "description": "Makes enemies drowsy on impact",
+        "base_damage": 716,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Cotton Guard",
+        "description": "Soft body absorbs damage",
+        "base_protection": 71,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "The champion of slumber parties who turns bedtime into battle time.",
+    "original_image": null,
+    "hp": 926
+  },
+  {
+    "id": "pixel_pete",
+    "name": "Pixel Pete",
+    "visual_description": "A blocky, pixelated character reminiscent of an 8-bit video game sprite, composed of blue and purple cubes with a simple, digital appearance",
+    "elements": [
+      "mecha",
+      "universe"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Pixel Punch",
+        "description": "Blocky fist attack",
+        "base_damage": 1153,
+        "element": "mecha"
+      },
+      {
+        "name": "8-Bit Barrage",
+        "description": "Retro projectile spam",
+        "base_damage": 1143,
+        "element": "mecha"
+      },
+      {
+        "name": "Resolution Rend",
+        "description": "Pixelates enemies apart",
+        "base_damage": 1139,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bit Block",
+        "description": "Digital shield of pixels",
+        "base_protection": 76,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A retro hero from the digital realm who fights with the power of classic gaming.",
+    "original_image": null,
+    "hp": 1028
+  },
+  {
+    "id": "popcorn_popper",
+    "name": "Popcorn Popper",
+    "visual_description": "A creature whose body is a red-and-white striped popcorn container overflowing with popcorn, with two googly eyes peeking out from the buttery kernels",
+    "elements": [
+      "fire",
+      "plant"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Kernel Cannon",
+        "description": "Fires hot popcorn projectiles",
+        "base_damage": 557,
+        "element": "fire"
+      },
+      {
+        "name": "Hot Butter Blast",
+        "description": "Scalding butter spray",
+        "base_damage": 630,
+        "element": "fire"
+      },
+      {
+        "name": "Pop-splosion",
+        "description": "Explosive popping attack",
+        "base_damage": 600,
+        "element": "plant"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Buttery Shield",
+        "description": "Slippery butter coating",
+        "base_protection": 52,
+        "element": "plant"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A delicious monster that brings movie snack mayhem to every battle.",
+    "original_image": null,
+    "hp": 878
+  },
+  {
+    "id": "porcupine_pal",
+    "name": "Porcupine Pal",
+    "visual_description": "A cute, brown porcupine-like monster with large, friendly eyes and a back covered in a formidable array of sharp, white quills",
+    "elements": [
+      "earth",
+      "plant"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Quill Quiver",
+        "description": "Launches sharp quills",
+        "base_damage": 721,
+        "element": "plant"
+      },
+      {
+        "name": "Spike Shot",
+        "description": "Rapid quill projectiles",
+        "base_damage": 596,
+        "element": "earth"
+      },
+      {
+        "name": "Pin Cushion",
+        "description": "Rolls into a spiky ball",
+        "base_damage": 646,
+        "element": "earth"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Spiny Shield",
+        "description": "Hurts anyone who touches",
+        "base_protection": 70,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A prickly friend who gives the sharpest hugs and the pointiest attacks.",
+    "original_image": null,
+    "hp": 773
+  },
+  {
+    "id": "puzzle_piece",
+    "name": "Puzzle Piece",
+    "visual_description": "A humanoid figure constructed from interlocking, multi-colored puzzle pieces standing in a dynamic pose suggesting movement or readiness",
+    "elements": [
+      "magic",
+      "mecha"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Jigsaw Jab",
+        "description": "Connects punches in sequence",
+        "base_damage": 732,
+        "element": "mecha"
+      },
+      {
+        "name": "Piece-by-Piece Pummel",
+        "description": "Dismantles enemy defenses",
+        "base_damage": 789,
+        "element": "magic"
+      },
+      {
+        "name": "Confounding Combo",
+        "description": "Puzzling attack patterns",
+        "base_damage": 551,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Interlocking Shield",
+        "description": "Pieces lock together for defense",
+        "base_protection": 43,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A mysterious creature that solves battles piece by piece until victory is complete.",
+    "original_image": null,
+    "hp": 740
+  },
+  {
+    "id": "rainbow_blob",
+    "name": "Rainbow Blob",
+    "visual_description": "A large, amorphous blob of vibrant, swirling rainbow colors with a simple, cheerful face featuring small eyes and a gentle smile",
+    "elements": [
+      "magic",
+      "water"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Color Splash",
+        "description": "Bursts of prismatic energy",
+        "base_damage": 808,
+        "element": "magic"
+      },
+      {
+        "name": "Prismatic Pulse",
+        "description": "Rainbow shockwave attack",
+        "base_damage": 849,
+        "element": "magic"
+      },
+      {
+        "name": "Rainbow Whip",
+        "description": "Colorful tendril strike",
+        "base_damage": 1195,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Gooey Guard",
+        "description": "Absorbs attacks into blobby body",
+        "base_protection": 85,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A cheerful rainbow creature that brings colorful chaos to every encounter.",
+    "original_image": null,
+    "hp": 1283
+  },
+  {
+    "id": "rock_monster",
+    "name": "Rock Monster",
+    "visual_description": "A massive, powerful creature made of solid grey and brown rock with glowing red eyes, a craggy open mouth, and large boulder-like fists",
+    "elements": [
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Stone Slam",
+        "description": "Crushing boulder punch",
+        "base_damage": 752,
+        "element": "earth"
+      },
+      {
+        "name": "Rock Throw",
+        "description": "Hurls pieces of itself at foes",
+        "base_damage": 612,
+        "element": "earth"
+      },
+      {
+        "name": "Pebble Pummel",
+        "description": "Rapid-fire stone projectiles",
+        "base_damage": 710,
+        "element": "earth"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Granite Guard",
+        "description": "Rock-solid defensive stance",
+        "base_protection": 44,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A towering stone guardian that crushes enemies with the weight of a mountain.",
+    "original_image": null,
+    "hp": 955
+  },
+  {
+    "id": "rubber_band",
+    "name": "Rubber Band",
+    "visual_description": "A creature formed from a tangled, chaotic mass of colorful rubber bands with two googly eyes peering out from the elastic knot",
+    "elements": [
+      "magic",
+      "plant"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Elastic Lash",
+        "description": "Stretchy snapping strike",
+        "base_damage": 705,
+        "element": "magic"
+      },
+      {
+        "name": "Snap Back Sting",
+        "description": "Painful rubber band snap",
+        "base_damage": 639,
+        "element": "plant"
+      },
+      {
+        "name": "Rubber Barrage",
+        "description": "Multiple stretchy attacks",
+        "base_damage": 739,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Bouncy Barrier",
+        "description": "Stretches to absorb impacts",
+        "base_protection": 59,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A stretchy, snappy creature that keeps coming back no matter how far you push it.",
+    "original_image": null,
+    "hp": 701
+  },
+  {
+    "id": "scribble_monster",
+    "name": "Scribble Monster",
+    "visual_description": "A chaotic being appearing as a frantic, three-dimensional scribble of black, blue, and red ink with a single large expressive eye at its center",
+    "elements": [
+      "magic",
+      "air"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Ink Jet",
+        "description": "Sprays dark ink at enemies",
+        "base_damage": 755,
+        "element": "magic"
+      },
+      {
+        "name": "Scribble Storm",
+        "description": "Chaotic line attack",
+        "base_damage": 581,
+        "element": "air"
+      },
+      {
+        "name": "Chaotic Line",
+        "description": "Unpredictable strike patterns",
+        "base_damage": 600,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Graphite Guard",
+        "description": "Smudges attacks away",
+        "base_protection": 59,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "Born from a childs wild drawings, this scribble creature brings artistic chaos to life.",
+    "original_image": null,
+    "hp": 991
+  },
+  {
+    "id": "shadow_creeper",
+    "name": "Shadow Creeper",
+    "visual_description": "A shadowy, ghost-like figure with a featureless head and two glowing white eyes, composed of dark, smoky tendrils giving an ethereal, menacing look",
+    "elements": [
+      "universe",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Shadow Sneak",
+        "description": "Strikes from the darkness",
+        "base_damage": 784,
+        "element": "magic"
+      },
+      {
+        "name": "Gloom Grasp",
+        "description": "Grabs with shadowy tendrils",
+        "base_damage": 532,
+        "element": "universe"
+      },
+      {
+        "name": "Dark Pulse",
+        "description": "Wave of dark energy",
+        "base_damage": 664,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Umbral Cloak",
+        "description": "Hides in shadows to avoid damage",
+        "base_protection": 44,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A creature of pure darkness that lurks in shadows waiting to strike the unwary.",
+    "original_image": null,
+    "hp": 731
+  },
+  {
+    "id": "silly_string",
+    "name": "Silly String",
+    "visual_description": "A chaotic explosion of colorful, stringy material with two prominent cartoonish eyes peeking out from the vibrant mess of pink, yellow, and blue strings",
+    "elements": [
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "String Shot",
+        "description": "Sprays sticky strings",
+        "base_damage": 764,
+        "element": "magic"
+      },
+      {
+        "name": "Tangle Lash",
+        "description": "Entangles enemies in strings",
+        "base_damage": 778,
+        "element": "magic"
+      },
+      {
+        "name": "Gummy Grip",
+        "description": "Holds foes in place",
+        "base_damage": 583,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Silly Shield",
+        "description": "Absorbs attacks in stringy mess",
+        "base_protection": 44,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A party gone wrong, this string creature tangles up anyone who dares to fight it.",
+    "original_image": null,
+    "hp": 950
+  },
+  {
+    "id": "snot_monster",
+    "name": "Snot Monster",
+    "visual_description": "A grotesque, slimy green creature made entirely of mucus with a large nostril from which thick snot perpetually drips, amorphous and goopy body",
+    "elements": [
+      "water",
+      "plant"
+    ],
+    "tier": "legendary",
+    "attacks": [
+      {
+        "name": "Snot Shot",
+        "description": "Launches gobs of mucus",
+        "base_damage": 1446,
+        "element": "water"
+      },
+      {
+        "name": "Mucus Whip",
+        "description": "Slimy tendril strike",
+        "base_damage": 1097,
+        "element": "plant"
+      },
+      {
+        "name": "Booger Bomb",
+        "description": "Explosive snot projectile",
+        "base_damage": 1036,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Slimy Shield",
+        "description": "Slippery coating deflects attacks",
+        "base_protection": 139,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "The grossest monster around, leaving a trail of slime and defeated enemies in its wake.",
+    "original_image": null,
+    "hp": 1342
+  },
+  {
+    "id": "sock_monster",
+    "name": "Sock Monster",
+    "visual_description": "A creature resembling a striped gray and white tube sock come to life with a single large googly eye and a wide stitched mouth like a goofy puppet",
+    "elements": [
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Sock Slap",
+        "description": "Floppy fabric strike",
+        "base_damage": 712,
+        "element": "magic"
+      },
+      {
+        "name": "Lint Ball",
+        "description": "Fires fuzzy projectiles",
+        "base_damage": 563,
+        "element": "magic"
+      },
+      {
+        "name": "Static Cling",
+        "description": "Zaps with sock electricity",
+        "base_damage": 799,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Cotton Guard",
+        "description": "Soft material absorbs hits",
+        "base_protection": 56,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "The creature that lives in your laundry, eating socks and fighting with the ones it wears.",
+    "original_image": null,
+    "hp": 823
+  },
+  {
+    "id": "sound_wave",
+    "name": "Sound Wave",
+    "visual_description": "An abstract being composed of concentric, vibrating rings of light and energy, colors shifting from bright white center to blues and purples on the edges",
+    "elements": [
+      "air",
+      "universe"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Sonic Boom",
+        "description": "Devastating sound explosion",
+        "base_damage": 543,
+        "element": "air"
+      },
+      {
+        "name": "Piercing Pitch",
+        "description": "High-frequency painful sound",
+        "base_damage": 720,
+        "element": "air"
+      },
+      {
+        "name": "Resonant Blast",
+        "description": "Vibrating shockwave attack",
+        "base_damage": 796,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sound Barrier",
+        "description": "Deflects attacks with sound",
+        "base_protection": 74,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A being of pure sound that shatters enemies with the power of vibration.",
+    "original_image": null,
+    "hp": 721
+  },
+  {
+    "id": "sparky",
+    "name": "Sparky",
+    "visual_description": "A small, yellow, fuzzy creature with large black eyes and two long floppy ears ending in three-pronged electrical plugs, with a similar plug-like tail",
+    "elements": [
+      "mecha",
+      "air"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Spark Shock",
+        "description": "Electric jolt attack",
+        "base_damage": 607,
+        "element": "mecha"
+      },
+      {
+        "name": "Jolt Jab",
+        "description": "Quick shocking strike",
+        "base_damage": 665,
+        "element": "air"
+      },
+      {
+        "name": "Plug Pounce",
+        "description": "Leaping electrical attack",
+        "base_damage": 625,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Static Shield",
+        "description": "Electric barrier",
+        "base_protection": 57,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "An adorable electric creature that powers up for battle with its plug-shaped ears.",
+    "original_image": null,
+    "hp": 837
+  },
+  {
+    "id": "spike_ball",
+    "name": "Spike Ball",
+    "visual_description": "A spherical, brown creature covered in sharp, wooden-looking spikes with two large simple black eyes and a small downturned mouth, rough organic texture",
+    "elements": [
+      "plant",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Spike Roll",
+        "description": "Rolls into enemies with spikes",
+        "base_damage": 740,
+        "element": "earth"
+      },
+      {
+        "name": "Thorn Toss",
+        "description": "Launches sharp thorns",
+        "base_damage": 666,
+        "element": "plant"
+      },
+      {
+        "name": "Pin Cushion",
+        "description": "Bristles with defensive spikes",
+        "base_damage": 538,
+        "element": "plant"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Harden Spikes",
+        "description": "Makes spikes extra sharp",
+        "base_protection": 41,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A grumpy ball of natural spikes that rolls through enemies without slowing down.",
+    "original_image": null,
+    "hp": 857
+  },
+  {
+    "id": "spinner_spirit",
+    "name": "Spinner Spirit",
+    "visual_description": "A ghostly, ethereal figure wide at top and tapering to a point like a spinning top or tornado, white and light blue with a swirling, smoky texture and classic ghost face",
+    "elements": [
+      "air",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Spirit Spin",
+        "description": "Whirling ghostly attack",
+        "base_damage": 552,
+        "element": "magic"
+      },
+      {
+        "name": "Tornado Twist",
+        "description": "Creates a spectral vortex",
+        "base_damage": 538,
+        "element": "air"
+      },
+      {
+        "name": "Ecto-Vortex",
+        "description": "Sucks enemies into ghostly spiral",
+        "base_damage": 782,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Spectral Shield",
+        "description": "Ghostly barrier blocks attacks",
+        "base_protection": 54,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A spinning phantom that whirls through the battlefield like a supernatural tornado.",
+    "original_image": null,
+    "hp": 995
+  },
+  {
+    "id": "sprinkle_spirit",
+    "name": "Sprinkle Spirit",
+    "visual_description": "A whimsical blob-like creature of melting ice cream or frosting, pink and blue swirls covered in colorful candy sprinkles with joyful eyes and a pink cherry on top",
+    "elements": [
+      "magic",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Sprinkle Storm",
+        "description": "Rains down candy sprinkles",
+        "base_damage": 683,
+        "element": "magic"
+      },
+      {
+        "name": "Sugar Rush",
+        "description": "Hyperactive sweet attack",
+        "base_damage": 536,
+        "element": "magic"
+      },
+      {
+        "name": "Frosting Fling",
+        "description": "Throws globs of sweet frosting",
+        "base_damage": 628,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Sweet Shield",
+        "description": "Sugary coating blocks attacks",
+        "base_protection": 64,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A dessert come to life that makes every battle as sweet as it is dangerous.",
+    "original_image": null,
+    "hp": 769
+  },
+  {
+    "id": "star_striker",
+    "name": "Star Striker",
+    "visual_description": "A celestial being with a star-shaped head and humanoid body of cosmic energy, glowing yellow five-pointed star head with determined eyes, body filled with nebulae",
+    "elements": [
+      "universe",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Star Strike",
+        "description": "Celestial energy attack",
+        "base_damage": 785,
+        "element": "universe"
+      },
+      {
+        "name": "Cosmic Ray",
+        "description": "Beam of starlight",
+        "base_damage": 659,
+        "element": "universe"
+      },
+      {
+        "name": "Meteor Mash",
+        "description": "Summons space rocks to strike",
+        "base_damage": 777,
+        "element": "universe"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Nebula Shield",
+        "description": "Cloud of cosmic dust protection",
+        "base_protection": 41,
+        "element": "universe"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A star warrior from beyond the cosmos who strikes with the power of galaxies.",
+    "original_image": null,
+    "hp": 930
+  },
+  {
+    "id": "sticky_note",
+    "name": "Sticky Note",
+    "visual_description": "A creature resembling a yellow sticky note pad with googly eyes and a simple drawn mouth, limbs made of rolled or crumpled paper with a handcrafted look",
+    "elements": [
+      "magic",
+      "plant"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Paper Cut",
+        "description": "Sharp paper edge slice",
+        "base_damage": 957,
+        "element": "plant"
+      },
+      {
+        "name": "Sticky Note Swarm",
+        "description": "Covers enemies in notes",
+        "base_damage": 1148,
+        "element": "magic"
+      },
+      {
+        "name": "Adhesive Slap",
+        "description": "Sticks to and slaps enemies",
+        "base_damage": 854,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Paper Shield",
+        "description": "Layers of paper protection",
+        "base_protection": 79,
+        "element": "plant"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "An office supply turned warrior that leaves important reminders and painful cuts.",
+    "original_image": null,
+    "hp": 1291
+  },
+  {
+    "id": "tape_monster",
+    "name": "Tape Monster",
+    "visual_description": "A chaotic monster constructed from loops and strips of clear adhesive tape with a tape dispenser for a head and a tangled, semi-transparent body",
+    "elements": [
+      "mecha",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Tape Tangle",
+        "description": "Wraps enemies in sticky tape",
+        "base_damage": 790,
+        "element": "mecha"
+      },
+      {
+        "name": "Binding Wrap",
+        "description": "Immobilizes foes completely",
+        "base_damage": 581,
+        "element": "magic"
+      },
+      {
+        "name": "Adhesive Lash",
+        "description": "Whips with tape strips",
+        "base_damage": 643,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Laminate Shield",
+        "description": "Layered tape protection",
+        "base_protection": 58,
+        "element": "mecha"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A sticky creature that holds everything together, especially its enemies.",
+    "original_image": null,
+    "hp": 756
+  },
+  {
+    "id": "the_bone_chiller",
+    "name": "The Bone Chiller",
+    "visual_description": "A skeletal creature enveloped in a frosty, blue, ethereal glow made of sharp, icy bones with menacing, glowing blue eyes",
+    "elements": [
+      "water",
+      "magic"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Frostbite",
+        "description": "Freezing touch of death",
+        "base_damage": 907,
+        "element": "water"
+      },
+      {
+        "name": "Bone Chill",
+        "description": "Cold that cuts to the bone",
+        "base_damage": 1160,
+        "element": "magic"
+      },
+      {
+        "name": "Ice Shard",
+        "description": "Frozen bone projectiles",
+        "base_damage": 1133,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Frozen Armor",
+        "description": "Encased in protective ice",
+        "base_protection": 87,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A frozen skeleton that brings a chill to every battle and freezes enemies solid.",
+    "original_image": null,
+    "hp": 1180
+  },
+  {
+    "id": "the_stomper",
+    "name": "The Stomper",
+    "visual_description": "A massive, bipedal monster with disproportionately large, powerful legs and feet, dense muscular body with tough rock-like hide",
+    "elements": [
+      "earth",
+      "mecha"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Stompquake",
+        "description": "Earth-shaking foot slam",
+        "base_damage": 527,
+        "element": "earth"
+      },
+      {
+        "name": "Ground Pound",
+        "description": "Devastating downward strike",
+        "base_damage": 548,
+        "element": "earth"
+      },
+      {
+        "name": "Seismic Slam",
+        "description": "Shockwave-creating stomp",
+        "base_damage": 722,
+        "element": "mecha"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Earth Block",
+        "description": "Raises defensive earth wall",
+        "base_protection": 58,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A heavy-footed titan that leaves craters wherever it walks and enemies wherever it stomps.",
+    "original_image": null,
+    "hp": 832
+  },
+  {
+    "id": "thunder_cloud",
+    "name": "Thunder Cloud",
+    "visual_description": "A sentient, dark storm cloud with a grumpy face, bright lightning flashing within its form and glowing yellow eyes",
+    "elements": [
+      "air",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Thunderclap",
+        "description": "Deafening thunder boom",
+        "base_damage": 569,
+        "element": "air"
+      },
+      {
+        "name": "Lightning Strike",
+        "description": "Bolt from above",
+        "base_damage": 637,
+        "element": "air"
+      },
+      {
+        "name": "Gale Burst",
+        "description": "Powerful wind attack",
+        "base_damage": 585,
+        "element": "water"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Cloud Cover",
+        "description": "Hides in misty fog",
+        "base_protection": 69,
+        "element": "water"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A grumpy storm cloud that rains destruction on anyone beneath its angry shadow.",
+    "original_image": null,
+    "hp": 875
+  },
+  {
+    "id": "time_twister",
+    "name": "Time Twister",
+    "visual_description": "A swirling vortex of blues, purples, and whites resembling a spiral galaxy or hurricane with a prominent clock face at its center with distorted hands",
+    "elements": [
+      "universe",
+      "magic"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Temporal Twist",
+        "description": "Warps time around enemies",
+        "base_damage": 794,
+        "element": "universe"
+      },
+      {
+        "name": "Chrono-Vortex",
+        "description": "Pulls foes through time",
+        "base_damage": 505,
+        "element": "universe"
+      },
+      {
+        "name": "Minute Hand Lash",
+        "description": "Strikes with clock hands",
+        "base_damage": 559,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Time Shield",
+        "description": "Reverses incoming attacks",
+        "base_protection": 45,
+        "element": "universe"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A master of time that can slow, stop, or speed up the flow of battle.",
+    "original_image": null,
+    "hp": 924
+  },
+  {
+    "id": "tornado_terror",
+    "name": "Tornado Terror",
+    "visual_description": "A menacing, dark tornado with a monstrous, roaring face in the funnel cloud with glowing red eyes and a wide-open mouth, debris visible within",
+    "elements": [
+      "air",
+      "magic"
+    ],
+    "tier": "legendary",
+    "attacks": [
+      {
+        "name": "Gale Force Fury",
+        "description": "Maximum wind destruction",
+        "base_damage": 1474,
+        "element": "air"
+      },
+      {
+        "name": "Cyclone Slam",
+        "description": "Spinning vortex attack",
+        "base_damage": 1078,
+        "element": "air"
+      },
+      {
+        "name": "Debris Barrage",
+        "description": "Flings objects at enemies",
+        "base_damage": 1286,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Storm Wall",
+        "description": "Wind barrier blocks attacks",
+        "base_protection": 102,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A living tornado that terrorizes the battlefield with its destructive winds.",
+    "original_image": null,
+    "hp": 1662
+  },
+  {
+    "id": "universe_3_combined_infinite",
+    "name": "Universe Three Combined Infinite",
+    "visual_description": "A cosmic being composed of three interconnected, swirling galaxies with a vaguely humanoid or draconic shape, bright nebulae and star clusters forming its body",
+    "elements": [
+      "universe",
+      "magic"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Galactic Collision",
+        "description": "Smashes galaxies together",
+        "base_damage": 878,
+        "element": "universe"
+      },
+      {
+        "name": "Supernova Burst",
+        "description": "Explosive star death attack",
+        "base_damage": 1025,
+        "element": "universe"
+      },
+      {
+        "name": "Comet Tail",
+        "description": "Sweeps with cosmic debris",
+        "base_damage": 867,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Celestial Barrier",
+        "description": "Protected by cosmic forces",
+        "base_protection": 73,
+        "element": "universe"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "An infinite cosmic entity containing the power of three galaxies combined into one.",
+    "original_image": null,
+    "hp": 1290
+  },
+  {
+    "id": "unnamed_creature",
+    "name": "Unnamed Creature",
+    "visual_description": "A grotesque and fleshy monster with a pale, lumpy body featuring a single, large staring eye in center and several tentacle-like appendages",
+    "elements": [
+      "magic",
+      "water"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Mind Melt",
+        "description": "Psychic confusion attack",
+        "base_damage": 688,
+        "element": "magic"
+      },
+      {
+        "name": "Flesh Slap",
+        "description": "Tendril striking attack",
+        "base_damage": 610,
+        "element": "water"
+      },
+      {
+        "name": "Reality Warp",
+        "description": "Distorts space around enemies",
+        "base_damage": 631,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Amorphous Dodge",
+        "description": "Shape-shifts to avoid attacks",
+        "base_protection": 47,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A mysterious creature so strange that no one has been able to give it a proper name.",
+    "original_image": null,
+    "hp": 721
+  },
+  {
+    "id": "volcano_monster",
+    "name": "Volcano Monster",
+    "visual_description": "A creature made of cooling magma and dark volcanic rock with humanoid shape, bright orange and red lava glowing from cracks in dark, rocky exterior",
+    "elements": [
+      "fire",
+      "earth"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Magma Spew",
+        "description": "Erupts molten rock",
+        "base_damage": 713,
+        "element": "fire"
+      },
+      {
+        "name": "Eruption Blast",
+        "description": "Explosive volcanic attack",
+        "base_damage": 581,
+        "element": "fire"
+      },
+      {
+        "name": "Obsidian Shard",
+        "description": "Launches sharp volcanic glass",
+        "base_damage": 624,
+        "element": "earth"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Cooling Crust",
+        "description": "Hardens outer layer for protection",
+        "base_protection": 51,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A walking volcano that erupts with fury and covers enemies in molten destruction.",
+    "original_image": null,
+    "hp": 994
+  },
+  {
+    "id": "wiggly_worm",
+    "name": "Wiggly Worm",
+    "visual_description": "A cheerful, cartoonish worm with a segmented, pink and purple body and a simple, smiling face with two small antennae",
+    "elements": [
+      "plant",
+      "earth"
+    ],
+    "tier": "legendary",
+    "attacks": [
+      {
+        "name": "Wiggle Whip",
+        "description": "Flailing body slam",
+        "base_damage": 1462,
+        "element": "plant"
+      },
+      {
+        "name": "Earth Munch",
+        "description": "Burrowing bite attack",
+        "base_damage": 1216,
+        "element": "earth"
+      },
+      {
+        "name": "Slime Trail",
+        "description": "Leaves sticky residue",
+        "base_damage": 1013,
+        "element": "plant"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Burrow",
+        "description": "Digs underground to safety",
+        "base_protection": 112,
+        "element": "earth"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A wiggly friend that tunnels through battles with a smile and a slimy trail.",
+    "original_image": null,
+    "hp": 1393
+  },
+  {
+    "id": "zig_zag",
+    "name": "Zig Zag",
+    "visual_description": "An abstract, energetic creature made of sharp, zig-zagging black and yellow lines resembling a bolt of electricity or chaotic scribble",
+    "elements": [
+      "air",
+      "magic"
+    ],
+    "tier": "strong",
+    "attacks": [
+      {
+        "name": "Zig-Zag Zap",
+        "description": "Unpredictable electrical strike",
+        "base_damage": 1016,
+        "element": "air"
+      },
+      {
+        "name": "Jagged Jolt",
+        "description": "Sharp-angled shock attack",
+        "base_damage": 1151,
+        "element": "air"
+      },
+      {
+        "name": "Static Shock",
+        "description": "Electric discharge",
+        "base_damage": 1185,
+        "element": "magic"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Erratic Dodge",
+        "description": "Moves unpredictably to avoid hits",
+        "base_protection": 86,
+        "element": "magic"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A chaotic creature that moves in unpredictable patterns, never going straight.",
+    "original_image": null,
+    "hp": 1174
+  },
+  {
+    "id": "zipper_zapper",
+    "name": "Zipper Zapper",
+    "visual_description": "A robotic, cyclopean creature whose body is a large, blue zipper with a single glowing red eye, standing on two small legs with electrical sparks from its sides",
+    "elements": [
+      "mecha",
+      "air"
+    ],
+    "tier": "common",
+    "attacks": [
+      {
+        "name": "Zipper Zap",
+        "description": "Electric zipper attack",
+        "base_damage": 701,
+        "element": "mecha"
+      },
+      {
+        "name": "Chain Link Lash",
+        "description": "Whips with metal teeth",
+        "base_damage": 520,
+        "element": "mecha"
+      },
+      {
+        "name": "Fasten",
+        "description": "Zips enemies together",
+        "base_damage": 747,
+        "element": "air"
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Unzip Dodge",
+        "description": "Opens up to let attacks pass through",
+        "base_protection": 55,
+        "element": "air"
+      }
+    ],
+    "special_abilities": [],
+    "biography": "A zipping robot that fastens enemies in defeat with its shocking zipper attacks.",
+    "original_image": null,
+    "hp": 757
   }
 ]

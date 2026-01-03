@@ -100,7 +100,8 @@ let cardsByTier = {};
  */
 export async function loadCards() {
     try {
-        const response = await fetch('data/cards.json');
+        const cacheBuster = Date.now();
+        const response = await fetch(`data/cards.json?v=${cacheBuster}`);
         if (!response.ok) {
             throw new Error(`Failed to load cards: ${response.status}`);
         }
@@ -196,11 +197,14 @@ export function formatHP(hp) {
  * @param {string} element - Element name
  * @returns {string} HTML string for element icon
  */
-export function createElementIcon(element) {
+export function createElementIcon(element, size = 'medium') {
     const config = ELEMENTS[element];
     if (!config) return '';
 
-    return `<span class="element-icon ${element}" title="${element}">${config.icon}</span>`;
+    const sizeClass = size === 'small' ? 'element-icon-sm' : size === 'large' ? 'element-icon-lg' : '';
+    return `<span class="element-icon ${element} ${sizeClass}" title="${element}">
+        <img src="assets/images/elements/${element}.png" alt="${element}" loading="lazy">
+    </span>`;
 }
 
 /**
@@ -270,7 +274,9 @@ export function renderCardBack(card, options = {}) {
     const attacksHTML = card.attacks.map(attack => `
         <div class="card-attack">
             <span class="attack-name">${attack.name}</span>
-            <span class="attack-element element-icon ${attack.element}">${ELEMENTS[attack.element]?.icon || '?'}</span>
+            <span class="attack-element element-icon element-icon-sm ${attack.element}">
+                <img src="assets/images/elements/${attack.element}.png" alt="${attack.element}" loading="lazy">
+            </span>
             <span class="attack-damage">${formatHP(attack.base_damage)}</span>
             ${attack.limited_uses ? `<span class="attack-uses">(${attack.limited_uses}x)</span>` : ''}
         </div>
@@ -280,7 +286,9 @@ export function renderCardBack(card, options = {}) {
     const defensesHTML = card.defenses.map(defense => `
         <div class="card-defense">
             <span class="defense-name">${defense.name}</span>
-            <span class="defense-element element-icon ${defense.element}">${ELEMENTS[defense.element]?.icon || '?'}</span>
+            <span class="defense-element element-icon element-icon-sm ${defense.element}">
+                <img src="assets/images/elements/${defense.element}.png" alt="${defense.element}" loading="lazy">
+            </span>
             <span class="defense-protection">${formatHP(defense.base_protection)}</span>
             ${defense.special_type ? `<span class="defense-special">[${defense.special_type}]</span>` : ''}
         </div>

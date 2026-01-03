@@ -49,11 +49,11 @@
     --border-color: #3a3a5a;
     --shadow-color: rgba(0, 0, 0, 0.5);
 
-    /* Card Dimensions - optimized for single-screen view */
-    --card-width: 100px;
-    --card-height: 140px;
-    --card-width-large: 160px;
-    --card-height-large: 220px;
+    /* Card Dimensions - larger for readability */
+    --card-width: 140px;
+    --card-height: 200px;
+    --card-width-large: 200px;
+    --card-height-large: 280px;
     --card-border-radius: 10px;
 
     /* Spacing */
@@ -420,29 +420,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Element Icons
+   Element Icons - Image-based circular icons
    ========================================================================== */
 .element-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.6rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid;
 }
 
-.element-icon.air { background: var(--color-air); color: #333; }
-.element-icon.water { background: var(--color-water); }
-.element-icon.fire { background: var(--color-fire); }
-.element-icon.earth { background: var(--color-earth); }
-.element-icon.universe { background: var(--color-universe); }
-.element-icon.plant { background: var(--color-plant); }
-.element-icon.mecha { background: var(--color-mecha); color: #333; }
-.element-icon.magic { background: var(--color-magic); }
+.element-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Size variants */
+.element-icon-sm {
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+}
+
+.element-icon-lg {
+    width: 28px;
+    height: 28px;
+    border-width: 2px;
+}
+
+/* Element-specific border colors */
+.element-icon.air { border-color: var(--color-air); }
+.element-icon.water { border-color: var(--color-water); }
+.element-icon.fire { border-color: var(--color-fire); }
+.element-icon.earth { border-color: var(--color-earth); }
+.element-icon.universe { border-color: var(--color-universe); }
+.element-icon.plant { border-color: var(--color-plant); }
+.element-icon.mecha { border-color: var(--color-mecha); }
+.element-icon.magic { border-color: var(--color-magic); }
 
 /* ==========================================================================
    Tier Styling - Game Cards
@@ -1067,10 +1086,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 95%;
     max-height: 90vh;
     overflow-y: auto;
-    border: 3px solid transparent;
-    background-image: var(--tier-legendary), linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border: 3px solid #FFD700;
     box-shadow:
         0 0 40px rgba(255, 215, 0, 0.3),
         0 20px 60px var(--shadow-color),
@@ -2205,6 +2221,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: bold;
+    z-index: 20;
 }
 
 .tier-badge.legendary {
@@ -2577,7 +2594,7 @@ h1, h2, h3, h4, h5, h6 {
 .drafted-mini-card .element-icon {
     width: 14px;
     height: 14px;
-    font-size: 0.5rem;
+    border-width: 1px;
 }
 
 /* Empty Slot Placeholder */
@@ -2591,6 +2608,24 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-secondary);
     font-size: 0.75rem;
     font-style: italic;
+}
+
+/* Drag and Drop Styles */
+.drafting-card.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+    box-shadow: 0 0 20px var(--text-accent);
+}
+
+.drafted-cards.drag-over {
+    background: rgba(233, 69, 96, 0.1);
+    border: 2px dashed var(--text-accent);
+    border-radius: var(--spacing-sm);
+}
+
+.drafted-cards.drag-over .drafted-slot-empty {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
 }
 
 /* Drafting Actions */
@@ -3072,55 +3107,61 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/assets/images/card-texture.png');
+    background-image: url('../assets/images/card-texture.png');
     background-size: cover;
-    opacity: 0.08;
+    opacity: 0.05;
     pointer-events: none;
     border-radius: inherit;
     mix-blend-mode: overlay;
+    z-index: 15;
 }
 
 /* Slightly stronger texture on hover for tactile feedback */
 .game-card:hover::after,
 .drafting-card:hover::after {
-    opacity: 0.12;
+    opacity: 0.08;
 }
 
 /* Arena cards get slightly more visible texture */
 .arena-card.game-card::after {
-    opacity: 0.1;
+    opacity: 0.06;
 }
 
-/* Card back design - override the pattern with image */
+/* Card back design - diagonal pattern with texture overlay */
 .card-back {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/assets/images/card-back.png');
-    background-size: cover;
-    background-position: center;
+    background:
+        repeating-linear-gradient(45deg, var(--bg-secondary), var(--bg-secondary) 10px, var(--bg-tertiary) 10px, var(--bg-tertiary) 20px);
     border-radius: calc(var(--card-border-radius) - 3px);
+    position: relative;
 }
 
-/* Keep the text hidden when using image back */
+/* Texture overlay on card back */
+.card-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/card-texture.png');
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+}
+
+/* Card back text styling */
 .card-back-text {
     font-size: 3rem;
     color: var(--text-secondary);
-    opacity: 0;
-    position: absolute;
-}
-
-/* Show text as fallback if image fails to load */
-.card-back.no-image {
-    background:
-        repeating-linear-gradient(45deg, var(--bg-secondary), var(--bg-secondary) 10px, var(--bg-tertiary) 10px, var(--bg-tertiary) 20px);
-}
-
-.card-back.no-image .card-back-text {
     opacity: 0.5;
-    position: static;
+    z-index: 1;
 }
 
 /* Texture on modal card views */
@@ -3135,11 +3176,12 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/assets/images/card-texture.png');
+    background-image: url('../assets/images/card-texture.png');
     background-size: 200px 300px;
     opacity: 0.05;
     pointer-events: none;
     border-radius: var(--card-border-radius);
+    z-index: 1;
 }
 
 /* Drafted mini cards in sidebar */
@@ -3154,11 +3196,12 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/assets/images/card-texture.png');
+    background-image: url('../assets/images/card-texture.png');
     background-size: cover;
-    opacity: 0.06;
+    opacity: 0.05;
     pointer-events: none;
     border-radius: inherit;
+    z-index: 1;
 }
 
 /* ==========================================================================

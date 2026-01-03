@@ -330,7 +330,7 @@ export function showAttackOptions(attacks, onSelect) {
                 ${!attack.canUse ? 'disabled' : ''}>
             <span class="attack-name">${attack.name}</span>
             <span class="attack-damage">${formatHP(attack.base_damage)}</span>
-            <span class="element-icon ${attack.element}">${attack.element[0].toUpperCase()}</span>
+            <span class="element-icon ${attack.element}"><img src="assets/images/elements/${attack.element}.png" alt="${attack.element}" loading="lazy"></span>
             ${attack.remainingUses !== Infinity ? `<span class="uses">(${attack.remainingUses}x)</span>` : ''}
         </button>
     `).join('');
@@ -365,7 +365,7 @@ export function showDefenseOptions(defenses, onSelect) {
                 ${!defense.canUse ? 'disabled' : ''}>
             <span class="defense-name">${defense.name}</span>
             <span class="defense-protection">${formatHP(defense.base_protection)}</span>
-            <span class="element-icon ${defense.element}">${defense.element[0].toUpperCase()}</span>
+            <span class="element-icon ${defense.element}"><img src="assets/images/elements/${defense.element}.png" alt="${defense.element}" loading="lazy"></span>
             ${defense.special_type ? `<span class="special">[${defense.special_type}]</span>` : ''}
             ${defense.remainingUses !== Infinity ? `<span class="uses">(${defense.remainingUses}x)</span>` : ''}
         </button>

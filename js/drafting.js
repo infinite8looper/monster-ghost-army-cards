@@ -160,6 +160,29 @@ function setupEventListeners() {
     if (confirmBtn) {
         confirmBtn.addEventListener('click', confirmSelection);
     }
+
+    // Set up drop zone on sidebar for drag-and-drop card selection
+    const { draftedCards } = draftingState.elements;
+    if (draftedCards) {
+        draftedCards.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            draftedCards.classList.add('drag-over');
+        });
+        draftedCards.addEventListener('dragleave', () => {
+            draftedCards.classList.remove('drag-over');
+        });
+        draftedCards.addEventListener('drop', (e) => {
+            e.preventDefault();
+            draftedCards.classList.remove('drag-over');
+            const cardId = e.dataTransfer.getData('text/plain');
+            if (cardId && !draftingState.takenCardIds.has(cardId)) {
+                // Select and immediately draft the card
+                draftingState.selectedCardId = cardId;
+                draftCard(cardId, getCurrentPlayer());
+            }
+        });
+    }
 }
 
 /**
@@ -403,7 +426,11 @@ function createDraftingCardElement(card) {
             const iconSpan = document.createElement('span');
             iconSpan.className = 'element-icon ' + el;
             iconSpan.title = el;
-            iconSpan.textContent = elementConfig.icon;
+            const iconImg = document.createElement('img');
+            iconImg.src = `assets/images/elements/${el}.png`;
+            iconImg.alt = el;
+            iconImg.loading = 'lazy';
+            iconSpan.appendChild(iconImg);
             elementsDiv.appendChild(iconSpan);
         }
     });
@@ -453,7 +480,11 @@ function createDraftingCardElement(card) {
             const iconSpan = document.createElement('span');
             iconSpan.className = 'element-icon ' + el;
             iconSpan.title = el;
-            iconSpan.textContent = elementConfig.icon;
+            const iconImg = document.createElement('img');
+            iconImg.src = `assets/images/elements/${el}.png`;
+            iconImg.alt = el;
+            iconImg.loading = 'lazy';
+            iconSpan.appendChild(iconImg);
             backElements.appendChild(iconSpan);
         }
     });
@@ -470,7 +501,8 @@ function createDraftingCardElement(card) {
         const attackList = document.createElement('ul');
         card.attacks.forEach(atk => {
             const li = document.createElement('li');
-            li.textContent = atk.name + ' (' + atk.damage + ')';
+            const damage = atk.base_damage || atk.damage || 0;
+            li.textContent = atk.name + ' (' + formatHP(damage) + ' dmg)';
             attackList.appendChild(li);
         });
         attackSection.appendChild(attackList);
@@ -487,11 +519,29 @@ function createDraftingCardElement(card) {
         const defenseList = document.createElement('ul');
         card.defenses.forEach(def => {
             const li = document.createElement('li');
-            li.textContent = def.name + ' (-' + def.reduction + ')';
+            const protection = def.base_protection || def.protection || 0;
+            li.textContent = def.name + ' (-' + formatHP(protection) + ')';
             defenseList.appendChild(li);
         });
         defenseSection.appendChild(defenseList);
         backFace.appendChild(defenseSection);
+    }
+
+    // Special abilities section
+    if (card.special_abilities && card.special_abilities.length > 0) {
+        const specialSection = document.createElement('div');
+        specialSection.className = 'card-back-section';
+        const specialTitle = document.createElement('h4');
+        specialTitle.textContent = 'Special Abilities';
+        specialSection.appendChild(specialTitle);
+        const specialList = document.createElement('ul');
+        card.special_abilities.forEach(ability => {
+            const li = document.createElement('li');
+            li.textContent = ability.name + (ability.uses ? ' (' + ability.uses + 'x)' : '');
+            specialList.appendChild(li);
+        });
+        specialSection.appendChild(specialList);
+        backFace.appendChild(specialSection);
     }
 
     // Biography
@@ -505,13 +555,31 @@ function createDraftingCardElement(card) {
     flipper.appendChild(backFace);
     cardDiv.appendChild(flipper);
 
-    // Add click handler if not unavailable
+    // Add click and drag handlers if not unavailable
     if (!isUnavailable) {
+        // Single click to select
         cardDiv.addEventListener('click', (e) => {
             // Only select card if clicking front face (not when flipped)
             if (!cardDiv.classList.contains('flipped')) {
                 selectCard(card.id);
             }
+        });
+
+        // Double-click to open modal with larger view
+        cardDiv.addEventListener('dblclick', (e) => {
+            e.stopPropagation();
+            openCardModal(card, {});
+        });
+
+        // Make card draggable
+        cardDiv.draggable = true;
+        cardDiv.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', card.id);
+            e.dataTransfer.effectAllowed = 'move';
+            cardDiv.classList.add('dragging');
+        });
+        cardDiv.addEventListener('dragend', () => {
+            cardDiv.classList.remove('dragging');
         });
     }
 
@@ -545,10 +613,9 @@ function renderDraftedCards() {
         totalSlots - (playerCards.length - draftingState.cardsThisRound)
     );
 
-    // Update count to show round progress
+    // Update count to show round progress and total
     if (draftedCount) {
-        draftedCount.textContent = draftingState.cardsThisRound + ' / ' + roundTarget +
-            ' (R' + draftingState.currentRound + ')';
+        draftedCount.textContent = playerCards.length + ' / ' + totalSlots;
     }
 
     // Clear and rebuild drafted cards using DOM methods
@@ -563,9 +630,9 @@ function renderDraftedCards() {
         }
     });
 
-    // Render empty slots for remaining cards needed
-    const emptySlots = totalSlots - playerCards.length;
-    for (let i = 0; i < emptySlots; i++) {
+    // Only show empty slots for remaining cards needed THIS ROUND (cleaner UI)
+    const cardsNeededThisRound = roundTarget - draftingState.cardsThisRound;
+    for (let i = 0; i < cardsNeededThisRound; i++) {
         const emptyDiv = document.createElement('div');
         emptyDiv.className = 'drafted-slot-empty';
         emptyDiv.textContent = 'Empty Slot';
@@ -609,9 +676,13 @@ function createMiniCardElement(card) {
         const elementConfig = ELEMENTS[el];
         if (elementConfig) {
             const iconSpan = document.createElement('span');
-            iconSpan.className = 'element-icon ' + el;
+            iconSpan.className = 'element-icon element-icon-sm ' + el;
             iconSpan.title = el;
-            iconSpan.textContent = elementConfig.icon;
+            const iconImg = document.createElement('img');
+            iconImg.src = `assets/images/elements/${el}.png`;
+            iconImg.alt = el;
+            iconImg.loading = 'lazy';
+            iconSpan.appendChild(iconImg);
             elementsDiv.appendChild(iconSpan);
         }
     });

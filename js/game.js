@@ -559,8 +559,11 @@ function renderOpponentCardsInContainer(cards, options, container) {
             const iconSpan = document.createElement('span');
             iconSpan.className = `element-icon ${el}`;
             iconSpan.title = el;
-            const config = ELEMENTS[el];
-            iconSpan.textContent = config?.icon || el[0].toUpperCase();
+            const iconImg = document.createElement('img');
+            iconImg.src = `assets/images/elements/${el}.png`;
+            iconImg.alt = el;
+            iconImg.loading = 'lazy';
+            iconSpan.appendChild(iconImg);
             elementsDiv.appendChild(iconSpan);
         });
         cardEl.appendChild(elementsDiv);
