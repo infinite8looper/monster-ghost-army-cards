@@ -7,6 +7,7 @@
 
 import { getAllCards, ELEMENTS, formatHP, createElementIcon, getCardById } from './cards.js';
 import { openCardModal } from './ui.js';
+import { createCardElement, createMiniCardElement, getAvgAttack, getAvgDefense } from './cardComponent.js';
 
 // Drafting state
 const draftingState = {
@@ -38,29 +39,7 @@ const TIER_ORDER = {
     'weak': 4
 };
 
-/**
- * Calculate average attack damage from a card's attacks array
- * @param {Object} card - Card object with attacks array
- * @returns {number} Average base_damage or 0 if no attacks
- */
-function getAvgAttack(card) {
-    const attacks = card.attacks || [];
-    if (attacks.length === 0) return 0;
-    const total = attacks.reduce((sum, atk) => sum + (atk.base_damage || 0), 0);
-    return Math.round(total / attacks.length);
-}
-
-/**
- * Calculate average defense protection from a card's defenses array
- * @param {Object} card - Card object with defenses array
- * @returns {number} Average base_protection or 0 if no defenses
- */
-function getAvgDefense(card) {
-    const defenses = card.defenses || [];
-    if (defenses.length === 0) return 0;
-    const total = defenses.reduce((sum, def) => sum + (def.base_protection || 0), 0);
-    return Math.round(total / defenses.length);
-}
+// Note: getAvgAttack and getAvgDefense are imported from cardComponent.js
 
 /**
  * Initialize the drafting phase
@@ -405,263 +384,43 @@ function getSortedCards(cards) {
 }
 
 /**
- * Create a DOM element for a drafting card with flip animation
+ * Create a DOM element for a drafting card using the unified card component
  * @param {Object} card - Card data
  * @returns {HTMLElement} Card element
  */
 function createDraftingCardElement(card) {
     const isUnavailable = draftingState.takenCardIds.has(card.id);
     const isSelected = draftingState.selectedCardId === card.id;
-    const tierClass = 'tier-' + (card.tier || 'common');
 
-    // Create main card div
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'drafting-card ' + tierClass;
-    if (isUnavailable) cardDiv.classList.add('unavailable');
-    if (isSelected) cardDiv.classList.add('selected-for-draft');
-    cardDiv.dataset.cardId = card.id;
+    // Build additional classes
+    const additionalClasses = [
+        'drafting-card',
+        isUnavailable ? 'unavailable' : '',
+        isSelected ? 'selected-for-draft' : ''
+    ].filter(Boolean).join(' ');
 
-    // Create flipper container
-    const flipper = document.createElement('div');
-    flipper.className = 'card-flipper';
-
-    // Helper to create tier badge
-    function createTierBadge() {
-        const badge = document.createElement('span');
-        badge.className = 'tier-badge ' + (card.tier || 'common');
-        badge.textContent = capitalizeFirst(card.tier || 'common');
-        return badge;
-    }
-
-    // Helper to create info button
-    function createInfoBtn() {
-        const btn = document.createElement('button');
-        btn.className = 'card-info-btn';
-        btn.textContent = 'i';
-        btn.title = 'Flip card for details';
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent card selection
-            cardDiv.classList.toggle('flipped');
-        });
-        return btn;
-    }
-
-    // === FRONT FACE ===
-    const frontFace = document.createElement('div');
-    frontFace.className = 'card-front';
-    frontFace.appendChild(createTierBadge());
-    frontFace.appendChild(createInfoBtn());
-
-    // Card image container
-    const imageDiv = document.createElement('div');
-    imageDiv.className = 'card-image';
-
-    const img = document.createElement('img');
-    img.src = 'assets/images/generated/' + card.id + '_generated.png';
-    img.alt = card.name;
-    img.onerror = function() {
-        this.style.display = 'none';
-        const placeholder = document.createElement('span');
-        placeholder.style.fontSize = '0.6rem';
-        placeholder.style.color = 'var(--text-secondary)';
-        placeholder.textContent = 'No Image';
-        this.parentElement.appendChild(placeholder);
-    };
-    imageDiv.appendChild(img);
-    frontFace.appendChild(imageDiv);
-
-    // Card info container
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'card-info';
-
-    // Card name
-    const nameDiv = document.createElement('div');
-    nameDiv.className = 'card-name';
-    nameDiv.textContent = card.name;
-    infoDiv.appendChild(nameDiv);
-
-    // Element icons
-    const elementsDiv = document.createElement('div');
-    elementsDiv.className = 'card-elements';
-    card.elements.forEach(el => {
-        const elementConfig = ELEMENTS[el];
-        if (elementConfig) {
-            const iconSpan = document.createElement('span');
-            iconSpan.className = 'element-icon ' + el;
-            iconSpan.title = el;
-            const iconImg = document.createElement('img');
-            iconImg.src = `assets/images/elements/${el}.png`;
-            iconImg.alt = el;
-            iconImg.loading = 'lazy';
-            iconSpan.appendChild(iconImg);
-            elementsDiv.appendChild(iconSpan);
+    // Use the unified card component
+    const cardContainer = createCardElement(card, {
+        size: 'drafting',
+        showHP: false,  // Drafting cards don't show HP bars
+        draggable: !isUnavailable,
+        dragType: 'drafting',
+        additionalClasses: additionalClasses,
+        onCardClick: !isUnavailable ? (cardId, cardData) => {
+            selectCard(cardId);
+        } : null,
+        onInfoClick: (cardData, isFlipped) => {
+            // Info button handles flip internally
         }
     });
-    infoDiv.appendChild(elementsDiv);
 
-    // Biography (on front, below elements)
-    if (card.biography) {
-        const bioDiv = document.createElement('div');
-        bioDiv.className = 'card-front-bio';
-        bioDiv.textContent = card.biography;
-        infoDiv.appendChild(bioDiv);
-    }
-
-    // Stats
-    const statsDiv = document.createElement('div');
-    statsDiv.className = 'card-stats';
-
-    const hpSpan = document.createElement('span');
-    hpSpan.className = 'stat stat-hp';
-    hpSpan.textContent = 'HP: ' + formatHP(card.hp || 0);
-    statsDiv.appendChild(hpSpan);
-
-    const atkSpan = document.createElement('span');
-    atkSpan.className = 'stat stat-atk';
-    atkSpan.textContent = 'ATK: ' + formatHP(getAvgAttack(card));
-    statsDiv.appendChild(atkSpan);
-
-    const defSpan = document.createElement('span');
-    defSpan.className = 'stat stat-def';
-    defSpan.textContent = 'DEF: ' + formatHP(getAvgDefense(card));
-    statsDiv.appendChild(defSpan);
-
-    infoDiv.appendChild(statsDiv);
-    frontFace.appendChild(infoDiv);
-    flipper.appendChild(frontFace);
-
-    // === BACK FACE ===
-    // Order: name, elements, attacks, defenses, specials (bio moved to front)
-    const backFace = document.createElement('div');
-    backFace.className = 'card-back';
-    backFace.appendChild(createTierBadge());
-    backFace.appendChild(createInfoBtn());
-
-    // 1. Name
-    const backName = document.createElement('div');
-    backName.className = 'card-name';
-    backName.textContent = card.name;
-    backFace.appendChild(backName);
-
-    // 2. Elements
-    const backElements = document.createElement('div');
-    backElements.className = 'card-elements';
-    card.elements.forEach(el => {
-        const elementConfig = ELEMENTS[el];
-        if (elementConfig) {
-            const iconSpan = document.createElement('span');
-            iconSpan.className = 'element-icon ' + el;
-            iconSpan.title = el;
-            const iconImg = document.createElement('img');
-            iconImg.src = `assets/images/elements/${el}.png`;
-            iconImg.alt = el;
-            iconImg.loading = 'lazy';
-            iconSpan.appendChild(iconImg);
-            backElements.appendChild(iconSpan);
-        }
-    });
-    backFace.appendChild(backElements);
-
-    // Helper to create element icon for moves
-    function createMoveElementIcon(element) {
-        if (!element) return null;
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'element-icon element-icon-sm ' + element;
-        iconSpan.title = element;
-        const iconImg = document.createElement('img');
-        iconImg.src = `assets/images/elements/${element}.png`;
-        iconImg.alt = element;
-        iconImg.loading = 'lazy';
-        iconSpan.appendChild(iconImg);
-        return iconSpan;
-    }
-
-    // 4. Attacks section (sorted by damage descending)
-    if (card.attacks && card.attacks.length > 0) {
-        const sortedAttacks = [...card.attacks].sort((a, b) =>
-            (b.base_damage || 0) - (a.base_damage || 0)
-        );
-        const attackSection = document.createElement('div');
-        attackSection.className = 'card-back-section';
-        const attackTitle = document.createElement('h4');
-        attackTitle.textContent = 'Attacks';
-        attackSection.appendChild(attackTitle);
-        const attackList = document.createElement('ul');
-        sortedAttacks.forEach(atk => {
-            const li = document.createElement('li');
-            const elementIcon = createMoveElementIcon(atk.element);
-            if (elementIcon) li.appendChild(elementIcon);
-            const damage = atk.base_damage || atk.damage || 0;
-            const textSpan = document.createElement('span');
-            textSpan.textContent = atk.name + ' (' + formatHP(damage) + ' dmg)';
-            li.appendChild(textSpan);
-            attackList.appendChild(li);
-        });
-        attackSection.appendChild(attackList);
-        backFace.appendChild(attackSection);
-    }
-
-    // 5. Defenses section (sorted by protection descending)
-    if (card.defenses && card.defenses.length > 0) {
-        const sortedDefenses = [...card.defenses].sort((a, b) =>
-            (b.base_protection || 0) - (a.base_protection || 0)
-        );
-        const defenseSection = document.createElement('div');
-        defenseSection.className = 'card-back-section';
-        const defenseTitle = document.createElement('h4');
-        defenseTitle.textContent = 'Defenses';
-        defenseSection.appendChild(defenseTitle);
-        const defenseList = document.createElement('ul');
-        sortedDefenses.forEach(def => {
-            const li = document.createElement('li');
-            const elementIcon = createMoveElementIcon(def.element);
-            if (elementIcon) li.appendChild(elementIcon);
-            const protection = def.base_protection || def.protection || 0;
-            const textSpan = document.createElement('span');
-            textSpan.textContent = def.name + ' (-' + formatHP(protection) + ')';
-            li.appendChild(textSpan);
-            defenseList.appendChild(li);
-        });
-        defenseSection.appendChild(defenseList);
-        backFace.appendChild(defenseSection);
-    }
-
-    // 6. Special abilities section
-    if (card.special_abilities && card.special_abilities.length > 0) {
-        const specialSection = document.createElement('div');
-        specialSection.className = 'card-back-section';
-        const specialTitle = document.createElement('h4');
-        specialTitle.textContent = 'Special Abilities';
-        specialSection.appendChild(specialTitle);
-        const specialList = document.createElement('ul');
-        card.special_abilities.forEach(ability => {
-            const li = document.createElement('li');
-            const abilityName = typeof ability === 'string' ? ability : ability.name;
-            const uses = typeof ability === 'object' && ability.uses ? ' (' + ability.uses + 'x)' : '';
-            li.textContent = abilityName + uses;
-            specialList.appendChild(li);
-        });
-        specialSection.appendChild(specialList);
-        backFace.appendChild(specialSection);
-    }
-
-    flipper.appendChild(backFace);
-    cardDiv.appendChild(flipper);
-
-    // Add click and drag handlers if not unavailable
-    if (!isUnavailable) {
-        // Single click to select
-        cardDiv.addEventListener('click', (e) => {
-            // Only select card if clicking front face (not when flipped)
-            if (!cardDiv.classList.contains('flipped')) {
-                selectCard(card.id);
-            }
-        });
-
+    // Get the unified-card div for adding double-click handler
+    const cardDiv = cardContainer.querySelector('.unified-card');
+    if (cardDiv && !isUnavailable) {
         // Double-click to open modal with larger view
         cardDiv.addEventListener('dblclick', (e) => {
             e.stopPropagation();
-            // Get current flipped state from the draft card
+            // Get current flipped state from the card
             const isCurrentlyFlipped = cardDiv.classList.contains('flipped');
             // Open modal with the same flip state, and sync back when closed
             openCardModal(card, {}, {
@@ -679,34 +438,33 @@ function createDraftingCardElement(card) {
             });
         });
 
-        // Make card draggable
-        cardDiv.draggable = true;
-        let currentDragImage = null;  // Track drag image for cleanup
+        // Custom drag handlers for drafting (override the default ones)
+        cardContainer.draggable = true;
+        let currentDragImage = null;
 
-        cardDiv.addEventListener('dragstart', (e) => {
+        cardContainer.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', card.id);
             e.dataTransfer.effectAllowed = 'move';
-            cardDiv.classList.add('dragging');
+            cardContainer.classList.add('dragging');
 
             // Create a custom drag image showing the whole card
-            const dragImage = cardDiv.cloneNode(true);
+            const dragImage = cardContainer.cloneNode(true);
             dragImage.style.position = 'absolute';
             dragImage.style.top = '-9999px';
             dragImage.style.left = '-9999px';
             dragImage.style.opacity = '0.8';
             dragImage.style.transform = 'scale(0.8)';
-            dragImage.style.pointerEvents = 'none';  // Prevent interaction
+            dragImage.style.pointerEvents = 'none';
             dragImage.classList.remove('dragging');
             document.body.appendChild(dragImage);
-            currentDragImage = dragImage;  // Store reference for cleanup
+            currentDragImage = dragImage;
 
-            // Set the custom drag image (centered on cursor)
-            const rect = cardDiv.getBoundingClientRect();
+            const rect = cardContainer.getBoundingClientRect();
             e.dataTransfer.setDragImage(dragImage, rect.width / 2, rect.height / 2);
         });
-        cardDiv.addEventListener('dragend', () => {
-            cardDiv.classList.remove('dragging');
-            // Clean up drag image when drag ends
+
+        cardContainer.addEventListener('dragend', () => {
+            cardContainer.classList.remove('dragging');
             if (currentDragImage && currentDragImage.parentNode) {
                 currentDragImage.parentNode.removeChild(currentDragImage);
                 currentDragImage = null;
@@ -714,16 +472,7 @@ function createDraftingCardElement(card) {
         });
     }
 
-    return cardDiv;
-}
-
-/**
- * Capitalize first letter
- * @param {string} str - String to capitalize
- * @returns {string} Capitalized string
- */
-function capitalizeFirst(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return cardContainer;
 }
 
 /**
@@ -751,7 +500,7 @@ function renderDraftedCards() {
         const card = draftingState.availableCards.find(c => c.id === cardId)
             || getAllCards().find(c => c.id === cardId);
         if (card) {
-            draftedCards.appendChild(createMiniCardElement(card));
+            draftedCards.appendChild(createDraftingMiniCard(card));
         }
     });
 
@@ -766,66 +515,18 @@ function renderDraftedCards() {
 }
 
 /**
- * Create a mini card element for the sidebar
+ * Create a mini card element for the sidebar (local wrapper for drafting context)
+ * Uses the shared createMiniCardElement from cardComponent.js
  * @param {Object} card - Card data
  * @returns {HTMLElement} Mini card element
  */
-function createMiniCardElement(card) {
-    const tierClass = 'tier-' + (card.tier || 'common');
-    const miniCard = document.createElement('div');
-    miniCard.className = 'drafted-mini-card ' + tierClass;
-
-    // Mini image
-    const imageDiv = document.createElement('div');
-    imageDiv.className = 'mini-image';
-
-    const img = document.createElement('img');
-    img.src = 'assets/images/generated/' + card.id + '_generated.png';
-    img.alt = card.name;
-    img.onerror = function() { this.style.display = 'none'; };
-    imageDiv.appendChild(img);
-    miniCard.appendChild(imageDiv);
-
-    // Mini info
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'mini-info';
-
-    const nameDiv = document.createElement('div');
-    nameDiv.className = 'mini-name';
-    nameDiv.textContent = card.name;
-    infoDiv.appendChild(nameDiv);
-
-    const elementsDiv = document.createElement('div');
-    elementsDiv.className = 'mini-elements';
-    card.elements.forEach(el => {
-        const elementConfig = ELEMENTS[el];
-        if (elementConfig) {
-            const iconSpan = document.createElement('span');
-            iconSpan.className = 'element-icon element-icon-sm ' + el;
-            iconSpan.title = el;
-            const iconImg = document.createElement('img');
-            iconImg.src = `assets/images/elements/${el}.png`;
-            iconImg.alt = el;
-            iconImg.loading = 'lazy';
-            iconSpan.appendChild(iconImg);
-            elementsDiv.appendChild(iconSpan);
+function createDraftingMiniCard(card) {
+    // Use the shared mini card component with drafting-specific double-click handler
+    return createMiniCardElement(card, {
+        onDoubleClick: (cardData) => {
+            openCardModal(cardData, {});
         }
     });
-    infoDiv.appendChild(elementsDiv);
-    miniCard.appendChild(infoDiv);
-
-    // Add double-click handler to open modal
-    // Mini cards don't have a flipped state, so always open un-flipped
-    miniCard.addEventListener('dblclick', (e) => {
-        e.stopPropagation();
-        openCardModal(card, {});
-    });
-
-    // Add cursor pointer to indicate clickable
-    miniCard.style.cursor = 'pointer';
-    miniCard.title = 'Double-click for details';
-
-    return miniCard;
 }
 
 /**

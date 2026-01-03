@@ -6,6 +6,7 @@
  */
 
 import { renderCard, renderCardPlaceholder, createCardDetailView, formatHP, ELEMENTS } from './cards.js';
+import { createCardElement, createMiniCardElement as createMiniCardFromComponent, updateCardHPDisplay } from './cardComponent.js';
 
 // DOM element references (cached for performance)
 let elements = {};
@@ -235,7 +236,7 @@ export function renderPlayerHand(cards, gameState = {}, onCardClick = null) {
 }
 
 /**
- * Create a battle card element for the player's hand with flip animation
+ * Create a battle card element for the player's hand using the unified card component
  * @param {Object} card - Card data
  * @param {Object} gs - Game state for HP tracking
  * @param {Function} onCardClick - Click handler
@@ -243,335 +244,20 @@ export function renderPlayerHand(cards, gameState = {}, onCardClick = null) {
  * @returns {HTMLElement} Card wrapper element with flip capability
  */
 function createPlayerBattleCardElement(card, gs, onCardClick, additionalClasses = '') {
-    const currentHP = gs.cardHP?.[card.id] ?? card.hp;
-    const tierClass = card.tier ? `tier-${card.tier}` : 'tier-common';
-    const imagePath = `assets/images/generated/${card.id}_generated.png`;
-
-    // Create wrapper for card + external HP display
-    const wrapper = document.createElement('div');
-    wrapper.className = 'battle-card-wrapper';
-    wrapper.dataset.cardId = card.id;
-
-    // Create main card div (similar to drafting-card structure)
-    const cardDiv = document.createElement('div');
-    cardDiv.className = `battle-card ${tierClass} ${additionalClasses}`;
-    cardDiv.dataset.cardId = card.id;
-    cardDiv.dataset.tier = card.tier;
-    cardDiv.title = 'Click to select, double-click for details';
-
-    // Create flipper container
-    const flipper = document.createElement('div');
-    flipper.className = 'card-flipper';
-
-    // Helper to capitalize first letter
-    function capitalizeFirst(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
-    // Helper to create tier badge
-    function createTierBadge() {
-        const badge = document.createElement('span');
-        badge.className = 'tier-badge ' + (card.tier || 'common');
-        badge.textContent = capitalizeFirst(card.tier || 'common');
-        return badge;
-    }
-
-    // Helper to create info button that flips the card
-    function createInfoBtn() {
-        const btn = document.createElement('button');
-        btn.className = 'card-info-btn';
-        btn.textContent = 'i';
-        btn.title = 'Flip card for details';
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            cardDiv.classList.toggle('flipped');
-        });
-        return btn;
-    }
-
-    // Helper to create element icon
-    function createElementIcon(element, size = 'medium') {
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'element-icon ' + element + (size === 'small' ? ' element-icon-sm' : '');
-        iconSpan.title = element;
-        const iconImg = document.createElement('img');
-        iconImg.src = `assets/images/elements/${element}.png`;
-        iconImg.alt = element;
-        iconImg.loading = 'lazy';
-        iconSpan.appendChild(iconImg);
-        return iconSpan;
-    }
-
-    // Helper to calculate average attack
-    function getAvgAttack(c) {
-        const attacks = c.attacks || [];
-        if (attacks.length === 0) return 0;
-        const total = attacks.reduce((sum, atk) => sum + (atk.base_damage || 0), 0);
-        return Math.round(total / attacks.length);
-    }
-
-    // Helper to calculate average defense
-    function getAvgDefense(c) {
-        const defenses = c.defenses || [];
-        if (defenses.length === 0) return 0;
-        const total = defenses.reduce((sum, def) => sum + (def.base_protection || 0), 0);
-        return Math.round(total / defenses.length);
-    }
-
-    // === FRONT FACE ===
-    const frontFace = document.createElement('div');
-    frontFace.className = 'card-front';
-    frontFace.appendChild(createTierBadge());
-    frontFace.appendChild(createInfoBtn());
-
-    // Card image container
-    const imageDiv = document.createElement('div');
-    imageDiv.className = 'card-image';
-
-    const img = document.createElement('img');
-    img.src = imagePath;
-    img.alt = card.name;
-    img.onerror = function() {
-        this.style.display = 'none';
-        const placeholder = document.createElement('span');
-        placeholder.style.fontSize = '0.6rem';
-        placeholder.style.color = 'var(--text-secondary)';
-        placeholder.textContent = 'No Image';
-        this.parentElement.appendChild(placeholder);
-    };
-    imageDiv.appendChild(img);
-    frontFace.appendChild(imageDiv);
-
-    // Card info container
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'card-info';
-
-    // Card name
-    const nameDiv = document.createElement('div');
-    nameDiv.className = 'card-name';
-    nameDiv.textContent = card.name;
-    infoDiv.appendChild(nameDiv);
-
-    // Element icons
-    const elementsDiv = document.createElement('div');
-    elementsDiv.className = 'card-elements';
-    card.elements.forEach(el => {
-        elementsDiv.appendChild(createElementIcon(el));
-    });
-    infoDiv.appendChild(elementsDiv);
-
-    // Stats (HP/ATK/DEF) - matching draft mode style
-    const statsDiv = document.createElement('div');
-    statsDiv.className = 'card-stats';
-
-    const hpSpan = document.createElement('span');
-    hpSpan.className = 'stat stat-hp';
-    hpSpan.textContent = 'HP: ' + formatHP(card.hp || 0);
-    statsDiv.appendChild(hpSpan);
-
-    const atkSpan = document.createElement('span');
-    atkSpan.className = 'stat stat-atk';
-    atkSpan.textContent = 'ATK: ' + formatHP(getAvgAttack(card));
-    statsDiv.appendChild(atkSpan);
-
-    const defSpan = document.createElement('span');
-    defSpan.className = 'stat stat-def';
-    defSpan.textContent = 'DEF: ' + formatHP(getAvgDefense(card));
-    statsDiv.appendChild(defSpan);
-
-    infoDiv.appendChild(statsDiv);
-    frontFace.appendChild(infoDiv);
-    flipper.appendChild(frontFace);
-
-    // === BACK FACE ===
-    const backFace = document.createElement('div');
-    backFace.className = 'card-back';
-    backFace.appendChild(createTierBadge());
-    backFace.appendChild(createInfoBtn());
-
-    // Name
-    const backName = document.createElement('div');
-    backName.className = 'card-name';
-    backName.textContent = card.name;
-    backFace.appendChild(backName);
-
-    // Biography
-    if (card.biography) {
-        const bioDiv = document.createElement('div');
-        bioDiv.className = 'card-back-bio';
-        bioDiv.textContent = card.biography;
-        backFace.appendChild(bioDiv);
-    }
-
-    // Elements
-    const backElements = document.createElement('div');
-    backElements.className = 'card-elements';
-    card.elements.forEach(el => {
-        backElements.appendChild(createElementIcon(el));
-    });
-    backFace.appendChild(backElements);
-
-    // Attacks section (sorted by damage descending)
-    if (card.attacks && card.attacks.length > 0) {
-        const sortedAttacks = [...card.attacks].sort((a, b) =>
-            (b.base_damage || 0) - (a.base_damage || 0)
-        );
-        const attackSection = document.createElement('div');
-        attackSection.className = 'card-back-section';
-        const attackTitle = document.createElement('h4');
-        attackTitle.textContent = 'Attacks';
-        attackSection.appendChild(attackTitle);
-        const attackList = document.createElement('ul');
-        sortedAttacks.forEach(atk => {
-            const li = document.createElement('li');
-            li.appendChild(createElementIcon(atk.element, 'small'));
-            const textSpan = document.createElement('span');
-            textSpan.textContent = `${atk.name} (${formatHP(atk.base_damage || 0)} dmg)`;
-            li.appendChild(textSpan);
-            attackList.appendChild(li);
-        });
-        attackSection.appendChild(attackList);
-        backFace.appendChild(attackSection);
-    }
-
-    // Defenses section (sorted by protection descending)
-    if (card.defenses && card.defenses.length > 0) {
-        const sortedDefenses = [...card.defenses].sort((a, b) =>
-            (b.base_protection || 0) - (a.base_protection || 0)
-        );
-        const defenseSection = document.createElement('div');
-        defenseSection.className = 'card-back-section';
-        const defenseTitle = document.createElement('h4');
-        defenseTitle.textContent = 'Defenses';
-        defenseSection.appendChild(defenseTitle);
-        const defenseList = document.createElement('ul');
-        sortedDefenses.forEach(def => {
-            const li = document.createElement('li');
-            li.appendChild(createElementIcon(def.element, 'small'));
-            const textSpan = document.createElement('span');
-            textSpan.textContent = `${def.name} (${formatHP(def.base_protection || 0)} block)`;
-            li.appendChild(textSpan);
-            defenseList.appendChild(li);
-        });
-        defenseSection.appendChild(defenseList);
-        backFace.appendChild(defenseSection);
-    }
-
-    // Special abilities
-    if (card.special_abilities && card.special_abilities.length > 0) {
-        const specialSection = document.createElement('div');
-        specialSection.className = 'card-back-section';
-        const specialTitle = document.createElement('h4');
-        specialTitle.textContent = 'Special';
-        specialSection.appendChild(specialTitle);
-        const specialList = document.createElement('ul');
-        card.special_abilities.forEach(ability => {
-            const li = document.createElement('li');
-            const abilityName = typeof ability === 'string' ? ability : ability.name;
-            const uses = typeof ability === 'object' && ability.uses ? ` (${ability.uses}x)` : '';
-            li.textContent = abilityName + uses;
-            specialList.appendChild(li);
-        });
-        specialSection.appendChild(specialList);
-        backFace.appendChild(specialSection);
-    }
-
-    flipper.appendChild(backFace);
-    cardDiv.appendChild(flipper);
-
-    // Add click handlers
-    if (onCardClick) {
-        cardDiv.addEventListener('click', (e) => {
-            // Only select if not flipped (clicking front face)
-            if (!cardDiv.classList.contains('flipped')) {
-                onCardClick(card.id);
-            }
-        });
-        cardDiv.addEventListener('dblclick', (e) => {
-            e.stopPropagation();
-            // Open modal on double-click
-            if (window.handleCardDoubleClick) {
-                window.handleCardDoubleClick(card.id);
-            }
-        });
-    }
-
-    // Add drag functionality for player cards
-    wrapper.draggable = true;
-    wrapper.dataset.cardType = 'player';
-    let currentDragImage = null;
-
-    wrapper.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text/plain', card.id);
-        e.dataTransfer.setData('application/x-card-type', 'player');
-        e.dataTransfer.effectAllowed = 'move';
-        wrapper.classList.add('dragging');
-
-        // Create custom drag image
-        const dragImage = wrapper.cloneNode(true);
-        dragImage.style.position = 'absolute';
-        dragImage.style.top = '-9999px';
-        dragImage.style.left = '-9999px';
-        dragImage.style.opacity = '0.8';
-        dragImage.style.transform = 'scale(0.7)';
-        dragImage.style.pointerEvents = 'none';
-        dragImage.classList.remove('dragging');
-        document.body.appendChild(dragImage);
-        currentDragImage = dragImage;
-
-        const rect = wrapper.getBoundingClientRect();
-        e.dataTransfer.setDragImage(dragImage, rect.width / 2, rect.height / 2);
-
-        // Highlight valid drop zone (attacker slot for player cards)
-        const attackerSlot = document.getElementById('attacker-slot');
-        if (attackerSlot) {
-            attackerSlot.classList.add('drag-target');
-        }
+    // Use the unified card component
+    const cardContainer = createCardElement(card, {
+        size: 'battle',
+        gameState: gs,
+        showHP: true,
+        draggable: true,
+        dragType: 'player',
+        additionalClasses: `battle-card-wrapper ${additionalClasses}`,
+        onCardClick: onCardClick ? (cardId, cardData) => {
+            onCardClick(cardId);
+        } : null
     });
 
-    wrapper.addEventListener('dragend', () => {
-        wrapper.classList.remove('dragging');
-        if (currentDragImage && currentDragImage.parentNode) {
-            currentDragImage.parentNode.removeChild(currentDragImage);
-            currentDragImage = null;
-        }
-
-        // Remove drop zone highlights
-        const attackerSlot = document.getElementById('attacker-slot');
-        const defenderSlot = document.getElementById('defender-slot');
-        if (attackerSlot) {
-            attackerSlot.classList.remove('drag-target', 'drag-over');
-        }
-        if (defenderSlot) {
-            defenderSlot.classList.remove('drag-target', 'drag-over');
-        }
-    });
-
-    wrapper.appendChild(cardDiv);
-
-    // External HP display BELOW the card
-    const hpDisplay = document.createElement('div');
-    hpDisplay.className = 'external-hp-display';
-    hpDisplay.dataset.cardId = card.id;
-
-    const hpPercent = Math.max(0, Math.min(100, (currentHP / card.hp) * 100));
-
-    const hpBar = document.createElement('div');
-    hpBar.className = 'external-hp-bar';
-    const hpFill = document.createElement('div');
-    hpFill.className = 'external-hp-fill';
-    hpFill.style.width = `${hpPercent}%`;
-    hpBar.appendChild(hpFill);
-    hpDisplay.appendChild(hpBar);
-
-    const hpText = document.createElement('div');
-    hpText.className = 'external-hp-text';
-    hpText.textContent = `${formatHP(currentHP)} / ${formatHP(card.hp)}`;
-    hpDisplay.appendChild(hpText);
-
-    wrapper.appendChild(hpDisplay);
-
-    return wrapper;
+    return cardContainer;
 }
 
 /**
@@ -646,284 +332,44 @@ export function renderOpponentCards(cards, options = {}) {
 }
 
 /**
- * Create an arena card element with flip animation (consistent with draft/battle cards)
+ * Create an arena card element using the unified card component
  * @param {Object} card - Card data
  * @param {Object} gameState - Game state for HP tracking
  * @returns {HTMLElement} Arena card element with flip capability
  */
 function createArenaCardElement(card, gameState = {}) {
-    const currentHP = gameState.cardHP?.[card.id] ?? card.hp;
-    const tierClass = card.tier ? `tier-${card.tier}` : 'tier-common';
-    const imagePath = `assets/images/generated/${card.id}_generated.png`;
+    // Use the unified card component with arena size
+    const cardContainer = createCardElement(card, {
+        size: 'arena',
+        gameState: gameState,
+        showHP: true,
+        draggable: false,
+        additionalClasses: 'arena-card-wrapper'
+    });
 
-    // Create wrapper for card + external HP display
-    const wrapper = document.createElement('div');
-    wrapper.className = 'arena-card-wrapper';
-    wrapper.dataset.cardId = card.id;
-
-    // Create main card div with arena-card and battle-card classes for styling
-    const cardDiv = document.createElement('div');
-    cardDiv.className = `arena-card battle-card ${tierClass}`;
-    cardDiv.dataset.cardId = card.id;
-    cardDiv.dataset.tier = card.tier;
-    cardDiv.title = 'Double-click for details, click info button to flip';
-
-    // Create flipper container
-    const flipper = document.createElement('div');
-    flipper.className = 'card-flipper';
-
-    // Helper to capitalize first letter
-    function capitalizeFirst(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
-    // Helper to create tier badge
-    function createTierBadge() {
-        const badge = document.createElement('span');
-        badge.className = 'tier-badge ' + (card.tier || 'common');
-        badge.textContent = capitalizeFirst(card.tier || 'common');
-        return badge;
-    }
-
-    // Helper to create info button that flips the card
-    function createInfoBtn() {
-        const btn = document.createElement('button');
-        btn.className = 'card-info-btn';
-        btn.textContent = 'i';
-        btn.title = 'Flip card for details';
-        btn.addEventListener('click', (e) => {
+    // Add double-click handler to open modal (with flip state sync)
+    const cardDiv = cardContainer.querySelector('.unified-card');
+    if (cardDiv) {
+        cardDiv.addEventListener('dblclick', (e) => {
             e.stopPropagation();
-            cardDiv.classList.toggle('flipped');
-        });
-        return btn;
-    }
-
-    // Helper to create element icon
-    function createElementIcon(element, size = 'medium') {
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'element-icon ' + element + (size === 'small' ? ' element-icon-sm' : '');
-        iconSpan.title = element;
-        const iconImg = document.createElement('img');
-        iconImg.src = `assets/images/elements/${element}.png`;
-        iconImg.alt = element;
-        iconImg.loading = 'lazy';
-        iconSpan.appendChild(iconImg);
-        return iconSpan;
-    }
-
-    // Helper to calculate average attack
-    function getAvgAttack(c) {
-        const attacks = c.attacks || [];
-        if (attacks.length === 0) return 0;
-        const total = attacks.reduce((sum, atk) => sum + (atk.base_damage || 0), 0);
-        return Math.round(total / attacks.length);
-    }
-
-    // Helper to calculate average defense
-    function getAvgDefense(c) {
-        const defenses = c.defenses || [];
-        if (defenses.length === 0) return 0;
-        const total = defenses.reduce((sum, def) => sum + (def.base_protection || 0), 0);
-        return Math.round(total / defenses.length);
-    }
-
-    // === FRONT FACE ===
-    const frontFace = document.createElement('div');
-    frontFace.className = 'card-front';
-    frontFace.appendChild(createTierBadge());
-    frontFace.appendChild(createInfoBtn());
-
-    // Card image container
-    const imageDiv = document.createElement('div');
-    imageDiv.className = 'card-image';
-
-    const img = document.createElement('img');
-    img.src = imagePath;
-    img.alt = card.name;
-    img.onerror = function() {
-        this.style.display = 'none';
-        const placeholder = document.createElement('span');
-        placeholder.style.fontSize = '0.6rem';
-        placeholder.style.color = 'var(--text-secondary)';
-        placeholder.textContent = 'No Image';
-        this.parentElement.appendChild(placeholder);
-    };
-    imageDiv.appendChild(img);
-    frontFace.appendChild(imageDiv);
-
-    // Card info container
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'card-info';
-
-    // Card name
-    const nameDiv = document.createElement('div');
-    nameDiv.className = 'card-name';
-    nameDiv.textContent = card.name;
-    infoDiv.appendChild(nameDiv);
-
-    // Element icons
-    const elementsDiv = document.createElement('div');
-    elementsDiv.className = 'card-elements';
-    card.elements.forEach(el => {
-        elementsDiv.appendChild(createElementIcon(el));
-    });
-    infoDiv.appendChild(elementsDiv);
-
-    // Stats (HP/ATK/DEF) - matching draft mode style
-    const statsDiv = document.createElement('div');
-    statsDiv.className = 'card-stats';
-
-    const hpSpan = document.createElement('span');
-    hpSpan.className = 'stat stat-hp';
-    hpSpan.textContent = 'HP: ' + formatHP(card.hp || 0);
-    statsDiv.appendChild(hpSpan);
-
-    const atkSpan = document.createElement('span');
-    atkSpan.className = 'stat stat-atk';
-    atkSpan.textContent = 'ATK: ' + formatHP(getAvgAttack(card));
-    statsDiv.appendChild(atkSpan);
-
-    const defSpan = document.createElement('span');
-    defSpan.className = 'stat stat-def';
-    defSpan.textContent = 'DEF: ' + formatHP(getAvgDefense(card));
-    statsDiv.appendChild(defSpan);
-
-    infoDiv.appendChild(statsDiv);
-    frontFace.appendChild(infoDiv);
-    flipper.appendChild(frontFace);
-
-    // === BACK FACE ===
-    const backFace = document.createElement('div');
-    backFace.className = 'card-back';
-    backFace.appendChild(createTierBadge());
-    backFace.appendChild(createInfoBtn());
-
-    // Name
-    const backName = document.createElement('div');
-    backName.className = 'card-name';
-    backName.textContent = card.name;
-    backFace.appendChild(backName);
-
-    // Elements
-    const backElements = document.createElement('div');
-    backElements.className = 'card-elements';
-    card.elements.forEach(el => {
-        backElements.appendChild(createElementIcon(el));
-    });
-    backFace.appendChild(backElements);
-
-    // Attacks section (sorted by damage descending)
-    if (card.attacks && card.attacks.length > 0) {
-        const sortedAttacks = [...card.attacks].sort((a, b) =>
-            (b.base_damage || 0) - (a.base_damage || 0)
-        );
-        const attackSection = document.createElement('div');
-        attackSection.className = 'card-back-section';
-        const attackTitle = document.createElement('h4');
-        attackTitle.textContent = 'Attacks';
-        attackSection.appendChild(attackTitle);
-        const attackList = document.createElement('ul');
-        sortedAttacks.forEach(atk => {
-            const li = document.createElement('li');
-            li.appendChild(createElementIcon(atk.element, 'small'));
-            const textSpan = document.createElement('span');
-            textSpan.textContent = `${atk.name} (${formatHP(atk.base_damage || 0)} dmg)`;
-            li.appendChild(textSpan);
-            attackList.appendChild(li);
-        });
-        attackSection.appendChild(attackList);
-        backFace.appendChild(attackSection);
-    }
-
-    // Defenses section (sorted by protection descending)
-    if (card.defenses && card.defenses.length > 0) {
-        const sortedDefenses = [...card.defenses].sort((a, b) =>
-            (b.base_protection || 0) - (a.base_protection || 0)
-        );
-        const defenseSection = document.createElement('div');
-        defenseSection.className = 'card-back-section';
-        const defenseTitle = document.createElement('h4');
-        defenseTitle.textContent = 'Defenses';
-        defenseSection.appendChild(defenseTitle);
-        const defenseList = document.createElement('ul');
-        sortedDefenses.forEach(def => {
-            const li = document.createElement('li');
-            li.appendChild(createElementIcon(def.element, 'small'));
-            const textSpan = document.createElement('span');
-            textSpan.textContent = `${def.name} (${formatHP(def.base_protection || 0)} block)`;
-            li.appendChild(textSpan);
-            defenseList.appendChild(li);
-        });
-        defenseSection.appendChild(defenseList);
-        backFace.appendChild(defenseSection);
-    }
-
-    // Special abilities
-    if (card.special_abilities && card.special_abilities.length > 0) {
-        const specialSection = document.createElement('div');
-        specialSection.className = 'card-back-section';
-        const specialTitle = document.createElement('h4');
-        specialTitle.textContent = 'Special';
-        specialSection.appendChild(specialTitle);
-        const specialList = document.createElement('ul');
-        card.special_abilities.forEach(ability => {
-            const li = document.createElement('li');
-            const abilityName = typeof ability === 'string' ? ability : ability.name;
-            const uses = typeof ability === 'object' && ability.uses ? ` (${ability.uses}x)` : '';
-            li.textContent = abilityName + uses;
-            specialList.appendChild(li);
-        });
-        specialSection.appendChild(specialList);
-        backFace.appendChild(specialSection);
-    }
-
-    flipper.appendChild(backFace);
-    cardDiv.appendChild(flipper);
-
-    // Add double-click handler to open modal
-    cardDiv.addEventListener('dblclick', (e) => {
-        e.stopPropagation();
-        const isCurrentlyFlipped = cardDiv.classList.contains('flipped');
-        openCardModal(card, gameState, {
-            startFlipped: isCurrentlyFlipped,
-            onClose: (isFlipped, closedCardId) => {
-                // Sync the flip state back to the arena card
-                if (closedCardId === card.id) {
-                    if (isFlipped) {
-                        cardDiv.classList.add('flipped');
-                    } else {
-                        cardDiv.classList.remove('flipped');
+            const isCurrentlyFlipped = cardDiv.classList.contains('flipped');
+            openCardModal(card, gameState, {
+                startFlipped: isCurrentlyFlipped,
+                onClose: (isFlipped, closedCardId) => {
+                    // Sync the flip state back to the arena card
+                    if (closedCardId === card.id) {
+                        if (isFlipped) {
+                            cardDiv.classList.add('flipped');
+                        } else {
+                            cardDiv.classList.remove('flipped');
+                        }
                     }
                 }
-            }
+            });
         });
-    });
+    }
 
-    wrapper.appendChild(cardDiv);
-
-    // External HP display BELOW the card
-    const hpDisplay = document.createElement('div');
-    hpDisplay.className = 'external-hp-display arena-hp-display';
-    hpDisplay.dataset.cardId = card.id;
-
-    const hpPercent = Math.max(0, Math.min(100, (currentHP / card.hp) * 100));
-
-    const hpBar = document.createElement('div');
-    hpBar.className = 'external-hp-bar';
-    const hpFill = document.createElement('div');
-    hpFill.className = 'external-hp-fill';
-    hpFill.style.width = `${hpPercent}%`;
-    hpBar.appendChild(hpFill);
-    hpDisplay.appendChild(hpBar);
-
-    const hpText = document.createElement('div');
-    hpText.className = 'external-hp-text';
-    hpText.textContent = `${formatHP(currentHP)} / ${formatHP(card.hp)}`;
-    hpDisplay.appendChild(hpText);
-
-    wrapper.appendChild(hpDisplay);
-
-    return wrapper;
+    return cardContainer;
 }
 
 /**
@@ -1606,16 +1052,16 @@ export function closeModal() {
 }
 
 /**
- * Highlight a card (for selection) - legacy function, clears all highlights
+ * Highlight a card (for selection) - clears all highlights then adds to selected card
  * @param {string} cardId - Card ID to highlight
  */
 export function highlightCard(cardId) {
     // Remove existing highlights
-    document.querySelectorAll('.game-card.selected, .battle-card.selected').forEach(el => {
+    document.querySelectorAll('.game-card.selected, .battle-card.selected, .card-container.selected').forEach(el => {
         el.classList.remove('selected');
     });
 
-    // Add highlight to selected card (support both old game-card and new battle-card)
+    // Add highlight to selected card (support old game-card, battle-card, and new unified card-container)
     const gameCard = document.querySelector(`.game-card[data-card-id="${cardId}"]`);
     if (gameCard) {
         gameCard.classList.add('selected');
@@ -1625,6 +1071,11 @@ export function highlightCard(cardId) {
     if (battleCard) {
         battleCard.classList.add('selected');
     }
+
+    const cardContainer = document.querySelector(`.card-container[data-card-id="${cardId}"]`);
+    if (cardContainer) {
+        cardContainer.classList.add('selected');
+    }
 }
 
 /**
@@ -1632,7 +1083,7 @@ export function highlightCard(cardId) {
  * @param {string} cardId - Card ID to highlight as attacker
  */
 export function highlightAttackerCard(cardId) {
-    // Add highlight to selected card (support both old game-card and new battle-card)
+    // Add highlight to selected card (support old game-card, battle-card, and new unified card-container)
     const gameCard = document.querySelector(`.game-card[data-card-id="${cardId}"]`);
     if (gameCard) {
         gameCard.classList.add('selected', 'selected-attacker');
@@ -1642,13 +1093,18 @@ export function highlightAttackerCard(cardId) {
     if (battleCard) {
         battleCard.classList.add('selected', 'selected-attacker');
     }
+
+    const cardContainer = document.querySelector(`.card-container[data-card-id="${cardId}"]`);
+    if (cardContainer) {
+        cardContainer.classList.add('selected', 'selected-attacker');
+    }
 }
 
 /**
  * Clear attacker card highlight only
  */
 export function clearAttackerHighlight() {
-    document.querySelectorAll('.game-card.selected-attacker, .battle-card.selected-attacker').forEach(el => {
+    document.querySelectorAll('.game-card.selected-attacker, .battle-card.selected-attacker, .card-container.selected-attacker').forEach(el => {
         el.classList.remove('selected', 'selected-attacker');
     });
 }
@@ -1658,7 +1114,7 @@ export function clearAttackerHighlight() {
  * @param {string} cardId - Card ID to highlight as defender
  */
 export function highlightDefenderCard(cardId) {
-    // Add highlight to selected card (support both old game-card and new battle-card)
+    // Add highlight to selected card (support old game-card, battle-card, and new unified card-container)
     const gameCard = document.querySelector(`.game-card[data-card-id="${cardId}"]`);
     if (gameCard) {
         gameCard.classList.add('selected', 'selected-defender');
@@ -1668,13 +1124,18 @@ export function highlightDefenderCard(cardId) {
     if (battleCard) {
         battleCard.classList.add('selected', 'selected-defender');
     }
+
+    const cardContainer = document.querySelector(`.card-container[data-card-id="${cardId}"]`);
+    if (cardContainer) {
+        cardContainer.classList.add('selected', 'selected-defender');
+    }
 }
 
 /**
  * Clear defender card highlight only
  */
 export function clearDefenderHighlight() {
-    document.querySelectorAll('.game-card.selected-defender, .battle-card.selected-defender').forEach(el => {
+    document.querySelectorAll('.game-card.selected-defender, .battle-card.selected-defender, .card-container.selected-defender').forEach(el => {
         el.classList.remove('selected', 'selected-defender');
     });
 }
@@ -1683,7 +1144,7 @@ export function clearDefenderHighlight() {
  * Clear all card highlights
  */
 export function clearHighlights() {
-    document.querySelectorAll('.game-card.selected, .battle-card.selected, .card-placeholder.selected').forEach(el => {
+    document.querySelectorAll('.game-card.selected, .battle-card.selected, .card-container.selected, .card-placeholder.selected').forEach(el => {
         el.classList.remove('selected', 'selected-attacker', 'selected-defender');
     });
 }
@@ -1695,6 +1156,9 @@ export function clearHighlights() {
  * @param {number} maxHP - Maximum HP
  */
 export function updateCardHP(cardId, currentHP, maxHP) {
+    // Use the unified HP update function from cardComponent
+    updateCardHPDisplay(cardId, currentHP, maxHP);
+
     const percent = Math.max(0, Math.min(100, (currentHP / maxHP) * 100));
 
     // Update old-style game-card HP (if any still exist)
@@ -1702,20 +1166,6 @@ export function updateCardHP(cardId, currentHP, maxHP) {
     gameCards.forEach(card => {
         const hpFill = card.querySelector('.card-hp-fill');
         const hpText = card.querySelector('.card-hp-text');
-
-        if (hpFill) {
-            hpFill.style.width = `${percent}%`;
-        }
-        if (hpText) {
-            hpText.textContent = `${formatHP(currentHP)} / ${formatHP(maxHP)}`;
-        }
-    });
-
-    // Update new battle-card external HP display
-    const externalHpDisplays = document.querySelectorAll(`.external-hp-display[data-card-id="${cardId}"]`);
-    externalHpDisplays.forEach(display => {
-        const hpFill = display.querySelector('.external-hp-fill');
-        const hpText = display.querySelector('.external-hp-text');
 
         if (hpFill) {
             hpFill.style.width = `${percent}%`;

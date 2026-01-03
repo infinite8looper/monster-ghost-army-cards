@@ -4555,3 +4555,489 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #FF6B35 !important;
     box-shadow: 0 0 20px rgba(255, 107, 53, 0.8), 0 0 40px rgba(255, 107, 53, 0.4) !important;
 }
+
+/* ==========================================================================
+   UNIFIED CARD COMPONENT - Image-Based Rendering
+   Uses pre-rendered front/back PNG images for cards
+   All card sizes use CSS transform: scale() for consistent rendering
+   ========================================================================== */
+
+/* Card Container - Provides perspective and size scaling */
+.card-container {
+    --card-base-width: 160px;
+    --card-base-height: 224px;
+    --card-scale: 1;
+
+    width: calc(var(--card-base-width) * var(--card-scale));
+    height: calc(var(--card-base-height) * var(--card-scale));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+}
+
+/* Size Presets via CSS classes */
+.card-container.card-size-drafting {
+    --card-scale: 1;
+}
+
+.card-container.card-size-battle {
+    --card-scale: 0.85;
+}
+
+.card-container.card-size-arena {
+    --card-scale: 1.3;
+}
+
+.card-container.card-size-modal {
+    --card-scale: 2.5;
+}
+
+.card-container.card-size-mini {
+    --card-scale: 0.5;
+}
+
+/* The Unified Card Element */
+.unified-card {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform var(--transition-normal), z-index 0s;
+    position: relative;
+    perspective: 1000px;
+}
+
+.unified-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    z-index: 10;
+}
+
+/* Card Flipper - Holds front and back, provides 3D transform */
+.unified-card .card-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius: var(--card-border-radius);
+    background: var(--bg-tertiary);
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.unified-card:hover .card-flipper {
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* Flipped state */
+.unified-card.flipped .card-flipper {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back faces */
+.unified-card .card-front,
+.unified-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: inherit;
+    overflow: hidden;
+    background: var(--bg-tertiary);
+}
+
+.unified-card .card-front {
+    z-index: 2;
+}
+
+.unified-card .card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+    padding: var(--spacing-sm);
+    overflow-y: auto;
+}
+
+/* Pre-rendered card face images */
+.unified-card .card-face-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* Info button overlay */
+.unified-card .card-info-btn {
+    position: absolute;
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
+    width: calc(22px * var(--card-scale, 1));
+    height: calc(22px * var(--card-scale, 1));
+    min-width: 18px;
+    min-height: 18px;
+    padding: 0;
+    border: 2px solid var(--color-water);
+    border-radius: 50%;
+    background: rgba(65, 105, 225, 0.9);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: calc(0.7rem * var(--card-scale, 1));
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.unified-card .card-info-btn:hover {
+    background: var(--color-water);
+    border-color: white;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px var(--color-water);
+}
+
+/* Tier badge overlay */
+.unified-card .tier-badge {
+    position: absolute;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    padding: calc(2px * var(--card-scale, 1)) calc(6px * var(--card-scale, 1));
+    border-radius: 3px;
+    font-size: calc(0.55rem * var(--card-scale, 1));
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    z-index: 20;
+}
+
+/* Tier badge colors */
+.unified-card .tier-badge.legendary {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a2e;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.unified-card .tier-badge.strong {
+    background: linear-gradient(135deg, #9400D3, #6B238E);
+    color: white;
+}
+
+.unified-card .tier-badge.common {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    color: #1a1a2e;
+}
+
+.unified-card .tier-badge.weak {
+    background: linear-gradient(135deg, #CD7F32, #8B5A2B);
+    color: white;
+}
+
+/* Tier styling for unified card container */
+.card-container.tier-weak .unified-card .card-flipper {
+    --tier-border-color: var(--tier-border-weak);
+    border-color: #8B5A2B;
+    background: var(--tier-bg-weak), var(--bg-tertiary);
+}
+
+.card-container.tier-common .unified-card .card-flipper {
+    --tier-border-color: var(--tier-border-common);
+    border-color: #5f9ea0;
+    background: var(--tier-bg-common), var(--bg-tertiary);
+}
+
+.card-container.tier-strong .unified-card .card-flipper {
+    --tier-border-color: var(--tier-border-strong);
+    border-color: #9400D3;
+    background: var(--tier-bg-strong), var(--bg-tertiary);
+    box-shadow: 0 0 10px rgba(148, 0, 211, 0.3);
+}
+
+.card-container.tier-legendary .unified-card .card-flipper {
+    --tier-border-color: var(--tier-border-legendary);
+    border: 3px solid transparent;
+    background-image: var(--tier-legendary), var(--tier-bg-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
+    background-origin: border-box;
+    background-clip: padding-box, padding-box, border-box;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2);
+    animation: legendaryPulse 3s ease-in-out infinite;
+}
+
+/* Tier hover effects */
+.card-container.tier-weak:hover .unified-card .card-flipper {
+    box-shadow: 0 0 12px rgba(139, 90, 43, 0.3), 0 15px 30px var(--shadow-color);
+}
+
+.card-container.tier-common:hover .unified-card .card-flipper {
+    box-shadow: 0 0 15px rgba(100, 149, 237, 0.4), 0 15px 30px var(--shadow-color);
+}
+
+.card-container.tier-strong:hover .unified-card .card-flipper {
+    box-shadow: 0 0 25px rgba(148, 0, 211, 0.5), 0 15px 30px var(--shadow-color);
+}
+
+.card-container.tier-legendary:hover .unified-card .card-flipper {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.4), 0 15px 30px var(--shadow-color);
+}
+
+/* External HP Display (below card) */
+.external-hp-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.external-hp-bar {
+    width: 90%;
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.external-hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #ff8800, #44ff44);
+    border-radius: 2px;
+    transition: width var(--transition-normal);
+}
+
+.external-hp-text {
+    font-size: calc(0.65rem * var(--card-scale, 1));
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* DOM Fallback Content (when pre-rendered images not available) */
+.card-dom-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-dom-front .card-image {
+    width: calc(100% - 8px);
+    height: 52%;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 4px 0 4px;
+    border: 3px solid var(--tier-border-color, var(--border-color));
+}
+
+.card-dom-front .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-dom-front .card-info {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.card-dom-front .card-name,
+.card-dom-back .card-name {
+    font-family: var(--font-heading);
+    font-size: calc(0.75rem * var(--card-scale, 1));
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 var(--spacing-xs);
+    width: 100%;
+}
+
+.card-dom-front .card-elements,
+.card-dom-back .card-elements {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.card-dom-front .card-front-bio {
+    font-size: calc(0.5rem * var(--card-scale, 1));
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    padding: 0 var(--spacing-xs);
+    margin-top: 2px;
+}
+
+.card-dom-front .card-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: calc(0.65rem * var(--card-scale, 1));
+    color: var(--text-secondary);
+    padding: 4px var(--spacing-sm);
+    background: var(--bg-primary);
+    border-radius: 4px;
+    margin-top: auto;
+}
+
+.card-dom-front .stat-hp { color: #44ff44; }
+.card-dom-front .stat-atk { color: var(--color-fire); }
+.card-dom-front .stat-def { color: var(--color-water); }
+
+/* DOM Back Content Styling */
+.card-dom-back {
+    padding: var(--spacing-sm);
+}
+
+.card-dom-back .card-back-section {
+    margin-bottom: var(--spacing-xs);
+}
+
+.card-dom-back .card-back-section h4 {
+    font-family: var(--font-heading);
+    font-size: calc(0.65rem * var(--card-scale, 1));
+    color: var(--text-accent);
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card-dom-back .card-back-section ul {
+    margin: 0;
+    padding: 0;
+    padding-left: var(--spacing-md);
+    font-size: calc(0.55rem * var(--card-scale, 1));
+    color: var(--text-secondary);
+    line-height: 1.3;
+    list-style: none;
+}
+
+.card-dom-back .card-back-section li {
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-dom-back .card-back-section li .element-icon {
+    flex-shrink: 0;
+    width: calc(12px * var(--card-scale, 1));
+    height: calc(12px * var(--card-scale, 1));
+}
+
+/* Selection states for unified cards */
+.card-container.selected .unified-card .card-flipper,
+.unified-card.selected .card-flipper {
+    border-color: #FFD700 !important;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6) !important;
+}
+
+.card-container.selected-attacker .unified-card .card-flipper,
+.unified-card.selected-attacker .card-flipper {
+    border-color: #00BFFF !important;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(0, 191, 255, 0.4) !important;
+}
+
+.card-container.selected-defender .unified-card .card-flipper,
+.unified-card.selected-defender .card-flipper {
+    border-color: #FF6B35 !important;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.8), 0 0 40px rgba(255, 107, 53, 0.4) !important;
+}
+
+/* Dragging states */
+.card-container.dragging {
+    opacity: 0.5;
+}
+
+.card-container.dragging .unified-card {
+    transform: scale(0.95);
+}
+
+.card-container.dragging .unified-card .card-flipper {
+    box-shadow: 0 0 20px var(--text-accent);
+}
+
+/* Unavailable state */
+.card-container.unavailable {
+    opacity: 0.4;
+    cursor: not-allowed;
+    filter: grayscale(80%);
+}
+
+.card-container.unavailable .unified-card:hover {
+    transform: none;
+}
+
+/* Card texture overlay for unified cards */
+.unified-card .card-flipper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/card-texture.png');
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 100;
+}
+
+/* No image placeholder */
+.no-image-placeholder {
+    color: var(--text-secondary);
+    font-size: 0.6rem;
+    text-align: center;
+    padding: var(--spacing-xs);
+}
+
+/* Responsive adjustments for unified cards */
+@media (max-width: 800px) {
+    .card-container.card-size-arena {
+        --card-scale: 1;
+    }
+
+    .card-container.card-size-modal {
+        --card-scale: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container.card-size-drafting {
+        --card-scale: 0.7;
+    }
+
+    .card-container.card-size-battle {
+        --card-scale: 0.6;
+    }
+
+    .card-container.card-size-arena {
+        --card-scale: 0.85;
+    }
+
+    .card-container.card-size-modal {
+        --card-scale: 1.8;
+    }
+}
