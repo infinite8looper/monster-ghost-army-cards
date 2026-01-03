@@ -137,7 +137,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Spike Shield",
+        "description": "Reflects 50% of physical damage back to attacker. Usable once per game.",
+        "element": "mecha"
+      }
+    ],
     "biography": "A legendary mechanical fortress that crushes all who dare approach its electrified spikes.",
     "original_image": "PXL_20260101_190744411.jpg",
     "hp": 1699
@@ -239,7 +245,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Chain Lightning",
+        "description": "Lightning arcs to hit an additional enemy card for 50% damage. Usable twice per game.",
+        "element": "mecha"
+      }
+    ],
     "biography": "A living fortress of crackling lightning and razor-sharp spikes that guards the cosmic gates.",
     "original_image": "PXL_20260101_190812887.MP.jpg",
     "hp": 1629
@@ -291,7 +303,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Cosmic Barrier",
+        "description": "Become immune to the next attack regardless of element. Usable once per game.",
+        "element": "universe"
+      }
+    ],
     "biography": "A cosmic defender whose spikes are forged from the very fabric of space-time.",
     "original_image": "PXL_20260101_190824822.jpg",
     "hp": 1867
@@ -314,7 +332,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Tidal Wave",
+        "description": "Hits all enemy cards for 40% of normal attack damage. Usable once per game.",
+        "element": "water"
+      }
+    ],
     "biography": "An aquatic fortress that combines crushing waves with piercing spikes.",
     "original_image": "PXL_20260101_190831743.jpg",
     "hp": 1825
@@ -366,7 +390,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Flame Aura",
+        "description": "Inflicts burn damage equal to 20% of attack each turn for 3 turns. Usable once per game.",
+        "element": "fire"
+      }
+    ],
     "biography": "A blazing barrier of molten metal and searing flames that incinerates all attackers.",
     "original_image": "PXL_20260101_190843259.jpg",
     "hp": 1580
@@ -447,7 +477,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Regrowth",
+        "description": "Heal 25% of max HP. Usable twice per game.",
+        "element": "plant"
+      }
+    ],
     "biography": "A living fortress of thorny vines and mechanical gears that grows stronger with each sunrise.",
     "original_image": "PXL_20260101_190859757.jpg",
     "hp": 1969
@@ -470,7 +506,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Earthquake",
+        "description": "Stuns target opponent, causing them to skip their next turn. Usable once per game.",
+        "element": "earth"
+      }
+    ],
     "biography": "A mountain of mechanical might, with rocky spikes that can trigger devastating earthquakes.",
     "original_image": "PXL_20260101_190906673.jpg",
     "hp": 1585
@@ -492,7 +534,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Gravity Well",
+        "description": "Target cannot dodge or teleport for their next 2 turns. Usable once per game.",
+        "element": "universe"
+      }
+    ],
     "biography": "An all-consuming cosmic horror that devours stars and bends reality to its will.",
     "original_image": "PXL_20260101_190911488.jpg",
     "hp": 1694
@@ -537,7 +585,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Core Meltdown",
+        "description": "Deal 200% damage but take 25% recoil damage. Usable once per game.",
+        "element": "fire"
+      }
+    ],
     "biography": "A chaotic entity from the depths of a dying star, wielding the power to warp time itself.",
     "original_image": "PXL_20260101_190928007.jpg",
     "hp": 1977
@@ -676,7 +730,13 @@
         "element": "earth"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Aftershock",
+        "description": "Your next attack deals 50% bonus damage. Usable twice per game.",
+        "element": "earth"
+      }
+    ],
     "biography": "A seismic titan that shakes the very foundations of reality with its thunderous movements.",
     "original_image": "PXL_20260101_190953288.jpg",
     "hp": 1993
@@ -1095,7 +1155,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Undertow",
+        "description": "Reduces target's defense by 50% for their next defense. Usable twice per game.",
+        "element": "water"
+      }
+    ],
     "biography": "An ancient water elemental that rules the deepest ocean trenches with tidal fury.",
     "original_image": "PXL_20260101_191115890.jpg",
     "hp": 1856
@@ -1221,7 +1287,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Tremor",
+        "description": "50% chance to stun opponent, making them skip their turn. Usable twice per game.",
+        "element": "earth"
+      }
+    ],
     "biography": "A primordial mountain spirit whose footsteps trigger devastating earthquakes.",
     "original_image": "PXL_20260101_191141024.jpg",
     "hp": 1604
@@ -2359,7 +2431,13 @@
       }
     ],
     "defenses": [],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Ignite",
+        "description": "Sets target ablaze, dealing 15% of attack damage for 3 turns. Usable once per game.",
+        "element": "fire"
+      }
+    ],
     "biography": "A primordial flame spirit that ignites all it touches with eternal fire.",
     "original_image": "PXL_20260101_191628356.jpg",
     "hp": 1532
@@ -3304,7 +3382,13 @@
         "element": "fire"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Ember Storm",
+        "description": "Rain fire on all enemies, dealing 30% damage to each. Usable once per game.",
+        "element": "fire"
+      }
+    ],
     "biography": "A tiny terror of flames and spikes that burns anything foolish enough to get close.",
     "original_image": null,
     "hp": 1306
@@ -3538,7 +3622,13 @@
         "element": "water"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Phase Shift",
+        "description": "50% chance to completely avoid the next attack. Usable twice per game.",
+        "element": "magic"
+      }
+    ],
     "biography": "A melancholy ghost that cant stop dripping, leaving a trail of supernatural slime everywhere.",
     "original_image": null,
     "hp": 1579
@@ -3640,7 +3730,13 @@
         "element": "mecha"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Unlock Potential",
+        "description": "Boost another friendly card's attack by 50% for their next attack. Usable once per game.",
+        "element": "magic"
+      }
+    ],
     "biography": "The guardian of all locks and doors, this key creature can open any defense.",
     "original_image": null,
     "hp": 1641
@@ -4232,7 +4328,13 @@
         "element": "water"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Sticky Trap",
+        "description": "Target's attack is reduced by 30% for their next 2 attacks. Usable twice per game.",
+        "element": "plant"
+      }
+    ],
     "biography": "The grossest monster around, leaving a trail of slime and defeated enemies in its wake.",
     "original_image": null,
     "hp": 1342
@@ -4723,7 +4825,13 @@
         "element": "air"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Whirlwind",
+        "description": "Randomly swap the order of opponent's cards, disrupting their strategy. Usable once per game.",
+        "element": "air"
+      }
+    ],
     "biography": "A living tornado that terrorizes the battlefield with its destructive winds.",
     "original_image": null,
     "hp": 1662
@@ -4867,7 +4975,13 @@
         "element": "earth"
       }
     ],
-    "special_abilities": [],
+    "special_abilities": [
+      {
+        "name": "Burrow",
+        "description": "Automatically dodge the next attack completely. Usable once per game.",
+        "element": "earth"
+      }
+    ],
     "biography": "A wiggly friend that tunnels through battles with a smile and a slimy trail.",
     "original_image": null,
     "hp": 1393
