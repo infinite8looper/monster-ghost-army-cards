@@ -858,17 +858,20 @@ export function openCardModal(card, gameState = {}, options = {}) {
     frontFace.appendChild(createTierBadge());
     frontFace.appendChild(createInfoBtn());
 
-    // Card image
+    // Card image - use pre-rendered with fallback to generated
     const imageDiv = document.createElement('div');
     imageDiv.className = 'card-image';
     const img = document.createElement('img');
-    img.src = 'assets/images/generated/' + card.id + '_generated.png';
+    img.src = 'assets/images/cards/' + card.id + '_front.png';
     img.alt = card.name;
     img.onerror = function() {
-        this.style.display = 'none';
-        const placeholder = document.createElement('span');
-        placeholder.textContent = 'No Image';
-        this.parentElement.appendChild(placeholder);
+        this.src = 'assets/images/generated/' + card.id + '_generated.png';
+        this.onerror = function() {
+            this.style.display = 'none';
+            const placeholder = document.createElement('span');
+            placeholder.textContent = 'No Image';
+            this.parentElement.appendChild(placeholder);
+        };
     };
     imageDiv.appendChild(img);
     frontFace.appendChild(imageDiv);

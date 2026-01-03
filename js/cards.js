@@ -232,8 +232,9 @@ export function renderCard(card, options = {}) {
     // Element icons
     const elementIcons = card.elements.map(el => createElementIcon(el)).join('');
 
-    // Image path - use generated images if available
-    const imagePath = `assets/images/generated/${card.id}_generated.png`;
+    // Image path - use pre-rendered images with fallback to generated
+    const imagePath = `assets/images/cards/${card.id}_front.png`;
+    const fallbackPath = `assets/images/generated/${card.id}_generated.png`;
 
     if (showBack) {
         return renderCardBack(card, { tierClass, sizeClass, additionalClasses });
@@ -248,7 +249,7 @@ export function renderCard(card, options = {}) {
             <div class="card-image">
                 <img src="${imagePath}"
                      alt="${card.name}"
-                     onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     onerror="if(this.src.includes('_front.png')){this.src='${fallbackPath}';}else{this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';}">
                 <div class="card-image-placeholder" style="display:none;">No Image</div>
             </div>
             <div class="card-name">${card.name}</div>

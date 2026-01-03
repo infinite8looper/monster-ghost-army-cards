@@ -548,7 +548,9 @@ function renderAllOpponents() {
 function createBattleCardElement(card, gs, onCardClick, additionalClasses = '') {
     const currentHP = gs.cardHP?.[card.id] ?? card.hp;
     const tierClass = card.tier ? `tier-${card.tier}` : 'tier-common';
-    const imagePath = `assets/images/generated/${card.id}_generated.png`;
+    // Use pre-rendered card image with fallback to generated
+    const preRenderedPath = `assets/images/cards/${card.id}_front.png`;
+    const fallbackPath = `assets/images/generated/${card.id}_generated.png`;
 
     // Create wrapper for card + external HP display
     const wrapper = document.createElement('div');
@@ -611,15 +613,20 @@ function createBattleCardElement(card, gs, onCardClick, additionalClasses = '') 
     imageDiv.className = 'card-image';
 
     const img = document.createElement('img');
-    img.src = imagePath;
+    img.src = preRenderedPath;
     img.alt = card.name;
     img.onerror = function() {
-        this.style.display = 'none';
-        const placeholder = document.createElement('span');
-        placeholder.style.fontSize = '0.6rem';
-        placeholder.style.color = 'var(--text-secondary)';
-        placeholder.textContent = 'No Image';
-        this.parentElement.appendChild(placeholder);
+        // Try fallback to generated image
+        if (this.src !== fallbackPath) {
+            this.src = fallbackPath;
+        } else {
+            this.style.display = 'none';
+            const placeholder = document.createElement('span');
+            placeholder.style.fontSize = '0.6rem';
+            placeholder.style.color = 'var(--text-secondary)';
+            placeholder.textContent = 'No Image';
+            this.parentElement.appendChild(placeholder);
+        }
     };
     imageDiv.appendChild(img);
     frontFace.appendChild(imageDiv);
