@@ -5,13 +5,17 @@
  * selecting cards to build their 10-card decks.
  */
 
-import { getAllCards, ELEMENTS, formatHP, createElementIcon } from './cards.js';
+import { getAllCards, ELEMENTS, formatHP, createElementIcon, getCardById } from './cards.js';
+import { openCardModal } from './ui.js';
 
 // Drafting state
 const draftingState = {
     players: [],                // All players in the game
-    currentRound: 1,            // Current drafting round (1-10)
-    totalRounds: 10,            // Total rounds for drafting
+    currentRound: 1,            // Current drafting round (1-3)
+    totalRounds: 3,             // Total selection rounds (fixed at 3)
+    deckSize: 10,               // Total cards per player
+    cardsThisRound: 0,          // Cards drafted by current player this round
+    cardsPerRound: 4,           // Target cards per round (deckSize / 3)
     roundOrder: [],             // Randomized player order for current round
     currentPlayerIndex: 0,      // Index in roundOrder for current turn
     availableCards: [],         // Cards still available for drafting
@@ -60,9 +64,10 @@ function getAvgDefense(card) {
 /**
  * Initialize the drafting phase
  * @param {Array} players - Array of player objects with { id, name, isAI, cards: [] }
+ * @param {number} deckSize - Number of cards each player will draft (default 10)
  */
-export function startDraftingPhase(players) {
-    console.log('Starting drafting phase with players:', players);
+export function startDraftingPhase(players, deckSize = 10) {
+    console.log('Starting drafting phase with players:', players, 'Deck size:', deckSize);
 
     // Initialize drafting state
     draftingState.players = players.map(p => ({
@@ -70,7 +75,10 @@ export function startDraftingPhase(players) {
         cards: []  // Reset cards for fresh draft
     }));
     draftingState.currentRound = 1;
-    draftingState.totalRounds = 10;
+    draftingState.totalRounds = 3;  // Fixed at 3 selection rounds
+    draftingState.deckSize = deckSize;
+    draftingState.cardsPerRound = Math.ceil(deckSize / 3);  // Divide cards across 3 rounds
+    draftingState.cardsThisRound = 0;
     draftingState.availableCards = [...getAllCards()];
     draftingState.takenCardIds = new Set();
     draftingState.selectedCardId = null;
@@ -317,7 +325,7 @@ function getSortedCards(cards) {
 }
 
 /**
- * Create a DOM element for a drafting card
+ * Create a DOM element for a drafting card with flip animation
  * @param {Object} card - Card data
  * @returns {HTMLElement} Card element
  */
@@ -333,11 +341,30 @@ function createDraftingCardElement(card) {
     if (isSelected) cardDiv.classList.add('selected-for-draft');
     cardDiv.dataset.cardId = card.id;
 
-    // Tier badge
+    // Tier badge (outside flipper - always visible)
     const tierBadge = document.createElement('span');
     tierBadge.className = 'tier-badge ' + (card.tier || 'common');
     tierBadge.textContent = capitalizeFirst(card.tier || 'common');
     cardDiv.appendChild(tierBadge);
+
+    // Info button (outside flipper - always visible)
+    const infoBtn = document.createElement('button');
+    infoBtn.className = 'card-info-btn';
+    infoBtn.textContent = 'i';
+    infoBtn.title = 'Flip card for details';
+    infoBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent card selection
+        cardDiv.classList.toggle('flipped');
+    });
+    cardDiv.appendChild(infoBtn);
+
+    // Create flipper container
+    const flipper = document.createElement('div');
+    flipper.className = 'card-flipper';
+
+    // === FRONT FACE ===
+    const frontFace = document.createElement('div');
+    frontFace.className = 'card-front';
 
     // Card image container
     const imageDiv = document.createElement('div');
@@ -355,7 +382,7 @@ function createDraftingCardElement(card) {
         this.parentElement.appendChild(placeholder);
     };
     imageDiv.appendChild(img);
-    cardDiv.appendChild(imageDiv);
+    frontFace.appendChild(imageDiv);
 
     // Card info container
     const infoDiv = document.createElement('div');
@@ -402,12 +429,89 @@ function createDraftingCardElement(card) {
     statsDiv.appendChild(defSpan);
 
     infoDiv.appendChild(statsDiv);
-    cardDiv.appendChild(infoDiv);
+    frontFace.appendChild(infoDiv);
+    flipper.appendChild(frontFace);
+
+    // === BACK FACE ===
+    const backFace = document.createElement('div');
+    backFace.className = 'card-back';
+
+    // Back header with name and elements
+    const backHeader = document.createElement('div');
+    backHeader.className = 'card-back-header';
+
+    const backName = document.createElement('div');
+    backName.className = 'card-name';
+    backName.textContent = card.name;
+    backHeader.appendChild(backName);
+
+    const backElements = document.createElement('div');
+    backElements.className = 'card-elements';
+    card.elements.forEach(el => {
+        const elementConfig = ELEMENTS[el];
+        if (elementConfig) {
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'element-icon ' + el;
+            iconSpan.title = el;
+            iconSpan.textContent = elementConfig.icon;
+            backElements.appendChild(iconSpan);
+        }
+    });
+    backHeader.appendChild(backElements);
+    backFace.appendChild(backHeader);
+
+    // Attacks section
+    if (card.attacks && card.attacks.length > 0) {
+        const attackSection = document.createElement('div');
+        attackSection.className = 'card-back-section';
+        const attackTitle = document.createElement('h4');
+        attackTitle.textContent = 'Attacks';
+        attackSection.appendChild(attackTitle);
+        const attackList = document.createElement('ul');
+        card.attacks.forEach(atk => {
+            const li = document.createElement('li');
+            li.textContent = atk.name + ' (' + atk.damage + ')';
+            attackList.appendChild(li);
+        });
+        attackSection.appendChild(attackList);
+        backFace.appendChild(attackSection);
+    }
+
+    // Defenses section
+    if (card.defenses && card.defenses.length > 0) {
+        const defenseSection = document.createElement('div');
+        defenseSection.className = 'card-back-section';
+        const defenseTitle = document.createElement('h4');
+        defenseTitle.textContent = 'Defenses';
+        defenseSection.appendChild(defenseTitle);
+        const defenseList = document.createElement('ul');
+        card.defenses.forEach(def => {
+            const li = document.createElement('li');
+            li.textContent = def.name + ' (-' + def.reduction + ')';
+            defenseList.appendChild(li);
+        });
+        defenseSection.appendChild(defenseList);
+        backFace.appendChild(defenseSection);
+    }
+
+    // Biography
+    if (card.biography) {
+        const bioDiv = document.createElement('div');
+        bioDiv.className = 'card-back-bio';
+        bioDiv.textContent = card.biography;
+        backFace.appendChild(bioDiv);
+    }
+
+    flipper.appendChild(backFace);
+    cardDiv.appendChild(flipper);
 
     // Add click handler if not unavailable
     if (!isUnavailable) {
-        cardDiv.addEventListener('click', () => {
-            selectCard(card.id);
+        cardDiv.addEventListener('click', (e) => {
+            // Only select card if clicking front face (not when flipped)
+            if (!cardDiv.classList.contains('flipped')) {
+                selectCard(card.id);
+            }
         });
     }
 
@@ -433,11 +537,18 @@ function renderDraftedCards() {
     if (!draftedCards || !currentPlayer) return;
 
     const playerCards = currentPlayer.cards;
-    const totalSlots = draftingState.totalRounds;
+    const totalSlots = draftingState.deckSize;
 
-    // Update count
+    // Show round progress: "X / Y this round (Z / total)"
+    const roundTarget = Math.min(
+        draftingState.cardsPerRound,
+        totalSlots - (playerCards.length - draftingState.cardsThisRound)
+    );
+
+    // Update count to show round progress
     if (draftedCount) {
-        draftedCount.textContent = playerCards.length + ' / ' + totalSlots;
+        draftedCount.textContent = draftingState.cardsThisRound + ' / ' + roundTarget +
+            ' (R' + draftingState.currentRound + ')';
     }
 
     // Clear and rebuild drafted cards using DOM methods
@@ -452,12 +563,12 @@ function renderDraftedCards() {
         }
     });
 
-    // Render empty slots
+    // Render empty slots for remaining cards needed
     const emptySlots = totalSlots - playerCards.length;
     for (let i = 0; i < emptySlots; i++) {
         const emptyDiv = document.createElement('div');
         emptyDiv.className = 'drafted-slot-empty';
-        emptyDiv.textContent = 'Empty Slot ' + (playerCards.length + i + 1);
+        emptyDiv.textContent = 'Empty Slot';
         draftedCards.appendChild(emptyDiv);
     }
 }
@@ -468,8 +579,9 @@ function renderDraftedCards() {
  * @returns {HTMLElement} Mini card element
  */
 function createMiniCardElement(card) {
+    const tierClass = 'tier-' + (card.tier || 'common');
     const miniCard = document.createElement('div');
-    miniCard.className = 'drafted-mini-card';
+    miniCard.className = 'drafted-mini-card ' + tierClass;
 
     // Mini image
     const imageDiv = document.createElement('div');
@@ -594,19 +706,32 @@ function draftCard(cardId, player) {
     // Remove from available cards
     draftingState.availableCards = draftingState.availableCards.filter(c => c.id !== cardId);
 
+    // Track cards drafted this round
+    draftingState.cardsThisRound++;
+
     // Clear selection
     draftingState.selectedCardId = null;
 
-    console.log(player.name + ' drafted card: ' + cardId);
+    console.log(player.name + ' drafted card: ' + cardId + ' (' + draftingState.cardsThisRound + '/' + draftingState.cardsPerRound + ' this round)');
 
-    // Move to next turn
-    advanceTurn();
+    // Check if player has drafted enough cards for this round or has full deck
+    const targetCards = Math.min(draftingState.cardsPerRound, draftingState.deckSize - (player.cards.length - draftingState.cardsThisRound));
+    if (draftingState.cardsThisRound >= targetCards || player.cards.length >= draftingState.deckSize) {
+        // Move to next player
+        advanceTurn();
+    } else {
+        // Same player continues drafting
+        renderDraftingState();
+        startCurrentTurn();
+    }
 }
 
 /**
- * Advance to the next turn
+ * Advance to the next turn (next player or next round)
  */
 function advanceTurn() {
+    // Reset cards drafted this round counter
+    draftingState.cardsThisRound = 0;
     draftingState.currentPlayerIndex++;
 
     // Check if all players have drafted this round
@@ -614,13 +739,15 @@ function advanceTurn() {
         // Round complete, move to next round
         draftingState.currentRound++;
 
-        // Check if drafting is complete
-        if (draftingState.currentRound > draftingState.totalRounds) {
+        // Check if drafting is complete (all players have full decks)
+        const allPlayersComplete = draftingState.players.every(p => p.cards.length >= draftingState.deckSize);
+        if (allPlayersComplete || draftingState.currentRound > draftingState.totalRounds) {
             completeDrafting();
             return;
         }
 
         // Start new round with new random order
+        draftingState.currentPlayerIndex = 0;
         generateRoundOrder();
     }
 

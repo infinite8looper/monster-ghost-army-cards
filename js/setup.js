@@ -10,14 +10,30 @@
 // Setup state
 const setupState = {
     playerCount: 2,
+    deckSize: 10,
+    totalCards: 96,  // Default, will be updated after cards.json loads
     players: []
 };
+
+/**
+ * Update the total cards available (called after cards.json loads)
+ * @param {number} count - Actual number of cards in the deck
+ */
+function setTotalCards(count) {
+    setupState.totalCards = count;
+    updateDeckSizeConstraints();
+    updateDeckSizeDisplay();
+}
 
 // DOM element references
 let setupScreen = null;
 let playerInputsContainer = null;
 let countButtons = null;
 let startGameButton = null;
+let deckSizeSlider = null;
+let deckSizeValue = null;
+let deckSizeWarning = null;
+let totalCardsNeeded = null;
 
 /**
  * Initialize the setup module
@@ -28,6 +44,10 @@ function initSetup() {
     playerInputsContainer = document.getElementById('player-inputs');
     startGameButton = document.getElementById('btn-start-game');
     countButtons = document.querySelectorAll('.count-btn');
+    deckSizeSlider = document.getElementById('deck-size-slider');
+    deckSizeValue = document.getElementById('deck-size-value');
+    deckSizeWarning = document.getElementById('deck-size-warning');
+    totalCardsNeeded = document.getElementById('total-cards-needed');
 
     if (!setupScreen || !playerInputsContainer || !startGameButton) {
         console.error('Setup: Required DOM elements not found');
@@ -37,8 +57,9 @@ function initSetup() {
     // Set up event listeners
     setupEventListeners();
 
-    // Initialize with default player count
+    // Initialize with default values
     setPlayerCount(2);
+    updateDeckSizeDisplay();
 }
 
 /**
@@ -52,6 +73,14 @@ function setupEventListeners() {
             setPlayerCount(count);
         });
     });
+
+    // Deck size slider
+    if (deckSizeSlider) {
+        deckSizeSlider.addEventListener('input', () => {
+            setupState.deckSize = parseInt(deckSizeSlider.value, 10);
+            updateDeckSizeDisplay();
+        });
+    }
 
     // Start game button
     startGameButton.addEventListener('click', handleStartGame);
@@ -72,8 +101,62 @@ function setPlayerCount(count) {
         btn.classList.toggle('active', btnCount === count);
     });
 
+    // Update deck size constraints based on player count
+    updateDeckSizeConstraints();
+
     // Generate player input rows
     renderPlayerInputs();
+}
+
+/**
+ * Update deck size slider constraints based on player count
+ */
+function updateDeckSizeConstraints() {
+    if (!deckSizeSlider) return;
+
+    // Calculate max deck size: floor(totalCards / playerCount)
+    // Cap at 25 max cards per player, or available cards / players
+    const maxDeckSize = Math.floor(setupState.totalCards / setupState.playerCount);
+    const newMax = Math.min(25, maxDeckSize);
+    deckSizeSlider.max = newMax;
+
+    // If current deck size exceeds new max, adjust it
+    if (setupState.deckSize > newMax) {
+        setupState.deckSize = newMax;
+        deckSizeSlider.value = newMax;
+    }
+
+    updateDeckSizeDisplay();
+}
+
+/**
+ * Update the deck size display and validation messages
+ */
+function updateDeckSizeDisplay() {
+    if (!deckSizeValue || !totalCardsNeeded) return;
+
+    const needed = setupState.playerCount * setupState.deckSize;
+    const available = setupState.totalCards;
+
+    // Update display
+    deckSizeValue.textContent = setupState.deckSize;
+    totalCardsNeeded.textContent = `${needed} of ${available} cards needed`;
+
+    // Show warning if close to limit
+    if (deckSizeWarning) {
+        if (needed > available) {
+            deckSizeWarning.textContent = '⚠ Not enough cards!';
+            deckSizeWarning.classList.remove('hidden');
+            startGameButton.disabled = true;
+        } else if (needed > available * 0.9) {
+            deckSizeWarning.textContent = '⚠ Using most cards';
+            deckSizeWarning.classList.remove('hidden');
+            startGameButton.disabled = false;
+        } else {
+            deckSizeWarning.classList.add('hidden');
+            startGameButton.disabled = false;
+        }
+    }
 }
 
 /**
@@ -236,7 +319,8 @@ function handleStartGame() {
     const event = new CustomEvent('gameSetupComplete', {
         detail: {
             players: playerConfigs,
-            playerCount: setupState.playerCount
+            playerCount: setupState.playerCount,
+            deckSize: setupState.deckSize
         }
     });
 
@@ -257,5 +341,6 @@ export {
     showSetupScreen,
     hideSetupScreen,
     getPlayerConfigs,
-    setPlayerCount
+    setPlayerCount,
+    setTotalCards
 };

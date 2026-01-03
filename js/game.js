@@ -40,7 +40,7 @@ import {
     showMessage,
     getElements
 } from './ui.js';
-import { showSetupScreen, hideSetupScreen, getPlayerConfigs } from './setup.js';
+import { showSetupScreen, hideSetupScreen, getPlayerConfigs, setTotalCards } from './setup.js';
 import { startDraftingPhase } from './drafting.js';
 import { getAIAttackChoice, getAIDefenseChoice, isAIPlayer, delay } from './ai.js';
 
@@ -105,6 +105,9 @@ async function initGame() {
         // Load card data
         updateLoadingStatus('Loading card data...');
         const cards = await loadCards();
+
+        // Update setup screen with actual card count
+        setTotalCards(cards.length);
 
         updateLoadingStatus('Preparing game...');
 
@@ -192,12 +195,13 @@ function setupControlListeners() {
  * @param {CustomEvent} event - The gameSetupComplete event with player data
  */
 function handleGameSetupComplete(event) {
-    const { players, playerCount } = event.detail;
+    const { players, playerCount, deckSize = 10 } = event.detail;
 
-    console.log('Game setup complete:', players);
+    console.log('Game setup complete:', players, 'Deck size:', deckSize);
 
     // Update game state with player configurations
     gameState.playerCount = playerCount;
+    gameState.deckSize = deckSize;
     gameState.players = players.map((config, index) => ({
         id: config.id,
         name: config.name,
@@ -206,7 +210,7 @@ function handleGameSetupComplete(event) {
     }));
 
     // Log player setup
-    addLogEntry(`Game configured with ${playerCount} players:`, 'system');
+    addLogEntry(`Game configured with ${playerCount} players (${deckSize} cards each):`, 'system');
     players.forEach((player, index) => {
         const playerType = player.isAI ? 'AI' : 'Human';
         addLogEntry(`  ${index + 1}. ${player.name} (${playerType})`, 'system');
@@ -220,8 +224,8 @@ function handleGameSetupComplete(event) {
     // Listen for drafting completion
     document.addEventListener('draftingComplete', handleDraftingComplete, { once: true });
 
-    // Start the drafting phase
-    startDraftingPhase(players);
+    // Start the drafting phase with deck size
+    startDraftingPhase(players, deckSize);
 }
 
 /**
@@ -507,7 +511,19 @@ function renderOpponentCardsInContainer(cards, options, container) {
         cardEl.className = `game-card ${tierClass} opponent-card`;
         cardEl.dataset.cardId = card.id;
         cardEl.dataset.tier = card.tier;
-        cardEl.title = 'Click to target';
+        cardEl.title = 'Click to target, double-click for details';
+
+        // Info button
+        const infoBtn = document.createElement('button');
+        infoBtn.className = 'card-info-btn';
+        infoBtn.title = 'View card details';
+        infoBtn.setAttribute('aria-label', `View details for ${card.name}`);
+        infoBtn.textContent = 'i';
+        infoBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            handleCardDoubleClick(card.id);
+        });
+        cardEl.appendChild(infoBtn);
 
         // Card image container
         const imageDiv = document.createElement('div');

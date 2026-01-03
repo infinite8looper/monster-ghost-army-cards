@@ -20,10 +20,24 @@
     /* Tier Colors (borders/accents) */
     --tier-legendary: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
     --tier-legendary-glow: #FFD700;
+    --tier-strong: linear-gradient(135deg, #9400D3, #6B238E, #9400D3);
+    --tier-strong-glow: #9400D3;
     --tier-common: linear-gradient(135deg, #C0C0C0, #A8A8A8, #C0C0C0);
     --tier-common-glow: #C0C0C0;
     --tier-weak: linear-gradient(135deg, #CD7F32, #8B5A2B, #CD7F32);
     --tier-weak-glow: #CD7F32;
+
+    /* Tier Background Gradients */
+    --tier-bg-legendary: linear-gradient(145deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 140, 0, 0.2) 50%, rgba(255, 215, 0, 0.15) 100%);
+    --tier-bg-strong: linear-gradient(145deg, rgba(148, 0, 211, 0.2) 0%, rgba(107, 35, 142, 0.15) 50%, rgba(148, 0, 211, 0.1) 100%);
+    --tier-bg-common: linear-gradient(145deg, rgba(100, 149, 237, 0.15) 0%, rgba(0, 128, 128, 0.1) 50%, rgba(100, 149, 237, 0.08) 100%);
+    --tier-bg-weak: linear-gradient(145deg, rgba(139, 90, 43, 0.15) 0%, rgba(105, 105, 105, 0.12) 50%, rgba(139, 90, 43, 0.08) 100%);
+
+    /* Tier Image Border Colors (solid colors for card images) */
+    --tier-border-weak: #8B7355;
+    --tier-border-common: #4A90A4;
+    --tier-border-strong: #9B59B6;
+    --tier-border-legendary: #FFD700;
 
     /* UI Colors */
     --bg-primary: #1a1a2e;
@@ -161,6 +175,51 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border-color);
 }
 
+/* How to Play Link */
+.how-to-play-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--spacing-sm);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    transition: all var(--transition-fast);
+}
+
+.how-to-play-link:hover {
+    border-color: var(--text-accent);
+    background: var(--bg-secondary);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+.how-to-play-link .link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, var(--color-universe), var(--color-magic));
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.how-to-play-link .link-text {
+    display: inline;
+}
+
+@media (max-width: 800px) {
+    .how-to-play-link .link-text {
+        display: none;
+    }
+}
+
 /* ==========================================================================
    Card Rows
    ========================================================================== */
@@ -235,15 +294,64 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-start;
 }
 
+/* Card Info Button */
+.card-info-btn {
+    position: absolute;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--text-accent);
+    background: var(--bg-secondary);
+    color: var(--text-accent);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    padding: 0;
+    line-height: 1;
+}
+
+.card-info-btn:hover {
+    background: var(--text-accent);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px var(--text-accent);
+}
+
+.card-info-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--text-accent);
+}
+
+/* Smaller info button for opponent cards */
+.opponent-card .card-info-btn,
+.player-panel .card-info-btn {
+    width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+    top: 2px;
+    right: 2px;
+}
+
 .game-card .card-image {
     width: 100%;
     height: 55%;
     background: var(--bg-secondary);
-    border-radius: var(--spacing-sm);
+    border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid var(--tier-border-color, var(--border-color));
+    transition: box-shadow var(--transition-normal);
 }
 
 .game-card .card-image img {
@@ -337,27 +445,70 @@ h1, h2, h3, h4, h5, h6 {
 .element-icon.magic { background: var(--color-magic); }
 
 /* ==========================================================================
-   Tier Styling
+   Tier Styling - Game Cards
    ========================================================================== */
+
+/* Weak Tier - Muted brown (common, nothing special) */
+.game-card.tier-weak {
+    --tier-border-color: var(--tier-border-weak);
+    border-color: #8B5A2B;
+    background: var(--tier-bg-weak), var(--bg-tertiary);
+}
+
+.game-card.tier-weak:hover {
+    box-shadow: 0 0 12px rgba(139, 90, 43, 0.3), 0 12px 24px var(--shadow-color);
+}
+
+/* Common Tier - Steel blue (reliable) */
+.game-card.tier-common {
+    --tier-border-color: var(--tier-border-common);
+    border-color: #5f9ea0;
+    background: var(--tier-bg-common), var(--bg-tertiary);
+}
+
+.game-card.tier-common:hover {
+    box-shadow: 0 0 15px rgba(100, 149, 237, 0.4), 0 12px 24px var(--shadow-color);
+}
+
+/* Strong Tier - Purple (powerful) */
+.game-card.tier-strong {
+    --tier-border-color: var(--tier-border-strong);
+    border-color: #9400D3;
+    background: var(--tier-bg-strong), var(--bg-tertiary);
+    box-shadow: 0 0 10px rgba(148, 0, 211, 0.3);
+}
+
+.game-card.tier-strong:hover {
+    box-shadow: 0 0 20px rgba(148, 0, 211, 0.5), 0 12px 24px var(--shadow-color);
+}
+
+/* Legendary Tier - Gold with glow (epic!) */
 .game-card.tier-legendary {
+    --tier-border-color: var(--tier-border-legendary);
     border: 3px solid transparent;
-    background-image: var(--tier-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
+    background-image: var(--tier-legendary), var(--tier-bg-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
     background-origin: border-box;
-    background-clip: padding-box, border-box;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    background-clip: padding-box, padding-box, border-box;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2);
+    animation: legendaryPulse 3s ease-in-out infinite;
 }
 
 .game-card.tier-legendary:hover {
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 12px 24px var(--shadow-color);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 50px rgba(255, 140, 0, 0.4), 0 12px 24px var(--shadow-color);
 }
 
-.game-card.tier-common {
-    border-color: #A8A8A8;
+/* Legendary card image gets a subtle inner glow */
+.game-card.tier-legendary .card-image {
+    box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-.game-card.tier-weak {
-    border-color: #8B5A2B;
-    opacity: 0.85;
+@keyframes legendaryPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.7), 0 0 50px rgba(255, 140, 0, 0.3);
+    }
 }
 
 /* ==========================================================================
@@ -684,7 +835,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -706,6 +857,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-content {
     position: relative;
+    z-index: 1;
     background: var(--bg-secondary);
     border-radius: var(--card-border-radius);
     padding: var(--spacing-xl);
@@ -746,6 +898,33 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--bg-tertiary);
     border-radius: var(--card-border-radius);
     border: 2px solid var(--border-color);
+}
+
+/* Tier Styling for Modal Card Back View */
+.modal-card-view .card-back-view.tier-weak {
+    --tier-border-color: var(--tier-border-weak);
+    border-color: #8B5A2B;
+    background: var(--tier-bg-weak), var(--bg-tertiary);
+}
+
+.modal-card-view .card-back-view.tier-common {
+    --tier-border-color: var(--tier-border-common);
+    border-color: #5f9ea0;
+    background: var(--tier-bg-common), var(--bg-tertiary);
+}
+
+.modal-card-view .card-back-view.tier-strong {
+    --tier-border-color: var(--tier-border-strong);
+    border-color: #9400D3;
+    background: var(--tier-bg-strong), var(--bg-tertiary);
+    box-shadow: 0 0 15px rgba(148, 0, 211, 0.3);
+}
+
+.modal-card-view .card-back-view.tier-legendary {
+    --tier-border-color: var(--tier-border-legendary);
+    border: 2px solid #FFD700;
+    background: var(--tier-bg-legendary), var(--bg-tertiary);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 0 0 50px rgba(255, 140, 0, 0.2);
 }
 
 .card-back-content {
@@ -1025,6 +1204,79 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
+/* Deck Size Selector */
+.deck-size-selector {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+#deck-size-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--bg-primary);
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#deck-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF8C00);
+    cursor: pointer;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transition: transform var(--transition-fast);
+}
+
+#deck-size-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+#deck-size-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF8C00);
+    cursor: pointer;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.deck-size-display {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+#deck-size-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #FFD700;
+    min-width: 40px;
+    text-align: center;
+}
+
+.deck-size-info {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+.warning-text {
+    color: #FF6B6B;
+    font-weight: bold;
+}
+
 /* Player Inputs */
 .player-inputs {
     display: flex;
@@ -1191,11 +1443,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .human-indicator {
-    font-size: 0.7rem;
-    color: #FFD700;
+    font-size: 0.75rem;
+    color: #1a1a2e;
+    background: linear-gradient(135deg, #FFD700, #FF8C00);
+    padding: 4px 10px;
+    border-radius: 12px;
     font-family: var(--font-heading);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: bold;
 }
 
 /* Setup Footer */
@@ -1872,14 +2128,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Card Content */
 .drafting-card .card-image {
-    width: 100%;
-    height: 55%;
+    width: calc(100% - 8px);
+    height: 52%;
     background: var(--bg-secondary);
-    border-radius: var(--spacing-sm) var(--spacing-sm) 0 0;
+    border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 4px 4px 0 4px;
+    border: 3px solid var(--tier-border-color, var(--border-color));
+    transition: box-shadow var(--transition-normal);
 }
 
 .drafting-card .card-image img {
@@ -1969,24 +2228,62 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-/* Drafting Card Tier Borders */
-.drafting-card.tier-legendary {
-    border: 3px solid transparent;
-    background-image: var(--tier-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-}
+/* ==========================================================================
+   Tier Styling - Drafting Cards
+   ========================================================================== */
 
-.drafting-card.tier-strong {
-    border-color: #9400D3;
-}
-
-.drafting-card.tier-common {
-    border-color: #A8A8A8;
-}
-
+/* Weak Tier - Muted brown */
 .drafting-card.tier-weak {
+    --tier-border-color: var(--tier-border-weak);
     border-color: #8B5A2B;
+    background: var(--tier-bg-weak), var(--bg-tertiary);
+}
+
+.drafting-card.tier-weak:hover:not(.unavailable) {
+    box-shadow: 0 0 12px rgba(139, 90, 43, 0.3), 0 15px 30px var(--shadow-color);
+}
+
+/* Common Tier - Steel blue */
+.drafting-card.tier-common {
+    --tier-border-color: var(--tier-border-common);
+    border-color: #5f9ea0;
+    background: var(--tier-bg-common), var(--bg-tertiary);
+}
+
+.drafting-card.tier-common:hover:not(.unavailable) {
+    box-shadow: 0 0 15px rgba(100, 149, 237, 0.4), 0 15px 30px var(--shadow-color);
+}
+
+/* Strong Tier - Purple */
+.drafting-card.tier-strong {
+    --tier-border-color: var(--tier-border-strong);
+    border-color: #9400D3;
+    background: var(--tier-bg-strong), var(--bg-tertiary);
+    box-shadow: 0 0 10px rgba(148, 0, 211, 0.3);
+}
+
+.drafting-card.tier-strong:hover:not(.unavailable) {
+    box-shadow: 0 0 25px rgba(148, 0, 211, 0.5), 0 15px 30px var(--shadow-color);
+}
+
+/* Legendary Tier - Gold with glow */
+.drafting-card.tier-legendary {
+    --tier-border-color: var(--tier-border-legendary);
+    border: 3px solid transparent;
+    background-image: var(--tier-legendary), var(--tier-bg-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
+    background-origin: border-box;
+    background-clip: padding-box, padding-box, border-box;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.2);
+    animation: legendaryPulse 3s ease-in-out infinite;
+}
+
+.drafting-card.tier-legendary:hover:not(.unavailable) {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.4), 0 15px 30px var(--shadow-color);
+}
+
+/* Legendary drafting card image gets a subtle inner glow */
+.drafting-card.tier-legendary .card-image {
+    box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* Hover Stats Tooltip */
@@ -2010,6 +2307,123 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   3D Card Flip Animation
+   ========================================================================== */
+
+/* Card container needs perspective for 3D effect */
+.drafting-card {
+    perspective: 1000px;
+}
+
+/* The flipper holds both front and back faces */
+.card-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+/* When flipped, rotate 180 degrees */
+.drafting-card.flipped .card-flipper {
+    transform: rotateY(180deg);
+}
+
+/* Both faces need these base styles */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+/* Front face is default visible */
+.card-front {
+    z-index: 2;
+}
+
+/* Back face starts rotated 180 degrees (facing away) */
+.card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+    background: var(--bg-tertiary);
+    padding: var(--spacing-sm);
+}
+
+/* Card back content styling */
+.card-back-header {
+    text-align: center;
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.card-back-header .card-name {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.card-back-header .card-elements {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.card-back-section {
+    margin-bottom: var(--spacing-xs);
+}
+
+.card-back-section h4 {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    color: var(--text-accent);
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+}
+
+.card-back-section ul {
+    margin: 0;
+    padding: 0 0 0 var(--spacing-sm);
+    font-size: 0.55rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.card-back-section li {
+    margin-bottom: 1px;
+}
+
+.card-back-bio {
+    font-size: 0.5rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Info button styling - ensure it's above the flip */
+.card-info-btn {
+    z-index: 10;
+}
+
+/* When card is flipped, adjust info button appearance */
+.drafting-card.flipped .card-info-btn {
+    background: var(--color-fire);
 }
 
 /* Drafting Sidebar */
@@ -2082,6 +2496,33 @@ h1, h2, h3, h4, h5, h6 {
     animation: slideIn 0.3s ease-out;
 }
 
+/* Tier Styling for Mini Cards */
+.drafted-mini-card.tier-weak {
+    --tier-border-color: var(--tier-border-weak);
+    border-color: #8B5A2B;
+    background: var(--tier-bg-weak), var(--bg-tertiary);
+}
+
+.drafted-mini-card.tier-common {
+    --tier-border-color: var(--tier-border-common);
+    border-color: #5f9ea0;
+    background: var(--tier-bg-common), var(--bg-tertiary);
+}
+
+.drafted-mini-card.tier-strong {
+    --tier-border-color: var(--tier-border-strong);
+    border-color: #9400D3;
+    background: var(--tier-bg-strong), var(--bg-tertiary);
+    box-shadow: 0 0 8px rgba(148, 0, 211, 0.2);
+}
+
+.drafted-mini-card.tier-legendary {
+    --tier-border-color: var(--tier-border-legendary);
+    border: 2px solid #FFD700;
+    background: var(--tier-bg-legendary), var(--bg-tertiary);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -2096,9 +2537,15 @@ h1, h2, h3, h4, h5, h6 {
 .drafted-mini-card .mini-image {
     width: 40px;
     height: 40px;
-    border-radius: var(--spacing-xs);
+    border-radius: 6px;
     overflow: hidden;
     flex-shrink: 0;
+    border: 2px solid var(--tier-border-color, var(--border-color));
+}
+
+/* Legendary mini card image gets a subtle inner glow */
+.drafted-mini-card.tier-legendary .mini-image {
+    box-shadow: inset 0 0 6px rgba(255, 215, 0, 0.5);
 }
 
 .drafted-mini-card .mini-image img {
@@ -2610,4 +3057,150 @@ h1, h2, h3, h4, h5, h6 {
 .special-badge.used {
     opacity: 0.3;
     text-decoration: line-through;
+}
+
+/* ==========================================================================
+   Card Texture Overlay - Makes cards feel more tactile
+   ========================================================================== */
+/* Subtle paper/linen texture for tactile card feel */
+.game-card::after,
+.card-placeholder::after,
+.drafting-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/card-texture.png');
+    background-size: cover;
+    opacity: 0.08;
+    pointer-events: none;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+}
+
+/* Slightly stronger texture on hover for tactile feedback */
+.game-card:hover::after,
+.drafting-card:hover::after {
+    opacity: 0.12;
+}
+
+/* Arena cards get slightly more visible texture */
+.arena-card.game-card::after {
+    opacity: 0.1;
+}
+
+/* Card back design - override the pattern with image */
+.card-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/card-back.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: calc(var(--card-border-radius) - 3px);
+}
+
+/* Keep the text hidden when using image back */
+.card-back-text {
+    font-size: 3rem;
+    color: var(--text-secondary);
+    opacity: 0;
+    position: absolute;
+}
+
+/* Show text as fallback if image fails to load */
+.card-back.no-image {
+    background:
+        repeating-linear-gradient(45deg, var(--bg-secondary), var(--bg-secondary) 10px, var(--bg-tertiary) 10px, var(--bg-tertiary) 20px);
+}
+
+.card-back.no-image .card-back-text {
+    opacity: 0.5;
+    position: static;
+}
+
+/* Texture on modal card views */
+.modal-card-view .card-back-view {
+    position: relative;
+}
+
+.modal-card-view .card-back-view::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/card-texture.png');
+    background-size: 200px 300px;
+    opacity: 0.05;
+    pointer-events: none;
+    border-radius: var(--card-border-radius);
+}
+
+/* Drafted mini cards in sidebar */
+.drafted-mini-card {
+    position: relative;
+}
+
+.drafted-mini-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/card-texture.png');
+    background-size: cover;
+    opacity: 0.06;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* ==========================================================================
+   Card Info Button (Drafting Phase)
+   ========================================================================== */
+.card-info-btn {
+    position: absolute;
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 2px solid var(--color-water);
+    border-radius: 50%;
+    background: rgba(65, 105, 225, 0.9);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-info-btn:hover {
+    background: var(--color-water);
+    border-color: white;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px var(--color-water);
+}
+
+.card-info-btn:active {
+    transform: scale(1.05);
+}
+
+/* Reduce opacity of info button on unavailable cards */
+.drafting-card.unavailable .card-info-btn {
+    opacity: 0.4;
+    pointer-events: none;
 }

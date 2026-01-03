@@ -27,6 +27,10 @@
                 <span id="turn-indicator">Current Turn: Player 1</span>
                 <span id="player-count-display">Players: 2</span>
             </div>
+            <a href="how-to-play.html" class="how-to-play-link" title="Learn how to play">
+                <span class="link-icon">?</span>
+                <span class="link-text">How to Play</span>
+            </a>
         </header>
 
         <!-- Main Game Area -->
@@ -203,6 +207,21 @@
                             <button type="button" class="count-btn" data-count="6">6</button>
                             <button type="button" class="count-btn" data-count="7">7</button>
                             <button type="button" class="count-btn" data-count="8">8</button>
+                        </div>
+                    </div>
+
+                    <!-- Deck Size Selection -->
+                    <div class="setup-section">
+                        <label class="setup-label" for="deck-size">Cards per Warrior</label>
+                        <div class="deck-size-selector">
+                            <input type="range" id="deck-size-slider" min="5" max="25" value="10" step="1">
+                            <div class="deck-size-display">
+                                <span id="deck-size-value">10</span> cards each
+                                <span id="deck-size-warning" class="hidden warning-text"></span>
+                            </div>
+                        </div>
+                        <div class="deck-size-info">
+                            <span id="total-cards-needed">20 of 96 cards needed</span>
                         </div>
                     </div>
 

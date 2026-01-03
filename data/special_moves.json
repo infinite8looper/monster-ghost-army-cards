@@ -1,0 +1,122 @@
+{
+  "spike_wall": {
+    "name": "Impenetrable Fortress",
+    "description": "Erect an unbreakable barrier of razor-sharp spikes. For the next 2 turns, ALL incoming damage to ANY of your cards is reduced by 75%. Attackers take 25% of their attack damage as recoil.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Apply a 2-turn buff to the player that reduces all incoming damage by 75% and reflects 25% back. Track turns remaining. Visual: orange spike barriers appear around all player cards."
+  },
+  "electric_spike_wall": {
+    "name": "Chain Lightning Storm",
+    "description": "Unleash devastating electrical discharge that arcs between ALL enemy cards currently in play. Each enemy card takes 40% of Electric Spike Wall's base attack damage. Damage chains: first target takes 100%, second takes 80%, third takes 60%, etc.",
+    "usage_limit": 1,
+    "can_be_defended": true,
+    "can_be_bounced": false,
+    "implementation_notes": "Calculate damage based on number of enemy cards. Order targets by HP (highest first). Apply decreasing damage multiplier (1.0, 0.8, 0.6, 0.4...). Visual: lightning bolts arc between enemy cards in sequence."
+  },
+  "universe_spike_wall": {
+    "name": "Dimensional Rift",
+    "description": "Tear open a rift in spacetime. Select one enemy card - it is banished to another dimension for 2 turns and cannot attack OR be attacked. When it returns, it takes 500,000 cosmic damage.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Remove target card from play temporarily (cannot be selected as attacker or target). After 2 full rounds, return card and apply 500K damage. Visual: swirling purple portal consumes then releases card."
+  },
+  "water_spike_wall": {
+    "name": "Abyssal Depths",
+    "description": "Drag a target card into the crushing depths of the ocean. Target is submerged for 1 turn (cannot act). When they surface, their next attack deals 50% less damage due to waterlogged equipment/abilities.",
+    "usage_limit": 1,
+    "can_be_defended": true,
+    "can_be_bounced": false,
+    "implementation_notes": "Stun target for 1 turn. Apply 50% damage debuff to their next attack after returning. Track debuff state. Visual: waves crash over card, pulling it underwater."
+  },
+  "fire_spike_wall": {
+    "name": "Infernal Eruption",
+    "description": "Summon volcanic fury from beneath the battlefield. ALL cards (including your own, except Fire Spike Wall) take 300,000 fire damage. Fire-element cards take only 50% damage; water-element cards take 150% damage.",
+    "usage_limit": 1,
+    "can_be_defended": true,
+    "can_be_bounced": false,
+    "implementation_notes": "Apply 300K base damage to all cards except self. Modify by element: fire=0.5x, water=1.5x, others=1.0x. High-risk high-reward move. Visual: lava geysers erupt across entire battlefield."
+  },
+  "plant_spike_wall": {
+    "name": "Overgrowth Entanglement",
+    "description": "Massive thorned vines erupt and entangle ALL enemy cards. Each entangled card loses 100,000 HP per turn for 3 turns. Cards with less than 25% HP remaining cannot escape and are instantly defeated.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Apply 3-turn DoT (100K/turn) to all enemy cards. Check HP threshold each turn - defeat cards below 25% max HP. Visual: thorny green vines wrap around all enemy cards."
+  },
+  "earth_spike_wall": {
+    "name": "Tectonic Devastation",
+    "description": "Trigger a massive earthquake that reshapes the battlefield. ALL players must randomly discard 1 card from their hand (returned to deck). Earth-element cards are immune. Creates rubble that deals 200,000 damage to a random enemy card.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Force random card discard for each player (earth cards exempt). Then deal 200K to random enemy card. Shuffled cards return to main deck. Visual: ground splits, rocks fly, cards tumble."
+  },
+  "galaxy_black_hole": {
+    "name": "Event Horizon",
+    "description": "Create an inescapable gravitational singularity. Target card is locked onto - for the next 3 turns, Galaxy Black Hole automatically deals 400,000 unavoidable damage to that target at the START of each turn, ignoring all defenses.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Mark target with Event Horizon debuff. At start of each turn (before normal actions), deal 400K unblockable damage. Lasts 3 turns or until target dies. Visual: swirling dark vortex follows target card."
+  },
+  "innercore_monster": {
+    "name": "Possess",
+    "description": "Reach into an enemy's mind and claim their card as your own. Target enemy card joins YOUR army with its current HP and all abilities intact. Cannot be defended or bounced. Cannot possess legendary cards.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Transfer ownership of target non-legendary card to the Innercore Monster's player. Maintain current HP/state. Add to player's active cards. Visual: ghostly tendrils connect to target, which slides to new owner."
+  },
+  "2_combined_infinite": {
+    "name": "Reality Paradox",
+    "description": "Warp the fabric of reality itself. Choose one: (A) ALL damage dealt this round is doubled for everyone, OR (B) ALL damage dealt this round is halved for everyone, OR (C) Swap HP values between any two cards on the battlefield.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Present 3 choices to player. Option A/B: apply multiplier to all damage this round. Option C: select two cards and swap their current HP values. Visual: rainbow distortion waves across battlefield."
+  },
+  "earthquake": {
+    "name": "Summon Ghost Army",
+    "description": "Call forth spectral warriors from beyond the veil. Summon 3 Ghost Soldiers (each with 300,000 HP, single 150,000 damage attack). Ghost Soldiers act on your turn but vanish after 2 turns or upon defeat.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Create 3 temporary Ghost Soldier tokens belonging to player. Each has 300K HP, one attack (150K magic damage). Auto-removed after 2 turns. Can be attacked/defeated normally. Visual: ghostly warriors rise from ground."
+  },
+  "universe_elemental": {
+    "name": "Stellar Collapse",
+    "description": "Channel the death of a star. Charge for 1 turn (cannot act or be targeted during charge). On the following turn, deal 2,000,000 cosmic damage to a single target. If Universe Elemental is defeated before the attack resolves, the move fails.",
+    "usage_limit": 1,
+    "can_be_defended": true,
+    "can_be_bounced": true,
+    "implementation_notes": "Enter charging state (invulnerable but cannot act). Track charge. Next turn, execute massive damage. If defeated during charge, cancel. Visual: card glows with building starlight, then releases supernova."
+  },
+  "elemental_trio_water_lurker": {
+    "name": "Depths Unknown",
+    "description": "Become one with the abyss. Water Lurker submerges completely - it cannot attack or be attacked for 2 turns. Upon resurfacing, deal 800,000 water damage to the card with the LOWEST current HP among all enemies.",
+    "usage_limit": 1,
+    "can_be_defended": true,
+    "can_be_bounced": false,
+    "implementation_notes": "Make card untargetable and unable to act for 2 turns. Track submerge timer. On resurface, find enemy with lowest HP and deal 800K water damage. Visual: card sinks into dark waters, erupts back up."
+  },
+  "elemental_trio_earth_shaker": {
+    "name": "Mountain's Wrath",
+    "description": "Become an immovable mountain fortress. For the next 3 turns, Earth Shaker cannot attack, but takes 80% reduced damage from ALL sources and reflects 30% of damage back to attackers.",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Apply defensive stance buff: 80% damage reduction, 30% reflection, cannot attack. Lasts 3 turns. Track remaining turns. Visual: stone armor encases the card, cracks appear when hit."
+  },
+  "elemental_trio_fire_starter": {
+    "name": "Eternal Flame",
+    "description": "Ignite an undying fire within. Fire Starter's attacks deal 50% bonus fire damage for the rest of the game. However, Fire Starter also takes 100,000 fire damage at the end of each of its turns (self-burn).",
+    "usage_limit": 1,
+    "can_be_defended": false,
+    "can_be_bounced": false,
+    "implementation_notes": "Apply permanent buff: +50% fire damage to all attacks. Apply permanent self-DoT: 100K at end of each turn when Fire Starter acts. Balance: high reward with ongoing cost. Visual: flames permanently wreath the card."
+  }
+}

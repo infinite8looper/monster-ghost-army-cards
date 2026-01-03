@@ -64,6 +64,11 @@ export const TIERS = {
         hpMultiplier: 1.0,
         label: 'Legendary'
     },
+    strong: {
+        borderClass: 'tier-strong',
+        hpMultiplier: 1.0,
+        label: 'Strong'
+    },
     common: {
         borderClass: 'tier-common',
         hpMultiplier: 1.0,
@@ -234,7 +239,8 @@ export function renderCard(card, options = {}) {
         <div class="game-card ${tierClass} ${sizeClass} ${additionalClasses}"
              data-card-id="${card.id}"
              data-tier="${card.tier}"
-             title="Click to view details">
+             title="Click to select, double-click for details">
+            <button class="card-info-btn" title="View card details" aria-label="View details for ${card.name}">i</button>
             <div class="card-image">
                 <img src="${imagePath}"
                      alt="${card.name}"
@@ -343,10 +349,11 @@ export function renderCardPlaceholder(text = 'Empty Slot', additionalClasses = '
  */
 export function createCardDetailView(card, gameState = {}) {
     const currentHP = gameState.cardHP?.[card.id] ?? card.hp;
+    const tierClass = TIERS[card.tier]?.borderClass || 'tier-common';
 
     return {
         front: renderCard(card, { currentHP, isLarge: true }),
-        back: renderCardBack(card, { isLarge: true })
+        back: renderCardBack(card, { tierClass, isLarge: true })
     };
 }
 

@@ -155,14 +155,25 @@ export function renderPlayerHand(cards, gameState = {}, onCardClick = null) {
     // Add click listeners
     if (onCardClick) {
         elements.playerCards.querySelectorAll('.game-card').forEach(cardEl => {
+            const cardId = cardEl.dataset.cardId;
+
+            // Info button click opens detail modal
+            const infoBtn = cardEl.querySelector('.card-info-btn');
+            if (infoBtn) {
+                infoBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (window.handleCardDoubleClick) {
+                        window.handleCardDoubleClick(cardId);
+                    }
+                });
+            }
+
             cardEl.addEventListener('click', () => {
-                const cardId = cardEl.dataset.cardId;
                 onCardClick(cardId, 'player');
             });
             // Double-click opens detail modal
             cardEl.addEventListener('dblclick', (e) => {
                 e.stopPropagation();
-                const cardId = cardEl.dataset.cardId;
                 if (window.handleCardDoubleClick) {
                     window.handleCardDoubleClick(cardId);
                 }
@@ -215,14 +226,25 @@ export function renderOpponentCards(cards, options = {}) {
     // Add click listeners
     if (onCardClick) {
         elements.opponentCards.querySelectorAll('.card-placeholder, .game-card').forEach(cardEl => {
+            const cardId = cardEl.dataset.cardId;
+
+            // Info button click opens detail modal
+            const infoBtn = cardEl.querySelector('.card-info-btn');
+            if (infoBtn) {
+                infoBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (window.handleCardDoubleClick) {
+                        window.handleCardDoubleClick(cardId);
+                    }
+                });
+            }
+
             cardEl.addEventListener('click', () => {
-                const cardId = cardEl.dataset.cardId;
                 onCardClick(cardId, 'opponent');
             });
             // Double-click opens detail modal
             cardEl.addEventListener('dblclick', (e) => {
                 e.stopPropagation();
-                const cardId = cardEl.dataset.cardId;
                 if (window.handleCardDoubleClick) {
                     window.handleCardDoubleClick(cardId);
                 }

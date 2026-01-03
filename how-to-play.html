@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to play Monster Ghost Army Cards - Complete game rules and instructions">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>How to Play - Monster Ghost Army Cards</title>
+
+    <!-- Google Fonts - Fantasy style fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=4">
+
+    <!-- How to Play specific styles -->
+    <style>
+        /* How to Play Page Layout */
+        .rules-page {
+            min-height: 100vh;
+            padding: var(--spacing-md);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .rules-header {
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            background: linear-gradient(180deg, var(--bg-secondary), transparent);
+            border-radius: var(--card-border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .rules-header .game-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .rules-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            border-radius: var(--spacing-sm);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            transition: all var(--transition-fast);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .back-link:hover {
+            border-color: var(--text-accent);
+            background: var(--bg-secondary);
+            transform: translateX(-5px);
+        }
+
+        .back-arrow {
+            font-size: 1.2rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-secondary);
+            border-radius: var(--card-border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            border: 1px solid var(--border-color);
+        }
+
+        .toc-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--text-accent);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+        }
+
+        .toc-list a {
+            display: block;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--bg-tertiary);
+            border-radius: var(--spacing-xs);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all var(--transition-fast);
+            border-left: 3px solid transparent;
+        }
+
+        .toc-list a:hover {
+            border-left-color: var(--text-accent);
+            background: var(--bg-primary);
+            padding-left: calc(var(--spacing-md) + 5px);
+        }
+
+        /* Rules Sections */
+        .rules-section {
+            background: var(--bg-secondary);
+            border-radius: var(--card-border-radius);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--text-accent);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+        }
+
+        .rules-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .rules-content p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .rules-content strong {
+            color: var(--text-primary);
+        }
+
+        /* Numbered Lists */
+        .rules-list {
+            list-style: none;
+            counter-reset: rules-counter;
+            padding-left: 0;
+        }
+
+        .rules-list li {
+            counter-increment: rules-counter;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            background: var(--bg-tertiary);
+            border-radius: var(--spacing-sm);
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .rules-list li::before {
+            content: counter(rules-counter);
+            position: absolute;
+            left: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--color-universe), var(--color-magic));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Element Grid */
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .element-card {
+            background: var(--bg-tertiary);
+            border-radius: var(--card-border-radius);
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            border: 2px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+
+        .element-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        .element-card .element-icon {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+        }
+
+        .interaction-pair .element-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+        }
+
+        .element-name {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-transform: capitalize;
+        }
+
+        .element-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Interaction Tables */
+        .interaction-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .interaction-box {
+            background: var(--bg-tertiary);
+            border-radius: var(--card-border-radius);
+            padding: var(--spacing-lg);
+            border: 2px solid var(--border-color);
+        }
+
+        .interaction-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .interaction-title.opposites {
+            color: var(--color-water);
+        }
+
+        .interaction-title.complements {
+            color: var(--color-plant);
+        }
+
+        .interaction-pair {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-sm);
+            background: var(--bg-secondary);
+            border-radius: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .interaction-pair:last-child {
+            margin-bottom: 0;
+        }
+
+        .pair-vs {
+            font-family: var(--font-heading);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .effect-badge {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--spacing-xs);
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: var(--spacing-sm);
+        }
+
+        .effect-badge.damage-down {
+            background: var(--color-water);
+            color: white;
+        }
+
+        .effect-badge.damage-up {
+            background: var(--color-fire);
+            color: white;
+        }
+
+        /* Special Moves Section */
+        .special-moves-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .special-move-card {
+            background: var(--bg-tertiary);
+            border-radius: var(--card-border-radius);
+            padding: var(--spacing-lg);
+            border: 2px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-move-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .special-move-card.attack::before {
+            background: linear-gradient(90deg, var(--color-fire), var(--color-magic));
+        }
+
+        .special-move-card.defense::before {
+            background: linear-gradient(90deg, var(--color-water), var(--color-universe));
+        }
+
+        .special-move-card.utility::before {
+            background: linear-gradient(90deg, var(--color-plant), var(--color-air));
+        }
+
+        .special-move-name {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .special-move-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .special-move-uses {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--bg-secondary);
+            border-radius: var(--spacing-xs);
+            font-size: 0.8rem;
+            color: var(--text-accent);
+        }
+
+        /* Damage Calculation Box */
+        .damage-calc-box {
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-primary));
+            border: 2px solid var(--color-fire);
+            border-radius: var(--card-border-radius);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .damage-calc-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--color-fire);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .damage-formula {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--spacing-sm);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+        }
+
+        .formula-part {
+            text-align: center;
+        }
+
+        .formula-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .formula-value {
+            color: var(--text-primary);
+        }
+
+        .formula-operator {
+            font-size: 1.5rem;
+            color: var(--text-accent);
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-primary));
+            border-left: 4px solid var(--text-accent);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-md) 0;
+            border-radius: 0 var(--spacing-sm) var(--spacing-sm) 0;
+        }
+
+        .highlight-box.tip {
+            border-left-color: var(--color-plant);
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--color-fire);
+        }
+
+        .highlight-box.info {
+            border-left-color: var(--color-water);
+        }
+
+        .highlight-title {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            color: var(--text-accent);
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .highlight-box.tip .highlight-title {
+            color: var(--color-plant);
+        }
+
+        .highlight-box.warning .highlight-title {
+            color: var(--color-fire);
+        }
+
+        .highlight-box.info .highlight-title {
+            color: var(--color-water);
+        }
+
+        /* Card Stats Reference */
+        .stats-reference {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .stat-box {
+            background: var(--bg-tertiary);
+            padding: var(--spacing-md);
+            border-radius: var(--spacing-sm);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-value {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .stat-range {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* Footer Navigation */
+        .rules-footer {
+            text-align: center;
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .play-now-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: linear-gradient(135deg, var(--color-fire), #cc3700);
+            border: 3px solid #FFD700;
+            border-radius: var(--spacing-sm);
+            color: white;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all var(--transition-normal);
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        .play-now-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 69, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .rules-header .game-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .rules-section {
+                padding: var(--spacing-md);
+            }
+
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+
+            .elements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .element-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .interaction-container {
+                grid-template-columns: 1fr;
+            }
+
+            .damage-formula {
+                flex-direction: column;
+            }
+
+            .formula-operator {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .elements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rules-list li {
+                padding-left: 50px;
+            }
+
+            .rules-list li::before {
+                width: 25px;
+                height: 25px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rules-page">
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">
+            <span class="back-arrow">&#8592;</span>
+            <span>Back to Game</span>
+        </a>
+
+        <!-- Header -->
+        <header class="rules-header">
+            <h1 class="game-title">How to Play</h1>
+            <p class="rules-subtitle">Master the art of commanding your Monster Ghost Army</p>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <h2 class="toc-title">Quick Navigation</h2>
+            <ul class="toc-list">
+                <li><a href="#overview">Game Overview</a></li>
+                <li><a href="#elements">The 8 Elements</a></li>
+                <li><a href="#interactions">Element Interactions</a></li>
+                <li><a href="#drafting">Drafting Phase</a></li>
+                <li><a href="#battle">Battle Phase</a></li>
+                <li><a href="#attacks">Attacks &amp; Damage</a></li>
+                <li><a href="#defense">Defense Moves</a></li>
+                <li><a href="#special">Special Moves</a></li>
+                <li><a href="#winning">Winning the Game</a></li>
+            </ul>
+        </nav>
+
+        <!-- Game Overview Section -->
+        <section id="overview" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#9876;</span>
+                Game Overview
+            </h2>
+            <div class="rules-content">
+                <p>
+                    <strong>Monster Ghost Army Cards</strong> is an epic deck-building battle game for
+                    <strong>2-8 players</strong>. Command your army of fantastical creatures and ghosts
+                    as you clash against your opponents in strategic combat.
+                </p>
+                <p>
+                    Each player builds their army by drafting cards, then battles until only one
+                    player remains standing. Victory requires careful selection during drafting and
+                    clever tactical decisions during battle.
+                </p>
+
+                <div class="stats-reference">
+                    <div class="stat-box">
+                        <div class="stat-label">Players</div>
+                        <div class="stat-value">2-8</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Total Cards</div>
+                        <div class="stat-value">96</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Cards Per Player</div>
+                        <div class="stat-value">10</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Draft Rounds</div>
+                        <div class="stat-value">10</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Elements Section -->
+        <section id="elements" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#10070;</span>
+                The 8 Elements
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Every card belongs to one or two elements. Understanding elements is crucial
+                    for maximizing damage and building effective defenses.
+                </p>
+
+                <div class="elements-grid">
+                    <div class="element-card">
+                        <img src="assets/images/elements/air.png" alt="Air" class="element-icon air">
+                        <div>
+                            <div class="element-name">Air</div>
+                            <div class="element-desc">Swift and elusive spirits</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/water.png" alt="Water" class="element-icon water">
+                        <div>
+                            <div class="element-name">Water</div>
+                            <div class="element-desc">Flowing, adaptive entities</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/fire.png" alt="Fire" class="element-icon fire">
+                        <div>
+                            <div class="element-name">Fire</div>
+                            <div class="element-desc">Fierce and destructive forces</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/earth.png" alt="Earth" class="element-icon earth">
+                        <div>
+                            <div class="element-name">Earth</div>
+                            <div class="element-desc">Sturdy, resilient creatures</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/universe.png" alt="Universe" class="element-icon universe">
+                        <div>
+                            <div class="element-name">Universe</div>
+                            <div class="element-desc">Cosmic and otherworldly beings</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/plant.png" alt="Plant" class="element-icon plant">
+                        <div>
+                            <div class="element-name">Plant</div>
+                            <div class="element-desc">Natural, growing entities</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/mecha.png" alt="Mecha" class="element-icon mecha">
+                        <div>
+                            <div class="element-name">Mecha</div>
+                            <div class="element-desc">Mechanical constructs</div>
+                        </div>
+                    </div>
+                    <div class="element-card">
+                        <img src="assets/images/elements/magic.png" alt="Magic" class="element-icon magic">
+                        <div>
+                            <div class="element-name">Magic</div>
+                            <div class="element-desc">Arcane and mystical powers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box tip">
+                    <div class="highlight-title">Dual-Element Cards</div>
+                    <p>Some cards have two complementary elements, giving them versatility in both attack and defense!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Element Interactions Section -->
+        <section id="interactions" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#8644;</span>
+                Element Interactions
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Elements interact in specific ways that affect damage dealt. Learning these
+                    interactions is key to victory!
+                </p>
+
+                <div class="interaction-container">
+                    <div class="interaction-box">
+                        <h3 class="interaction-title opposites">
+                            <span>&#8596;</span> Opposite Elements
+                        </h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md); font-size: 0.9rem;">
+                            Attacks against opposite elements deal <strong>50% less damage</strong>
+                        </p>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/air.png" alt="Air" class="element-icon air">
+                            <span class="pair-vs">vs</span>
+                            <img src="assets/images/elements/earth.png" alt="Earth" class="element-icon earth">
+                        </div>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/water.png" alt="Water" class="element-icon water">
+                            <span class="pair-vs">vs</span>
+                            <img src="assets/images/elements/fire.png" alt="Fire" class="element-icon fire">
+                        </div>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/mecha.png" alt="Mecha" class="element-icon mecha">
+                            <span class="pair-vs">vs</span>
+                            <img src="assets/images/elements/universe.png" alt="Universe" class="element-icon universe">
+                        </div>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/plant.png" alt="Plant" class="element-icon plant">
+                            <span class="pair-vs">vs</span>
+                            <img src="assets/images/elements/magic.png" alt="Magic" class="element-icon magic">
+                        </div>
+                        <span class="effect-badge damage-down">-50% Damage</span>
+                    </div>
+
+                    <div class="interaction-box">
+                        <h3 class="interaction-title complements">
+                            <span>&#10004;</span> Complementary Elements
+                        </h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md); font-size: 0.9rem;">
+                            Attacks against complements deal <strong>50% more damage</strong>
+                        </p>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/air.png" alt="Air" class="element-icon air">
+                            <span class="pair-vs">&#8594;</span>
+                            <img src="assets/images/elements/universe.png" alt="Universe" class="element-icon universe">
+                        </div>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/water.png" alt="Water" class="element-icon water">
+                            <span class="pair-vs">&#8594;</span>
+                            <img src="assets/images/elements/plant.png" alt="Plant" class="element-icon plant">
+                        </div>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/magic.png" alt="Magic" class="element-icon magic">
+                            <span class="pair-vs">&#8594;</span>
+                            <img src="assets/images/elements/fire.png" alt="Fire" class="element-icon fire">
+                        </div>
+                        <div class="interaction-pair">
+                            <img src="assets/images/elements/mecha.png" alt="Mecha" class="element-icon mecha">
+                            <span class="pair-vs">&#8594;</span>
+                            <img src="assets/images/elements/earth.png" alt="Earth" class="element-icon earth">
+                        </div>
+                        <span class="effect-badge damage-up">+50% Damage</span>
+                    </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">Same Element</div>
+                    <p>Attacking a card with the same element as your attack deals the base damage amount (no modifier).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drafting Phase Section -->
+        <section id="drafting" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#9998;</span>
+                Drafting Phase
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Before battle begins, each player must assemble their army of 10 cards through
+                    a drafting process.
+                </p>
+
+                <ol class="rules-list">
+                    <li>
+                        <strong>Random Order:</strong> At the start of each draft round, a random
+                        selection order is determined for all players.
+                    </li>
+                    <li>
+                        <strong>Choose One Card:</strong> When it's your turn, select one available
+                        card from the shared pool. This card joins your army.
+                    </li>
+                    <li>
+                        <strong>10 Rounds:</strong> The drafting continues for 10 rounds, with each
+                        player selecting one card per round.
+                    </li>
+                    <li>
+                        <strong>Build Your Army:</strong> After all rounds, each player will have
+                        exactly 10 cards in their army.
+                    </li>
+                </ol>
+
+                <div class="highlight-box tip">
+                    <div class="highlight-title">Drafting Strategy</div>
+                    <p>Consider element variety when drafting! Having multiple elements gives you flexibility against different opponents. Also watch what your opponents are drafting to counter their strategies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Battle Phase Section -->
+        <section id="battle" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#9876;</span>
+                Battle Phase
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Once drafting is complete, the battle for supremacy begins!
+                </p>
+
+                <ol class="rules-list">
+                    <li>
+                        <strong>Turn Order:</strong> At the start of battle, a random turn order
+                        is established. This order remains the same for all subsequent rounds.
+                    </li>
+                    <li>
+                        <strong>Select Attacker:</strong> On your turn, choose one of your remaining
+                        cards to be the attacker.
+                    </li>
+                    <li>
+                        <strong>Select Target:</strong> Choose any card from any other player to
+                        attack.
+                    </li>
+                    <li>
+                        <strong>Choose Attack:</strong> Select which attack move to use from your
+                        attacker's available attacks.
+                    </li>
+                    <li>
+                        <strong>Defense Response:</strong> The targeted player may choose a defense
+                        move (if available) to reduce damage.
+                    </li>
+                    <li>
+                        <strong>Apply Damage:</strong> Calculate final damage and apply it to the
+                        target's health.
+                    </li>
+                </ol>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">Card Elimination</div>
+                    <p>When a card's health reaches 0 or below, it is eliminated from the game and returned to the deck. Lost cards cannot be recovered!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attacks Section -->
+        <section id="attacks" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#9889;</span>
+                Attacks &amp; Damage
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Each card has one or more attacks with varying power levels.
+                </p>
+
+                <div class="stats-reference">
+                    <div class="stat-box">
+                        <div class="stat-label">Average HP</div>
+                        <div class="stat-value">1M</div>
+                        <div class="stat-range">Varies by card</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Average Attack</div>
+                        <div class="stat-value">200K</div>
+                        <div class="stat-range">100-500K range</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Average Defense</div>
+                        <div class="stat-value">100K</div>
+                        <div class="stat-range">50-250K range</div>
+                    </div>
+                </div>
+
+                <div class="damage-calc-box">
+                    <h4 class="damage-calc-title">Damage Calculation</h4>
+                    <div class="damage-formula">
+                        <div class="formula-part">
+                            <div class="formula-label">Base Damage</div>
+                            <div class="formula-value">Attack Power</div>
+                        </div>
+                        <div class="formula-operator">x</div>
+                        <div class="formula-part">
+                            <div class="formula-label">Element Modifier</div>
+                            <div class="formula-value">0.5 / 1.0 / 1.5</div>
+                        </div>
+                        <div class="formula-operator">-</div>
+                        <div class="formula-part">
+                            <div class="formula-label">Defense</div>
+                            <div class="formula-value">Protection</div>
+                        </div>
+                        <div class="formula-operator">=</div>
+                        <div class="formula-part">
+                            <div class="formula-label">Result</div>
+                            <div class="formula-value" style="color: var(--color-fire);">Final Damage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Defense Section -->
+        <section id="defense" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#128737;</span>
+                Defense Moves
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Defense moves work <strong>opposite</strong> to attacks in terms of element
+                    interactions:
+                </p>
+
+                <ul style="list-style: disc; padding-left: var(--spacing-xl); margin: var(--spacing-md) 0; color: var(--text-secondary);">
+                    <li style="margin-bottom: var(--spacing-sm);"><strong>Same Element:</strong> Defense blocks the base protection amount</li>
+                    <li style="margin-bottom: var(--spacing-sm);"><strong>Opposite Elements:</strong> Attack/defense pairings <em>increase</em> damage by 25%</li>
+                    <li style="margin-bottom: var(--spacing-sm);"><strong>Complementary Elements:</strong> Attack/defense pairings <em>reduce</em> damage by 25%</li>
+                </ul>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">Strategic Defense</div>
+                    <p>Choosing the right defense against specific attacks can significantly reduce incoming damage. Match your defense element to complement the attacker's element for maximum protection!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Moves Section -->
+        <section id="special" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#10022;</span>
+                Special Moves
+            </h2>
+            <div class="rules-content">
+                <p>
+                    Special moves are powerful abilities with limited uses. Use them wisely!
+                </p>
+
+                <div class="special-moves-grid">
+                    <div class="special-move-card attack">
+                        <h4 class="special-move-name">Black Hole</h4>
+                        <p class="special-move-desc">
+                            An incredibly powerful attack that devastates the target.
+                            Cannot be bounced back.
+                        </p>
+                        <span class="special-move-uses">Uses: (Number of Players - 2)</span>
+                    </div>
+
+                    <div class="special-move-card attack">
+                        <h4 class="special-move-name">Summon Ghost Army</h4>
+                        <p class="special-move-desc">
+                            Call forth spectral warriors to overwhelm your opponent.
+                            Cannot be bounced back.
+                        </p>
+                        <span class="special-move-uses">Uses: (Number of Players - 2)</span>
+                    </div>
+
+                    <div class="special-move-card defense">
+                        <h4 class="special-move-name">Bounce Back</h4>
+                        <p class="special-move-desc">
+                            Reflects 75% of incoming damage back to the attacker.
+                            Cannot reflect Black Hole or Summon Ghost Army attacks.
+                        </p>
+                        <span class="special-move-uses">Uses: 2 per card</span>
+                    </div>
+
+                    <div class="special-move-card utility">
+                        <h4 class="special-move-name">Teleport</h4>
+                        <p class="special-move-desc">
+                            Completely dodges an incoming attack. The attack misses
+                            entirely and deals no damage.
+                        </p>
+                        <span class="special-move-uses">Uses: 1 per card</span>
+                    </div>
+
+                    <div class="special-move-card utility">
+                        <h4 class="special-move-name">Slime Cover</h4>
+                        <p class="special-move-desc">
+                            Cover spikes with slime, especially effective against Mecha
+                            attacks. Blunts the attack AND reduces that attack's efficacy
+                            by 75% for the rest of the game.
+                        </p>
+                        <span class="special-move-uses">Special ability</span>
+                    </div>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">Limited Uses</div>
+                    <p>Once a special move's uses are exhausted, it becomes unavailable for that card for the rest of the game. Plan carefully!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Winning Section -->
+        <section id="winning" class="rules-section">
+            <h2 class="section-title">
+                <span class="section-icon">&#127942;</span>
+                Winning the Game
+            </h2>
+            <div class="rules-content">
+                <ol class="rules-list">
+                    <li>
+                        <strong>Card Elimination:</strong> When a card's health reaches 0,
+                        it is eliminated from the game.
+                    </li>
+                    <li>
+                        <strong>Player Elimination:</strong> When a player loses all their
+                        cards, they are out of the game.
+                    </li>
+                    <li>
+                        <strong>Victory:</strong> The last player remaining with at least
+                        one card wins the game!
+                    </li>
+                </ol>
+
+                <div class="highlight-box tip">
+                    <div class="highlight-title">Victory Tips</div>
+                    <ul style="list-style: disc; padding-left: var(--spacing-md); margin-top: var(--spacing-sm);">
+                        <li>Draft a balanced army with multiple elements</li>
+                        <li>Target opponents' powerful cards early</li>
+                        <li>Save special moves for critical moments</li>
+                        <li>Use element advantages to maximize damage</li>
+                        <li>Protect your strongest cards with smart defense</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="rules-footer">
+            <a href="index.html" class="play-now-btn">
+                <span>Begin Battle</span>
+                <span>&#9876;</span>
+            </a>
+        </footer>
+    </div>
+</body>
+</html>

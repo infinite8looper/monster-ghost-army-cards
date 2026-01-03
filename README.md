@@ -1,53 +1,218 @@
-# monster-ghost-army-cards
-Join an epic clash monster/ghost armies with this deck building game! Supports 2--8 players.
+# Monster Ghost Army Cards
 
-# Rules
-1. Each player selects 10 cards from the deck. Players take turns, over 10 rounds (random player order is drawn independently for each round); players can pick one available card during their selection turn, removing it from the pool. After selection, each player has constructed their army!
-2. Turns proceed in rounds (order is randomized at the start and then continues in the same order for every subsequent round)
-3. During each turn, a player selects one of their (remaining) cards as the attacker, and any card from any other player as the target.  This may affect the target, attacker's, or other cards' available health.
-4. When a card's health reaches 0 (or below), it is removed from the game and returned to the deck.
-5. When a player runs out of cards, they are out of the game.
-6. The last remaining player wins.
+A fantasy deck-building battle game for 2-8 players featuring 96 hand-drawn monster and ghost cards. Build your army, clash with opponents, and become the last player standing!
 
-# Cards
-1. Some cards support multiple attacks or special moves; others have just a single option.
-2. Each card comes with a built-in amount of hit points (average: 1M).
-3. Each card comprises:
- - The name of the monster or ghost
- - Icons depecting which element(s) that card has (air, water, fire, earth, universe, plant, mecha, magic). Cards can contain either a single element or two complementary elements.
- - A fantasy-style image of the monster or ghost
- - A brief (1--2 sentences) fantasy-style "biography" of the monster or ghost, or a fantasty style "quote" about the monster or ghost, written as though it came from an ancient mystical tome. Some silliness/humor should be used (exploding kittens style).
- - A hit point bar, displaying the current hit point count as a proportion of the starting hit point count (mortal kombat style)
- - Turn the card over to reveal its available attack and defense moves, along with any other special properties. Each attack has an associated element, drawn from the one or more elements associated with the card.
- - The back of the card shows (in the background) another fantasty style image of that card's entity "in battle"
+**[Play the Game](https://infinite8looper.github.io/monster-ghost-army-cards/)**
 
-# Attacks
-1. Each attack has a "base" amount of damage that it inflicts on the target (average: 200K; range: 100 -- 500K)
-2. Each attack is associated with one or more elements
-3. Damage may be modulated by:
- - Special properties of the attacker and/or target (e.g., fire attacks are blunted by water-based entities and vice versa). Same-elements (e.g., attack a card with element X using a element X attack) cause the base amount of damage. Opposite card/attack matches *reduce* the amount of damage by 50%. Complementary (but not matching) card/attack pairings *increase* the amount of damage by 50%. Pairings:
-   - Opposites: Air/earth, Water/fire, mecha/universe, plant/magic
-   - Complements: Air/universe, water/plant, magic/fire, mecha/earth
- - Defense moves and/or deflections
-4. Very powerful attacks (e.g., black hole, summon ghost army) can only be used a limited number (number of players - 2) times each, and then are removed from that card's abilities for the rest of the game.
+---
 
-# Defense moves and deflections
-1. Some cards have defense moves. Each defense has an element (drawn from the set of the that card's elements). 
-2. Each defense has a base protection amount (average: 100K; range: 50 -- 250K). These work *opposite* to how attacks work: same-element pairings defend by the base amount. Oppose attack/defense pairings *increase* damage by 25%. Complementary (but not matching) attack/defense pairings *reduce* the amount of damage by 25%.
-3. Special defense moves may entirely block damage, regardless of elements:
-  - Bounce back turns the attack back on the attacker, causing to the attacker 75% of the damage it would have otherwise caused to the defender. This can be used twice and then is removed (no longer selectable) from the card's abilities for the rest of the game.
-  - Black hole attacks can *not* be bounced back
-  - Summon ghost army attacks
-4. Teleporting dodges an attack entirely. This can be used once and then is removed (no longer selectable) from the card's abilities for the rest of the game.
-5. Some cards have special moves like covering spikes with slime; this is especially effective against mecha attacks. It blunts the attack AND reduces that attack's efficacy by 75% from then on in the game.
+## Play the Game
 
-# Other design decisions
-- There are 96 cards in all, based on a set of hand-drawn cards in the images/orig/ folder.
-- Cards vary in power. There should be at least 8 "highly powerful" cards that have excellent health AND attack strength. There are a few "weak" cards (e.g., "Spikey Box") that don't do much (they're primarily a gag, but sometimes a player might be stuck needing to include a weak card)
-- As each player takes their turn, images of their cards appear at the bottom of the screen (large, interactive), and all other player's cards are organized conveniently for selection.
-- The background of the "board" should be a neat looking (but partially transparent to keep it subtle and clean) fantasy image showing powerful cards' "heros" of each element type engaged in combat
-- Use fantasty fonts
-- Powerful attacks and defenses have cool sound effects
-- Subtle sound effects for clicking on cards, pressing buttons in the interface, and so on
-- Click any card to bring up a zoomed in view and/or interact with it.
-- Everything needs to run through a site hosted on github pages.
+Visit the live game at: https://infinite8looper.github.io/monster-ghost-army-cards/
+
+---
+
+## Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/infinite8looper/monster-ghost-army-cards.git
+cd monster-ghost-army-cards
+
+# Start local server
+python3 -m http.server 8080
+
+# Open in browser
+open http://localhost:8080
+```
+
+For development with live reload, you can use any static file server of your choice.
+
+---
+
+## Project Structure
+
+```
+monster-ghost-army-cards/
+├── index.html              # Main game entry point
+├── css/
+│   └── styles.css          # Game styling with fantasy theme
+├── js/
+│   ├── game.js             # Core game state management
+│   ├── cards.js            # Card loading and rendering
+│   ├── battle.js           # Combat mechanics and damage calculation
+│   ├── drafting.js         # Card selection/drafting phase
+│   ├── setup.js            # Game initialization
+│   ├── ui.js               # User interface interactions
+│   └── ai.js               # AI opponent logic
+├── data/
+│   └── cards.json          # Card definitions (stats, attacks, elements)
+├── assets/
+│   └── images/
+│       ├── generated/      # AI-generated card artwork (96 cards)
+│       └── elements/       # Element type icons (8 elements)
+├── scripts/                # Python utilities for card management
+└── images/
+    └── orig/               # Original hand-drawn card photos
+```
+
+---
+
+## Creating New Cards
+
+1. **Add card image** to `assets/images/generated/` with naming format: `card_name_generated.png`
+
+2. **Edit `data/cards.json`** with card details:
+```json
+{
+  "id": "card_id",
+  "name": "Card Name",
+  "elements": ["fire", "magic"],
+  "tier": "common",
+  "hp": 1000000,
+  "attacks": [
+    {
+      "name": "Attack Name",
+      "description": "What it does",
+      "base_damage": 700000,
+      "element": "fire"
+    }
+  ],
+  "defenses": [],
+  "special_abilities": [],
+  "biography": "A brief fantasy-style description..."
+}
+```
+
+3. **Run rebalance script** if needed:
+```bash
+python3 scripts/rebalance_cards.py
+```
+
+---
+
+## Editing Existing Cards
+
+Card data is stored in `data/cards.json`. Each card includes:
+
+| Field | Description |
+|-------|-------------|
+| `id` | Unique identifier (lowercase, underscores) |
+| `name` | Display name |
+| `elements` | Array of 1-2 elements |
+| `tier` | Power level: `weak`, `common`, `strong`, `legendary` |
+| `hp` | Hit points |
+| `attacks` | Array of attack objects |
+| `defenses` | Array of defense objects |
+| `special_abilities` | Special moves (bounce back, teleport, etc.) |
+| `biography` | Flavor text for the card |
+
+### Stat Ranges by Tier
+
+| Tier | HP Range | Attack Damage | Defense |
+|------|----------|---------------|---------|
+| Weak | 600K - 800K | 450K - 600K | 20K - 50K |
+| Common | 850K - 1.1M | 550K - 800K | 35K - 85K |
+| Strong | 1.1M - 1.35M | 700K - 1M | 50K - 110K |
+| Legendary | 1.5M - 2M | 1M - 1.4M | 80K - 160K |
+
+### Elements
+
+Eight elements available: `air`, `water`, `fire`, `earth`, `universe`, `plant`, `mecha`, `magic`
+
+**Opposite pairs** (50% damage reduction): air/earth, water/fire, mecha/universe, plant/magic
+
+**Complementary pairs** (50% damage increase): air/universe, water/plant, magic/fire, mecha/earth
+
+---
+
+## Utility Scripts
+
+All scripts are in the `scripts/` directory. Run from project root.
+
+| Script | Description |
+|--------|-------------|
+| `rebalance_cards.py` | Rebalance all card stats based on tier configurations |
+| `simulate_balance.py` | Simulate battles to test game balance (target: 30-40 turns) |
+| `extract_card_data.py` | Extract card data from hand-drawn images using Gemini Vision |
+| `preprocess_images.py` | Rotate and crop original card photos |
+| `generate_elements.py` | Generate element icons using Stable Diffusion |
+| `generate_prompts.py` | Create AI prompts for card art generation |
+| `gemini_generate.py` | Generate card artwork using Gemini |
+| `sd_generate.py` | Generate card artwork using Stable Diffusion |
+| `generate_bios.py` | Generate fantasy biographies for cards |
+| `enhance_cards.py` | Enhance card data with additional details |
+| `add_new_cards.py` | Add new cards to the dataset |
+| `merge_extracted_cards.py` | Merge extracted card batches |
+
+### Example Usage
+
+```bash
+# Rebalance all cards to target stats
+python3 scripts/rebalance_cards.py
+
+# Simulate 100 games to check balance
+python3 scripts/simulate_balance.py
+
+# Extract card data from a new image
+python3 scripts/extract_card_data.py --single PXL_20260101_190708125.jpg
+
+# Preprocess all card images
+python3 scripts/preprocess_images.py --all
+```
+
+---
+
+## Game Rules
+
+### Setup
+1. Each player drafts 10 cards from the deck (random turn order each round)
+2. Players take turns selecting one available card until all have 10
+
+### Gameplay
+1. Turns proceed in rounds with consistent player order
+2. On your turn: select one of your cards to attack any opponent's card
+3. Damage is calculated based on attack power, elements, and defenses
+4. Cards at 0 HP are eliminated
+5. Players with no cards remaining are out
+6. Last player standing wins!
+
+### Special Moves
+- **Black Hole / Summon Ghost Army**: Powerful attacks, usable (num_players - 2) times
+- **Bounce Back**: Reflects 75% damage to attacker, usable twice (cannot reflect Black Hole/Ghost Army)
+- **Teleport**: Dodge attack entirely, usable once
+
+For complete rules, see the **[How to Play](https://infinite8looper.github.io/monster-ghost-army-cards/how-to-play.html)** page.
+
+---
+
+## Contributing
+
+Contributions are welcome! Here's how to help:
+
+1. **Fork** the repository
+2. **Create a branch** for your feature (`git checkout -b feature/amazing-feature`)
+3. **Make your changes** and test locally
+4. **Commit** with clear messages (`git commit -m 'Add amazing feature'`)
+5. **Push** to your branch (`git push origin feature/amazing-feature`)
+6. **Open a Pull Request**
+
+### Development Guidelines
+- Test all changes locally before submitting
+- Ensure cards are balanced using `simulate_balance.py`
+- Follow existing code style and naming conventions
+- Update documentation for any new features
+
+---
+
+## License
+
+This project is open source. Card artwork is AI-generated based on original hand-drawn designs.
+
+---
+
+## Credits
+
+- Original hand-drawn card designs: The Monster Ghost Army team
+- Game development: Built with vanilla JavaScript, HTML5, and CSS3
+- AI artwork: Generated using Stable Diffusion and Google Gemini
