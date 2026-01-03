@@ -210,37 +210,28 @@ function createPlayerInputRow(playerNum) {
     row.appendChild(numberBadge);
     row.appendChild(nameInput);
 
-    // AI toggle (not for player 1)
-    if (isFirstPlayer) {
-        // Human indicator for player 1
-        const humanIndicator = document.createElement('span');
-        humanIndicator.className = 'human-indicator';
-        humanIndicator.textContent = 'You';
-        row.appendChild(humanIndicator);
-    } else {
-        // AI toggle for other players
-        const aiLabel = document.createElement('label');
-        aiLabel.className = 'ai-toggle-label';
-        aiLabel.htmlFor = 'ai-toggle-' + playerNum;
+    // AI toggle for all players (shared device mode)
+    const aiLabel = document.createElement('label');
+    aiLabel.className = 'ai-toggle-label';
+    aiLabel.htmlFor = 'ai-toggle-' + playerNum;
 
-        const aiCheckbox = document.createElement('input');
-        aiCheckbox.type = 'checkbox';
-        aiCheckbox.className = 'ai-checkbox';
-        aiCheckbox.id = 'ai-toggle-' + playerNum;
-        aiCheckbox.checked = false; // Default to human
+    const aiCheckbox = document.createElement('input');
+    aiCheckbox.type = 'checkbox';
+    aiCheckbox.className = 'ai-checkbox';
+    aiCheckbox.id = 'ai-toggle-' + playerNum;
+    aiCheckbox.checked = false; // Default to human
 
-        const toggleSwitch = document.createElement('span');
-        toggleSwitch.className = 'ai-toggle-switch';
+    const toggleSwitch = document.createElement('span');
+    toggleSwitch.className = 'ai-toggle-switch';
 
-        const toggleText = document.createElement('span');
-        toggleText.className = 'ai-toggle-text';
-        toggleText.textContent = 'AI';
+    const toggleText = document.createElement('span');
+    toggleText.className = 'ai-toggle-text';
+    toggleText.textContent = 'AI';
 
-        aiLabel.appendChild(aiCheckbox);
-        aiLabel.appendChild(toggleSwitch);
-        aiLabel.appendChild(toggleText);
-        row.appendChild(aiLabel);
-    }
+    aiLabel.appendChild(aiCheckbox);
+    aiLabel.appendChild(toggleSwitch);
+    aiLabel.appendChild(toggleText);
+    row.appendChild(aiLabel);
 
     return row;
 }

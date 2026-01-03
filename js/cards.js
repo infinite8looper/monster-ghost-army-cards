@@ -262,7 +262,26 @@ export function renderCard(card, options = {}) {
 }
 
 /**
- * Render the back of a card (attacks, defenses, biography)
+ * Sort actions by: strength descending, then element count, then element name alphabetically
+ * @param {Array} actions - Array of attack or defense objects
+ * @param {string} strengthKey - Key for strength value ('base_damage' or 'base_protection')
+ * @returns {Array} Sorted array
+ */
+function sortActions(actions, strengthKey) {
+    return [...actions].sort((a, b) => {
+        // Primary: strength descending
+        const strengthDiff = (b[strengthKey] || 0) - (a[strengthKey] || 0);
+        if (strengthDiff !== 0) return strengthDiff;
+
+        // Secondary: element name alphabetically
+        const elemA = a.element || '';
+        const elemB = b.element || '';
+        return elemA.localeCompare(elemB);
+    });
+}
+
+/**
+ * Render the back of a card (bio, attacks, defenses, specials)
  * @param {Object} card - Card data object
  * @param {Object} options - Rendering options
  * @returns {string} HTML string for card back
@@ -270,8 +289,9 @@ export function renderCard(card, options = {}) {
 export function renderCardBack(card, options = {}) {
     const { tierClass = '', sizeClass = '', additionalClasses = '' } = options;
 
-    // Render attacks
-    const attacksHTML = card.attacks.map(attack => `
+    // Sort attacks by strength (descending)
+    const sortedAttacks = sortActions(card.attacks || [], 'base_damage');
+    const attacksHTML = sortedAttacks.map(attack => `
         <div class="card-attack">
             <span class="attack-name">${attack.name}</span>
             <span class="attack-element element-icon element-icon-sm ${attack.element}">
@@ -282,8 +302,9 @@ export function renderCardBack(card, options = {}) {
         </div>
     `).join('');
 
-    // Render defenses
-    const defensesHTML = card.defenses.map(defense => `
+    // Sort defenses by protection (descending)
+    const sortedDefenses = sortActions(card.defenses || [], 'base_protection');
+    const defensesHTML = sortedDefenses.map(defense => `
         <div class="card-defense">
             <span class="defense-name">${defense.name}</span>
             <span class="defense-element element-icon element-icon-sm ${defense.element}">
@@ -296,29 +317,41 @@ export function renderCardBack(card, options = {}) {
 
     // Render special abilities
     const specialsHTML = card.special_abilities && card.special_abilities.length > 0
-        ? card.special_abilities.map(ability => `
-            <div class="card-special">
-                <span class="special-name">${ability.name}</span>
-                ${ability.uses ? `<span class="special-uses">(${ability.uses}x)</span>` : ''}
-            </div>
-        `).join('')
+        ? card.special_abilities.map(ability => {
+            const abilityName = typeof ability === 'string' ? ability : ability.name;
+            const uses = typeof ability === 'object' && ability.uses ? `(${ability.uses}x)` : '';
+            return `<div class="card-special"><span class="special-name">${abilityName}</span>${uses}</div>`;
+        }).join('')
         : '';
 
+    // Order: name, bio, elements, attacks, defenses, specials
     return `
         <div class="game-card card-back-view ${tierClass} ${sizeClass} ${additionalClasses}"
              data-card-id="${card.id}">
             <div class="card-back-content">
                 <div class="card-back-name">${card.name}</div>
 
-                <div class="card-attacks-section">
-                    <h4>Attacks</h4>
-                    ${attacksHTML || '<p class="no-items">No attacks</p>'}
-                </div>
+                ${card.biography ? `
+                    <div class="card-biography">
+                        <p>${card.biography}</p>
+                    </div>
+                ` : ''}
 
-                <div class="card-defenses-section">
-                    <h4>Defenses</h4>
-                    ${defensesHTML || '<p class="no-items">No defenses</p>'}
-                </div>
+                <div class="card-elements-back">${card.elements.map(el => createElementIcon(el)).join('')}</div>
+
+                ${sortedAttacks.length > 0 ? `
+                    <div class="card-attacks-section">
+                        <h4>Attacks</h4>
+                        ${attacksHTML}
+                    </div>
+                ` : ''}
+
+                ${sortedDefenses.length > 0 ? `
+                    <div class="card-defenses-section">
+                        <h4>Defenses</h4>
+                        ${defensesHTML}
+                    </div>
+                ` : ''}
 
                 ${specialsHTML ? `
                     <div class="card-specials-section">
@@ -326,10 +359,6 @@ export function renderCardBack(card, options = {}) {
                         ${specialsHTML}
                     </div>
                 ` : ''}
-
-                <div class="card-biography">
-                    <p>${card.biography || ''}</p>
-                </div>
             </div>
         </div>
     `;

@@ -50,9 +50,9 @@ export function initUI() {
 
         // Modal
         cardModal: document.getElementById('card-modal'),
+        modalCardContainer: document.getElementById('modal-card-container'),
         modalCardFront: document.getElementById('modal-card-front'),
         modalCardBack: document.getElementById('modal-card-back'),
-        btnFlipCard: document.getElementById('btn-flip-card'),
         modalClose: document.querySelector('.modal-close'),
         modalOverlay: document.querySelector('.modal-overlay'),
 
@@ -76,9 +76,6 @@ function setupModalListeners() {
     }
     if (elements.modalOverlay) {
         elements.modalOverlay.addEventListener('click', closeModal);
-    }
-    if (elements.btnFlipCard) {
-        elements.btnFlipCard.addEventListener('click', flipModalCard);
     }
 
     // Close modal on Escape key
@@ -508,27 +505,198 @@ export function setControlStates(states) {
 }
 
 /**
- * Open the card detail modal
+ * Open the card detail modal with flip animation
  * @param {Object} card - Card object
  * @param {Object} gameState - Current game state
  */
 export function openCardModal(card, gameState = {}) {
-    if (!elements.cardModal) return;
+    if (!elements.cardModal || !elements.modalCardContainer) return;
 
-    const views = createCardDetailView(card, gameState);
+    const container = elements.modalCardContainer;
+    const frontFace = elements.modalCardFront;
+    const backFace = elements.modalCardBack;
 
-    if (elements.modalCardFront) {
-        setContent(elements.modalCardFront, views.front);
-        elements.modalCardFront.classList.remove('hidden');
+    // Clear flipped state
+    container.classList.remove('flipped');
+
+    // Set tier class on container for styling
+    container.className = 'modal-card-container tier-' + (card.tier || 'common');
+
+    // Clear existing content
+    frontFace.innerHTML = '';
+    backFace.innerHTML = '';
+
+    // Helper to create tier badge
+    function createTierBadge() {
+        const badge = document.createElement('span');
+        badge.className = 'tier-badge ' + (card.tier || 'common');
+        badge.textContent = (card.tier || 'common').charAt(0).toUpperCase() + (card.tier || 'common').slice(1);
+        return badge;
     }
-    if (elements.modalCardBack) {
-        setContent(elements.modalCardBack, views.back);
-        elements.modalCardBack.classList.add('hidden');
+
+    // Helper to create info button
+    function createInfoBtn() {
+        const btn = document.createElement('button');
+        btn.className = 'card-info-btn';
+        btn.textContent = 'i';
+        btn.title = 'Flip card for details';
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            container.classList.toggle('flipped');
+        });
+        return btn;
+    }
+
+    // Helper to create element icon
+    function createElementIcon(element, size = 'medium') {
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'element-icon ' + element + (size === 'small' ? ' element-icon-sm' : '');
+        iconSpan.title = element;
+        const iconImg = document.createElement('img');
+        iconImg.src = `assets/images/elements/${element}.png`;
+        iconImg.alt = element;
+        iconImg.loading = 'lazy';
+        iconSpan.appendChild(iconImg);
+        return iconSpan;
+    }
+
+    // === RENDER FRONT FACE ===
+    frontFace.appendChild(createTierBadge());
+    frontFace.appendChild(createInfoBtn());
+
+    // Card image
+    const imageDiv = document.createElement('div');
+    imageDiv.className = 'card-image';
+    const img = document.createElement('img');
+    img.src = 'assets/images/generated/' + card.id + '_generated.png';
+    img.alt = card.name;
+    img.onerror = function() {
+        this.style.display = 'none';
+        const placeholder = document.createElement('span');
+        placeholder.textContent = 'No Image';
+        this.parentElement.appendChild(placeholder);
+    };
+    imageDiv.appendChild(img);
+    frontFace.appendChild(imageDiv);
+
+    // Card info section
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'card-info';
+
+    const nameDiv = document.createElement('div');
+    nameDiv.className = 'card-name';
+    nameDiv.textContent = card.name;
+    infoDiv.appendChild(nameDiv);
+
+    const elementsDiv = document.createElement('div');
+    elementsDiv.className = 'card-elements';
+    card.elements.forEach(el => {
+        elementsDiv.appendChild(createElementIcon(el));
+    });
+    infoDiv.appendChild(elementsDiv);
+
+    const statsDiv = document.createElement('div');
+    statsDiv.className = 'card-stats';
+    const currentHP = gameState.cardHP?.[card.id] ?? card.hp;
+    statsDiv.innerHTML = `
+        <span class="stat stat-hp">HP: ${formatHP(currentHP)} / ${formatHP(card.hp)}</span>
+    `;
+    infoDiv.appendChild(statsDiv);
+
+    frontFace.appendChild(infoDiv);
+
+    // === RENDER BACK FACE ===
+    backFace.appendChild(createTierBadge());
+    backFace.appendChild(createInfoBtn());
+
+    // Name
+    const backName = document.createElement('div');
+    backName.className = 'card-name';
+    backName.textContent = card.name;
+    backFace.appendChild(backName);
+
+    // Biography
+    if (card.biography) {
+        const bioDiv = document.createElement('div');
+        bioDiv.className = 'card-back-bio';
+        bioDiv.textContent = card.biography;
+        backFace.appendChild(bioDiv);
+    }
+
+    // Elements
+    const backElements = document.createElement('div');
+    backElements.className = 'card-elements';
+    card.elements.forEach(el => {
+        backElements.appendChild(createElementIcon(el));
+    });
+    backFace.appendChild(backElements);
+
+    // Attacks section (sorted by damage descending)
+    if (card.attacks && card.attacks.length > 0) {
+        const sortedAttacks = [...card.attacks].sort((a, b) =>
+            (b.base_damage || 0) - (a.base_damage || 0)
+        );
+        const attackSection = document.createElement('div');
+        attackSection.className = 'card-back-section';
+        const attackTitle = document.createElement('h4');
+        attackTitle.textContent = 'Attacks';
+        attackSection.appendChild(attackTitle);
+        const attackList = document.createElement('ul');
+        sortedAttacks.forEach(atk => {
+            const li = document.createElement('li');
+            li.appendChild(createElementIcon(atk.element, 'small'));
+            const textSpan = document.createElement('span');
+            textSpan.textContent = `${atk.name} (${formatHP(atk.base_damage || 0)} dmg)`;
+            li.appendChild(textSpan);
+            attackList.appendChild(li);
+        });
+        attackSection.appendChild(attackList);
+        backFace.appendChild(attackSection);
+    }
+
+    // Defenses section (sorted by protection descending)
+    if (card.defenses && card.defenses.length > 0) {
+        const sortedDefenses = [...card.defenses].sort((a, b) =>
+            (b.base_protection || 0) - (a.base_protection || 0)
+        );
+        const defenseSection = document.createElement('div');
+        defenseSection.className = 'card-back-section';
+        const defenseTitle = document.createElement('h4');
+        defenseTitle.textContent = 'Defenses';
+        defenseSection.appendChild(defenseTitle);
+        const defenseList = document.createElement('ul');
+        sortedDefenses.forEach(def => {
+            const li = document.createElement('li');
+            li.appendChild(createElementIcon(def.element, 'small'));
+            const textSpan = document.createElement('span');
+            textSpan.textContent = `${def.name} (${formatHP(def.base_protection || 0)} block)`;
+            li.appendChild(textSpan);
+            defenseList.appendChild(li);
+        });
+        defenseSection.appendChild(defenseList);
+        backFace.appendChild(defenseSection);
+    }
+
+    // Special abilities
+    if (card.special_abilities && card.special_abilities.length > 0) {
+        const specialSection = document.createElement('div');
+        specialSection.className = 'card-back-section';
+        const specialTitle = document.createElement('h4');
+        specialTitle.textContent = 'Special';
+        specialSection.appendChild(specialTitle);
+        const specialList = document.createElement('ul');
+        card.special_abilities.forEach(ability => {
+            const li = document.createElement('li');
+            const abilityName = typeof ability === 'string' ? ability : ability.name;
+            const uses = typeof ability === 'object' && ability.uses ? ` (${ability.uses}x)` : '';
+            li.textContent = abilityName + uses;
+            specialList.appendChild(li);
+        });
+        specialSection.appendChild(specialList);
+        backFace.appendChild(specialSection);
     }
 
     elements.cardModal.classList.remove('hidden');
-
-    // Store current card for flip functionality
     elements.cardModal.dataset.currentCardId = card.id;
 }
 
@@ -538,23 +706,10 @@ export function openCardModal(card, gameState = {}) {
 export function closeModal() {
     if (elements.cardModal) {
         elements.cardModal.classList.add('hidden');
-    }
-}
-
-/**
- * Flip the card in the modal
- */
-function flipModalCard() {
-    if (!elements.modalCardFront || !elements.modalCardBack) return;
-
-    const frontHidden = elements.modalCardFront.classList.contains('hidden');
-
-    if (frontHidden) {
-        elements.modalCardFront.classList.remove('hidden');
-        elements.modalCardBack.classList.add('hidden');
-    } else {
-        elements.modalCardFront.classList.add('hidden');
-        elements.modalCardBack.classList.remove('hidden');
+        // Reset flip state when closing
+        if (elements.modalCardContainer) {
+            elements.modalCardContainer.classList.remove('flipped');
+        }
     }
 }
 

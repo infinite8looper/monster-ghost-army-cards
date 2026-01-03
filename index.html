@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
 
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=8">
+    <link rel="stylesheet" href="css/styles.css?v=15">
 </head>
 <body>
     <!-- Game Container -->
@@ -138,15 +138,19 @@
         <!-- Card Detail Modal (Zoom View) -->
         <div id="card-modal" class="modal hidden">
             <div class="modal-overlay"></div>
-            <div class="modal-content">
+            <div class="modal-content modal-card-content">
                 <button class="modal-close" aria-label="Close">&times;</button>
-                <div id="modal-card-front" class="modal-card-view">
-                    <!-- Front of card with image, name, HP, elements -->
+                <!-- Modal card uses same flip structure as drafting cards -->
+                <div id="modal-card-container" class="modal-card-container">
+                    <div class="card-flipper">
+                        <div id="modal-card-front" class="card-front">
+                            <!-- Front of card rendered here -->
+                        </div>
+                        <div id="modal-card-back" class="card-back">
+                            <!-- Back of card rendered here -->
+                        </div>
+                    </div>
                 </div>
-                <div id="modal-card-back" class="modal-card-view hidden">
-                    <!-- Back of card with attacks, defenses, biography -->
-                </div>
-                <button id="btn-flip-card" class="control-btn">Flip Card</button>
             </div>
         </div>
 
@@ -344,6 +348,6 @@
     </div>
 
     <!-- JavaScript Modules -->
-    <script type="module" src="js/game.js?v=8"></script>
+    <script type="module" src="js/game.js?v=13"></script>
 </body>
 </html>

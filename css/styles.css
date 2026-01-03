@@ -27,11 +27,11 @@
     --tier-weak: linear-gradient(135deg, #CD7F32, #8B5A2B, #CD7F32);
     --tier-weak-glow: #CD7F32;
 
-    /* Tier Background Gradients */
-    --tier-bg-legendary: linear-gradient(145deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 140, 0, 0.2) 50%, rgba(255, 215, 0, 0.15) 100%);
-    --tier-bg-strong: linear-gradient(145deg, rgba(148, 0, 211, 0.2) 0%, rgba(107, 35, 142, 0.15) 50%, rgba(148, 0, 211, 0.1) 100%);
-    --tier-bg-common: linear-gradient(145deg, rgba(100, 149, 237, 0.15) 0%, rgba(0, 128, 128, 0.1) 50%, rgba(100, 149, 237, 0.08) 100%);
-    --tier-bg-weak: linear-gradient(145deg, rgba(139, 90, 43, 0.15) 0%, rgba(105, 105, 105, 0.12) 50%, rgba(139, 90, 43, 0.08) 100%);
+    /* Tier Background Gradients - Enhanced for visual distinction */
+    --tier-bg-legendary: linear-gradient(145deg, rgba(255, 215, 0, 0.35) 0%, rgba(255, 140, 0, 0.3) 50%, rgba(255, 215, 0, 0.25) 100%);
+    --tier-bg-strong: linear-gradient(145deg, rgba(148, 0, 211, 0.35) 0%, rgba(180, 50, 255, 0.3) 50%, rgba(148, 0, 211, 0.25) 100%);
+    --tier-bg-common: linear-gradient(145deg, rgba(70, 130, 180, 0.35) 0%, rgba(100, 149, 237, 0.3) 50%, rgba(70, 130, 180, 0.25) 100%);
+    --tier-bg-weak: linear-gradient(145deg, rgba(139, 90, 43, 0.35) 0%, rgba(160, 110, 60, 0.3) 50%, rgba(139, 90, 43, 0.25) 100%);
 
     /* Tier Image Border Colors (solid colors for card images) */
     --tier-border-weak: #8B7355;
@@ -50,11 +50,14 @@
     --shadow-color: rgba(0, 0, 0, 0.5);
 
     /* Card Dimensions - larger for readability */
-    --card-width: 140px;
-    --card-height: 200px;
-    --card-width-large: 200px;
-    --card-height-large: 280px;
-    --card-border-radius: 10px;
+    --card-width: 180px;
+    --card-height: 260px;
+    --card-width-large: 240px;
+    --card-height-large: 340px;
+    /* Modal card fills most of screen - 30% larger than before */
+    --card-width-modal: min(540px, 85vw);
+    --card-height-modal: min(780px, 90vh);
+    --card-border-radius: 12px;
 
     /* Spacing */
     --spacing-xs: 4px;
@@ -472,10 +475,15 @@ h1, h2, h3, h4, h5, h6 {
     --tier-border-color: var(--tier-border-weak);
     border-color: #8B5A2B;
     background: var(--tier-bg-weak), var(--bg-tertiary);
+    box-shadow: 0 0 6px rgba(139, 90, 43, 0.2);
 }
 
 .game-card.tier-weak:hover {
-    box-shadow: 0 0 12px rgba(139, 90, 43, 0.3), 0 12px 24px var(--shadow-color);
+    box-shadow: 0 0 12px rgba(139, 90, 43, 0.4), 0 12px 24px var(--shadow-color);
+}
+
+.game-card.tier-weak .card-image {
+    box-shadow: inset 0 0 8px rgba(139, 90, 43, 0.3);
 }
 
 /* Common Tier - Steel blue (reliable) */
@@ -483,10 +491,15 @@ h1, h2, h3, h4, h5, h6 {
     --tier-border-color: var(--tier-border-common);
     border-color: #5f9ea0;
     background: var(--tier-bg-common), var(--bg-tertiary);
+    box-shadow: 0 0 8px rgba(70, 130, 180, 0.25);
 }
 
 .game-card.tier-common:hover {
-    box-shadow: 0 0 15px rgba(100, 149, 237, 0.4), 0 12px 24px var(--shadow-color);
+    box-shadow: 0 0 15px rgba(100, 149, 237, 0.5), 0 12px 24px var(--shadow-color);
+}
+
+.game-card.tier-common .card-image {
+    box-shadow: inset 0 0 8px rgba(70, 130, 180, 0.4);
 }
 
 /* Strong Tier - Purple (powerful) */
@@ -494,11 +507,15 @@ h1, h2, h3, h4, h5, h6 {
     --tier-border-color: var(--tier-border-strong);
     border-color: #9400D3;
     background: var(--tier-bg-strong), var(--bg-tertiary);
-    box-shadow: 0 0 10px rgba(148, 0, 211, 0.3);
+    box-shadow: 0 0 12px rgba(148, 0, 211, 0.35);
 }
 
 .game-card.tier-strong:hover {
-    box-shadow: 0 0 20px rgba(148, 0, 211, 0.5), 0 12px 24px var(--shadow-color);
+    box-shadow: 0 0 20px rgba(148, 0, 211, 0.6), 0 12px 24px var(--shadow-color);
+}
+
+.game-card.tier-strong .card-image {
+    box-shadow: inset 0 0 10px rgba(148, 0, 211, 0.4);
 }
 
 /* Legendary Tier - Gold with glow (epic!) */
@@ -877,46 +894,290 @@ h1, h2, h3, h4, h5, h6 {
 .modal-content {
     position: relative;
     z-index: 1;
-    background: var(--bg-secondary);
+    background: transparent;
     border-radius: var(--card-border-radius);
-    padding: var(--spacing-xl);
-    max-width: 500px;
-    width: 90%;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 20px 60px var(--shadow-color);
+    padding: var(--spacing-md);
+    width: auto;
+    max-width: calc(var(--card-width-modal) + var(--spacing-xl) * 2);
 }
 
 .modal-close {
     position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-    background: none;
-    border: none;
+    top: calc(var(--spacing-sm) * -1);
+    right: calc(var(--spacing-sm) * -1);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
     color: var(--text-secondary);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-close:hover {
     color: var(--text-accent);
+    border-color: var(--text-accent);
 }
 
-.modal-card-view {
-    min-height: 300px;
+/* Modal Card Container - Uses same flip animation as drafting cards */
+.modal-card-content {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    max-width: none;
+    padding: var(--spacing-lg);
+}
+
+.modal-card-container {
+    width: var(--card-width-modal);
+    height: var(--card-height-modal);
+    perspective: 1500px;
+    cursor: pointer;
+}
+
+.modal-card-container .card-flipper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    border-radius: var(--card-border-radius);
+    background: var(--bg-tertiary);
+    border: 3px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    /* NO overflow:hidden - breaks backface-visibility */
+}
+
+.modal-card-container.flipped .card-flipper {
+    transform: rotateY(180deg);
+}
+
+.modal-card-container .card-front,
+.modal-card-container .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.modal-card-container .card-front {
+    z-index: 2;
+    background: var(--bg-tertiary);
+}
+
+.modal-card-container .card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+    overflow-y: auto;
+}
+
+/* Modal card content styling - MATCHES drafting card structure, scaled up 3x */
+.modal-card-container .card-image {
+    width: calc(100% - 24px);    /* Scaled from 8px */
+    height: 52%;                  /* Same ratio as drafting card */
+    background: var(--bg-secondary);
+    border-radius: 16px;          /* Scaled from 8px */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 12px 0 12px;    /* Scaled from 4px */
+    border: 4px solid var(--tier-border-color, var(--border-color));
+}
+
+.modal-card-container .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;            /* Same as drafting card */
+}
+
+.modal-card-container .card-info {
+    padding: var(--spacing-sm) var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-card-container .card-name {
+    font-family: var(--font-heading);
+    font-size: 2rem;              /* Scaled from 0.9rem (~2.2x) */
+    text-align: center;
+    line-height: 1.15;
+    max-height: 2.3em;
+    overflow: hidden;
+    word-break: break-word;
+    padding: 0 var(--spacing-sm);
+}
+
+.modal-card-container .card-elements {
+    display: flex;
+    gap: 12px;                    /* Scaled from 6px */
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.modal-card-container .card-elements .element-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.modal-card-container .card-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;            /* Scaled from 0.75rem */
+    color: var(--text-secondary);
+    padding: 10px var(--spacing-md);
+    background: var(--bg-primary);
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+.modal-card-container .stat-hp { color: #44ff44; }
+.modal-card-container .stat-atk { color: var(--color-fire); }
+.modal-card-container .stat-def { color: var(--color-water); }
+
+.modal-card-container .tier-badge {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    z-index: 20;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;           /* Scaled from 0.55rem */
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+.modal-card-container .card-info-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    z-index: 25;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+/* Modal card back content - scaled up */
+.modal-card-container .card-back .card-name {
+    font-size: 1.8rem;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--text-accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-card-container .card-back-bio {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    text-align: center;
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.modal-card-container .card-back-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-card-container .card-back-section h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--text-accent);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.modal-card-container .card-back-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.modal-card-container .card-back-section li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 6px 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.modal-card-container .card-back-section .element-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Tier styling for modal */
+.modal-card-container.tier-weak .card-flipper {
+    border-color: #8B5A2B;
+    background: var(--tier-bg-weak), var(--bg-tertiary);
+}
+
+.modal-card-container.tier-common .card-flipper {
+    border-color: #5f9ea0;
+    background: var(--tier-bg-common), var(--bg-tertiary);
+}
+
+.modal-card-container.tier-strong .card-flipper {
+    border-color: #9400D3;
+    background: var(--tier-bg-strong), var(--bg-tertiary);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(148, 0, 211, 0.3);
+}
+
+.modal-card-container.tier-legendary .card-flipper {
+    border: 3px solid transparent;
+    background-image: var(--tier-legendary), var(--tier-bg-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
+    background-origin: border-box;
+    background-clip: padding-box, padding-box, border-box;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: legendaryPulse 3s ease-in-out infinite;
+}
+
+/* Legacy modal-card-view - kept for backwards compatibility */
+.modal-card-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal card sizing - fill the modal */
+.modal-card-view .game-card,
+.modal-card-view .card-back-view {
+    width: var(--card-width-modal);
+    height: var(--card-height-modal);
 }
 
 /* Modal Card Back Styling - Attacks & Defenses */
 .modal-card-view .card-back-view {
-    width: 100%;
-    height: auto;
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     background: var(--bg-tertiary);
     border-radius: var(--card-border-radius);
-    border: 2px solid var(--border-color);
+    border: 3px solid var(--border-color);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Tier Styling for Modal Card Back View */
@@ -2082,36 +2343,25 @@ h1, h2, h3, h4, h5, h6 {
 /* Card Gallery Grid */
 .drafting-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
     gap: var(--spacing-md);
     justify-items: center;
 }
 
-/* Drafting Card Styles */
+/* Drafting Card Styles - Container provides perspective only */
 .drafting-card {
-    width: 160px;
-    height: 220px;
-    border-radius: var(--card-border-radius);
-    background: var(--bg-tertiary);
-    border: 3px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
+    width: var(--card-width);
+    height: var(--card-height);
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: transform var(--transition-normal), z-index 0s;
     position: relative;
-    overflow: hidden;
+    /* Perspective for 3D flip */
+    perspective: 1000px;
 }
 
 .drafting-card:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px var(--shadow-color);
     z-index: 10;
-}
-
-.drafting-card.selected-for-draft {
-    border-color: #FFD700;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-    transform: translateY(-8px) scale(1.03);
 }
 
 .drafting-card.unavailable {
@@ -2120,26 +2370,8 @@ h1, h2, h3, h4, h5, h6 {
     filter: grayscale(80%);
 }
 
-.drafting-card.unavailable::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(0, 0, 0, 0.2) 10px,
-        rgba(0, 0, 0, 0.2) 20px
-    );
-    pointer-events: none;
-}
-
 .drafting-card.unavailable:hover {
     transform: none;
-    box-shadow: none;
 }
 
 /* Card Content */
@@ -2173,36 +2405,37 @@ h1, h2, h3, h4, h5, h6 {
 
 .drafting-card .card-name {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     text-align: center;
-    line-height: 1.1;
-    max-height: 2.2em;
+    line-height: 1.15;
+    max-height: 2.3em;
     overflow: hidden;
     word-break: break-word;
+    padding: 0 var(--spacing-xs);
 }
 
 .drafting-card .card-elements {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     justify-content: center;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 .drafting-card .card-stats {
     display: flex;
     justify-content: space-between;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    padding: 2px var(--spacing-xs);
+    padding: 4px var(--spacing-sm);
     background: var(--bg-primary);
-    border-radius: 3px;
+    border-radius: 4px;
     margin-top: auto;
 }
 
 .drafting-card .stat {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 3px;
 }
 
 .drafting-card .stat-hp { color: #44ff44; }
@@ -2246,46 +2479,60 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Tier Styling - Drafting Cards
+   Tier Styling - Drafting Cards (applied to .card-flipper for flip animation)
    ========================================================================== */
 
+/* Set CSS variables on parent so child elements can access them */
+.drafting-card.tier-weak { --tier-border-color: var(--tier-border-weak); }
+.drafting-card.tier-common { --tier-border-color: var(--tier-border-common); }
+.drafting-card.tier-strong { --tier-border-color: var(--tier-border-strong); }
+.drafting-card.tier-legendary { --tier-border-color: var(--tier-border-legendary); }
+
 /* Weak Tier - Muted brown */
-.drafting-card.tier-weak {
-    --tier-border-color: var(--tier-border-weak);
+.drafting-card.tier-weak .card-flipper {
     border-color: #8B5A2B;
     background: var(--tier-bg-weak), var(--bg-tertiary);
 }
 
-.drafting-card.tier-weak:hover:not(.unavailable) {
+.drafting-card.tier-weak:hover:not(.unavailable) .card-flipper {
     box-shadow: 0 0 12px rgba(139, 90, 43, 0.3), 0 15px 30px var(--shadow-color);
 }
 
+.drafting-card.tier-weak .card-image {
+    box-shadow: inset 0 0 8px rgba(139, 90, 43, 0.3);
+}
+
 /* Common Tier - Steel blue */
-.drafting-card.tier-common {
-    --tier-border-color: var(--tier-border-common);
+.drafting-card.tier-common .card-flipper {
     border-color: #5f9ea0;
     background: var(--tier-bg-common), var(--bg-tertiary);
 }
 
-.drafting-card.tier-common:hover:not(.unavailable) {
+.drafting-card.tier-common:hover:not(.unavailable) .card-flipper {
     box-shadow: 0 0 15px rgba(100, 149, 237, 0.4), 0 15px 30px var(--shadow-color);
 }
 
+.drafting-card.tier-common .card-image {
+    box-shadow: inset 0 0 8px rgba(70, 130, 180, 0.4);
+}
+
 /* Strong Tier - Purple */
-.drafting-card.tier-strong {
-    --tier-border-color: var(--tier-border-strong);
+.drafting-card.tier-strong .card-flipper {
     border-color: #9400D3;
     background: var(--tier-bg-strong), var(--bg-tertiary);
     box-shadow: 0 0 10px rgba(148, 0, 211, 0.3);
 }
 
-.drafting-card.tier-strong:hover:not(.unavailable) {
+.drafting-card.tier-strong:hover:not(.unavailable) .card-flipper {
     box-shadow: 0 0 25px rgba(148, 0, 211, 0.5), 0 15px 30px var(--shadow-color);
 }
 
+.drafting-card.tier-strong .card-image {
+    box-shadow: inset 0 0 10px rgba(148, 0, 211, 0.4);
+}
+
 /* Legendary Tier - Gold with glow */
-.drafting-card.tier-legendary {
-    --tier-border-color: var(--tier-border-legendary);
+.drafting-card.tier-legendary .card-flipper {
     border: 3px solid transparent;
     background-image: var(--tier-legendary), var(--tier-bg-legendary), linear-gradient(var(--bg-tertiary), var(--bg-tertiary));
     background-origin: border-box;
@@ -2294,7 +2541,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: legendaryPulse 3s ease-in-out infinite;
 }
 
-.drafting-card.tier-legendary:hover:not(.unavailable) {
+.drafting-card.tier-legendary:hover:not(.unavailable) .card-flipper {
     box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.4), 0 15px 30px var(--shadow-color);
 }
 
@@ -2330,18 +2577,49 @@ h1, h2, h3, h4, h5, h6 {
    3D Card Flip Animation
    ========================================================================== */
 
-/* Card container needs perspective for 3D effect */
-.drafting-card {
-    perspective: 1000px;
-}
-
-/* The flipper holds both front and back faces */
+/* The flipper holds both front and back faces - ALL visual styling goes here */
 .card-flipper {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.6s ease-in-out;
     transform-style: preserve-3d;
+    /* Visual styling that flips with the card */
+    border-radius: var(--card-border-radius);
+    background: var(--bg-tertiary);
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    /* Note: NO overflow:hidden here - it breaks backface-visibility in some browsers */
+}
+
+/* Hover shadow on flipper */
+.drafting-card:hover .card-flipper {
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+/* Selected state on flipper */
+.drafting-card.selected-for-draft .card-flipper {
+    border-color: #FFD700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Unavailable strikethrough on flipper */
+.drafting-card.unavailable .card-flipper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 0, 0, 0.2) 10px,
+        rgba(0, 0, 0, 0.2) 20px
+    );
+    pointer-events: none;
+    z-index: 100;
 }
 
 /* When flipped, rotate 180 degrees */
@@ -2361,11 +2639,14 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     border-radius: inherit;
     overflow: hidden;
+    /* IMPORTANT: Both faces need solid backgrounds to prevent see-through */
+    background: var(--bg-tertiary);
 }
 
 /* Front face is default visible */
 .card-front {
     z-index: 2;
+    background: var(--bg-tertiary);
 }
 
 /* Back face starts rotated 180 degrees (facing away) */
@@ -2374,6 +2655,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     background: var(--bg-tertiary);
     padding: var(--spacing-sm);
+    overflow-y: auto;
 }
 
 /* Card back content styling */
@@ -2407,18 +2689,35 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-accent);
     margin: 0 0 2px 0;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .card-back-section ul {
     margin: 0;
-    padding: 0 0 0 var(--spacing-sm);
+    padding: 0;
+    padding-left: var(--spacing-md);
     font-size: 0.55rem;
     color: var(--text-secondary);
     line-height: 1.3;
+    list-style-position: outside;
 }
 
 .card-back-section li {
     margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-back-section li .element-icon {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+}
+
+.card-back-section li .element-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .card-back-bio {
@@ -2431,11 +2730,17 @@ h1, h2, h3, h4, h5, h6 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    text-align: center;
+    padding: 0 var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
 }
 
-/* Info button styling - ensure it's above the flip */
+/* Info button styling - ensure it's above tier badge and other elements */
 .card-info-btn {
-    z-index: 10;
+    position: absolute;
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
+    z-index: 25;
 }
 
 /* When card is flipped, adjust info button appearance */
@@ -3108,12 +3413,13 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background-image: url('../assets/images/card-texture.png');
-    background-size: cover;
-    opacity: 0.05;
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    opacity: 0.12;
     pointer-events: none;
     border-radius: inherit;
-    mix-blend-mode: overlay;
-    z-index: 15;
+    mix-blend-mode: soft-light;
+    z-index: 2;
 }
 
 /* Slightly stronger texture on hover for tactile feedback */

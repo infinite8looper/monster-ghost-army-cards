@@ -75,9 +75,10 @@ export function startDraftingPhase(players, deckSize = 10) {
         cards: []  // Reset cards for fresh draft
     }));
     draftingState.currentRound = 1;
-    draftingState.totalRounds = 3;  // Fixed at 3 selection rounds
+    draftingState.totalRounds = 3;  // Fixed at 3 selection rounds (1 card per round)
     draftingState.deckSize = deckSize;
-    draftingState.cardsPerRound = Math.ceil(deckSize / 3);  // Divide cards across 3 rounds
+    draftingState.cardsPerRound = 1;  // 1 card per player per round
+    draftingState.manualSelectCount = 3;  // Players manually select 3 cards
     draftingState.cardsThisRound = 0;
     draftingState.availableCards = [...getAllCards()];
     draftingState.takenCardIds = new Set();
@@ -85,6 +86,12 @@ export function startDraftingPhase(players, deckSize = 10) {
     draftingState.currentFilter = 'all';
     draftingState.currentSort = 'name';
     draftingState.sortAscending = true;
+
+    // AUTO-ASSIGN: Randomly distribute (deckSize - 3) cards to each player
+    const autoAssignCount = Math.max(0, deckSize - draftingState.manualSelectCount);
+    if (autoAssignCount > 0) {
+        autoAssignCards(autoAssignCount);
+    }
 
     // Initialize UI elements
     initDraftingUI();
@@ -100,6 +107,37 @@ export function startDraftingPhase(players, deckSize = 10) {
 
     // Start first turn
     startCurrentTurn();
+}
+
+/**
+ * Auto-assign random cards to each player
+ * @param {number} countPerPlayer - Number of cards to assign to each player
+ */
+function autoAssignCards(countPerPlayer) {
+    console.log(`Auto-assigning ${countPerPlayer} cards per player`);
+
+    // Shuffle available cards
+    const shuffled = [...draftingState.availableCards].sort(() => Math.random() - 0.5);
+
+    // Distribute cards round-robin to ensure fairness
+    let cardIndex = 0;
+    for (let i = 0; i < countPerPlayer; i++) {
+        for (const player of draftingState.players) {
+            if (cardIndex < shuffled.length) {
+                const card = shuffled[cardIndex];
+                player.cards.push(card.id);
+                draftingState.takenCardIds.add(card.id);
+                cardIndex++;
+            }
+        }
+    }
+
+    // Update available cards (remove taken ones)
+    draftingState.availableCards = draftingState.availableCards.filter(
+        c => !draftingState.takenCardIds.has(c.id)
+    );
+
+    console.log(`Auto-assigned ${cardIndex} total cards. ${draftingState.availableCards.length} cards remaining.`);
 }
 
 /**
@@ -364,30 +402,36 @@ function createDraftingCardElement(card) {
     if (isSelected) cardDiv.classList.add('selected-for-draft');
     cardDiv.dataset.cardId = card.id;
 
-    // Tier badge (outside flipper - always visible)
-    const tierBadge = document.createElement('span');
-    tierBadge.className = 'tier-badge ' + (card.tier || 'common');
-    tierBadge.textContent = capitalizeFirst(card.tier || 'common');
-    cardDiv.appendChild(tierBadge);
-
-    // Info button (outside flipper - always visible)
-    const infoBtn = document.createElement('button');
-    infoBtn.className = 'card-info-btn';
-    infoBtn.textContent = 'i';
-    infoBtn.title = 'Flip card for details';
-    infoBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent card selection
-        cardDiv.classList.toggle('flipped');
-    });
-    cardDiv.appendChild(infoBtn);
-
     // Create flipper container
     const flipper = document.createElement('div');
     flipper.className = 'card-flipper';
 
+    // Helper to create tier badge
+    function createTierBadge() {
+        const badge = document.createElement('span');
+        badge.className = 'tier-badge ' + (card.tier || 'common');
+        badge.textContent = capitalizeFirst(card.tier || 'common');
+        return badge;
+    }
+
+    // Helper to create info button
+    function createInfoBtn() {
+        const btn = document.createElement('button');
+        btn.className = 'card-info-btn';
+        btn.textContent = 'i';
+        btn.title = 'Flip card for details';
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card selection
+            cardDiv.classList.toggle('flipped');
+        });
+        return btn;
+    }
+
     // === FRONT FACE ===
     const frontFace = document.createElement('div');
     frontFace.className = 'card-front';
+    frontFace.appendChild(createTierBadge());
+    frontFace.appendChild(createInfoBtn());
 
     // Card image container
     const imageDiv = document.createElement('div');
@@ -460,18 +504,27 @@ function createDraftingCardElement(card) {
     flipper.appendChild(frontFace);
 
     // === BACK FACE ===
+    // Order: name, bio, elements, attacks, defenses, specials
     const backFace = document.createElement('div');
     backFace.className = 'card-back';
+    backFace.appendChild(createTierBadge());
+    backFace.appendChild(createInfoBtn());
 
-    // Back header with name and elements
-    const backHeader = document.createElement('div');
-    backHeader.className = 'card-back-header';
-
+    // 1. Name
     const backName = document.createElement('div');
     backName.className = 'card-name';
     backName.textContent = card.name;
-    backHeader.appendChild(backName);
+    backFace.appendChild(backName);
 
+    // 2. Biography
+    if (card.biography) {
+        const bioDiv = document.createElement('div');
+        bioDiv.className = 'card-back-bio';
+        bioDiv.textContent = card.biography;
+        backFace.appendChild(bioDiv);
+    }
+
+    // 3. Elements
     const backElements = document.createElement('div');
     backElements.className = 'card-elements';
     card.elements.forEach(el => {
@@ -488,46 +541,73 @@ function createDraftingCardElement(card) {
             backElements.appendChild(iconSpan);
         }
     });
-    backHeader.appendChild(backElements);
-    backFace.appendChild(backHeader);
+    backFace.appendChild(backElements);
 
-    // Attacks section
+    // Helper to create element icon for moves
+    function createMoveElementIcon(element) {
+        if (!element) return null;
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'element-icon element-icon-sm ' + element;
+        iconSpan.title = element;
+        const iconImg = document.createElement('img');
+        iconImg.src = `assets/images/elements/${element}.png`;
+        iconImg.alt = element;
+        iconImg.loading = 'lazy';
+        iconSpan.appendChild(iconImg);
+        return iconSpan;
+    }
+
+    // 4. Attacks section (sorted by damage descending)
     if (card.attacks && card.attacks.length > 0) {
+        const sortedAttacks = [...card.attacks].sort((a, b) =>
+            (b.base_damage || 0) - (a.base_damage || 0)
+        );
         const attackSection = document.createElement('div');
         attackSection.className = 'card-back-section';
         const attackTitle = document.createElement('h4');
         attackTitle.textContent = 'Attacks';
         attackSection.appendChild(attackTitle);
         const attackList = document.createElement('ul');
-        card.attacks.forEach(atk => {
+        sortedAttacks.forEach(atk => {
             const li = document.createElement('li');
+            const elementIcon = createMoveElementIcon(atk.element);
+            if (elementIcon) li.appendChild(elementIcon);
             const damage = atk.base_damage || atk.damage || 0;
-            li.textContent = atk.name + ' (' + formatHP(damage) + ' dmg)';
+            const textSpan = document.createElement('span');
+            textSpan.textContent = atk.name + ' (' + formatHP(damage) + ' dmg)';
+            li.appendChild(textSpan);
             attackList.appendChild(li);
         });
         attackSection.appendChild(attackList);
         backFace.appendChild(attackSection);
     }
 
-    // Defenses section
+    // 5. Defenses section (sorted by protection descending)
     if (card.defenses && card.defenses.length > 0) {
+        const sortedDefenses = [...card.defenses].sort((a, b) =>
+            (b.base_protection || 0) - (a.base_protection || 0)
+        );
         const defenseSection = document.createElement('div');
         defenseSection.className = 'card-back-section';
         const defenseTitle = document.createElement('h4');
         defenseTitle.textContent = 'Defenses';
         defenseSection.appendChild(defenseTitle);
         const defenseList = document.createElement('ul');
-        card.defenses.forEach(def => {
+        sortedDefenses.forEach(def => {
             const li = document.createElement('li');
+            const elementIcon = createMoveElementIcon(def.element);
+            if (elementIcon) li.appendChild(elementIcon);
             const protection = def.base_protection || def.protection || 0;
-            li.textContent = def.name + ' (-' + formatHP(protection) + ')';
+            const textSpan = document.createElement('span');
+            textSpan.textContent = def.name + ' (-' + formatHP(protection) + ')';
+            li.appendChild(textSpan);
             defenseList.appendChild(li);
         });
         defenseSection.appendChild(defenseList);
         backFace.appendChild(defenseSection);
     }
 
-    // Special abilities section
+    // 6. Special abilities section
     if (card.special_abilities && card.special_abilities.length > 0) {
         const specialSection = document.createElement('div');
         specialSection.className = 'card-back-section';
@@ -537,19 +617,13 @@ function createDraftingCardElement(card) {
         const specialList = document.createElement('ul');
         card.special_abilities.forEach(ability => {
             const li = document.createElement('li');
-            li.textContent = ability.name + (ability.uses ? ' (' + ability.uses + 'x)' : '');
+            const abilityName = typeof ability === 'string' ? ability : ability.name;
+            const uses = typeof ability === 'object' && ability.uses ? ' (' + ability.uses + 'x)' : '';
+            li.textContent = abilityName + uses;
             specialList.appendChild(li);
         });
         specialSection.appendChild(specialList);
         backFace.appendChild(specialSection);
-    }
-
-    // Biography
-    if (card.biography) {
-        const bioDiv = document.createElement('div');
-        bioDiv.className = 'card-back-bio';
-        bioDiv.textContent = card.biography;
-        backFace.appendChild(bioDiv);
     }
 
     flipper.appendChild(backFace);
@@ -573,13 +647,36 @@ function createDraftingCardElement(card) {
 
         // Make card draggable
         cardDiv.draggable = true;
+        let currentDragImage = null;  // Track drag image for cleanup
+
         cardDiv.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', card.id);
             e.dataTransfer.effectAllowed = 'move';
             cardDiv.classList.add('dragging');
+
+            // Create a custom drag image showing the whole card
+            const dragImage = cardDiv.cloneNode(true);
+            dragImage.style.position = 'absolute';
+            dragImage.style.top = '-9999px';
+            dragImage.style.left = '-9999px';
+            dragImage.style.opacity = '0.8';
+            dragImage.style.transform = 'scale(0.8)';
+            dragImage.style.pointerEvents = 'none';  // Prevent interaction
+            dragImage.classList.remove('dragging');
+            document.body.appendChild(dragImage);
+            currentDragImage = dragImage;  // Store reference for cleanup
+
+            // Set the custom drag image (centered on cursor)
+            const rect = cardDiv.getBoundingClientRect();
+            e.dataTransfer.setDragImage(dragImage, rect.width / 2, rect.height / 2);
         });
         cardDiv.addEventListener('dragend', () => {
             cardDiv.classList.remove('dragging');
+            // Clean up drag image when drag ends
+            if (currentDragImage && currentDragImage.parentNode) {
+                currentDragImage.parentNode.removeChild(currentDragImage);
+                currentDragImage = null;
+            }
         });
     }
 
