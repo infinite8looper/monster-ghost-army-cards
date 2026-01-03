@@ -14,24 +14,6 @@
         "description": "",
         "base_damage": 1943,
         "element": "plant"
-      },
-      {
-        "name": "Black Hole",
-        "description": "",
-        "base_damage": 1688,
-        "element": "plant"
-      },
-      {
-        "name": "Chomp",
-        "description": "",
-        "base_damage": 981,
-        "element": "plant"
-      },
-      {
-        "name": "Thunder Arrows",
-        "description": "",
-        "base_damage": 956,
-        "element": "plant"
       }
     ],
     "defenses": [],
@@ -77,30 +59,6 @@
         "description": "",
         "base_damage": 993,
         "element": "fire"
-      },
-      {
-        "name": "Dark Wall Forces",
-        "description": "Makes every wall turn against you",
-        "base_damage": 954,
-        "element": "fire"
-      },
-      {
-        "name": "Do Two Moves At Once",
-        "description": "",
-        "base_damage": 907,
-        "element": "fire"
-      },
-      {
-        "name": "Fire Arrows",
-        "description": "",
-        "base_damage": 830,
-        "element": "fire"
-      },
-      {
-        "name": "Sun Lazers",
-        "description": "",
-        "base_damage": 815,
-        "element": "fire"
       }
     ],
     "defenses": [],
@@ -124,24 +82,6 @@
         "description": "",
         "base_damage": 783,
         "element": "air"
-      },
-      {
-        "name": "Fog Sandwich",
-        "description": "",
-        "base_damage": 745,
-        "element": "air"
-      },
-      {
-        "name": "Wind Tunnel",
-        "description": "",
-        "base_damage": 728,
-        "element": "air"
-      },
-      {
-        "name": "Hurricane",
-        "description": "",
-        "base_damage": 657,
-        "element": "air"
       }
     ],
     "defenses": [],
@@ -163,12 +103,6 @@
         "name": "Lights Anything On Fire",
         "description": "",
         "base_damage": 799,
-        "element": "fire"
-      },
-      {
-        "name": "Shoots Extremely Hot Wax",
-        "description": "That hardens into an imprisoning shell to prevent next attack",
-        "base_damage": 742,
         "element": "fire"
       }
     ],
@@ -200,30 +134,6 @@
         "description": "",
         "base_damage": 2642,
         "element": "mecha"
-      },
-      {
-        "name": "Elemental Black Hole",
-        "description": "",
-        "base_damage": 2366,
-        "element": "mecha"
-      },
-      {
-        "name": "Black Hole",
-        "description": "",
-        "base_damage": 2294,
-        "element": "mecha"
-      },
-      {
-        "name": "Chomp",
-        "description": "",
-        "base_damage": 1359,
-        "element": "mecha"
-      },
-      {
-        "name": "Swing",
-        "description": "",
-        "base_damage": 1230,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -245,18 +155,6 @@
         "name": "Ultra Spin Attack",
         "description": "",
         "base_damage": 738,
-        "element": "magic"
-      },
-      {
-        "name": "Summon Daemon",
-        "description": "To help cook latkes (splatters of oil are very painful)",
-        "base_damage": 616,
-        "element": "magic"
-      },
-      {
-        "name": "Enrage Enemies",
-        "description": "To distract them by landing on W (nun) every time",
-        "base_damage": 613,
         "element": "magic"
       }
     ],
@@ -280,12 +178,6 @@
         "name": "Spawn Firewalker Army",
         "description": "",
         "base_damage": 606,
-        "element": "fire"
-      },
-      {
-        "name": "Super Bright",
-        "description": "Hurts any eye",
-        "base_damage": 553,
         "element": "fire"
       }
     ],
@@ -313,12 +205,6 @@
         "name": "Very Loud",
         "description": "Hurts ears",
         "base_damage": 780,
-        "element": "magic"
-      },
-      {
-        "name": "Puts All Babies That Are Nearby To Sleep",
-        "description": "Next attack is 100x stronger",
-        "base_damage": 660,
         "element": "magic"
       }
     ],
@@ -350,30 +236,6 @@
         "description": "",
         "base_damage": 2683,
         "element": "mecha"
-      },
-      {
-        "name": "Black Hole",
-        "description": "",
-        "base_damage": 2603,
-        "element": "mecha"
-      },
-      {
-        "name": "Elemental Black Hole",
-        "description": "",
-        "base_damage": 2161,
-        "element": "mecha"
-      },
-      {
-        "name": "Lightning",
-        "description": "",
-        "base_damage": 1360,
-        "element": "mecha"
-      },
-      {
-        "name": "Swing",
-        "description": "",
-        "base_damage": 1290,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -395,12 +257,6 @@
         "name": "Smothers Enemies",
         "description": "",
         "base_damage": 745,
-        "element": "magic"
-      },
-      {
-        "name": "Squelches",
-        "description": "",
-        "base_damage": 652,
         "element": "magic"
       }
     ],
@@ -432,30 +288,6 @@
         "description": "",
         "base_damage": 1987,
         "element": "mecha"
-      },
-      {
-        "name": "Elemental Black Hole",
-        "description": "",
-        "base_damage": 1697,
-        "element": "mecha"
-      },
-      {
-        "name": "White Hole",
-        "description": "",
-        "base_damage": 1530,
-        "element": "mecha"
-      },
-      {
-        "name": "Lazers",
-        "description": "",
-        "base_damage": 1345,
-        "element": "mecha"
-      },
-      {
-        "name": "Swing",
-        "description": "",
-        "base_damage": 1286,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -479,30 +311,6 @@
         "description": "",
         "base_damage": 2669,
         "element": "water"
-      },
-      {
-        "name": "Elemental Black Hole",
-        "description": "",
-        "base_damage": 2391,
-        "element": "water"
-      },
-      {
-        "name": "White Hole",
-        "description": "",
-        "base_damage": 1641,
-        "element": "water"
-      },
-      {
-        "name": "Tsunami",
-        "description": "",
-        "base_damage": 1395,
-        "element": "water"
-      },
-      {
-        "name": "Lazers",
-        "description": "",
-        "base_damage": 1334,
-        "element": "water"
       }
     ],
     "defenses": [],
@@ -525,12 +333,6 @@
         "description": "",
         "base_damage": 724,
         "element": "magic"
-      },
-      {
-        "name": "Sharp Foot Poke",
-        "description": "Don't step on me!",
-        "base_damage": 551,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -538,12 +340,6 @@
         "name": "Shield Block",
         "description": "",
         "base_protection": 67,
-        "element": "magic"
-      },
-      {
-        "name": "Bounce Back",
-        "description": "",
-        "base_protection": 54,
         "element": "magic"
       }
     ],
@@ -567,30 +363,6 @@
         "description": "",
         "base_damage": 2319,
         "element": "fire"
-      },
-      {
-        "name": "White Hole",
-        "description": "",
-        "base_damage": 1911,
-        "element": "fire"
-      },
-      {
-        "name": "Black Hole",
-        "description": "",
-        "base_damage": 1900,
-        "element": "fire"
-      },
-      {
-        "name": "Charge",
-        "description": "",
-        "base_damage": 1381,
-        "element": "fire"
-      },
-      {
-        "name": "Chomp",
-        "description": "",
-        "base_damage": 1362,
-        "element": "fire"
       }
     ],
     "defenses": [],
@@ -612,12 +384,6 @@
         "name": "Exploding Seed Pods",
         "description": "",
         "base_damage": 768,
-        "element": "plant"
-      },
-      {
-        "name": "Unbearable Cuteness",
-        "description": "",
-        "base_damage": 717,
         "element": "plant"
       }
     ],
@@ -647,18 +413,6 @@
         "name": "Blinding Neon Spirals",
         "description": "",
         "base_damage": 778,
-        "element": "magic"
-      },
-      {
-        "name": "Spiraling Path Confusion",
-        "description": "",
-        "base_damage": 562,
-        "element": "magic"
-      },
-      {
-        "name": "Maximum Slime",
-        "description": "",
-        "base_damage": 553,
         "element": "magic"
       }
     ],
@@ -690,30 +444,6 @@
         "description": "",
         "base_damage": 2798,
         "element": "plant"
-      },
-      {
-        "name": "Black Hole",
-        "description": "",
-        "base_damage": 2255,
-        "element": "plant"
-      },
-      {
-        "name": "Elemental Black Hole",
-        "description": "",
-        "base_damage": 1644,
-        "element": "plant"
-      },
-      {
-        "name": "Chomp",
-        "description": "",
-        "base_damage": 1367,
-        "element": "plant"
-      },
-      {
-        "name": "Electric Arrows",
-        "description": "",
-        "base_damage": 1101,
-        "element": "plant"
       }
     ],
     "defenses": [],
@@ -737,30 +467,6 @@
         "description": "",
         "base_damage": 2148,
         "element": "earth"
-      },
-      {
-        "name": "Elemental Black Hole",
-        "description": "",
-        "base_damage": 1902,
-        "element": "earth"
-      },
-      {
-        "name": "Black Hole",
-        "description": "",
-        "base_damage": 1716,
-        "element": "earth"
-      },
-      {
-        "name": "Chomp",
-        "description": "",
-        "base_damage": 1396,
-        "element": "earth"
-      },
-      {
-        "name": "Earth Quake",
-        "description": "",
-        "base_damage": 1373,
-        "element": "earth"
       }
     ],
     "defenses": [],
@@ -782,18 +488,6 @@
         "name": "Infinite Black Hole",
         "description": "",
         "base_damage": 2402,
-        "element": "universe"
-      },
-      {
-        "name": "Shooting Stars!",
-        "description": "Literally",
-        "base_damage": 1079,
-        "element": "universe"
-      },
-      {
-        "name": "Extreme Gravity",
-        "description": "",
-        "base_damage": 1019,
         "element": "universe"
       }
     ],
@@ -840,30 +534,6 @@
         "description": "",
         "base_damage": 2118,
         "element": "air"
-      },
-      {
-        "name": "Wormhole",
-        "description": "Sends you back in time",
-        "base_damage": 1306,
-        "element": "air"
-      },
-      {
-        "name": "Transmogrify",
-        "description": "Transforms any creature into another form",
-        "base_damage": 1225,
-        "element": "air"
-      },
-      {
-        "name": "Posession",
-        "description": "",
-        "base_damage": 1191,
-        "element": "air"
-      },
-      {
-        "name": "Mutant Death Ray",
-        "description": "",
-        "base_damage": 1143,
-        "element": "air"
       }
     ],
     "defenses": [],
@@ -885,12 +555,6 @@
         "name": "Annoying Laughter",
         "description": "HEHAHEHEHAHAHEHA HAHA HE HAHE HO HA HE HE HA HO HO HO HE HE HO",
         "base_damage": 798,
-        "element": "magic"
-      },
-      {
-        "name": "Top Haunt",
-        "description": "Destroys the top of your body",
-        "base_damage": 665,
         "element": "magic"
       }
     ],
@@ -914,24 +578,6 @@
         "description": "",
         "base_damage": 717,
         "element": "magic"
-      },
-      {
-        "name": "Fruit Punch",
-        "description": "",
-        "base_damage": 704,
-        "element": "magic"
-      },
-      {
-        "name": "Candy Dash",
-        "description": "",
-        "base_damage": 626,
-        "element": "magic"
-      },
-      {
-        "name": "Chomp",
-        "description": "",
-        "base_damage": 553,
-        "element": "magic"
       }
     ],
     "defenses": [],
@@ -953,24 +599,6 @@
         "name": "Beak Grip",
         "description": "",
         "base_damage": 966,
-        "element": "magic"
-      },
-      {
-        "name": "Poison Shooter",
-        "description": "",
-        "base_damage": 815,
-        "element": "magic"
-      },
-      {
-        "name": "Elemental Summoner",
-        "description": "",
-        "base_damage": 749,
-        "element": "magic"
-      },
-      {
-        "name": "Cannonball Blaster",
-        "description": "",
-        "base_damage": 707,
         "element": "magic"
       }
     ],
@@ -998,24 +626,6 @@
         "name": "Infinity Burst",
         "description": "Unleashes a blast of infinite energy",
         "base_damage": 1589,
-        "element": "magic"
-      },
-      {
-        "name": "Infinity Eyeball Strike",
-        "description": "",
-        "base_damage": 1349,
-        "element": "magic"
-      },
-      {
-        "name": "Dream Spitter",
-        "description": "",
-        "base_damage": 1298,
-        "element": "magic"
-      },
-      {
-        "name": "Rainbow Dazzle",
-        "description": "",
-        "base_damage": 1289,
         "element": "magic"
       }
     ],
@@ -1056,24 +666,6 @@
         "description": "",
         "base_damage": 2209,
         "element": "earth"
-      },
-      {
-        "name": "Super Ghost Army Caller",
-        "description": "",
-        "base_damage": 1215,
-        "element": "earth"
-      },
-      {
-        "name": "Infinity Eyeball Strike",
-        "description": "",
-        "base_damage": 1192,
-        "element": "earth"
-      },
-      {
-        "name": "Double",
-        "description": "",
-        "base_damage": 1080,
-        "element": "earth"
       }
     ],
     "defenses": [
@@ -1103,18 +695,6 @@
         "name": "Growing Black Hole",
         "description": "",
         "base_damage": 1618,
-        "element": "plant"
-      },
-      {
-        "name": "Stunk Attack",
-        "description": "",
-        "base_damage": 856,
-        "element": "plant"
-      },
-      {
-        "name": "Flower Missile",
-        "description": "",
-        "base_damage": 743,
         "element": "plant"
       }
     ],
@@ -1173,12 +753,6 @@
         "description": "",
         "base_damage": 1907,
         "element": "air"
-      },
-      {
-        "name": "Tornado",
-        "description": "",
-        "base_damage": 856,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -1208,18 +782,6 @@
         "name": "Void Strike",
         "description": "Channels the power of infinite space into a single devastating blow",
         "base_damage": 1139,
-        "element": "air"
-      },
-      {
-        "name": "Lightning",
-        "description": "",
-        "base_damage": 699,
-        "element": "air"
-      },
-      {
-        "name": "Ultra Fog Lurker",
-        "description": "",
-        "base_damage": 667,
         "element": "air"
       }
     ],
@@ -1251,12 +813,6 @@
         "description": "",
         "base_damage": 734,
         "element": "earth"
-      },
-      {
-        "name": "Poison Shooter",
-        "description": "",
-        "base_damage": 668,
-        "element": "earth"
       }
     ],
     "defenses": [
@@ -1286,24 +842,6 @@
         "name": "Infinite Black Hole",
         "description": "",
         "base_damage": 1701,
-        "element": "plant"
-      },
-      {
-        "name": "Blinding Eye Flashes",
-        "description": "",
-        "base_damage": 1279,
-        "element": "plant"
-      },
-      {
-        "name": "Star Power",
-        "description": "",
-        "base_damage": 1059,
-        "element": "plant"
-      },
-      {
-        "name": "Gravity!",
-        "description": "",
-        "base_damage": 1047,
         "element": "plant"
       }
     ],
@@ -1340,18 +878,6 @@
         "description": "",
         "base_damage": 796,
         "element": "fire"
-      },
-      {
-        "name": "Lasers",
-        "description": "",
-        "base_damage": 742,
-        "element": "fire"
-      },
-      {
-        "name": "Magma Beam",
-        "description": "",
-        "base_damage": 565,
-        "element": "fire"
       }
     ],
     "defenses": [],
@@ -1375,12 +901,6 @@
         "description": "",
         "base_damage": 770,
         "element": "mecha"
-      },
-      {
-        "name": "Plugs Its Enemies",
-        "description": "",
-        "base_damage": 744,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -1403,18 +923,6 @@
         "name": "Color Power",
         "description": "",
         "base_damage": 718,
-        "element": "fire"
-      },
-      {
-        "name": "Smile/Frown",
-        "description": "",
-        "base_damage": 628,
-        "element": "fire"
-      },
-      {
-        "name": "Confusing Inversions",
-        "description": "",
-        "base_damage": 621,
         "element": "fire"
       }
     ],
@@ -1503,12 +1011,6 @@
         "description": "Forces an enemy to attack its own allies",
         "base_damage": 699,
         "element": "plant"
-      },
-      {
-        "name": "Sonic Wail",
-        "description": "A piercing cry that damages all who hear it",
-        "base_damage": 571,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -1537,18 +1039,6 @@
         "name": "Cuteness Overload",
         "description": "",
         "base_damage": 800,
-        "element": "magic"
-      },
-      {
-        "name": "Meow Power",
-        "description": "",
-        "base_damage": 747,
-        "element": "magic"
-      },
-      {
-        "name": "Purrrbrations",
-        "description": "",
-        "base_damage": 610,
         "element": "magic"
       }
     ],
@@ -1602,30 +1092,6 @@
         "description": "",
         "base_damage": 1377,
         "element": "water"
-      },
-      {
-        "name": "Tsunami",
-        "description": "",
-        "base_damage": 1254,
-        "element": "water"
-      },
-      {
-        "name": "Ocean Current Strength",
-        "description": "",
-        "base_damage": 1192,
-        "element": "water"
-      },
-      {
-        "name": "Tidal Attack!",
-        "description": "",
-        "base_damage": 1083,
-        "element": "water"
-      },
-      {
-        "name": "Depth Charge Zap",
-        "description": "",
-        "base_damage": 1019,
-        "element": "water"
       }
     ],
     "defenses": [],
@@ -1648,12 +1114,6 @@
         "name": "Potty Language",
         "description": "",
         "base_damage": 591,
-        "element": "air"
-      },
-      {
-        "name": "Extreme Smelliness",
-        "description": "",
-        "base_damage": 556,
         "element": "air"
       }
     ],
@@ -1714,18 +1174,6 @@
         "description": "",
         "base_damage": 670,
         "element": "magic"
-      },
-      {
-        "name": "Glare Attack",
-        "description": "",
-        "base_damage": 664,
-        "element": "magic"
-      },
-      {
-        "name": "\"The Look\"",
-        "description": "",
-        "base_damage": 649,
-        "element": "magic"
       }
     ],
     "defenses": [],
@@ -1747,18 +1195,6 @@
         "name": "Curly Whirlies",
         "description": "",
         "base_damage": 661,
-        "element": "magic"
-      },
-      {
-        "name": "Magic Lasso",
-        "description": "",
-        "base_damage": 626,
-        "element": "magic"
-      },
-      {
-        "name": "Confusion",
-        "description": "",
-        "base_damage": 585,
         "element": "magic"
       }
     ],
@@ -1782,30 +1218,6 @@
         "description": "",
         "base_damage": 1319,
         "element": "earth"
-      },
-      {
-        "name": "Mountain Crusher",
-        "description": "",
-        "base_damage": 1311,
-        "element": "earth"
-      },
-      {
-        "name": "Dirt Power",
-        "description": "",
-        "base_damage": 1247,
-        "element": "earth"
-      },
-      {
-        "name": "Earthquake",
-        "description": "",
-        "base_damage": 1238,
-        "element": "earth"
-      },
-      {
-        "name": "Rock Slinger",
-        "description": "",
-        "base_damage": 1031,
-        "element": "earth"
       }
     ],
     "defenses": [],
@@ -1828,12 +1240,6 @@
         "description": "",
         "base_damage": 741,
         "element": "water"
-      },
-      {
-        "name": "Extra-Sharp Razor Slice",
-        "description": "",
-        "base_damage": 563,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -1841,12 +1247,6 @@
         "name": "1000x Shield Shell",
         "description": "",
         "base_protection": 79,
-        "element": "water"
-      },
-      {
-        "name": "Bury to Dodge",
-        "description": "",
-        "base_protection": 76,
         "element": "water"
       }
     ],
@@ -1868,12 +1268,6 @@
         "name": "Song Sticker",
         "description": "Gets a song stuck in enemy's head",
         "base_damage": 675,
-        "element": "fire"
-      },
-      {
-        "name": "Shoots Superheated Gas Into Eyes",
-        "description": "",
-        "base_damage": 641,
         "element": "fire"
       }
     ],
@@ -1944,12 +1338,6 @@
         "description": "",
         "base_protection": 43,
         "element": "plant"
-      },
-      {
-        "name": "Impervious to Spike Walls",
-        "description": "",
-        "base_protection": 29,
-        "element": "plant"
       }
     ],
     "special_abilities": [],
@@ -2013,12 +1401,6 @@
         "description": "Jump over any attack",
         "base_protection": 40,
         "element": "magic"
-      },
-      {
-        "name": "Deflects Attacks to Another Player, Including the Attacker",
-        "description": "",
-        "base_protection": 32,
-        "element": "magic"
       }
     ],
     "special_abilities": [],
@@ -2068,12 +1450,6 @@
         "description": "",
         "base_damage": 622,
         "element": "water"
-      },
-      {
-        "name": "Super Distraction",
-        "description": "",
-        "base_damage": 560,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -2103,12 +1479,6 @@
         "description": "",
         "base_damage": 732,
         "element": "magic"
-      },
-      {
-        "name": "Flings Goo",
-        "description": "",
-        "base_damage": 558,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -2137,18 +1507,6 @@
         "name": "Squawking",
         "description": "",
         "base_damage": 758,
-        "element": "magic"
-      },
-      {
-        "name": "Crushing",
-        "description": "",
-        "base_damage": 732,
-        "element": "magic"
-      },
-      {
-        "name": "Flying",
-        "description": "",
-        "base_damage": 654,
         "element": "magic"
       }
     ],
@@ -2260,12 +1618,6 @@
         "description": "",
         "base_damage": 794,
         "element": "magic"
-      },
-      {
-        "name": "Rotten Mush",
-        "description": "",
-        "base_damage": 698,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -2299,12 +1651,6 @@
         "name": "Turn Hands Into Poop-Covered Danger Spoons",
         "description": "",
         "base_damage": 780,
-        "element": "magic"
-      },
-      {
-        "name": "All Monsters and Ghosts Must Change Into New Outfits",
-        "description": "",
-        "base_damage": 749,
         "element": "magic"
       }
     ],
@@ -2362,12 +1708,6 @@
         "description": "",
         "base_damage": 646,
         "element": "magic"
-      },
-      {
-        "name": "Poison",
-        "description": "",
-        "base_damage": 593,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -2404,12 +1744,6 @@
         "name": "Disappearing",
         "description": "",
         "base_protection": 33,
-        "element": "magic"
-      },
-      {
-        "name": "Absorbing Sun Energy",
-        "description": "",
-        "base_protection": 30,
         "element": "magic"
       }
     ],
@@ -2525,12 +1859,6 @@
         "description": "",
         "base_damage": 771,
         "element": "water"
-      },
-      {
-        "name": "Yumminess Overload",
-        "description": "",
-        "base_damage": 757,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -2559,12 +1887,6 @@
         "name": "Deafens Enemies",
         "description": "",
         "base_damage": 857,
-        "element": "magic"
-      },
-      {
-        "name": "Summons Ghost Army",
-        "description": "",
-        "base_damage": 833,
         "element": "magic"
       }
     ],
@@ -2596,12 +1918,6 @@
         "description": "",
         "base_damage": 724,
         "element": "water"
-      },
-      {
-        "name": "Robo-Voice",
-        "description": "So annoying enemies are instantly destroyed",
-        "base_damage": 555,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -2631,12 +1947,6 @@
         "description": "",
         "base_damage": 917,
         "element": "magic"
-      },
-      {
-        "name": "Dream Babble",
-        "description": "Confuses enemies with nonsensical dream-speak",
-        "base_damage": 770,
-        "element": "magic"
       }
     ],
     "defenses": [],
@@ -2664,24 +1974,6 @@
         "name": "Black Hole",
         "description": "",
         "base_damage": 1188,
-        "element": "fire"
-      },
-      {
-        "name": "Wing",
-        "description": "",
-        "base_damage": 984,
-        "element": "fire"
-      },
-      {
-        "name": "Grow",
-        "description": "",
-        "base_damage": 796,
-        "element": "fire"
-      },
-      {
-        "name": "Fire",
-        "description": "",
-        "base_damage": 764,
         "element": "fire"
       }
     ],
@@ -2717,18 +2009,6 @@
         "description": "",
         "base_damage": 731,
         "element": "plant"
-      },
-      {
-        "name": "Compost",
-        "description": "",
-        "base_damage": 694,
-        "element": "plant"
-      },
-      {
-        "name": "Dig",
-        "description": "",
-        "base_damage": 624,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -2758,12 +2038,6 @@
         "description": "",
         "base_damage": 799,
         "element": "magic"
-      },
-      {
-        "name": "The Squeeze",
-        "description": "",
-        "base_damage": 652,
-        "element": "magic"
       }
     ],
     "defenses": [],
@@ -2785,12 +2059,6 @@
         "name": "Shifter",
         "description": "Redirect any attack or defense",
         "base_damage": 690,
-        "element": "magic"
-      },
-      {
-        "name": "Leg Grow",
-        "description": "Grows extra legs to run faster",
-        "base_damage": 581,
         "element": "magic"
       }
     ],
@@ -2850,12 +2118,6 @@
         "name": "Overwhelming Fashionability",
         "description": "",
         "base_damage": 591,
-        "element": "magic"
-      },
-      {
-        "name": "Plaid Power",
-        "description": "",
-        "base_damage": 570,
         "element": "magic"
       }
     ],
@@ -2936,12 +2198,6 @@
         "description": "",
         "base_damage": 727,
         "element": "mecha"
-      },
-      {
-        "name": "Shocking",
-        "description": "",
-        "base_damage": 725,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -2965,12 +2221,6 @@
         "description": "",
         "base_damage": 1867,
         "element": "air"
-      },
-      {
-        "name": "Tornado Growin",
-        "description": "",
-        "base_damage": 893,
-        "element": "air"
       }
     ],
     "defenses": [],
@@ -2993,12 +2243,6 @@
         "name": "Black Hole",
         "description": "",
         "base_damage": 1401,
-        "element": "plant"
-      },
-      {
-        "name": "Injecting",
-        "description": "",
-        "base_damage": 797,
         "element": "plant"
       }
     ],
@@ -3029,18 +2273,6 @@
         "description": "Spikes directly at ghost eyeballs",
         "base_damage": 767,
         "element": "plant"
-      },
-      {
-        "name": "Really Annoying",
-        "description": "",
-        "base_damage": 645,
-        "element": "plant"
-      },
-      {
-        "name": "Pokes (Tree)",
-        "description": "Damage",
-        "base_damage": 630,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -3070,12 +2302,6 @@
         "name": "Gobbling",
         "description": "Eats/munches your enemy",
         "base_damage": 677,
-        "element": "mecha"
-      },
-      {
-        "name": "Lightning",
-        "description": "",
-        "base_damage": 594,
         "element": "mecha"
       }
     ],
@@ -3130,30 +2356,6 @@
         "description": "",
         "base_damage": 1395,
         "element": "fire"
-      },
-      {
-        "name": "Flamethrower",
-        "description": "",
-        "base_damage": 1301,
-        "element": "fire"
-      },
-      {
-        "name": "Fireball Max",
-        "description": "",
-        "base_damage": 1177,
-        "element": "fire"
-      },
-      {
-        "name": "Lava",
-        "description": "",
-        "base_damage": 1125,
-        "element": "fire"
-      },
-      {
-        "name": "Heat Power",
-        "description": "",
-        "base_damage": 1086,
-        "element": "fire"
       }
     ],
     "defenses": [],
@@ -3176,18 +2378,6 @@
         "name": "Growing Black Hole",
         "description": "",
         "base_damage": 1327,
-        "element": "air"
-      },
-      {
-        "name": "Tornado",
-        "description": "",
-        "base_damage": 934,
-        "element": "air"
-      },
-      {
-        "name": "Rainbow Space",
-        "description": "",
-        "base_damage": 732,
         "element": "air"
       }
     ],
@@ -3223,12 +2413,6 @@
         "name": "Makes a Huge Sticky Mess",
         "description": "To immobilize any foe",
         "base_damage": 751,
-        "element": "water"
-      },
-      {
-        "name": "Spits Extra-Juicy Orange Slices",
-        "description": "To distract and annoy",
-        "base_damage": 570,
         "element": "water"
       }
     ],
@@ -3282,18 +2466,6 @@
         "description": "",
         "base_damage": 1852,
         "element": "mecha"
-      },
-      {
-        "name": "White Hole",
-        "description": "",
-        "base_damage": 1836,
-        "element": "mecha"
-      },
-      {
-        "name": "Electric Arrows",
-        "description": "",
-        "base_damage": 798,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -3315,12 +2487,6 @@
         "name": "Raaaaawrr",
         "description": "",
         "base_damage": 653,
-        "element": "magic"
-      },
-      {
-        "name": "Beakgrip",
-        "description": "",
-        "base_damage": 652,
         "element": "magic"
       }
     ],
@@ -3344,18 +2510,6 @@
         "description": "",
         "base_damage": 777,
         "element": "mecha"
-      },
-      {
-        "name": "Raaaaawwrr",
-        "description": "",
-        "base_damage": 750,
-        "element": "mecha"
-      },
-      {
-        "name": "Beakgrip",
-        "description": "",
-        "base_damage": 569,
-        "element": "mecha"
       }
     ],
     "defenses": [],
@@ -3377,12 +2531,6 @@
         "name": "Raaaaawwrr!",
         "description": "",
         "base_damage": 798,
-        "element": "magic"
-      },
-      {
-        "name": "Cow Patty Splat",
-        "description": "",
-        "base_damage": 645,
         "element": "magic"
       }
     ],
@@ -3406,12 +2554,6 @@
         "description": "",
         "base_damage": 718,
         "element": "plant"
-      },
-      {
-        "name": "Beak Grip",
-        "description": "",
-        "base_damage": 625,
-        "element": "plant"
       }
     ],
     "defenses": [],
@@ -3433,24 +2575,6 @@
         "name": "Smell Horrific",
         "description": "",
         "base_damage": 800,
-        "element": "earth"
-      },
-      {
-        "name": "Panic Inducing",
-        "description": "",
-        "base_damage": 788,
-        "element": "earth"
-      },
-      {
-        "name": "Glitter Poo",
-        "description": "",
-        "base_damage": 731,
-        "element": "earth"
-      },
-      {
-        "name": "Ewwww",
-        "description": "",
-        "base_damage": 705,
         "element": "earth"
       }
     ],
@@ -3474,12 +2598,6 @@
         "name": "Inflation Burst",
         "description": "Expands rapidly to knock enemies back",
         "base_damage": 1189,
-        "element": "air"
-      },
-      {
-        "name": "Float Away",
-        "description": "Lifts enemies into the sky",
-        "base_damage": 944,
         "element": "air"
       },
       {
@@ -3516,12 +2634,6 @@
         "description": "Saps power from mechanical foes",
         "base_damage": 786,
         "element": "mecha"
-      },
-      {
-        "name": "Volt Tackle",
-        "description": "Charges forward with electric force",
-        "base_damage": 546,
-        "element": "mecha"
       }
     ],
     "defenses": [
@@ -3552,12 +2664,6 @@
         "description": "Bounces off walls to strike from multiple angles",
         "base_damage": 615,
         "element": "mecha"
-      },
-      {
-        "name": "Coil Crush",
-        "description": "Springs into enemies with crushing force",
-        "base_damage": 549,
-        "element": "mecha"
       }
     ],
     "defenses": [
@@ -3587,18 +2693,6 @@
         "name": "Bubble Burst",
         "description": "Explosive bubble barrage",
         "base_damage": 794,
-        "element": "water"
-      },
-      {
-        "name": "Sudsy Slick",
-        "description": "Creates a slippery surface to trip foes",
-        "base_damage": 786,
-        "element": "water"
-      },
-      {
-        "name": "Foam Spray",
-        "description": "Blasts enemies with sudsy foam",
-        "base_damage": 604,
         "element": "water"
       }
     ],
@@ -3636,12 +2730,6 @@
         "description": "Hyperactive attack fueled by sweetness",
         "base_damage": 584,
         "element": "plant"
-      },
-      {
-        "name": "Sticky Slap",
-        "description": "Adheres to enemies and slaps repeatedly",
-        "base_damage": 503,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -3678,12 +2766,6 @@
         "description": "Sprays corrosive stomach acids",
         "base_damage": 554,
         "element": "water"
-      },
-      {
-        "name": "Sonic Burp",
-        "description": "Releases a deafening gaseous roar",
-        "base_damage": 549,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -3719,12 +2801,6 @@
         "name": "Combo Crush",
         "description": "Executes a devastating button combo",
         "base_damage": 639,
-        "element": "mecha"
-      },
-      {
-        "name": "Button Barrage",
-        "description": "Fires buttons like projectiles",
-        "base_damage": 523,
         "element": "mecha"
       }
     ],
@@ -3762,12 +2838,6 @@
         "description": "Traps enemies in sticky candy",
         "base_damage": 654,
         "element": "magic"
-      },
-      {
-        "name": "Sugar Rush",
-        "description": "Hyperactive candy-fueled assault",
-        "base_damage": 541,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -3804,12 +2874,6 @@
         "description": "Erupts with a spray of hot cheese",
         "base_damage": 619,
         "element": "earth"
-      },
-      {
-        "name": "Fondue Flood",
-        "description": "Drowns enemies in melted cheese",
-        "base_damage": 524,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -3846,12 +2910,6 @@
         "description": "Fires coins at high velocity",
         "base_damage": 999,
         "element": "mecha"
-      },
-      {
-        "name": "Penny Pummel",
-        "description": "Rains down copper coins on enemies",
-        "base_damage": 946,
-        "element": "mecha"
       }
     ],
     "defenses": [
@@ -3881,12 +2939,6 @@
         "name": "Mind Scramble",
         "description": "Injects confusion serum into enemies",
         "base_damage": 994,
-        "element": "magic"
-      },
-      {
-        "name": "Confusion Injection",
-        "description": "Delivers a disorienting payload",
-        "base_damage": 986,
         "element": "magic"
       },
       {
@@ -3930,12 +2982,6 @@
         "description": "Engulfs foes in pink mist",
         "base_damage": 628,
         "element": "air"
-      },
-      {
-        "name": "Sugar Rush",
-        "description": "Hyperactive sweet attack",
-        "base_damage": 590,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -3972,12 +3018,6 @@
         "description": "Slashes with sharp crayon claws",
         "base_damage": 670,
         "element": "magic"
-      },
-      {
-        "name": "Color Melt",
-        "description": "Melts crayons into burning streams",
-        "base_damage": 615,
-        "element": "fire"
       }
     ],
     "defenses": [
@@ -4007,12 +3047,6 @@
         "name": "Geode Crush",
         "description": "Slams with crystal-encrusted fists",
         "base_damage": 710,
-        "element": "earth"
-      },
-      {
-        "name": "Crystal Shard",
-        "description": "Launches razor-sharp crystal fragments",
-        "base_damage": 665,
         "element": "earth"
       },
       {
@@ -4056,12 +3090,6 @@
         "description": "Random damage based on the roll",
         "base_damage": 665,
         "element": "magic"
-      },
-      {
-        "name": "Pip Pummel",
-        "description": "Strikes with corner force",
-        "base_damage": 611,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -4098,12 +3126,6 @@
         "description": "Blazing dance floor attack",
         "base_damage": 875,
         "element": "fire"
-      },
-      {
-        "name": "Glitter Bomb",
-        "description": "Explosive sparkle attack",
-        "base_damage": 873,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -4139,12 +3161,6 @@
         "name": "Domino Drop",
         "description": "Crushing domino avalanche",
         "base_damage": 1106,
-        "element": "mecha"
-      },
-      {
-        "name": "Toppling Strike",
-        "description": "Knocks enemies down like dominoes",
-        "base_damage": 938,
         "element": "mecha"
       }
     ],
@@ -4182,12 +3198,6 @@
         "description": "Blurs and disorients foes",
         "base_damage": 915,
         "element": "magic"
-      },
-      {
-        "name": "Pencil Jab",
-        "description": "Sharp graphite strike",
-        "base_damage": 873,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -4217,18 +3227,6 @@
         "name": "Gaze of Madness",
         "description": "Drives enemies insane with staring",
         "base_damage": 584,
-        "element": "magic"
-      },
-      {
-        "name": "Optic Blast",
-        "description": "Laser beams from multiple eyes",
-        "base_damage": 580,
-        "element": "magic"
-      },
-      {
-        "name": "Thousand-Stare",
-        "description": "Hypnotic gaze from countless eyes",
-        "base_damage": 557,
         "element": "magic"
       }
     ],
@@ -4266,12 +3264,6 @@
         "description": "Quick successive slaps",
         "base_damage": 745,
         "element": "air"
-      },
-      {
-        "name": "Five-Finger Slap",
-        "description": "Full-palm devastating slap",
-        "base_damage": 700,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -4301,18 +3293,6 @@
         "name": "Ember Jab",
         "description": "Quick fiery pokes",
         "base_damage": 1378,
-        "element": "fire"
-      },
-      {
-        "name": "Spike Singe",
-        "description": "Burns with flaming spikes",
-        "base_damage": 1357,
-        "element": "fire"
-      },
-      {
-        "name": "Fiery Spin",
-        "description": "Whirls in a burning tornado",
-        "base_damage": 1060,
         "element": "fire"
       }
     ],
@@ -4344,18 +3324,6 @@
         "description": "Burns with intense eye contact",
         "base_damage": 1136,
         "element": "fire"
-      },
-      {
-        "name": "Cinder Breath",
-        "description": "Exhales burning embers",
-        "base_damage": 978,
-        "element": "fire"
-      },
-      {
-        "name": "Fireball",
-        "description": "Spits concentrated flame orbs",
-        "base_damage": 858,
-        "element": "fire"
       }
     ],
     "defenses": [
@@ -4386,18 +3354,6 @@
         "description": "Grabs and freezes enemies solid",
         "base_damage": 762,
         "element": "water"
-      },
-      {
-        "name": "Ice Shard",
-        "description": "Launches frozen projectiles",
-        "base_damage": 638,
-        "element": "water"
-      },
-      {
-        "name": "Frostbite",
-        "description": "Freezing touch attack",
-        "base_damage": 502,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -4427,12 +3383,6 @@
         "name": "Geode Slam",
         "description": "Crushing rock attack",
         "base_damage": 766,
-        "element": "earth"
-      },
-      {
-        "name": "Crystal Shard",
-        "description": "Fires sharp crystal fragments",
-        "base_damage": 656,
         "element": "earth"
       },
       {
@@ -4472,12 +3422,6 @@
         "element": "water"
       },
       {
-        "name": "Ink Cloud",
-        "description": "Blinds enemies with dark ink",
-        "base_damage": 778,
-        "element": "water"
-      },
-      {
         "name": "Abyssal Squeeze",
         "description": "Crushing deep-sea grip",
         "base_damage": 500,
@@ -4511,12 +3455,6 @@
         "name": "Sparkle Storm",
         "description": "Showers enemies in sharp glitter",
         "base_damage": 690,
-        "element": "magic"
-      },
-      {
-        "name": "Confetti Blast",
-        "description": "Party-themed explosive attack",
-        "base_damage": 661,
         "element": "magic"
       },
       {
@@ -4554,18 +3492,6 @@
         "description": "Blinding light burst",
         "base_damage": 755,
         "element": "plant"
-      },
-      {
-        "name": "Glow Bite",
-        "description": "Biting attack that leaves a mark",
-        "base_damage": 545,
-        "element": "plant"
-      },
-      {
-        "name": "Luminous Spit",
-        "description": "Glowing acidic projectile",
-        "base_damage": 541,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -4595,12 +3521,6 @@
         "name": "Slime Shot",
         "description": "Launches gobs of ectoplasm",
         "base_damage": 1402,
-        "element": "water"
-      },
-      {
-        "name": "Goop Puddle",
-        "description": "Creates sticky trap on ground",
-        "base_damage": 1067,
         "element": "water"
       },
       {
@@ -4638,18 +3558,6 @@
         "description": "Sends objects into deadly orbit",
         "base_damage": 777,
         "element": "universe"
-      },
-      {
-        "name": "Meteor Slam",
-        "description": "Pulls space rocks onto foes",
-        "base_damage": 639,
-        "element": "universe"
-      },
-      {
-        "name": "Gravitational Pull",
-        "description": "Draws enemies in for crushing",
-        "base_damage": 587,
-        "element": "universe"
       }
     ],
     "defenses": [
@@ -4686,12 +3594,6 @@
         "description": "Concentrated electric beam",
         "base_damage": 663,
         "element": "air"
-      },
-      {
-        "name": "Jolt Shock",
-        "description": "Stunning electrical burst",
-        "base_damage": 605,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -4721,12 +3623,6 @@
         "name": "Key-Blade Barrage",
         "description": "Launches sharp keys as projectiles",
         "base_damage": 1472,
-        "element": "mecha"
-      },
-      {
-        "name": "Skeleton Key Strike",
-        "description": "Unlocks enemy defenses",
-        "base_damage": 1230,
         "element": "mecha"
       },
       {
@@ -4764,18 +3660,6 @@
         "description": "Whips with extending vines",
         "base_damage": 677,
         "element": "plant"
-      },
-      {
-        "name": "Razor Leaf",
-        "description": "Slices with sharp leaf edges",
-        "base_damage": 618,
-        "element": "plant"
-      },
-      {
-        "name": "Seed Shot",
-        "description": "Fires hard seeds at enemies",
-        "base_damage": 534,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -4805,12 +3689,6 @@
         "name": "Polarity Pulse",
         "description": "Magnetic field disruption",
         "base_damage": 615,
-        "element": "mecha"
-      },
-      {
-        "name": "Magnetic Crush",
-        "description": "Pulls enemies together violently",
-        "base_damage": 537,
         "element": "mecha"
       },
       {
@@ -4854,12 +3732,6 @@
         "description": "Explodes into bouncing projectiles",
         "base_damage": 673,
         "element": "earth"
-      },
-      {
-        "name": "Glass Gatling",
-        "description": "Rapid-fire marble barrage",
-        "base_damage": 537,
-        "element": "earth"
       }
     ],
     "defenses": [
@@ -4895,12 +3767,6 @@
         "name": "Mud Slap",
         "description": "Splatters enemies with wet earth",
         "base_damage": 612,
-        "element": "earth"
-      },
-      {
-        "name": "Bog Down",
-        "description": "Traps foes in sticky mud",
-        "base_damage": 569,
         "element": "earth"
       }
     ],
@@ -4938,12 +3804,6 @@
         "description": "Launches paint projectiles",
         "base_damage": 713,
         "element": "water"
-      },
-      {
-        "name": "Pigment Punch",
-        "description": "Colorful close-range strike",
-        "base_damage": 600,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -4980,12 +3840,6 @@
         "description": "Makes enemies drowsy on impact",
         "base_damage": 716,
         "element": "magic"
-      },
-      {
-        "name": "Pillow Pummel",
-        "description": "Soft but surprisingly powerful hits",
-        "base_damage": 686,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -5015,12 +3869,6 @@
         "name": "Pixel Punch",
         "description": "Blocky fist attack",
         "base_damage": 1153,
-        "element": "mecha"
-      },
-      {
-        "name": "8-Bit Barrage",
-        "description": "Retro projectile spam",
-        "base_damage": 1143,
         "element": "mecha"
       },
       {
@@ -5064,12 +3912,6 @@
         "description": "Explosive popping attack",
         "base_damage": 600,
         "element": "plant"
-      },
-      {
-        "name": "Kernel Cannon",
-        "description": "Fires hot popcorn projectiles",
-        "base_damage": 557,
-        "element": "fire"
       }
     ],
     "defenses": [
@@ -5105,12 +3947,6 @@
         "name": "Pin Cushion",
         "description": "Rolls into a spiky ball",
         "base_damage": 646,
-        "element": "earth"
-      },
-      {
-        "name": "Spike Shot",
-        "description": "Rapid quill projectiles",
-        "base_damage": 596,
         "element": "earth"
       }
     ],
@@ -5148,12 +3984,6 @@
         "description": "Connects punches in sequence",
         "base_damage": 732,
         "element": "mecha"
-      },
-      {
-        "name": "Confounding Combo",
-        "description": "Puzzling attack patterns",
-        "base_damage": 551,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -5190,12 +4020,6 @@
         "description": "Rainbow shockwave attack",
         "base_damage": 849,
         "element": "magic"
-      },
-      {
-        "name": "Color Splash",
-        "description": "Bursts of prismatic energy",
-        "base_damage": 808,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -5224,18 +4048,6 @@
         "name": "Stone Slam",
         "description": "Crushing boulder punch",
         "base_damage": 752,
-        "element": "earth"
-      },
-      {
-        "name": "Pebble Pummel",
-        "description": "Rapid-fire stone projectiles",
-        "base_damage": 710,
-        "element": "earth"
-      },
-      {
-        "name": "Rock Throw",
-        "description": "Hurls pieces of itself at foes",
-        "base_damage": 612,
         "element": "earth"
       }
     ],
@@ -5266,12 +4078,6 @@
         "name": "Rubber Barrage",
         "description": "Multiple stretchy attacks",
         "base_damage": 739,
-        "element": "magic"
-      },
-      {
-        "name": "Elastic Lash",
-        "description": "Stretchy snapping strike",
-        "base_damage": 705,
         "element": "magic"
       },
       {
@@ -5308,12 +4114,6 @@
         "name": "Ink Jet",
         "description": "Sprays dark ink at enemies",
         "base_damage": 755,
-        "element": "magic"
-      },
-      {
-        "name": "Chaotic Line",
-        "description": "Unpredictable strike patterns",
-        "base_damage": 600,
         "element": "magic"
       },
       {
@@ -5357,12 +4157,6 @@
         "description": "Wave of dark energy",
         "base_damage": 664,
         "element": "universe"
-      },
-      {
-        "name": "Gloom Grasp",
-        "description": "Grabs with shadowy tendrils",
-        "base_damage": 532,
-        "element": "universe"
       }
     ],
     "defenses": [
@@ -5391,18 +4185,6 @@
         "name": "Tangle Lash",
         "description": "Entangles enemies in strings",
         "base_damage": 778,
-        "element": "magic"
-      },
-      {
-        "name": "String Shot",
-        "description": "Sprays sticky strings",
-        "base_damage": 764,
-        "element": "magic"
-      },
-      {
-        "name": "Gummy Grip",
-        "description": "Holds foes in place",
-        "base_damage": 583,
         "element": "magic"
       }
     ],
@@ -5440,12 +4222,6 @@
         "description": "Slimy tendril strike",
         "base_damage": 1097,
         "element": "plant"
-      },
-      {
-        "name": "Booger Bomb",
-        "description": "Explosive snot projectile",
-        "base_damage": 1036,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -5474,18 +4250,6 @@
         "name": "Static Cling",
         "description": "Zaps with sock electricity",
         "base_damage": 799,
-        "element": "magic"
-      },
-      {
-        "name": "Sock Slap",
-        "description": "Floppy fabric strike",
-        "base_damage": 712,
-        "element": "magic"
-      },
-      {
-        "name": "Lint Ball",
-        "description": "Fires fuzzy projectiles",
-        "base_damage": 563,
         "element": "magic"
       }
     ],
@@ -5523,12 +4287,6 @@
         "description": "High-frequency painful sound",
         "base_damage": 720,
         "element": "air"
-      },
-      {
-        "name": "Sonic Boom",
-        "description": "Devastating sound explosion",
-        "base_damage": 543,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -5564,12 +4322,6 @@
         "name": "Plug Pounce",
         "description": "Leaping electrical attack",
         "base_damage": 625,
-        "element": "mecha"
-      },
-      {
-        "name": "Spark Shock",
-        "description": "Electric jolt attack",
-        "base_damage": 607,
         "element": "mecha"
       }
     ],
@@ -5607,12 +4359,6 @@
         "description": "Launches sharp thorns",
         "base_damage": 666,
         "element": "plant"
-      },
-      {
-        "name": "Pin Cushion",
-        "description": "Bristles with defensive spikes",
-        "base_damage": 538,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -5642,12 +4388,6 @@
         "name": "Ecto-Vortex",
         "description": "Sucks enemies into ghostly spiral",
         "base_damage": 782,
-        "element": "magic"
-      },
-      {
-        "name": "Spirit Spin",
-        "description": "Whirling ghostly attack",
-        "base_damage": 552,
         "element": "magic"
       },
       {
@@ -5691,12 +4431,6 @@
         "description": "Throws globs of sweet frosting",
         "base_damage": 628,
         "element": "water"
-      },
-      {
-        "name": "Sugar Rush",
-        "description": "Hyperactive sweet attack",
-        "base_damage": 536,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -5726,18 +4460,6 @@
         "name": "Star Strike",
         "description": "Celestial energy attack",
         "base_damage": 785,
-        "element": "universe"
-      },
-      {
-        "name": "Meteor Mash",
-        "description": "Summons space rocks to strike",
-        "base_damage": 777,
-        "element": "universe"
-      },
-      {
-        "name": "Cosmic Ray",
-        "description": "Beam of starlight",
-        "base_damage": 659,
         "element": "universe"
       }
     ],
@@ -5775,12 +4497,6 @@
         "description": "Sharp paper edge slice",
         "base_damage": 957,
         "element": "plant"
-      },
-      {
-        "name": "Adhesive Slap",
-        "description": "Sticks to and slaps enemies",
-        "base_damage": 854,
-        "element": "magic"
       }
     ],
     "defenses": [
@@ -5810,12 +4526,6 @@
         "name": "Tape Tangle",
         "description": "Wraps enemies in sticky tape",
         "base_damage": 790,
-        "element": "mecha"
-      },
-      {
-        "name": "Adhesive Lash",
-        "description": "Whips with tape strips",
-        "base_damage": 643,
         "element": "mecha"
       },
       {
@@ -5859,12 +4569,6 @@
         "description": "Frozen bone projectiles",
         "base_damage": 1133,
         "element": "water"
-      },
-      {
-        "name": "Frostbite",
-        "description": "Freezing touch of death",
-        "base_damage": 907,
-        "element": "water"
       }
     ],
     "defenses": [
@@ -5900,12 +4604,6 @@
         "name": "Ground Pound",
         "description": "Devastating downward strike",
         "base_damage": 548,
-        "element": "earth"
-      },
-      {
-        "name": "Stompquake",
-        "description": "Earth-shaking foot slam",
-        "base_damage": 527,
         "element": "earth"
       }
     ],
@@ -5943,12 +4641,6 @@
         "description": "Powerful wind attack",
         "base_damage": 585,
         "element": "water"
-      },
-      {
-        "name": "Thunderclap",
-        "description": "Deafening thunder boom",
-        "base_damage": 569,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -5985,12 +4677,6 @@
         "description": "Strikes with clock hands",
         "base_damage": 559,
         "element": "magic"
-      },
-      {
-        "name": "Chrono-Vortex",
-        "description": "Pulls foes through time",
-        "base_damage": 505,
-        "element": "universe"
       }
     ],
     "defenses": [
@@ -6027,12 +4713,6 @@
         "description": "Flings objects at enemies",
         "base_damage": 1286,
         "element": "magic"
-      },
-      {
-        "name": "Cyclone Slam",
-        "description": "Spinning vortex attack",
-        "base_damage": 1078,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -6062,12 +4742,6 @@
         "name": "Supernova Burst",
         "description": "Explosive star death attack",
         "base_damage": 1025,
-        "element": "universe"
-      },
-      {
-        "name": "Galactic Collision",
-        "description": "Smashes galaxies together",
-        "base_damage": 878,
         "element": "universe"
       },
       {
@@ -6104,12 +4778,6 @@
         "name": "Mind Melt",
         "description": "Psychic confusion attack",
         "base_damage": 688,
-        "element": "magic"
-      },
-      {
-        "name": "Reality Warp",
-        "description": "Distorts space around enemies",
-        "base_damage": 631,
         "element": "magic"
       },
       {
@@ -6153,12 +4821,6 @@
         "description": "Launches sharp volcanic glass",
         "base_damage": 624,
         "element": "earth"
-      },
-      {
-        "name": "Eruption Blast",
-        "description": "Explosive volcanic attack",
-        "base_damage": 581,
-        "element": "fire"
       }
     ],
     "defenses": [
@@ -6195,12 +4857,6 @@
         "description": "Burrowing bite attack",
         "base_damage": 1216,
         "element": "earth"
-      },
-      {
-        "name": "Slime Trail",
-        "description": "Leaves sticky residue",
-        "base_damage": 1013,
-        "element": "plant"
       }
     ],
     "defenses": [
@@ -6237,12 +4893,6 @@
         "description": "Sharp-angled shock attack",
         "base_damage": 1151,
         "element": "air"
-      },
-      {
-        "name": "Zig-Zag Zap",
-        "description": "Unpredictable electrical strike",
-        "base_damage": 1016,
-        "element": "air"
       }
     ],
     "defenses": [
@@ -6278,12 +4928,6 @@
         "name": "Zipper Zap",
         "description": "Electric zipper attack",
         "base_damage": 701,
-        "element": "mecha"
-      },
-      {
-        "name": "Chain Link Lash",
-        "description": "Whips with metal teeth",
-        "base_damage": 520,
         "element": "mecha"
       }
     ],

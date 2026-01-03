@@ -195,9 +195,9 @@ function setupControlListeners() {
  * @param {CustomEvent} event - The gameSetupComplete event with player data
  */
 function handleGameSetupComplete(event) {
-    const { players, playerCount, deckSize = 10 } = event.detail;
+    const { players, playerCount, deckSize = 10, turnOrder } = event.detail;
 
-    console.log('Game setup complete:', players, 'Deck size:', deckSize);
+    console.log('Game setup complete:', players, 'Deck size:', deckSize, 'Turn order:', turnOrder);
 
     // Update game state with player configurations
     gameState.playerCount = playerCount;
@@ -209,12 +209,19 @@ function handleGameSetupComplete(event) {
         cards: []
     }));
 
+    // Store the fixed turn order (established once at game start)
+    // This same order will be used for ALL drafting rounds AND battle rounds
+    gameState.turnOrder = turnOrder || shuffleArray([...Array(playerCount).keys()]);
+
     // Log player setup
     addLogEntry(`Game configured with ${playerCount} players (${deckSize} cards each):`, 'system');
     players.forEach((player, index) => {
         const playerType = player.isAI ? 'AI' : 'Human';
         addLogEntry(`  ${index + 1}. ${player.name} (${playerType})`, 'system');
     });
+
+    // Log the turn order
+    addLogEntry(`Turn order: ${gameState.turnOrder.map(i => players[i].name).join(' -> ')}`, 'system');
 
     // Move to drafting phase
     gameState.phase = 'drafting';
@@ -224,8 +231,8 @@ function handleGameSetupComplete(event) {
     // Listen for drafting completion
     document.addEventListener('draftingComplete', handleDraftingComplete, { once: true });
 
-    // Start the drafting phase with deck size
-    startDraftingPhase(players, deckSize);
+    // Start the drafting phase with deck size and fixed turn order
+    startDraftingPhase(players, deckSize, gameState.turnOrder);
 }
 
 /**
@@ -251,11 +258,14 @@ function handleDraftingComplete(event) {
         addLogEntry(`${player.name} drafted ${player.cards.length} cards`, 'system');
     });
 
-    // Initialize turn order (randomized)
-    gameState.turnOrder = shuffleArray([...Array(gameState.players.length).keys()]);
+    // Use the SAME turn order that was established at game start (already set in gameState.turnOrder)
+    // This ensures consistency between drafting and battle phases
     gameState.turnIndex = 0;
     gameState.currentPlayerIndex = gameState.turnOrder[0];
     gameState.round = 1;
+
+    // Log the battle turn order (same as drafting order)
+    addLogEntry(`Battle turn order: ${gameState.turnOrder.map(i => gameState.players[i].name).join(' -> ')}`, 'system');
 
     // Initialize stats
     gameState.stats = {
@@ -480,6 +490,298 @@ function renderAllOpponents() {
 }
 
 /**
+ * Create a battle card element with flip animation (matching draft mode style)
+ * @param {Object} card - Card data
+ * @param {Object} gs - Game state for HP tracking
+ * @param {Function} onCardClick - Click handler
+ * @param {string} additionalClasses - Additional CSS classes
+ * @returns {HTMLElement} Card element with flip capability
+ */
+function createBattleCardElement(card, gs, onCardClick, additionalClasses = '') {
+    const currentHP = gs.cardHP?.[card.id] ?? card.hp;
+    const tierClass = card.tier ? `tier-${card.tier}` : 'tier-common';
+    const imagePath = `assets/images/generated/${card.id}_generated.png`;
+
+    // Create wrapper for card + external HP display
+    const wrapper = document.createElement('div');
+    wrapper.className = 'battle-card-wrapper';
+    wrapper.dataset.cardId = card.id;
+
+    // Create main card div (similar to drafting-card structure)
+    const cardDiv = document.createElement('div');
+    cardDiv.className = `battle-card ${tierClass} ${additionalClasses}`;
+    cardDiv.dataset.cardId = card.id;
+    cardDiv.dataset.tier = card.tier;
+    cardDiv.title = 'Click to select, double-click for details';
+
+    // Create flipper container
+    const flipper = document.createElement('div');
+    flipper.className = 'card-flipper';
+
+    // Helper to create tier badge
+    function createTierBadge() {
+        const badge = document.createElement('span');
+        badge.className = 'tier-badge ' + (card.tier || 'common');
+        badge.textContent = capitalizeFirst(card.tier || 'common');
+        return badge;
+    }
+
+    // Helper to create info button that flips the card
+    function createInfoBtn() {
+        const btn = document.createElement('button');
+        btn.className = 'card-info-btn';
+        btn.textContent = 'i';
+        btn.title = 'Flip card for details';
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            cardDiv.classList.toggle('flipped');
+        });
+        return btn;
+    }
+
+    // Helper to create element icon
+    function createElementIcon(element, size = 'medium') {
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'element-icon ' + element + (size === 'small' ? ' element-icon-sm' : '');
+        iconSpan.title = element;
+        const iconImg = document.createElement('img');
+        iconImg.src = `assets/images/elements/${element}.png`;
+        iconImg.alt = element;
+        iconImg.loading = 'lazy';
+        iconSpan.appendChild(iconImg);
+        return iconSpan;
+    }
+
+    // === FRONT FACE ===
+    const frontFace = document.createElement('div');
+    frontFace.className = 'card-front';
+    frontFace.appendChild(createTierBadge());
+    frontFace.appendChild(createInfoBtn());
+
+    // Card image container
+    const imageDiv = document.createElement('div');
+    imageDiv.className = 'card-image';
+
+    const img = document.createElement('img');
+    img.src = imagePath;
+    img.alt = card.name;
+    img.onerror = function() {
+        this.style.display = 'none';
+        const placeholder = document.createElement('span');
+        placeholder.style.fontSize = '0.6rem';
+        placeholder.style.color = 'var(--text-secondary)';
+        placeholder.textContent = 'No Image';
+        this.parentElement.appendChild(placeholder);
+    };
+    imageDiv.appendChild(img);
+    frontFace.appendChild(imageDiv);
+
+    // Card info container
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'card-info';
+
+    // Card name
+    const nameDiv = document.createElement('div');
+    nameDiv.className = 'card-name';
+    nameDiv.textContent = card.name;
+    infoDiv.appendChild(nameDiv);
+
+    // Element icons
+    const elementsDiv = document.createElement('div');
+    elementsDiv.className = 'card-elements';
+    card.elements.forEach(el => {
+        elementsDiv.appendChild(createElementIcon(el));
+    });
+    infoDiv.appendChild(elementsDiv);
+
+    // Stats (HP/ATK/DEF) - matching draft mode style
+    const statsDiv = document.createElement('div');
+    statsDiv.className = 'card-stats';
+
+    const hpSpan = document.createElement('span');
+    hpSpan.className = 'stat stat-hp';
+    hpSpan.textContent = 'HP: ' + formatHP(card.hp || 0);
+    statsDiv.appendChild(hpSpan);
+
+    const atkSpan = document.createElement('span');
+    atkSpan.className = 'stat stat-atk';
+    atkSpan.textContent = 'ATK: ' + formatHP(getAvgAttack(card));
+    statsDiv.appendChild(atkSpan);
+
+    const defSpan = document.createElement('span');
+    defSpan.className = 'stat stat-def';
+    defSpan.textContent = 'DEF: ' + formatHP(getAvgDefense(card));
+    statsDiv.appendChild(defSpan);
+
+    infoDiv.appendChild(statsDiv);
+    frontFace.appendChild(infoDiv);
+    flipper.appendChild(frontFace);
+
+    // === BACK FACE ===
+    const backFace = document.createElement('div');
+    backFace.className = 'card-back';
+    backFace.appendChild(createTierBadge());
+    backFace.appendChild(createInfoBtn());
+
+    // Name
+    const backName = document.createElement('div');
+    backName.className = 'card-name';
+    backName.textContent = card.name;
+    backFace.appendChild(backName);
+
+    // Biography
+    if (card.biography) {
+        const bioDiv = document.createElement('div');
+        bioDiv.className = 'card-back-bio';
+        bioDiv.textContent = card.biography;
+        backFace.appendChild(bioDiv);
+    }
+
+    // Elements
+    const backElements = document.createElement('div');
+    backElements.className = 'card-elements';
+    card.elements.forEach(el => {
+        backElements.appendChild(createElementIcon(el));
+    });
+    backFace.appendChild(backElements);
+
+    // Attacks section (sorted by damage descending)
+    if (card.attacks && card.attacks.length > 0) {
+        const sortedAttacks = [...card.attacks].sort((a, b) =>
+            (b.base_damage || 0) - (a.base_damage || 0)
+        );
+        const attackSection = document.createElement('div');
+        attackSection.className = 'card-back-section';
+        const attackTitle = document.createElement('h4');
+        attackTitle.textContent = 'Attacks';
+        attackSection.appendChild(attackTitle);
+        const attackList = document.createElement('ul');
+        sortedAttacks.forEach(atk => {
+            const li = document.createElement('li');
+            li.appendChild(createElementIcon(atk.element, 'small'));
+            const textSpan = document.createElement('span');
+            textSpan.textContent = `${atk.name} (${formatHP(atk.base_damage || 0)} dmg)`;
+            li.appendChild(textSpan);
+            attackList.appendChild(li);
+        });
+        attackSection.appendChild(attackList);
+        backFace.appendChild(attackSection);
+    }
+
+    // Defenses section (sorted by protection descending)
+    if (card.defenses && card.defenses.length > 0) {
+        const sortedDefenses = [...card.defenses].sort((a, b) =>
+            (b.base_protection || 0) - (a.base_protection || 0)
+        );
+        const defenseSection = document.createElement('div');
+        defenseSection.className = 'card-back-section';
+        const defenseTitle = document.createElement('h4');
+        defenseTitle.textContent = 'Defenses';
+        defenseSection.appendChild(defenseTitle);
+        const defenseList = document.createElement('ul');
+        sortedDefenses.forEach(def => {
+            const li = document.createElement('li');
+            li.appendChild(createElementIcon(def.element, 'small'));
+            const textSpan = document.createElement('span');
+            textSpan.textContent = `${def.name} (${formatHP(def.base_protection || 0)} block)`;
+            li.appendChild(textSpan);
+            defenseList.appendChild(li);
+        });
+        defenseSection.appendChild(defenseList);
+        backFace.appendChild(defenseSection);
+    }
+
+    // Special abilities
+    if (card.special_abilities && card.special_abilities.length > 0) {
+        const specialSection = document.createElement('div');
+        specialSection.className = 'card-back-section';
+        const specialTitle = document.createElement('h4');
+        specialTitle.textContent = 'Special';
+        specialSection.appendChild(specialTitle);
+        const specialList = document.createElement('ul');
+        card.special_abilities.forEach(ability => {
+            const li = document.createElement('li');
+            const abilityName = typeof ability === 'string' ? ability : ability.name;
+            const uses = typeof ability === 'object' && ability.uses ? ` (${ability.uses}x)` : '';
+            li.textContent = abilityName + uses;
+            specialList.appendChild(li);
+        });
+        specialSection.appendChild(specialList);
+        backFace.appendChild(specialSection);
+    }
+
+    flipper.appendChild(backFace);
+    cardDiv.appendChild(flipper);
+
+    // Add click handlers
+    if (onCardClick) {
+        cardDiv.addEventListener('click', (e) => {
+            // Only select if not flipped (clicking front face)
+            if (!cardDiv.classList.contains('flipped')) {
+                onCardClick(card.id);
+            }
+        });
+        cardDiv.addEventListener('dblclick', (e) => {
+            e.stopPropagation();
+            handleCardDoubleClick(card.id);
+        });
+    }
+
+    wrapper.appendChild(cardDiv);
+
+    // External HP display BELOW the card
+    const hpDisplay = document.createElement('div');
+    hpDisplay.className = 'external-hp-display';
+    hpDisplay.dataset.cardId = card.id;
+
+    const hpPercent = Math.max(0, Math.min(100, (currentHP / card.hp) * 100));
+
+    const hpBar = document.createElement('div');
+    hpBar.className = 'external-hp-bar';
+    const hpFill = document.createElement('div');
+    hpFill.className = 'external-hp-fill';
+    hpFill.style.width = `${hpPercent}%`;
+    hpBar.appendChild(hpFill);
+    hpDisplay.appendChild(hpBar);
+
+    const hpText = document.createElement('div');
+    hpText.className = 'external-hp-text';
+    hpText.textContent = `${formatHP(currentHP)} / ${formatHP(card.hp)}`;
+    hpDisplay.appendChild(hpText);
+
+    wrapper.appendChild(hpDisplay);
+
+    return wrapper;
+}
+
+/**
+ * Helper function to capitalize first letter
+ */
+function capitalizeFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+/**
+ * Calculate average attack damage from a card's attacks array
+ */
+function getAvgAttack(card) {
+    const attacks = card.attacks || [];
+    if (attacks.length === 0) return 0;
+    const total = attacks.reduce((sum, atk) => sum + (atk.base_damage || 0), 0);
+    return Math.round(total / attacks.length);
+}
+
+/**
+ * Calculate average defense protection from a card's defenses array
+ */
+function getAvgDefense(card) {
+    const defenses = card.defenses || [];
+    if (defenses.length === 0) return 0;
+    const total = defenses.reduce((sum, def) => sum + (def.base_protection || 0), 0);
+    return Math.round(total / defenses.length);
+}
+
+/**
  * Render opponent cards to a specific container using DOM methods
  */
 function renderOpponentCardsInContainer(cards, options, container) {
@@ -500,99 +802,10 @@ function renderOpponentCardsInContainer(cards, options, container) {
         return;
     }
 
-    // Render each card using DOM methods
+    // Render each card using the new battle card element with flip support
     cards.forEach(card => {
-        const currentHP = gs.cardHP?.[card.id] ?? card.hp;
-        const hpPercent = Math.max(0, Math.min(100, (currentHP / card.hp) * 100));
-        const tierClass = card.tier ? `tier-${card.tier}` : 'tier-common';
-        const imagePath = `assets/images/generated/${card.id}_generated.png`;
-
-        const cardEl = document.createElement('div');
-        cardEl.className = `game-card ${tierClass} opponent-card`;
-        cardEl.dataset.cardId = card.id;
-        cardEl.dataset.tier = card.tier;
-        cardEl.title = 'Click to target, double-click for details';
-
-        // Info button
-        const infoBtn = document.createElement('button');
-        infoBtn.className = 'card-info-btn';
-        infoBtn.title = 'View card details';
-        infoBtn.setAttribute('aria-label', `View details for ${card.name}`);
-        infoBtn.textContent = 'i';
-        infoBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            handleCardDoubleClick(card.id);
-        });
-        cardEl.appendChild(infoBtn);
-
-        // Card image container
-        const imageDiv = document.createElement('div');
-        imageDiv.className = 'card-image';
-
-        const img = document.createElement('img');
-        img.src = imagePath;
-        img.alt = card.name;
-        img.onerror = function() {
-            this.style.display = 'none';
-            this.nextElementSibling.style.display = 'flex';
-        };
-
-        const placeholder = document.createElement('div');
-        placeholder.className = 'card-image-placeholder';
-        placeholder.style.display = 'none';
-        placeholder.textContent = 'No Image';
-
-        imageDiv.appendChild(img);
-        imageDiv.appendChild(placeholder);
-        cardEl.appendChild(imageDiv);
-
-        // Card name
-        const nameDiv = document.createElement('div');
-        nameDiv.className = 'card-name';
-        nameDiv.textContent = card.name;
-        cardEl.appendChild(nameDiv);
-
-        // Elements
-        const elementsDiv = document.createElement('div');
-        elementsDiv.className = 'card-elements';
-        card.elements.forEach(el => {
-            const iconSpan = document.createElement('span');
-            iconSpan.className = `element-icon ${el}`;
-            iconSpan.title = el;
-            const iconImg = document.createElement('img');
-            iconImg.src = `assets/images/elements/${el}.png`;
-            iconImg.alt = el;
-            iconImg.loading = 'lazy';
-            iconSpan.appendChild(iconImg);
-            elementsDiv.appendChild(iconSpan);
-        });
-        cardEl.appendChild(elementsDiv);
-
-        // HP bar
-        const hpBar = document.createElement('div');
-        hpBar.className = 'card-hp-bar';
-        const hpFill = document.createElement('div');
-        hpFill.className = 'card-hp-fill';
-        hpFill.style.width = `${hpPercent}%`;
-        hpBar.appendChild(hpFill);
-        cardEl.appendChild(hpBar);
-
-        // HP text
-        const hpText = document.createElement('div');
-        hpText.className = 'card-hp-text';
-        hpText.textContent = `${formatHP(currentHP)} / ${formatHP(card.hp)}`;
-        cardEl.appendChild(hpText);
-
-        // Add click listeners
-        if (onCardClick) {
-            cardEl.addEventListener('click', () => onCardClick(card.id));
-            cardEl.addEventListener('dblclick', (e) => {
-                e.stopPropagation();
-                handleCardDoubleClick(card.id);
-            });
-        }
-
-        container.appendChild(cardEl);
+        const cardWrapper = createBattleCardElement(card, gs, onCardClick, 'opponent-card');
+        container.appendChild(cardWrapper);
     });
 }
 

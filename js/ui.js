@@ -508,19 +508,30 @@ export function setControlStates(states) {
  * Open the card detail modal with flip animation
  * @param {Object} card - Card object
  * @param {Object} gameState - Current game state
+ * @param {Object} options - Modal options
+ * @param {boolean} options.startFlipped - Whether to start in flipped state
+ * @param {Function} options.onClose - Callback when modal closes, receives isFlipped state
  */
-export function openCardModal(card, gameState = {}) {
+export function openCardModal(card, gameState = {}, options = {}) {
     if (!elements.cardModal || !elements.modalCardContainer) return;
+
+    const { startFlipped = false, onClose = null } = options;
 
     const container = elements.modalCardContainer;
     const frontFace = elements.modalCardFront;
     const backFace = elements.modalCardBack;
 
-    // Clear flipped state
-    container.classList.remove('flipped');
+    // Store the onClose callback and card id for when modal closes
+    elements.cardModal._onCloseCallback = onClose;
+    elements.cardModal._currentCardId = card.id;
 
-    // Set tier class on container for styling
+    // Set tier class on container for styling (do this first, then add flipped if needed)
     container.className = 'modal-card-container tier-' + (card.tier || 'common');
+
+    // Set initial flipped state based on option
+    if (startFlipped) {
+        container.classList.add('flipped');
+    }
 
     // Clear existing content
     frontFace.innerHTML = '';
@@ -595,12 +606,41 @@ export function openCardModal(card, gameState = {}) {
     });
     infoDiv.appendChild(elementsDiv);
 
+    // NO biography on front - matches drafting card structure (bio is on back only)
+
+    // Stats (matching drafting card layout: HP, ATK, DEF)
     const statsDiv = document.createElement('div');
     statsDiv.className = 'card-stats';
     const currentHP = gameState.cardHP?.[card.id] ?? card.hp;
-    statsDiv.innerHTML = `
-        <span class="stat stat-hp">HP: ${formatHP(currentHP)} / ${formatHP(card.hp)}</span>
-    `;
+
+    // Calculate average attack and defense (same as drafting.js)
+    const attacks = card.attacks || [];
+    const avgAtk = attacks.length > 0
+        ? Math.round(attacks.reduce((sum, atk) => sum + (atk.base_damage || 0), 0) / attacks.length)
+        : 0;
+    const defenses = card.defenses || [];
+    const avgDef = defenses.length > 0
+        ? Math.round(defenses.reduce((sum, def) => sum + (def.base_protection || 0), 0) / defenses.length)
+        : 0;
+
+    // HP stat
+    const hpSpan = document.createElement('span');
+    hpSpan.className = 'stat stat-hp';
+    hpSpan.textContent = 'HP: ' + formatHP(currentHP);
+    statsDiv.appendChild(hpSpan);
+
+    // ATK stat
+    const atkSpan = document.createElement('span');
+    atkSpan.className = 'stat stat-atk';
+    atkSpan.textContent = 'ATK: ' + formatHP(avgAtk);
+    statsDiv.appendChild(atkSpan);
+
+    // DEF stat
+    const defSpan = document.createElement('span');
+    defSpan.className = 'stat stat-def';
+    defSpan.textContent = 'DEF: ' + formatHP(avgDef);
+    statsDiv.appendChild(defSpan);
+
     infoDiv.appendChild(statsDiv);
 
     frontFace.appendChild(infoDiv);
@@ -615,7 +655,7 @@ export function openCardModal(card, gameState = {}) {
     backName.textContent = card.name;
     backFace.appendChild(backName);
 
-    // Biography
+    // Biography (matches drafting card back structure: name, bio, elements, attacks, defenses, specials)
     if (card.biography) {
         const bioDiv = document.createElement('div');
         bioDiv.className = 'card-back-bio';
@@ -705,7 +745,22 @@ export function openCardModal(card, gameState = {}) {
  */
 export function closeModal() {
     if (elements.cardModal) {
+        // Get the current flipped state before closing
+        const isFlipped = elements.modalCardContainer?.classList.contains('flipped') || false;
+        const cardId = elements.cardModal._currentCardId;
+        const onCloseCallback = elements.cardModal._onCloseCallback;
+
         elements.cardModal.classList.add('hidden');
+
+        // Call the onClose callback if provided
+        if (onCloseCallback && typeof onCloseCallback === 'function') {
+            onCloseCallback(isFlipped, cardId);
+        }
+
+        // Clear stored callback and card id
+        elements.cardModal._onCloseCallback = null;
+        elements.cardModal._currentCardId = null;
+
         // Reset flip state when closing
         if (elements.modalCardContainer) {
             elements.modalCardContainer.classList.remove('flipped');
@@ -719,14 +774,19 @@ export function closeModal() {
  */
 export function highlightCard(cardId) {
     // Remove existing highlights
-    document.querySelectorAll('.game-card.selected').forEach(el => {
+    document.querySelectorAll('.game-card.selected, .battle-card.selected').forEach(el => {
         el.classList.remove('selected');
     });
 
-    // Add highlight to selected card
-    const card = document.querySelector(`.game-card[data-card-id="${cardId}"]`);
-    if (card) {
-        card.classList.add('selected');
+    // Add highlight to selected card (support both old game-card and new battle-card)
+    const gameCard = document.querySelector(`.game-card[data-card-id="${cardId}"]`);
+    if (gameCard) {
+        gameCard.classList.add('selected');
+    }
+
+    const battleCard = document.querySelector(`.battle-card[data-card-id="${cardId}"]`);
+    if (battleCard) {
+        battleCard.classList.add('selected');
     }
 }
 
@@ -734,7 +794,7 @@ export function highlightCard(cardId) {
  * Clear all card highlights
  */
 export function clearHighlights() {
-    document.querySelectorAll('.game-card.selected, .card-placeholder.selected').forEach(el => {
+    document.querySelectorAll('.game-card.selected, .battle-card.selected, .card-placeholder.selected').forEach(el => {
         el.classList.remove('selected');
     });
 }
@@ -746,14 +806,29 @@ export function clearHighlights() {
  * @param {number} maxHP - Maximum HP
  */
 export function updateCardHP(cardId, currentHP, maxHP) {
-    const cards = document.querySelectorAll(`.game-card[data-card-id="${cardId}"]`);
+    const percent = Math.max(0, Math.min(100, (currentHP / maxHP) * 100));
 
-    cards.forEach(card => {
+    // Update old-style game-card HP (if any still exist)
+    const gameCards = document.querySelectorAll(`.game-card[data-card-id="${cardId}"]`);
+    gameCards.forEach(card => {
         const hpFill = card.querySelector('.card-hp-fill');
         const hpText = card.querySelector('.card-hp-text');
 
         if (hpFill) {
-            const percent = Math.max(0, Math.min(100, (currentHP / maxHP) * 100));
+            hpFill.style.width = `${percent}%`;
+        }
+        if (hpText) {
+            hpText.textContent = `${formatHP(currentHP)} / ${formatHP(maxHP)}`;
+        }
+    });
+
+    // Update new battle-card external HP display
+    const externalHpDisplays = document.querySelectorAll(`.external-hp-display[data-card-id="${cardId}"]`);
+    externalHpDisplays.forEach(display => {
+        const hpFill = display.querySelector('.external-hp-fill');
+        const hpText = display.querySelector('.external-hp-text');
+
+        if (hpFill) {
             hpFill.style.width = `${percent}%`;
         }
         if (hpText) {

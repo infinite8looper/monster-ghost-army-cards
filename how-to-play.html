@@ -745,8 +745,9 @@
             </h2>
             <div class="rules-content">
                 <p>
-                    Elements interact in specific ways that affect damage dealt. Learning these
-                    interactions is key to victory!
+                    <strong>Each attack and defense move is associated with a single element.</strong>
+                    Element interactions between the attack's element and the defending card's elements
+                    determine damage modifiers. Learning these interactions is key to victory!
                 </p>
 
                 <div class="interaction-container">
@@ -836,8 +837,9 @@
                         and cards per player (5-25). The game ensures there are enough cards for everyone.
                     </li>
                     <li>
-                        <strong>Random Order:</strong> Each draft round randomizes the selection order
-                        to keep things fair.
+                        <strong>Turn Order Established:</strong> At game start, a random turn order is
+                        generated ONCE. This same order is used for ALL drafting rounds AND battle rounds,
+                        ensuring fairness (round-robin style).
                     </li>
                     <li>
                         <strong>Choose One Card:</strong> When it's your turn, browse the available
@@ -869,8 +871,8 @@
 
                 <ol class="rules-list">
                     <li>
-                        <strong>Turn Order:</strong> At the start of battle, a random turn order
-                        is established. This order remains the same for all subsequent rounds.
+                        <strong>Turn Order:</strong> The turn order established at game start (during setup)
+                        carries over to battle. The same order used for drafting is used for all battle rounds.
                     </li>
                     <li>
                         <strong>Select Attacker:</strong> On your turn, choose one of your remaining
@@ -915,17 +917,17 @@
                 <div class="stats-reference">
                     <div class="stat-box">
                         <div class="stat-label">HP Range</div>
-                        <div class="stat-value">500K-1.5M</div>
+                        <div class="stat-value">615-1,993</div>
                         <div class="stat-range">Varies by tier</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-label">Attack Power</div>
-                        <div class="stat-value">100K-400K</div>
+                        <div class="stat-value">467-2,798</div>
                         <div class="stat-range">Per attack</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-label">Defense</div>
-                        <div class="stat-value">50K-200K</div>
+                        <div class="stat-value">24-155</div>
                         <div class="stat-range">Per defense</div>
                     </div>
                 </div>
@@ -939,13 +941,13 @@
                         </div>
                         <div class="formula-operator">x</div>
                         <div class="formula-part">
-                            <div class="formula-label">Element Modifier</div>
+                            <div class="formula-label">Attack vs Defender Element</div>
                             <div class="formula-value">0.5 / 1.0 / 1.5</div>
                         </div>
                         <div class="formula-operator">-</div>
                         <div class="formula-part">
-                            <div class="formula-label">Defense</div>
-                            <div class="formula-value">Protection</div>
+                            <div class="formula-label">Defense Protection</div>
+                            <div class="formula-value">(if any)</div>
                         </div>
                         <div class="formula-operator">=</div>
                         <div class="formula-part">
@@ -953,6 +955,16 @@
                             <div class="formula-value" style="color: var(--color-fire);">Final Damage</div>
                         </div>
                     </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">Element Modifier</div>
+                    <p>The element modifier is determined by comparing the <strong>attack's element</strong> to the <strong>defending card's element(s)</strong>:</p>
+                    <ul style="list-style: disc; padding-left: var(--spacing-md); margin-top: var(--spacing-sm);">
+                        <li><strong>Opposite elements:</strong> 0.5x damage (50% reduction)</li>
+                        <li><strong>Same/Neutral elements:</strong> 1.0x damage (base)</li>
+                        <li><strong>Complementary elements:</strong> 1.5x damage (50% bonus)</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -965,19 +977,23 @@
             </h2>
             <div class="rules-content">
                 <p>
-                    Defense moves work <strong>opposite</strong> to attacks in terms of element
-                    interactions:
+                    When your card is attacked, you may use a defense move to reduce incoming damage.
+                    Each defense move subtracts its protection value from the final damage.
                 </p>
 
-                <ul style="list-style: disc; padding-left: var(--spacing-xl); margin: var(--spacing-md) 0; color: var(--text-secondary);">
-                    <li style="margin-bottom: var(--spacing-sm);"><strong>Same Element:</strong> Defense blocks the base protection amount</li>
-                    <li style="margin-bottom: var(--spacing-sm);"><strong>Opposite Elements:</strong> Attack/defense pairings <em>increase</em> damage by 25%</li>
-                    <li style="margin-bottom: var(--spacing-sm);"><strong>Complementary Elements:</strong> Attack/defense pairings <em>reduce</em> damage by 25%</li>
-                </ul>
+                <div class="highlight-box tip">
+                    <div class="highlight-title">Automatic Defense Selection</div>
+                    <p>If your card has multiple regular defense moves, the game automatically selects the <strong>best available defense</strong> (the one that minimizes damage).</p>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">Limited-Use Defense Moves</div>
+                    <p>Special defensive abilities (like <strong>Bounce Back</strong> or <strong>Teleport</strong>) require your explicit confirmation. When attacked, you'll be prompted to use them or decline. If you decline, the game falls back to your best available regular defense.</p>
+                </div>
 
                 <div class="highlight-box info">
                     <div class="highlight-title">Strategic Defense</div>
-                    <p>Choosing the right defense against specific attacks can significantly reduce incoming damage. Match your defense element to complement the attacker's element for maximum protection!</p>
+                    <p>Save your limited-use defenses for critical moments! Regular defenses are always available, but special moves like Teleport only work once per card.</p>
                 </div>
             </div>
         </section>
@@ -990,54 +1006,97 @@
             </h2>
             <div class="rules-content">
                 <p>
-                    Special moves are powerful abilities with limited uses. Use them wisely!
+                    Special moves are powerful abilities with limited uses. All special moves have
+                    sensible limits to prevent game-breaking strategies. Use them wisely!
                 </p>
 
+                <div class="highlight-box tip">
+                    <div class="highlight-title">Legendary Card Special Moves</div>
+                    <p><strong>Legendary cards</strong> each have unique special abilities that set them apart from other cards. These can turn the tide of battle when used strategically!</p>
+                </div>
+
+                <h3 style="font-family: var(--font-heading); color: var(--color-fire); margin: var(--spacing-lg) 0 var(--spacing-md);">Attack Specials</h3>
                 <div class="special-moves-grid">
                     <div class="special-move-card attack">
-                        <h4 class="special-move-name">Black Hole</h4>
+                        <h4 class="special-move-name">Black Hole / White Hole</h4>
                         <p class="special-move-desc">
-                            An incredibly powerful attack that devastates the target.
-                            Cannot be bounced back.
+                            Devastatingly powerful cosmic attacks that deal massive damage.
+                            <strong>Cannot be bounced back or reflected.</strong>
                         </p>
-                        <span class="special-move-uses">Uses: (Number of Players - 2)</span>
+                        <span class="special-move-uses">Uses: (Number of Players - 2) per game</span>
                     </div>
 
                     <div class="special-move-card attack">
                         <h4 class="special-move-name">Summon Ghost Army</h4>
                         <p class="special-move-desc">
-                            Call forth spectral warriors to overwhelm your opponent.
-                            Cannot be bounced back.
+                            Call forth spectral warriors to overwhelm your opponent with
+                            supernatural might. <strong>Cannot be bounced back.</strong>
                         </p>
-                        <span class="special-move-uses">Uses: (Number of Players - 2)</span>
+                        <span class="special-move-uses">Uses: (Number of Players - 2) per game</span>
                     </div>
 
+                    <div class="special-move-card attack">
+                        <h4 class="special-move-name">Doubler</h4>
+                        <p class="special-move-desc">
+                            Double the effect of your next attack or defense. Stacks with
+                            element bonuses for devastating combos.
+                        </p>
+                        <span class="special-move-uses">Uses: 1 per card</span>
+                    </div>
+                </div>
+
+                <h3 style="font-family: var(--font-heading); color: var(--color-water); margin: var(--spacing-lg) 0 var(--spacing-md);">Defense Specials</h3>
+                <div class="special-moves-grid">
                     <div class="special-move-card defense">
                         <h4 class="special-move-name">Bounce Back</h4>
                         <p class="special-move-desc">
-                            Reflects 75% of incoming damage back to the attacker.
-                            Cannot reflect Black Hole or Summon Ghost Army attacks.
+                            Reflects <strong>75%</strong> of incoming damage back to the attacker.
+                            Cannot reflect Black Hole, White Hole, or Summon Ghost Army attacks.
                         </p>
                         <span class="special-move-uses">Uses: 2 per card</span>
                     </div>
 
-                    <div class="special-move-card utility">
+                    <div class="special-move-card defense">
                         <h4 class="special-move-name">Teleport</h4>
                         <p class="special-move-desc">
                             Completely dodges an incoming attack. The attack misses
-                            entirely and deals no damage.
+                            entirely and deals <strong>zero damage</strong>.
                         </p>
                         <span class="special-move-uses">Uses: 1 per card</span>
                     </div>
 
-                    <div class="special-move-card utility">
+                    <div class="special-move-card defense">
                         <h4 class="special-move-name">Slime Cover</h4>
                         <p class="special-move-desc">
-                            Cover spikes with slime, especially effective against Mecha
-                            attacks. Blunts the attack AND reduces that attack's efficacy
-                            by 75% for the rest of the game.
+                            Cover spikes with slime. Especially effective against Mecha attacks.
+                            Blunts the attack AND reduces that attack's power by <strong>75%</strong>
+                            for the rest of the game.
                         </p>
-                        <span class="special-move-uses">Special ability</span>
+                        <span class="special-move-uses">Uses: 2 per card</span>
+                    </div>
+                </div>
+
+                <h3 style="font-family: var(--font-heading); color: var(--color-plant); margin: var(--spacing-lg) 0 var(--spacing-md);">Special Move Limits Summary</h3>
+                <div class="stats-reference" style="margin-top: var(--spacing-md);">
+                    <div class="stat-box">
+                        <div class="stat-label">Cosmic Attacks</div>
+                        <div class="stat-value">(P - 2)x</div>
+                        <div class="stat-range">P = number of players</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Bounce Back</div>
+                        <div class="stat-value">2x</div>
+                        <div class="stat-range">Per card</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Teleport</div>
+                        <div class="stat-value">1x</div>
+                        <div class="stat-range">Per card</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Doubler</div>
+                        <div class="stat-value">1x</div>
+                        <div class="stat-range">Per card</div>
                     </div>
                 </div>
 
@@ -1085,11 +1144,44 @@
 
         <!-- Footer -->
         <footer class="rules-footer">
-            <a href="index.html" class="play-now-btn">
-                <span>Begin Battle</span>
+            <button id="btn-return-to-game" class="play-now-btn" onclick="returnToGame()">
+                <span>Return to Game</span>
                 <span>&#9876;</span>
-            </a>
+            </button>
         </footer>
     </div>
+
+    <script>
+        /**
+         * Return to the game page without resetting state.
+         * Uses history.back() if we came from the game, otherwise navigates to index.html
+         */
+        function returnToGame() {
+            // Check if there's navigation history from the game
+            if (document.referrer && document.referrer.includes('index.html')) {
+                // User came from the game, go back to preserve state
+                history.back();
+            } else if (window.opener || (history.length > 1 && document.referrer)) {
+                // Likely came from the game via navigation
+                history.back();
+            } else {
+                // No history, navigate to the game
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Update button text based on how user arrived
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('btn-return-to-game');
+            if (button) {
+                // Check if user likely came from an active game
+                if (document.referrer && document.referrer.includes('index.html')) {
+                    button.querySelector('span').textContent = 'Return to Game';
+                } else {
+                    button.querySelector('span').textContent = 'Start Playing';
+                }
+            }
+        });
+    </script>
 </body>
 </html>

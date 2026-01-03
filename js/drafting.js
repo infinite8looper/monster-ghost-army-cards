@@ -16,7 +16,8 @@ const draftingState = {
     deckSize: 10,               // Total cards per player
     cardsThisRound: 0,          // Cards drafted by current player this round
     cardsPerRound: 4,           // Target cards per round (deckSize / 3)
-    roundOrder: [],             // Randomized player order for current round
+    turnOrder: [],              // Fixed turn order (indices into players array, set once at game start)
+    roundOrder: [],             // Player objects in turn order (derived from turnOrder for each round)
     currentPlayerIndex: 0,      // Index in roundOrder for current turn
     availableCards: [],         // Cards still available for drafting
     takenCardIds: new Set(),    // Set of card IDs already drafted
@@ -65,9 +66,10 @@ function getAvgDefense(card) {
  * Initialize the drafting phase
  * @param {Array} players - Array of player objects with { id, name, isAI, cards: [] }
  * @param {number} deckSize - Number of cards each player will draft (default 10)
+ * @param {Array} turnOrder - Fixed turn order (indices into players array), established once at game start
  */
-export function startDraftingPhase(players, deckSize = 10) {
-    console.log('Starting drafting phase with players:', players, 'Deck size:', deckSize);
+export function startDraftingPhase(players, deckSize = 10, turnOrder = null) {
+    console.log('Starting drafting phase with players:', players, 'Deck size:', deckSize, 'Turn order:', turnOrder);
 
     // Initialize drafting state
     draftingState.players = players.map(p => ({
@@ -87,6 +89,11 @@ export function startDraftingPhase(players, deckSize = 10) {
     draftingState.currentSort = 'name';
     draftingState.sortAscending = true;
 
+    // Store the fixed turn order (established once at game start)
+    // If no turn order provided, generate one (fallback)
+    draftingState.turnOrder = turnOrder || [...Array(players.length).keys()];
+    console.log('Using fixed turn order for all drafting rounds:', draftingState.turnOrder.map(i => draftingState.players[i].name));
+
     // AUTO-ASSIGN: Randomly distribute (deckSize - 3) cards to each player
     const autoAssignCount = Math.max(0, deckSize - draftingState.manualSelectCount);
     if (autoAssignCount > 0) {
@@ -96,8 +103,8 @@ export function startDraftingPhase(players, deckSize = 10) {
     // Initialize UI elements
     initDraftingUI();
 
-    // Generate random order for first round
-    generateRoundOrder();
+    // Set up round order using the FIXED turn order (same for ALL rounds)
+    setRoundOrderFromTurnOrder();
 
     // Show drafting screen
     showDraftingScreen();
@@ -244,11 +251,23 @@ function hideDraftingScreen() {
 }
 
 /**
+ * Set up round order using the FIXED turn order (same for ALL rounds)
+ * This uses the turn order established once at game start, ensuring
+ * all drafting rounds and battle rounds use the same consistent order.
+ */
+function setRoundOrderFromTurnOrder() {
+    // Map turn order indices to player objects
+    draftingState.roundOrder = draftingState.turnOrder.map(i => draftingState.players[i]);
+    draftingState.currentPlayerIndex = 0;
+}
+
+/**
  * Generate a random player order for the current round
+ * @deprecated Use setRoundOrderFromTurnOrder() instead - turn order is now fixed at game start
  */
 function generateRoundOrder() {
-    draftingState.roundOrder = shuffleArray([...draftingState.players]);
-    draftingState.currentPlayerIndex = 0;
+    // Legacy function - now just calls setRoundOrderFromTurnOrder for consistent ordering
+    setRoundOrderFromTurnOrder();
 }
 
 /**
@@ -480,6 +499,14 @@ function createDraftingCardElement(card) {
     });
     infoDiv.appendChild(elementsDiv);
 
+    // Biography (on front, below elements)
+    if (card.biography) {
+        const bioDiv = document.createElement('div');
+        bioDiv.className = 'card-front-bio';
+        bioDiv.textContent = card.biography;
+        infoDiv.appendChild(bioDiv);
+    }
+
     // Stats
     const statsDiv = document.createElement('div');
     statsDiv.className = 'card-stats';
@@ -504,7 +531,7 @@ function createDraftingCardElement(card) {
     flipper.appendChild(frontFace);
 
     // === BACK FACE ===
-    // Order: name, bio, elements, attacks, defenses, specials
+    // Order: name, elements, attacks, defenses, specials (bio moved to front)
     const backFace = document.createElement('div');
     backFace.className = 'card-back';
     backFace.appendChild(createTierBadge());
@@ -516,15 +543,7 @@ function createDraftingCardElement(card) {
     backName.textContent = card.name;
     backFace.appendChild(backName);
 
-    // 2. Biography
-    if (card.biography) {
-        const bioDiv = document.createElement('div');
-        bioDiv.className = 'card-back-bio';
-        bioDiv.textContent = card.biography;
-        backFace.appendChild(bioDiv);
-    }
-
-    // 3. Elements
+    // 2. Elements
     const backElements = document.createElement('div');
     backElements.className = 'card-elements';
     card.elements.forEach(el => {
@@ -642,7 +661,22 @@ function createDraftingCardElement(card) {
         // Double-click to open modal with larger view
         cardDiv.addEventListener('dblclick', (e) => {
             e.stopPropagation();
-            openCardModal(card, {});
+            // Get current flipped state from the draft card
+            const isCurrentlyFlipped = cardDiv.classList.contains('flipped');
+            // Open modal with the same flip state, and sync back when closed
+            openCardModal(card, {}, {
+                startFlipped: isCurrentlyFlipped,
+                onClose: (isFlipped, closedCardId) => {
+                    // Sync the flip state back to the draft card
+                    if (closedCardId === card.id) {
+                        if (isFlipped) {
+                            cardDiv.classList.add('flipped');
+                        } else {
+                            cardDiv.classList.remove('flipped');
+                        }
+                    }
+                }
+            });
         });
 
         // Make card draggable
@@ -704,13 +738,7 @@ function renderDraftedCards() {
     const playerCards = currentPlayer.cards;
     const totalSlots = draftingState.deckSize;
 
-    // Show round progress: "X / Y this round (Z / total)"
-    const roundTarget = Math.min(
-        draftingState.cardsPerRound,
-        totalSlots - (playerCards.length - draftingState.cardsThisRound)
-    );
-
-    // Update count to show round progress and total
+    // Update count to show progress
     if (draftedCount) {
         draftedCount.textContent = playerCards.length + ' / ' + totalSlots;
     }
@@ -727,9 +755,9 @@ function renderDraftedCards() {
         }
     });
 
-    // Only show empty slots for remaining cards needed THIS ROUND (cleaner UI)
-    const cardsNeededThisRound = roundTarget - draftingState.cardsThisRound;
-    for (let i = 0; i < cardsNeededThisRound; i++) {
+    // Show empty slots for ALL remaining cards needed to complete the deck
+    const remainingSlots = totalSlots - playerCards.length;
+    for (let i = 0; i < remainingSlots; i++) {
         const emptyDiv = document.createElement('div');
         emptyDiv.className = 'drafted-slot-empty';
         emptyDiv.textContent = 'Empty Slot';
@@ -785,6 +813,17 @@ function createMiniCardElement(card) {
     });
     infoDiv.appendChild(elementsDiv);
     miniCard.appendChild(infoDiv);
+
+    // Add double-click handler to open modal
+    // Mini cards don't have a flipped state, so always open un-flipped
+    miniCard.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        openCardModal(card, {});
+    });
+
+    // Add cursor pointer to indicate clickable
+    miniCard.style.cursor = 'pointer';
+    miniCard.title = 'Double-click for details';
 
     return miniCard;
 }
@@ -914,9 +953,10 @@ function advanceTurn() {
             return;
         }
 
-        // Start new round with new random order
+        // Start new round with SAME fixed turn order (no re-randomization)
+        // This ensures fairness: same player order for all drafting rounds
         draftingState.currentPlayerIndex = 0;
-        generateRoundOrder();
+        // roundOrder already set from turnOrder, no need to regenerate
     }
 
     // Update UI and start next turn

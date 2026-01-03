@@ -12,8 +12,23 @@ const setupState = {
     playerCount: 2,
     deckSize: 10,
     totalCards: 96,  // Default, will be updated after cards.json loads
-    players: []
+    players: [],
+    turnOrder: []  // Randomized turn order, set once at game start
 };
+
+/**
+ * Shuffle an array (Fisher-Yates algorithm)
+ * @param {Array} array - Array to shuffle
+ * @returns {Array} Shuffled array
+ */
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
 
 /**
  * Update the total cards available (called after cards.json loads)
@@ -303,15 +318,23 @@ function handleStartGame() {
         // Names will default to "Player X" in getPlayerConfigs
     }
 
+    // Generate randomized turn order ONCE at game start
+    // This order will be used for ALL drafting rounds AND battle rounds
+    const playerIndices = Array.from({ length: setupState.playerCount }, (_, i) => i);
+    setupState.turnOrder = shuffleArray(playerIndices);
+
+    console.log('Turn order established:', setupState.turnOrder.map(i => playerConfigs[i].name));
+
     // Hide setup screen
     hideSetupScreen();
 
-    // Dispatch custom event with player data
+    // Dispatch custom event with player data and turn order
     const event = new CustomEvent('gameSetupComplete', {
         detail: {
             players: playerConfigs,
             playerCount: setupState.playerCount,
-            deckSize: setupState.deckSize
+            deckSize: setupState.deckSize,
+            turnOrder: setupState.turnOrder  // Include the fixed turn order
         }
     });
 

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
 
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/styles.css?v=15">
+    <link rel="stylesheet" href="css/styles.css?v=17">
 </head>
 <body>
     <!-- Game Container -->
@@ -239,6 +239,10 @@
                 </div>
 
                 <div class="setup-footer">
+                    <a href="how-to-play.html" class="setup-rules-link" title="Learn how to play">
+                        <span class="link-icon">?</span>
+                        <span class="link-text">How to Play</span>
+                    </a>
                     <button id="btn-start-game" class="start-game-btn" type="button">
                         <span class="btn-text">Begin the Battle</span>
                         <span class="btn-icon">&#9876;</span>
@@ -266,6 +270,10 @@
                         <span id="drafting-round" class="drafting-stat">Round: 1 / 10</span>
                         <span id="drafting-player" class="drafting-stat current-player">Current Player: Player 1</span>
                     </div>
+                    <a href="how-to-play.html" class="drafting-rules-link" title="Learn how to play">
+                        <span class="link-icon">?</span>
+                        <span class="link-text">How to Play</span>
+                    </a>
                 </header>
 
                 <!-- Main Drafting Area -->
@@ -293,28 +301,28 @@
                             <span class="filter-label">Filter:</span>
                             <button class="element-filter-btn active" data-element="all" title="Show All">All</button>
                             <button class="element-filter-btn" data-element="air" title="Air">
-                                <span class="filter-icon air">A</span>
+                                <img class="filter-icon" src="assets/images/elements/air.png" alt="Air">
                             </button>
                             <button class="element-filter-btn" data-element="water" title="Water">
-                                <span class="filter-icon water">W</span>
+                                <img class="filter-icon" src="assets/images/elements/water.png" alt="Water">
                             </button>
                             <button class="element-filter-btn" data-element="fire" title="Fire">
-                                <span class="filter-icon fire">F</span>
+                                <img class="filter-icon" src="assets/images/elements/fire.png" alt="Fire">
                             </button>
                             <button class="element-filter-btn" data-element="earth" title="Earth">
-                                <span class="filter-icon earth">E</span>
+                                <img class="filter-icon" src="assets/images/elements/earth.png" alt="Earth">
                             </button>
                             <button class="element-filter-btn" data-element="plant" title="Plant">
-                                <span class="filter-icon plant">P</span>
+                                <img class="filter-icon" src="assets/images/elements/plant.png" alt="Plant">
                             </button>
                             <button class="element-filter-btn" data-element="mecha" title="Mecha">
-                                <span class="filter-icon mecha">M</span>
+                                <img class="filter-icon" src="assets/images/elements/mecha.png" alt="Mecha">
                             </button>
                             <button class="element-filter-btn" data-element="magic" title="Magic">
-                                <span class="filter-icon magic">*</span>
+                                <img class="filter-icon" src="assets/images/elements/magic.png" alt="Magic">
                             </button>
                             <button class="element-filter-btn" data-element="universe" title="Universe">
-                                <span class="filter-icon universe">U</span>
+                                <img class="filter-icon" src="assets/images/elements/universe.png" alt="Universe">
                             </button>
                         </div>
                     </div>
